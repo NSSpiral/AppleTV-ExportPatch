@@ -1,0 +1,21 @@
+/* Runtime dump - SAOrCondition
+ * Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
+ */
+
+@interface SAOrCondition : AceObject <SASupportCondition>
+
+@property (copy, nonatomic) NSArray * conditions;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString * description;
+@property (readonly, copy) NSString * debugDescription;
+
++ (SAOrCondition *)orCondition;
++ (NSDictionary *)orConditionWithDictionary:(NSDictionary *)arg0 context:(NSObject *)arg1;
+
+- (NSString *)groupIdentifier;
+- (NSString *)encodedClassName;
+- (NSArray *)conditions;
+- (void)setConditions:(NSArray *)arg0;
+
+@end

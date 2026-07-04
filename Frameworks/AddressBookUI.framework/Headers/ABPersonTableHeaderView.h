@@ -1,0 +1,121 @@
+/* Runtime dump - ABPersonTableHeaderView
+ * Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
+ */
+
+@interface ABPersonTableHeaderView : UIView <UITableViewDelegate, UITableViewDataSource>
+{
+    char _editing;
+    char _representsLinkedPeople;
+    ABPersonImageView * _imageView;
+    UIImageView * _imageShadowView;
+    ABPersonNameDisplayView * _displayView;
+    char _showsMultiplePhotoBackdropView;
+    ABNamePropertyGroup * _namePropertyGroup;
+    ABMultiCellContentView * _editingView;
+    ABMultiCell * _editingViewCell;
+    UITableView * _editingViewContainer;
+    UIView * _extraHeaderView;
+    char _extraHeaderViewAlignsToImage;
+    <ABPersonTableHeaderViewDelegate> * _delegate;
+    <ABStyleProvider> * _styleProvider;
+}
+
+@property (retain, nonatomic) ABUIPerson * personForImageView;
+@property (nonatomic) <ABPersonTableHeaderViewDelegate> * delegate;
+@property (retain, nonatomic) <ABStyleProvider> * styleProvider;
+@property (readonly, nonatomic) ABPersonImageView * imageView;
+@property (readonly, nonatomic) ABPersonNameDisplayView * displayView;
+@property (readonly, nonatomic) ABMultiCellContentView * editingView;
+@property (retain, nonatomic) ABNamePropertyGroup * namePropertyGroup;
+@property (nonatomic) char representsLinkedPeople;
+@property (copy, nonatomic) NSString * alternateName;
+@property (copy, nonatomic) NSString * message;
+@property (retain, nonatomic) UIFont * messageFont;
+@property (copy, nonatomic) NSString * messageDetail;
+@property (retain, nonatomic) UIFont * messageDetailFont;
+@property (retain, nonatomic) UIView * customMessageView;
+@property (retain, nonatomic) UIView * extraHeaderView;
+@property (nonatomic) char extraHeaderViewAlignsToImage;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString * description;
+@property (readonly, copy) NSString * debugDescription;
+
+- (NSString *)alternateName;
+- (<ABStyleProvider> *)styleProvider;
+- (void)setStyleProvider:(<ABStyleProvider> *)arg0;
+- (void)setAlternateName:(NSString *)arg0;
+- (ABPersonTableHeaderView *)initWithFrame:(struct CGRect)arg0 styleProvider:(struct CGSize)arg1;
+- (id)entryFieldForRow:(unsigned int)arg0;
+- (void)reloadImageData;
+- (void)setPersonForImageView:(ABUIPerson *)arg0;
+- (void)setNamePropertyGroup:(ABNamePropertyGroup *)arg0;
+- (void)setMessageFont:(UIFont *)arg0;
+- (void)setMessageDetailFont:(UIFont *)arg0;
+- (void)setMessageDetail:(NSString *)arg0;
+- (void)setCustomMessageView:(UIView *)arg0;
+- (void)reloadNameDataAnimated:(char)arg0;
+- (ABNamePropertyGroup *)namePropertyGroup;
+- (NSString *)messageDetail;
+- (UIFont *)messageFont;
+- (UIFont *)messageDetailFont;
+- (UIView *)customMessageView;
+- (struct CGRect)_imageViewFrameWhenEditing:(id)arg0;
+- (void)imageViewSelected:(id)arg0;
+- (struct CGPoint)_displayViewOrigin;
+- (float)_displayViewWidthForWidth:(float)arg0;
+- (struct CGPoint)_editingViewOrigin;
+- (float)_editingViewWidthForWidth:(float)arg0;
+- (struct CGRect)_editingViewContainerFrameForWidth:(id)arg0;
+- (struct CGRect)_displayViewFrameForWidth:(id)arg0;
+- (float)extraHeaderViewHorizontalPaddingWhenEditing:(char)arg0;
+- (char)representsLinkedPeople;
+- (void)_recreateEditingViewContainer;
+- (ABPersonNameDisplayView *)_displayView;
+- (struct CGPoint)_extraHeaderViewOriginForWidth:(float)arg0 whenEditing:(char)arg1;
+- (float)_extraHeaderViewAvailableWidthForWidth:(float)arg0 whenEditing:(char)arg1;
+- (void)_updateShowsMultiplePhotoBackdrop;
+- (void)_layoutExtraHeaderView;
+- (void)reloadNameDataButNotModelAnimated:(char)arg0;
+- (UIImageView *)_imageShadowView;
+- (ABUIPerson *)personForImageView;
+- (void)setExtraHeaderView:(UIView *)arg0;
+- (void)setRepresentsLinkedPeople:(char)arg0;
+- (void)deselectAnimated:(char)arg0;
+- (struct CGPoint)extraHeaderViewOrigin;
+- (void)setPrimaryProperty:(int)arg0 countryCode:(NSString *)arg1;
+- (void)_updateRecordIfNeeded;
+- (ABPersonNameDisplayView *)displayView;
+- (ABMultiCellContentView *)editingView;
+- (UIView *)extraHeaderView;
+- (char)extraHeaderViewAlignsToImage;
+- (void)setExtraHeaderViewAlignsToImage:(char)arg0;
+- (ABPersonTableHeaderView *)initWithFrame:(struct CGRect)arg0;
+- (void)dealloc;
+- (void)setBackgroundColor:(UIColor *)arg0;
+- (void)setDelegate:(<ABPersonTableHeaderViewDelegate> *)arg0;
+- (void)reloadData;
+- (void)layoutSubviews;
+- (void)tableView:(UITableView *)arg0 willDisplayCell:(UITableViewCell *)arg1 forRowAtIndexPath:(NSIndexPath *)arg2;
+- (float)tableView:(UITableView *)arg0 heightForRowAtIndexPath:(NSIndexPath *)arg1;
+- (int)tableView:(UITableView *)arg0 editingStyleForRowAtIndexPath:(NSIndexPath *)arg1;
+- (char)tableView:(UITableView *)arg0 shouldIndentWhileEditingRowAtIndexPath:(NSIndexPath *)arg1;
+- (int)tableView:(UITableView *)arg0 numberOfRowsInSection:(int)arg1;
+- (UITableViewCell *)tableView:(UITableView *)arg0 cellForRowAtIndexPath:(NSIndexPath *)arg1;
+- (int)numberOfSectionsInTableView:(UITableView *)arg0;
+- (struct CGSize)sizeThatFits:(struct CGSize)arg0;
+- (<ABPersonTableHeaderViewDelegate> *)delegate;
+- (char)resignFirstResponder;
+- (char)becomeFirstResponder;
+- (char)canBecomeFirstResponder;
+- (char)isFirstResponder;
+- (char)_isSpecialInternalHeaderView;
+- (void)setEditing:(char)arg0 animated:(char)arg1;
+- (float)marginForTableView:(NSObject *)arg0;
+- (NSString *)message;
+- (ABPersonImageView *)imageView;
+- (char)canResignFirstResponder;
+- (void)setMessage:(NSString *)arg0;
+- (void)setAllowsEditing:(char)arg0;
+
+@end

@@ -1,0 +1,134 @@
+/* Runtime dump - PQLConnection
+ * Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
+ */
+
+@interface PQLConnection : NSObject
+{
+    struct sqlite3 * _db;
+    int _suspendCaching;
+    int _savePointLevel;
+    int _skipBatchStop;
+    int _vacuumTracker;
+    NSMutableArray * _flushNotifications;
+    NSObject<OS_dispatch_source> * _batchingTimer;
+    double _batchingPeriod;
+    int _batchingChangesLimit;
+    int _batchingChangesCount;
+    int _cacheSize;
+    char _useBatching;
+    char _batchStarted;
+    char _useQueue;
+    struct cache_s * _preparedStatements;
+    NSObject<OS_dispatch_source> * _stmtCacheSource;
+    NSMutableArray * _stmtCacheCleanupQueue;
+    char _traced;
+    char _crashIfUsedAfterClose;
+    NSString * _label;
+    NSURL * _url;
+    id _lockedHandler;
+    id _autoRollbackHandler;
+    id _sqliteErrorHandler;
+    id _preFlushHook;
+    id _postFlushHook;
+    id _profilingHook;
+    NSObject<OS_dispatch_queue> * _serialQueue;
+    NSError * _lastError;
+}
+
+@property (copy, nonatomic) NSString * label;
+@property (nonatomic) char traced;
+@property (nonatomic) char crashIfUsedAfterClose;
+@property (readonly, copy, nonatomic) NSURL * url;
+@property (readonly, nonatomic) struct sqlite3 * dbHandle;
+@property (readonly, nonatomic) char isInBatch;
+@property (readonly, nonatomic) char isInTransaction;
+@property (retain, nonatomic) NSError * lastError;
+@property (readonly, nonatomic) long long lastInsertedRowID;
+@property (readonly, nonatomic) long long changes;
+@property (nonatomic) unsigned long statementCacheMaxCount;
+@property (readonly, nonatomic) NSObject<OS_dispatch_queue> * serialQueue;
+@property (copy, nonatomic) id lockedHandler;
+@property (copy, nonatomic) id autoRollbackHandler;
+@property (copy, nonatomic) id sqliteErrorHandler;
+@property (copy, nonatomic) id preFlushHook;
+@property (copy, nonatomic) id postFlushHook;
+@property (copy, nonatomic) id profilingHook;
+
++ (void)initialize;
+
+- (void)dealloc;
+- (PQLConnection *)init;
+- (NSString *)description;
+- (NSString *)debugDescription;
+- (NSURL *)url;
+- (void)flush;
+- (NSString *)label;
+- (void)setLabel:(NSString *)arg0;
+- (void).cxx_destruct;
+- (NSObject<OS_dispatch_queue> *)serialQueue;
+- (char)groupInTransaction:(NSObject *)arg0;
+- (void)setSqliteErrorHandler:(id /* block */)arg0;
+- (void)setTraced:(char)arg0;
+- (void)setCrashIfUsedAfterClose:(char)arg0;
+- (void)setStatementCacheMaxCount:(unsigned long)arg0;
+- (void)useSerialQueue;
+- (long long)changes;
+- (void)setProfilingHook:(id)arg0;
+- (char)executeRaw:(id)arg0;
+- (NSError *)lastError;
+- (char)openAtURL:(NSURL *)arg0 withFlags:(int)arg1 error:(id *)arg2;
+- (char)execute:(id)arg0;
+- (char)setupPragmas;
+- (char)close:(id *)arg0;
+- (char)registerFunction:(id)arg0 nArgs:(int)arg1 handler:(id /* block */)arg2;
+- (NSObject *)fetchObjectOfClass:(Class)arg0 sql:(/* block */ id)arg1;
+- (long long)lastInsertedRowID;
+- (id)fetch:(CKDQueuedRecordFetch *)arg0;
+- (NSObject *)fetchObject:(NSObject *)arg0 sql:(/* block */ id)arg1;
+- (long)userVersion;
+- (void)setPreFlushHook:(id)arg0;
+- (void)setPostFlushHook:(id)arg0;
+- (void)useBatchingWithDelay:(double)arg0 changeCount:(int)arg1;
+- (char)performWithFlags:(unsigned int)arg0 action:(NSObject *)arg1;
+- (struct sqlite3 *)dbHandle;
+- (char)setUserVersion:(int)arg0;
+- (char)backupToURL:(NSURL *)arg0 progress:(NSProgress *)arg1;
+- (void)groupInBatch:(id)arg0;
+- (char)performWithFlags:(unsigned int)arg0 action:(NSObject *)arg1 whenFlushed:(/* block */ id)arg2;
+- (void)setLastError:(NSError *)arg0;
+- (void)forceBatchStart;
+- (void)setLockedHandler:(id /* block */)arg0;
+- (void)setAutoRollbackHandler:(id /* block */)arg0;
+- (NSString *)_description:(char)arg0;
+- (void)_clearStatementCache;
+- (void)_resetState;
+- (void)_createCacheIfNeeded;
+- (char)_execute:(id)arg0 mustSucceed:(char)arg1 bindings:(void *)arg2;
+- (int)_vacuumMode;
+- (void)_vacuumIfNeeded;
+- (char)_performWithFlags:(unsigned int)arg0 action:(NSObject *)arg1 whenFlushed:(/* block */ id)arg2;
+- (char)openAtURL:(NSURL *)arg0 sharedCache:(char)arg1 error:(id *)arg2;
+- (char)destroyDatabaseWithError:(id *)arg0;
+- (NSString *)_newStatementForFormat:(NSString *)arg0 arguments:(void *)arg1;
+- (NSObject *)fetchObjectOfClass:(Class)arg0 initializer:(SEL)arg1 sql:(/* block */ id)arg2 args:(void *)arg3;
+- (unsigned long)statementCacheMaxCount;
+- (void)_batchStartIfNeeded;
+- (void)_batchStopIfNeeded;
+- (void)_fireFlushNotifications;
+- (char)isInBatch;
+- (char)isInTransaction;
+- (char)execute:(id)arg0 args:(void *)arg1;
+- (id)fetch:(CKDQueuedRecordFetch *)arg0 args:(void *)arg1;
+- (NSObject *)fetchObjectOfClass:(Class)arg0 initializer:(SEL)arg1 sql:(/* block */ id)arg2;
+- (NSObject *)fetchObjectOfClass:(Class)arg0 sql:(/* block */ id)arg1 args:(void *)arg2;
+- (NSObject *)fetchObject:(NSObject *)arg0 sql:(/* block */ id)arg1 args:(struct OpaqueJSValue * *)arg2;
+- (id /* block */)lockedHandler;
+- (id /* block */)autoRollbackHandler;
+- (id /* block */)sqliteErrorHandler;
+- (id)preFlushHook;
+- (id)postFlushHook;
+- (id)profilingHook;
+- (char)isTraced;
+- (char)crashIfUsedAfterClose;
+
+@end

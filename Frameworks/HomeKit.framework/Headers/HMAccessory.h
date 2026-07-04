@@ -1,0 +1,133 @@
+/* Runtime dump - HMAccessory
+ * Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
+ */
+
+@interface HMAccessory : NSObject <NSSecureCoding, HMMessageReceiver, HMObjectMerge>
+{
+    char _reachable;
+    char _bridgedAccessory;
+    char _blocked;
+    char _paired;
+    NSUUID * _uniqueIdentifier;
+    <HMAccessoryDelegate> * _delegate;
+    NSString * _name;
+    HMHome * _home;
+    HMRoom * _room;
+    NSArray * _uniqueIdentifiersForBridgedAccessories;
+    HMAccessoryCategory * _category;
+    NSUUID * _uuid;
+    HMMessageDispatcher * _msgDispatcher;
+    HMThreadSafeMutableArrayCollection * _currentServices;
+    NSObject<OS_dispatch_queue> * _clientQueue;
+    NSObject<OS_dispatch_queue> * _propertyQueue;
+    HMDelegateCaller * _delegateCaller;
+}
+
+@property (copy, nonatomic) NSString * name;
+@property (readonly, copy, nonatomic) NSUUID * identifier;
+@property (readonly, copy, nonatomic) NSUUID * uniqueIdentifier;
+@property (weak, nonatomic) <HMAccessoryDelegate> * delegate;
+@property (nonatomic) char reachable;
+@property (readonly, nonatomic) char bridged;
+@property (readonly, copy, nonatomic) NSArray * identifiersForBridgedAccessories;
+@property (copy, nonatomic) NSArray * uniqueIdentifiersForBridgedAccessories;
+@property (retain, nonatomic) HMAccessoryCategory * category;
+@property (weak, nonatomic) HMRoom * room;
+@property (readonly, copy, nonatomic) NSArray * services;
+@property (nonatomic) char blocked;
+@property (readonly, copy, nonatomic) NSUUID * uuid;
+@property (weak, nonatomic) HMHome * home;
+@property (retain, nonatomic) HMMessageDispatcher * msgDispatcher;
+@property (nonatomic) char paired;
+@property (copy, nonatomic) HMThreadSafeMutableArrayCollection * currentServices;
+@property (nonatomic) char bridgedAccessory;
+@property (retain, nonatomic) NSObject<OS_dispatch_queue> * clientQueue;
+@property (retain, nonatomic) NSObject<OS_dispatch_queue> * propertyQueue;
+@property (retain, nonatomic) HMDelegateCaller * delegateCaller;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString * description;
+@property (readonly, copy) NSString * debugDescription;
+@property (readonly, nonatomic) NSUUID * messageTargetUUID;
+@property (readonly, nonatomic) NSObject<OS_dispatch_queue> * messageReceiveQueue;
+
++ (char)supportsSecureCoding;
+
+- (HMDelegateCaller *)delegateCaller;
+- (void)setDelegateCaller:(HMDelegateCaller *)arg0;
+- (void)_writeValue:(id)arg0 forCharacteristic:(HMCharacteristic *)arg1 completionHandler:(id /* block */)arg2;
+- (void)_readValueForCharacteristic:(id)arg0 completionHandler:(id /* block */)arg1;
+- (void)_enableNotification:(char)arg0 forCharacteristic:(HMCharacteristic *)arg1 completionHandler:(id /* block */)arg2;
+- (void)_updateAuthorizationData:(NSData *)arg0 forService:(struct __SCNetworkService *)arg1 characteristic:(HAPCharacteristic *)arg2 completionHandler:(id /* block */)arg3;
+- (id)_findCharacteristic:(id)arg0 forService:(struct __SCNetworkService *)arg1;
+- (void)_registerNotificationHandlers;
+- (void)_unconfigure;
+- (void)_updateName:(NSString *)arg0 completionHandler:(id /* block */)arg1;
+- (void)updateName:(NSString *)arg0 completionHandler:(id /* block */)arg1;
+- (NSObject *)_findService:(NSObject *)arg0;
+- (HMThreadSafeMutableArrayCollection *)currentServices;
+- (void)setCurrentServices:(HMThreadSafeMutableArrayCollection *)arg0;
+- (void)_configure:(id)arg0 messageDispatcher:(HMDIDSMessageDispatcher *)arg1 clientQueue:(NSObject<OS_dispatch_queue> *)arg2 delegateCaller:(HMDelegateCaller *)arg3 configCompletionQueue:(NSObject *)arg4 configCompletion:(id /* block */)arg5;
+- (void)_copyFrom:(NSObject *)arg0;
+- (NSArray *)uniqueIdentifiersForBridgedAccessories;
+- (void)setUniqueIdentifiersForBridgedAccessories:(NSArray *)arg0;
+- (void)_handleMultipleCharacteristicsUpdated:(id)arg0;
+- (void)_updateRoom:(id)arg0 completionHandler:(id /* block */)arg1;
+- (char)bridgedAccessory;
+- (void)_configureClientQueue:(NSObject *)arg0;
+- (void)_handleAccessoryCategoryChanged:(NSNotification *)arg0;
+- (void)_handleRenamed:(id)arg0;
+- (void)_handleConnectivityChanged:(NSNotification *)arg0;
+- (void)_handleCharacteristicValueUpdated:(id)arg0;
+- (void)_handleCharacteristicsUpdated:(id)arg0;
+- (void)_handleAccessoryNotificationsUpdated:(id)arg0;
+- (void)_handleServicesUpdated:(id)arg0;
+- (void)_handleServiceRenamed:(id)arg0;
+- (void)_handleServiceTypeAssociated:(id)arg0;
+- (char)paired;
+- (void)setBridgedAccessory:(char)arg0;
+- (void)_identifyWithCompletionHandler:(id /* block */)arg0;
+- (char)isBridged;
+- (void)_configureMessageDispatcher:(id)arg0 clientQueue:(NSObject<OS_dispatch_queue> *)arg1 delegateCaller:(HMDelegateCaller *)arg2;
+- (void)_setNotifyValue:(char)arg0 forCharacteristic:(HMCharacteristic *)arg1;
+- (void)_updateAssociatedServiceType:(NSObject *)arg0 forService:(struct __SCNetworkService *)arg1 completionHandler:(id /* block */)arg2;
+- (void)_updateName:(NSString *)arg0 forService:(struct __SCNetworkService *)arg1 completionHandler:(id /* block */)arg2;
+- (void)identifyWithCompletionHandler:(id /* block */)arg0;
+- (void)dealloc;
+- (HMAccessory *)initWithCoder:(NSCoder *)arg0;
+- (void)encodeWithCoder:(NSCoder *)arg0;
+- (void)setDelegate:(<HMAccessoryDelegate> *)arg0;
+- (HMAccessory *)init;
+- (NSString *)description;
+- (<HMAccessoryDelegate> *)delegate;
+- (void)setName:(NSString *)arg0;
+- (NSString *)name;
+- (void)setCategory:(HMAccessoryCategory *)arg0;
+- (HMAccessoryCategory *)category;
+- (NSUUID *)identifier;
+- (NSUUID *)uniqueIdentifier;
+- (void).cxx_destruct;
+- (NSUUID *)uuid;
+- (NSObject<OS_dispatch_queue> *)clientQueue;
+- (NSArray *)services;
+- (void)setReachable:(char)arg0;
+- (NSObject<OS_dispatch_queue> *)propertyQueue;
+- (char)isReachable;
+- (HMMessageDispatcher *)msgDispatcher;
+- (HMHome *)home;
+- (void)setHome:(HMHome *)arg0;
+- (void)setMsgDispatcher:(HMMessageDispatcher *)arg0;
+- (NSUUID *)messageTargetUUID;
+- (NSObject<OS_dispatch_queue> *)messageReceiveQueue;
+- (void)setClientQueue:(NSObject<OS_dispatch_queue> *)arg0;
+- (HMRoom *)room;
+- (void)setRoom:(HMRoom *)arg0;
+- (NSArray *)identifiersForBridgedAccessories;
+- (char)isBlocked;
+- (void)setPropertyQueue:(NSObject<OS_dispatch_queue> *)arg0;
+- (void)_handleUpdateRoom:(id)arg0;
+- (void)setBlocked:(char)arg0;
+- (void)setPaired:(char)arg0;
+- (char)_mergeWithNewObject:(char)arg0 operations:(HMObjectMergeOperations *)arg1;
+
+@end

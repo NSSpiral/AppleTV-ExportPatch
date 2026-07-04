@@ -1,0 +1,136 @@
+/* Runtime dump - MFLibraryIMAPStore
+ * Image: /System/Library/PrivateFrameworks/Message.framework/MailServices/IMAP.framework/IMAP
+ */
+
+@interface MFLibraryIMAPStore : MFLibraryStore <MFIMAPSequenceIdentifierProvider>
+{
+    id _supportsCustomPermanentFlags;
+    id _supportsJunkFlag;
+    id _supportsDollarJunkFlag;
+    id _supportsNotJunkFlag;
+    id _supportsDollarNotJunkFlag;
+    id _supportsForwardedFlag;
+    id _supportsDollarForwardedFlag;
+    id _updatingCache;
+    id _updateMetadata;
+    id _readyToDealloc;
+    id _didSynchronizeOldMessages;
+    id _recentsExist;
+    id _settingServerCount;
+    id _reserved;
+    NSString * _mailboxName;
+    MFIMAPDownloadCache * _downloadCache;
+    MFIMAPCommandPipeline * _fetchPipeline;
+    unsigned int _serverDeletedCount;
+    unsigned int _serverUidNext;
+    unsigned long long _lastHighestModSequence;
+    unsigned long long _highestModSequence;
+    NSString * _selectedUID;
+    unsigned long _currentFetchUid;
+    NSString * _relativePath;
+    NSArray * _additionalSynchronizationSearchArguments;
+    NSArray * _additionalFetchHeaders;
+    id _downloadDelegate;
+    MFIMAPConnection * _cachedConnection;
+    NSLock * _cachedConnectionLock;
+}
+
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString * description;
+@property (readonly, copy) NSString * debugDescription;
+
++ (MFLibraryIMAPStore *)copyRemoteIDForTemporaryUid:(unsigned long)arg0;
++ (void)setHandlerForTemporaryUidToRemoteIDMapping:(id)arg0;
+
+- (void)dealloc;
+- (void)close;
+- (void)willRemoveDelegation:(id)arg0;
+- (char)connection:(NSURLConnection *)arg0 shouldHandleUntaggedResponse:(NSURLResponse *)arg1 forCommand:(struct ? *)arg2;
+- (void)connection:(NSURLConnection *)arg0 didReceiveResponse:(char)arg1 forCommand:(struct ? *)arg2;
+- (void)connectionDidDisconnect:(id)arg0;
+- (void)connection:(NSURLConnection *)arg0 didBeginBodyLoad:(id)arg1 section:(UITableViewSection *)arg2;
+- (void)connection:(NSURLConnection *)arg0 didLoadMoreBodyData:(NSData *)arg1 section:(UITableViewSection *)arg2;
+- (void)connection:(NSURLConnection *)arg0 didFinishLoadingBodyData:(NSData *)arg1 section:(UITableViewSection *)arg2;
+- (void)setServerMessageCount:(unsigned int)arg0;
+- (void)setHighestModSequence:(unsigned long long)arg0;
+- (NSString *)sequenceIdentifierForUIDs:(id)arg0;
+- (void)setSequenceIdentifier:(NSString *)arg0 forUIDs:(id)arg1;
+- (char)hasValidCacheFileForMessage:(NSString *)arg0;
+- (void)setUid:(unsigned long)arg0 forMessageWithTemporaryUid:(unsigned long)arg1;
+- (void)focusedMessageDidChange:(NSDictionary *)arg0;
+- (unsigned int)fetchMessagesWithUIDs:(id)arg0 connection:(NSURLConnection *)arg1 newCount:(unsigned int)arg2 flagsToSet:(unsigned long long)arg3 queueClass:(Class)arg4;
+- (unsigned int)syncMessagesWithUIDs:(id)arg0 connection:(NSURLConnection *)arg1 libraryDetails:(NSArray *)arg2 flagSearchResults:(NSArray *)arg3;
+- (void)_updateSelectedUID:(unsigned int *)arg0;
+- (id)_searchFlagsForUIDs:(id)arg0 usingConnection:(NSURLConnection *)arg1;
+- (void)_performActionsOnConnection:(NSURLConnection *)arg0 uidsToFetch:(id *)arg1 uidsToSync:(id *)arg2 messagesToCompact:(id *)arg3 libraryDetails:(NSArray *)arg4 flagSearchResults:(NSArray *)arg5 shouldForce:(char)arg6 newUIDsToFetch:(unsigned int *)arg7;
+- (char)performOperationRequiringConnection:(char)arg0 withOptions:(int)arg1 operation:(ISURLOperation *)arg2;
+- (void)updateDeletedCountWithNotDeletedCount:(unsigned int)arg0;
+- (char)_shouldContinueToPreservedUID:(unsigned int)arg0;
+- (id)_searchArgumentsForSynchronize;
+- (unsigned int)_fetchMessagesWithArguments:(NSDictionary *)arg0 idRange:(NSObject *)arg1 onConnection:(NSURLConnection *)arg2 synchronize:(char)arg3 limit:(unsigned int)arg4 topUIDToCompact:(unsigned int)arg5 topKnownUID:(unsigned int)arg6 success:(char *)arg7 examinedRange:(struct _NSRange *)arg8 fetchableUIDsFound:(unsigned int *)arg9 preserveUID:(unsigned int *)arg10;
+- (void)_fetchServerUnreadCountWithConnection:(NSURLConnection *)arg0;
+- (void)_updateServerUnreadCount:(unsigned int)arg0;
+- (void)_fetchMessagesMatchingCriterion:(id)arg0 limit:(unsigned int)arg1 handler:(id /* block */)arg2;
+- (id)offlineCacheIfOffline;
+- (id)deletedMessages;
+- (id)addMessages:(CHITMessages *)arg0 newMessagesByOldMessage:(NSString *)arg1;
+- (id)_uidsForMessages:(id)arg0;
+- (NSCache *)offlineCache;
+- (void)setMailboxUidValidity:(unsigned int)arg0;
+- (char)_doUidCopy:(struct ? *)arg0 toStore:(NSObject *)arg1 newMessages:(CHITMessages *)arg2;
+- (char)canPerformOfflineAppend;
+- (unsigned int)_doAppend:(struct ? *)arg0;
+- (unsigned int)appendMessages:(id)arg0 unsuccessfulOnes:(NSArray *)arg1 newMessageIDs:(id)arg2 newMessages:(CHITMessages *)arg3 flagsToSet:(NSSet *)arg4 customIMAPFlagsToSet:(NSSet *)arg5;
+- (void)_synchronouslySetFlags:(id)arg0 clearFlags:(unsigned long long)arg1 forMessages:(CHITMessages *)arg2 originalChanges:(id)arg3;
+- (void)addFlagChanges:(id)arg0 forMessages:(CHITMessages *)arg1;
+- (void)_setFlagsFromDictionary:(NSDictionary *)arg0 forMessages:(CHITMessages *)arg1;
+- (NSString *)_dataForMessage:(NSString *)arg0 readHeadersOnly:(char)arg1;
+- (NSData *)_downloadForMessageBodyData:(NSData *)arg0;
+- (id)_performBodyDataDownload:(id)arg0 usingConnection:(NSURLConnection *)arg1 isPartial:(char *)arg2;
+- (char)shouldRetryEmptyBodyDownloadForMessage:(NSString *)arg0;
+- (void)updateDeletedCount;
+- (void)setAdditionalFetchHeaders:(NSArray *)arg0;
+- (void)setAdditionalSynchronizationSearchArguments:(NSArray *)arg0;
+- (void)removeAllLocalMessages;
+- (void)_addOfflineTransferMessages:(id)arg0;
+- (id)newDictionaryForLocalFlags:(unsigned long long)arg0 serverFlags:(unsigned long long)arg1 existingDictionary:(NSDictionary *)arg2;
+- (void)reselectMailbox;
+- (char)_changedFlagsForMessage:(NSString *)arg0 fetchResponse:(NSURLResponse *)arg1 newFlags:(unsigned long long *)arg2;
+- (MFIMAPCommandPipeline *)fetchPipeline;
+- (MFIMAPDownloadCache *)downloadCache;
+- (void)setDownloadDelegate:(NSObject *)arg0;
+- (unsigned int)serverMessageCount;
+- (NSDictionary *)setFlagsFromDictionary:(NSDictionary *)arg0 forMessages:(CHITMessages *)arg1;
+- (unsigned int)appendMessages:(id)arg0 unsuccessfulOnes:(NSArray *)arg1 newMessageIDs:(id)arg2 newMessages:(CHITMessages *)arg3 flagsToSet:(NSSet *)arg4;
+- (NSString *)_fetchHeaderDataForMessage:(NSString *)arg0 downloadIfNecessary:(char)arg1;
+- (void)setFlagsForAllMessagesFromDictionary:(NSDictionary *)arg0;
+- (int)fetchNumMessages:(unsigned int)arg0 preservingUID:(id)arg1 options:(unsigned int)arg2;
+- (void)_setFlagsForMessages:(id)arg0;
+- (MFLibraryIMAPStore *)initWithMailboxUid:(MFMailboxUid *)arg0 readOnly:(char)arg1;
+- (unsigned int)growFetchWindow;
+- (char)canFetchSearchResults;
+- (int)fetchMessagesMatchingCriterion:(id)arg0 limit:(unsigned int)arg1;
+- (id)remoteIDsMatchingCriterion:(id)arg0 limit:(unsigned int)arg1 error:(id *)arg2;
+- (id)remoteIDsFromUniqueRemoteIDs:(id)arg0;
+- (char)canFetchMessageIDs;
+- (int)fetchMessagesWithMessageIDs:(id)arg0 andSetFlags:(unsigned long long)arg1;
+- (int)fetchMessagesWithRemoteIDs:(id)arg0 andSetFlags:(unsigned long long)arg1;
+- (char)canCompact;
+- (void)doCompact;
+- (void)deleteMessagesOlderThanNumberOfDays:(int)arg0 compact:(char)arg1;
+- (char)allowsAppend;
+- (NSObject *)messageForRemoteID:(NSObject *)arg0;
+- (id)uniqueRemoteIDsForMessages:(id)arg0;
+- (NSDictionary *)willSetFlagsFromDictionary:(NSDictionary *)arg0 forMessages:(CHITMessages *)arg1;
+- (void)setFlagsCancelled:(id)arg0 forMessages:(CHITMessages *)arg1;
+- (char)setPreferredEncoding:(unsigned long)arg0 forMessage:(NSString *)arg1;
+- (NSString *)mailboxName;
+- (void)_handleFlagsChangedForMessages:(id)arg0 flags:(_MFMessageFlags *)arg1 oldFlagsByMessage:(NSString *)arg2;
+- (char)_fetchDataForMimePart:(id)arg0 range:(struct _NSRange)arg1 isComplete:(char *)arg2 consumer:(<DASearchQueryConsumer> *)arg3;
+- (NSString *)_fetchFullBodyDataForMessage:(NSString *)arg0 andHeaderDataIfReadilyAvailable:(id *)arg1 downloadIfNecessary:(char)arg2 didDownload:(char *)arg3;
+- (NSString *)_fetchBodyDataForMessage:(NSString *)arg0 andHeaderDataIfReadilyAvailable:(id *)arg1 downloadIfNecessary:(char)arg2 partial:(char *)arg3;
+- (char)bodyFetchRequiresNetworkActivity;
+- (NSString *)relativePath;
+
+@end

@@ -1,0 +1,19 @@
+/* Runtime dump - SATimerCancel
+ * Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
+ */
+
+@interface SATimerCancel : SADomainCommand <SATimerTimerAction>
+
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString * description;
+@property (readonly, copy) NSString * debugDescription;
+
++ (char)cancel;
++ (NSDictionary *)cancelWithDictionary:(NSDictionary *)arg0 context:(NSObject *)arg1;
+
+- (NSString *)groupIdentifier;
+- (NSString *)encodedClassName;
+- (char)requiresResponse;
+
+@end

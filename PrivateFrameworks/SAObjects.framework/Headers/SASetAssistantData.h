@@ -1,0 +1,113 @@
+/* Runtime dump - SASetAssistantData
+ * Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
+ */
+
+@interface SASetAssistantData : SABaseCommand <SAServerBoundCommand>
+
+@property (copy, nonatomic) NSArray * abSources;
+@property (copy, nonatomic) NSNumber * allowUserGeneratedContent;
+@property (copy, nonatomic) NSString * anchor;
+@property (nonatomic) char censorSpeech;
+@property (copy, nonatomic) NSString * countryCode;
+@property (copy, nonatomic) NSNumber * debugFlags;
+@property (copy, nonatomic) NSArray * deviceCapabilities;
+@property (copy, nonatomic) NSString * deviceColor;
+@property (copy, nonatomic) NSString * deviceEnclosure;
+@property (copy, nonatomic) NSString * deviceVersion;
+@property (copy, nonatomic) NSString * firstName;
+@property (copy, nonatomic) NSString * fullStorefrontId;
+@property (nonatomic) char handsFree;
+@property (copy, nonatomic) NSNumber * holdToTalkThresholdInMilliseconds;
+@property (nonatomic) char inRetailStoreDemoMode;
+@property (copy, nonatomic) NSString * lastName;
+@property (copy, nonatomic) NSArray * meCards;
+@property (nonatomic) char mediaPlayerExplicitContentDisallowed;
+@property (copy, nonatomic) NSString * osVersion;
+@property (copy, nonatomic) NSArray * parentalRestrictions;
+@property (copy, nonatomic) NSString * region;
+@property (copy, nonatomic) NSNumber * storefront;
+@property (copy, nonatomic) NSString * temperatureUnit;
+@property (copy, nonatomic) NSString * timeZoneId;
+@property (retain, nonatomic) SAVoice * ttsVoice;
+@property (copy, nonatomic) NSNumber * twentyFourHourTimeDisplay;
+@property (copy, nonatomic) NSNumber * uiScale;
+@property (copy, nonatomic) NSString * userInterfaceIdiom;
+@property (nonatomic) char voiceOver;
+@property (copy, nonatomic) NSNumber * voiceTriggerEnabled;
+@property (retain, nonatomic) SAWatchData * watchData;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString * description;
+@property (readonly, copy) NSString * debugDescription;
+@property (copy, nonatomic) NSString * aceId;
+@property (copy, nonatomic) NSString * refId;
+
++ (NSData *)setAssistantData;
++ (NSDictionary *)setAssistantDataWithDictionary:(NSDictionary *)arg0 context:(NSObject *)arg1;
+
+- (NSNumber *)voiceTriggerEnabled;
+- (NSString *)groupIdentifier;
+- (NSString *)userInterfaceIdiom;
+- (NSString *)anchor;
+- (void)setAnchor:(NSString *)arg0;
+- (void)setRegion:(NSString *)arg0;
+- (NSString *)region;
+- (void)setFirstName:(NSString *)arg0;
+- (void)setLastName:(NSString *)arg0;
+- (NSString *)firstName;
+- (NSString *)lastName;
+- (NSString *)osVersion;
+- (void)setOsVersion:(NSString *)arg0;
+- (void)setCountryCode:(NSString *)arg0;
+- (NSString *)encodedClassName;
+- (NSString *)timeZoneId;
+- (void)setTimeZoneId:(NSString *)arg0;
+- (SAWatchData *)watchData;
+- (char)censorSpeech;
+- (void)setCensorSpeech:(char)arg0;
+- (char)handsFree;
+- (void)setHandsFree:(char)arg0;
+- (NSArray *)abSources;
+- (void)setAbSources:(NSArray *)arg0;
+- (NSNumber *)allowUserGeneratedContent;
+- (void)setAllowUserGeneratedContent:(NSNumber *)arg0;
+- (NSNumber *)debugFlags;
+- (void)setDebugFlags:(NSNumber *)arg0;
+- (NSArray *)deviceCapabilities;
+- (void)setDeviceCapabilities:(NSArray *)arg0;
+- (NSString *)deviceColor;
+- (void)setDeviceColor:(NSString *)arg0;
+- (NSString *)deviceEnclosure;
+- (void)setDeviceEnclosure:(NSString *)arg0;
+- (NSString *)deviceVersion;
+- (void)setDeviceVersion:(NSString *)arg0;
+- (NSString *)fullStorefrontId;
+- (void)setFullStorefrontId:(NSString *)arg0;
+- (NSNumber *)holdToTalkThresholdInMilliseconds;
+- (void)setHoldToTalkThresholdInMilliseconds:(NSNumber *)arg0;
+- (char)inRetailStoreDemoMode;
+- (void)setInRetailStoreDemoMode:(char)arg0;
+- (NSArray *)meCards;
+- (void)setMeCards:(NSArray *)arg0;
+- (char)mediaPlayerExplicitContentDisallowed;
+- (void)setMediaPlayerExplicitContentDisallowed:(char)arg0;
+- (NSArray *)parentalRestrictions;
+- (void)setParentalRestrictions:(NSArray *)arg0;
+- (NSNumber *)storefront;
+- (void)setStorefront:(NSNumber *)arg0;
+- (NSString *)temperatureUnit;
+- (void)setTemperatureUnit:(NSString *)arg0;
+- (SAVoice *)ttsVoice;
+- (void)setTtsVoice:(SAVoice *)arg0;
+- (NSNumber *)twentyFourHourTimeDisplay;
+- (void)setTwentyFourHourTimeDisplay:(NSNumber *)arg0;
+- (NSNumber *)uiScale;
+- (void)setUiScale:(NSNumber *)arg0;
+- (void)setUserInterfaceIdiom:(NSString *)arg0;
+- (char)voiceOver;
+- (void)setVoiceOver:(char)arg0;
+- (void)setVoiceTriggerEnabled:(NSNumber *)arg0;
+- (void)setWatchData:(SAWatchData *)arg0;
+- (NSString *)countryCode;
+
+@end

@@ -1,0 +1,54 @@
+// FrontBoardServices.framework umbrella header
+// Auto-generated from iOS 8.4.3 dyld_shared_cache (AppleTV 3,2)
+
+#import <Foundation/Foundation.h>
+
+#import <FrontBoardServices/FBSContext.h>
+#import <FrontBoardServices/FBSDisplay.h>
+#import <FrontBoardServices/FBSLogger.h>
+#import <FrontBoardServices/FBSMutableSceneClientSettings.h>
+#import <FrontBoardServices/FBSMutableSceneSettings.h>
+#import <FrontBoardServices/FBSScene.h>
+#import <FrontBoardServices/FBSSceneClientSettings.h>
+#import <FrontBoardServices/FBSSceneClientSettingsDiff.h>
+#import <FrontBoardServices/FBSSceneClientSettingsDiffInspector.h>
+#import <FrontBoardServices/FBSSceneContext.h>
+#import <FrontBoardServices/FBSSceneImpl.h>
+#import <FrontBoardServices/FBSSceneOcclusion.h>
+#import <FrontBoardServices/FBSSceneSettings.h>
+#import <FrontBoardServices/FBSSceneSettingsDiff.h>
+#import <FrontBoardServices/FBSSceneSettingsDiffInspector.h>
+#import <FrontBoardServices/FBSSceneTransitionContext.h>
+#import <FrontBoardServices/FBSSerialQueue.h>
+#import <FrontBoardServices/FBSServiceNames.h>
+#import <FrontBoardServices/FBSSystemAppProxy.h>
+#import <FrontBoardServices/FBSSystemService.h>
+#import <FrontBoardServices/FBSSystemServiceUtility.h>
+#import <FrontBoardServices/FBSUIApplicationLaunchEvent.h>
+#import <FrontBoardServices/FBSUIApplicationLaunchResponse.h>
+#import <FrontBoardServices/FBSUIApplicationLaunchResponseEvent.h>
+#import <FrontBoardServices/FBSUIApplicationSystemService.h>
+#import <FrontBoardServices/FBSUIApplicationWorkspace.h>
+#import <FrontBoardServices/FBSUIApplicationWorkspaceClient.h>
+#import <FrontBoardServices/FBSWorkspace.h>
+#import <FrontBoardServices/FBSWorkspaceActionsEvent.h>
+#import <FrontBoardServices/FBSWorkspaceClient.h>
+#import <FrontBoardServices/FBSWorkspaceCreateSceneEvent.h>
+#import <FrontBoardServices/FBSWorkspaceCreateSceneRequestEvent.h>
+#import <FrontBoardServices/FBSWorkspaceCreateSceneRequestResponseEvent.h>
+#import <FrontBoardServices/FBSWorkspaceCreateSceneResponse.h>
+#import <FrontBoardServices/FBSWorkspaceCreateSceneResponseEvent.h>
+#import <FrontBoardServices/FBSWorkspaceDestroySceneEvent.h>
+#import <FrontBoardServices/FBSWorkspaceDestroySceneRequestEvent.h>
+#import <FrontBoardServices/FBSWorkspaceDestroySceneRequestResponseEvent.h>
+#import <FrontBoardServices/FBSWorkspaceDestroySceneResponse.h>
+#import <FrontBoardServices/FBSWorkspaceDestroySceneResponseEvent.h>
+#import <FrontBoardServices/FBSWorkspaceEvent.h>
+#import <FrontBoardServices/FBSWorkspaceResponse.h>
+#import <FrontBoardServices/FBSWorkspaceSceneActionsEvent.h>
+#import <FrontBoardServices/FBSWorkspaceSceneClientSettingsChangedEvent.h>
+#import <FrontBoardServices/FBSWorkspaceSceneContextEvent.h>
+#import <FrontBoardServices/FBSWorkspaceSceneEvent.h>
+#import <FrontBoardServices/FBSWorkspaceSceneUpdateEvent.h>
+#import <FrontBoardServices/FBSWorkspaceSceneUpdateResponse.h>
+#import <FrontBoardServices/FBSWorkspaceSceneUpdateResponseEvent.h>

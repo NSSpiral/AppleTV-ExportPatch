@@ -1,0 +1,136 @@
+/* Runtime dump - MCSlide
+ * Image: /System/Library/PrivateFrameworks/ATVSlideshow.framework/ATVSlideshow
+ */
+
+@interface MCSlide : MCObject <MCAnimationPathSupport, MCFilterSupport>
+{
+    id * mSlideAsset;
+    NSMutableDictionary * mFrameAttributes;
+    NSMutableSet * mAnimationPaths;
+    NSMutableSet * mFilters;
+    NSArray * mCachedOrderedFilters;
+    unsigned int mFlags;
+    MCPlugSlide * mPlug;
+    MCSong * mSong;
+    unsigned int mIndex;
+    float mAudioVolume;
+    float mAudioDuckLevel;
+    NSString * mFrameID;
+    MCContainerEffect * mContainer;
+    double mAudioFadeInDuration;
+    double mAudioFadeOutDuration;
+    double mAudioDuckInDuration;
+    double mAudioDuckOutDuration;
+    double mStartTime;
+    double mDuration;
+}
+
+@property (readonly) NSSet * animationPaths;
+@property (readonly) unsigned int countOfAnimationPaths;
+@property (readonly) NSSet * filters;
+@property (readonly) NSArray * orderedFilters;
+@property (readonly, nonatomic) unsigned int countOfFilters;
+@property (retain) MCAssetVideo * asset;
+@property (retain) MCPlugSlide * plug;
+@property (readonly) MCSong * song;
+@property (nonatomic) unsigned int index;
+@property (nonatomic) float audioVolume;
+@property (nonatomic) double audioFadeInDuration;
+@property (nonatomic) double audioFadeOutDuration;
+@property (nonatomic) float audioDuckLevel;
+@property (nonatomic) double audioDuckInDuration;
+@property (nonatomic) double audioDuckOutDuration;
+@property (readonly) char startTimeIsDefined;
+@property (nonatomic) double startTime;
+@property (readonly) char durationIsDefined;
+@property (nonatomic) double duration;
+@property (copy) NSString * frameID;
+@property (copy) NSDictionary * frameAttributes;
+@property (copy) NSString * kenBurnsType;
+@property (nonatomic) struct CGPoint center;
+@property (nonatomic) float scale;
+@property (nonatomic) float rotation;
+@property MCContainerEffect * container;
+@property (nonatomic) unsigned char currentLayoutIndex;
+@property (readonly) unsigned char countOfLayouts;
+
++ (NSString *)keyPathsForValuesAffectingValueForKey:(NSString *)arg0;
+
+- (MCSlide *)init;
+- (double)duration;
+- (void)setDuration:(double)arg0;
+- (void)setStartTime:(double)arg0;
+- (float)scale;
+- (struct CGPoint)center;
+- (void)setCenter:(struct CGPoint)arg0;
+- (void)setContainer:(MCContainerEffect *)arg0;
+- (NSSet *)filters;
+- (void)setScale:(float)arg0;
+- (MCContainerEffect *)container;
+- (unsigned int)index;
+- (void)observeValueForKeyPath:(NSString *)arg0 ofObject:(NSObject *)arg1 change:(NSDictionary *)arg2 context:(void *)arg3;
+- (void)setRotation:(float)arg0;
+- (float)rotation;
+- (MCAssetVideo *)asset;
+- (double)startTime;
+- (void)setAsset:(MCAssetVideo *)arg0;
+- (void)setIndex:(unsigned int)arg0;
+- (void)addAnimationPath:(NSString *)arg0;
+- (void)removeAllAnimationPaths;
+- (NSSet *)animationPaths;
+- (void)removeAnimationPathForKey:(NSString *)arg0;
+- (NSString *)animationPathForKey:(NSString *)arg0;
+- (void)setAudioFadeOutDuration:(double)arg0;
+- (void)setPlug:(MCPlugSlide *)arg0;
+- (void)setAudioVolume:(float)arg0;
+- (void)setAudioDuckInDuration:(double)arg0;
+- (void)setAudioDuckOutDuration:(double)arg0;
+- (void)setAudioDuckLevel:(float)arg0;
+- (void)demolish;
+- (MCPlugSlide *)plug;
+- (double)audioFadeOutDuration;
+- (NSObject *)insertFilterWithFilterID:(NSString *)arg0 atIndex:(unsigned int)arg1;
+- (void)removeFiltersAtIndices:(id)arg0;
+- (void)moveFiltersAtIndices:(id)arg0 toIndex:(unsigned int)arg1;
+- (void)removeAllFilters;
+- (NSObject *)addFilterWithFilterID:(NSString *)arg0;
+- (unsigned int)countOfFilters;
+- (NSString *)frameID;
+- (void)setFrameID:(NSString *)arg0;
+- (void)setFrameAttribute:(NSObject *)arg0 forKey:(NSString *)arg1;
+- (NSDictionary *)frameAttributes;
+- (NSString *)frameAttributeForKey:(NSString *)arg0;
+- (void)undefineStartTime;
+- (void)undefineDuration;
+- (void)setAudioFadeInDuration:(double)arg0;
+- (NSString *)kenBurnsType;
+- (void)setKenBurnsType:(NSString *)arg0;
+- (float)audioVolume;
+- (double)audioFadeInDuration;
+- (double)audioDuckInDuration;
+- (double)audioDuckOutDuration;
+- (float)audioDuckLevel;
+- (char)startTimeIsDefined;
+- (char)durationIsDefined;
+- (unsigned char)currentLayoutIndex;
+- (void)setCurrentLayoutIndex:(unsigned char)arg0;
+- (unsigned int)countOfAnimationPaths;
+- (void)_copySelfToSnapshot:(NSObject *)arg0;
+- (void)initAnimationPathsWithImprints:(id)arg0;
+- (void)demolishAnimationPaths;
+- (NSArray *)imprintsForAnimationPaths;
+- (MCSlide *)initWithImprint:(NSDictionary *)arg0 andMontage:(NSObject *)arg1;
+- (unsigned char)countOfLayouts;
+- (void)initFiltersWithImprints:(id)arg0;
+- (void)demolishFilters;
+- (id)imprintsForFilters;
+- (void)setSongForAsset:(NSSet *)arg0;
+- (void)setFrameAttributes:(NSDictionary *)arg0;
+- (void)observeFilter:(NSObject *)arg0;
+- (void)unobserveFilter:(NSObject *)arg0;
+- (NSArray *)orderedFilters;
+- (MCSong *)song;
+- (NSObject *)filterAtIndex:(unsigned int)arg0;
+- (NSDictionary *)imprint;
+
+@end

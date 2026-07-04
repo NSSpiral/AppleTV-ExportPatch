@@ -1,0 +1,55 @@
+// BaseBoard.framework umbrella header
+// Auto-generated from iOS 8.4.3 dyld_shared_cache (AppleTV 3,2)
+
+#import <Foundation/Foundation.h>
+
+#import <BaseBoard/BSAction.h>
+#import <BaseBoard/BSActionListener.h>
+#import <BaseBoard/BSActionListenerController.h>
+#import <BaseBoard/BSActionResponse.h>
+#import <BaseBoard/BSAnimationSettings.h>
+#import <BaseBoard/BSAuditToken.h>
+#import <BaseBoard/BSBaseXPCClient.h>
+#import <BaseBoard/BSBaseXPCServer.h>
+#import <BaseBoard/BSBasicServerClient.h>
+#import <BaseBoard/BSCFBundle.h>
+#import <BaseBoard/BSColor.h>
+#import <BaseBoard/BSCopyingCacheSet.h>
+#import <BaseBoard/BSDescriptionBuilder.h>
+#import <BaseBoard/BSDispatchSource.h>
+#import <BaseBoard/BSEqualsBuilder.h>
+#import <BaseBoard/BSEventQueue.h>
+#import <BaseBoard/BSEventQueueEvent.h>
+#import <BaseBoard/BSEventQueueLock.h>
+#import <BaseBoard/BSFileLogManager.h>
+#import <BaseBoard/BSFileLogger.h>
+#import <BaseBoard/BSFuture.h>
+#import <BaseBoard/BSHashBuilder.h>
+#import <BaseBoard/BSLaunchdUtilities.h>
+#import <BaseBoard/BSMIGServer.h>
+#import <BaseBoard/BSMachPort.h>
+#import <BaseBoard/BSMachSendRight.h>
+#import <BaseBoard/BSMutableAnimationSettings.h>
+#import <BaseBoard/BSMutableSettings.h>
+#import <BaseBoard/BSMutableSpringAnimationSettings.h>
+#import <BaseBoard/BSPlatform.h>
+#import <BaseBoard/BSPortDeathWatcher.h>
+#import <BaseBoard/BSProcessDeathWatcher.h>
+#import <BaseBoard/BSSerializedRequestQueue.h>
+#import <BaseBoard/BSSettings.h>
+#import <BaseBoard/BSSettingsDiff.h>
+#import <BaseBoard/BSSignal.h>
+#import <BaseBoard/BSSpringAnimationSettings.h>
+#import <BaseBoard/BSStackFrameInfo.h>
+#import <BaseBoard/BSTimer.h>
+#import <BaseBoard/BSTransaction.h>
+#import <BaseBoard/BSTransactionAuditHistoryItem.h>
+#import <BaseBoard/BSUIApplicationSupport.h>
+#import <BaseBoard/BSWatchdog.h>
+#import <BaseBoard/BSXPCCodingArray.h>
+#import <BaseBoard/BSXPCConnectionListener.h>
+#import <BaseBoard/BSXPCConnectionListenerManager.h>
+#import <BaseBoard/BSXPCMessage.h>
+#import <BaseBoard/BSXPCReply.h>
+#import <BaseBoard/BSZeroingWeakReference.h>
+#import <BaseBoard/_BSCategoryLogger.h>

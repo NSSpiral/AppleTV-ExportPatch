@@ -1,0 +1,10 @@
+/* Runtime dump - AVPlayerItemErrorLogEventInternal
+ * Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
+ */
+
+@interface AVPlayerItemErrorLogEventInternal : NSObject
+{
+    NSDictionary * dict;
+}
+
+@end

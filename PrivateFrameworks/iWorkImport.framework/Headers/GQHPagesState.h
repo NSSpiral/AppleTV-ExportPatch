@@ -1,0 +1,124 @@
+/* Runtime dump - GQHPagesState
+ * Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
+ */
+
+@interface GQHPagesState : GQHState <GQWrapPointGenerator>
+{
+    struct __CFDictionary * mFloatingDrawables;
+    int mMode;
+    struct __CFDictionary * mHeaders;
+    struct __CFDictionary * mFooters;
+    struct __CFArray * mSectionStyles;
+    struct __CFDictionary * mPageWrapPointsMap;
+    int mCurrentPageIndex;
+    int mStartPageAt;
+    int mStartPageAtValueChangedAtPageIndex;
+    GQHStyle * mCurrentLayoutStyle;
+    GQHStyle * mCurrentParagraphStyle;
+    GQDSStyle * mCurrentBaseParagraphStyle;
+    struct __CFString * mCurrentCachedParagraphClass;
+    GQHStyle * mCurrentSpanStyle;
+    GQDSStyle * mCurrentBaseSpanStyle;
+    struct __CFString * mCurrentCachedSpanClass;
+    GQWrapPointSet * mCurrentWrapPointSet;
+    struct CGRect mLastFrame;
+    char mMappingFloatingDrawables;
+    char mStartedPage;
+    char mStartedSection;
+    char mDidInsertPageHeader;
+    char mDidFindContainerHint;
+    GQDWPContainerHint * mLastInsertedContainerHint;
+    struct __CFArray * mAttachmentPositions;
+    long mAttachmentIdCounter;
+    long mFirstAttachmentId;
+    char mSplitNextAttachment;
+    GQDSStyle * mCurrentSectionStyle;
+    char mHasLayoutDrawables;
+    int mCurrentHintPageIndex;
+    int mCurrentHintColumnIndex;
+    char mIsMappingHeadersFooters;
+    int mHeaderFooterPageNumber;
+    struct __CFDictionary * mDrawablePagesOrderToCssZOrderClassMap;
+    struct CGSize mPageSize;
+    struct __CFArray * mTocHrefStack;
+    char mCurrentFrameHasSandbagFloats;
+    int mProgressiveIndex;
+}
+
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString * description;
+@property (readonly, copy) NSString * debugDescription;
+
+- (struct set<GQUtility::ObjcSharedPtr<GQDWrapPoint>, GQUtility::NSObjectComparator<GQDWrapPoint>, std::__1::allocator<GQUtility::ObjcSharedPtr<GQDWrapPoint> > > *)wrapPoints;
+- (void)addWrapPoint:(NSObject *)arg0;
+- (struct vector<GQUtility::ObjcSharedPtr<GQDWrapPoint>, std::__1::allocator<GQUtility::ObjcSharedPtr<GQDWrapPoint> > > *)createListOfWrapPointsAlongY:(id)arg0 minX:(id)arg1 maxX:(float)arg2 zIndex:(SEL)arg3;
+- (void)clearWrapPoints;
+- (char)useOutline;
+- (void)pushTocHref:(struct __CFString *)arg0;
+- (void)popTocHref;
+- (void)setDidInsertPageHeader:(char)arg0;
+- (void)overrideSectionStyle:(NSObject *)arg0;
+- (void)setCurrentLayoutStyle:(NSObject *)arg0;
+- (void)setDidFindContainerHint:(char)arg0;
+- (void)handleContainerHint:(id)arg0;
+- (struct __CFString *)cssZOrderClassForDrawable:(id)arg0;
+- (char)allowInlineWrap;
+- (GQHPagesState *)initWithState:(NSObject *)arg0 documentSize:(struct CGSize)arg1;
+- (void)addStyle:(struct __CFString *)arg0 className:(struct __CFString *)arg1 srcStyle:(NSObject *)arg2;
+- (void)endSection;
+- (int)floatingDrawablesCount;
+- (long)currentAttachmentId;
+- (void)setPageSize:(struct CGSize)arg0;
+- (void)setFooters:(struct __CFArray *)arg0;
+- (void)addSectionStyle:(NSObject *)arg0 pageIndex:(int)arg1 numPages:(int)arg2;
+- (void)resolveHeaderName:(struct __CFString * *)arg0 footerName:(struct __CFString *)arg1;
+- (void)setIsMappingHeadersFooters:(char)arg0;
+- (NSString *)headerForName:(struct __CFString *)arg0;
+- (NSString *)footerForName:(struct __CFString *)arg0;
+- (struct __CFDictionary *)pagesOrderToCssZOrderClassMapDictionary;
+- (void)beginWrapPointSet;
+- (void)addFloatingDrawable:(GQHPagesFloatingDrawable *)arg0;
+- (void)endWrapPointSet;
+- (struct __CFArray *)pageDrawables:(int)arg0;
+- (double)currentAttachmentPosition;
+- (long)nextAttachmentId;
+- (void)addAttachmentPosition:(double)arg0;
+- (void)startLayout;
+- (void)closeStateLayoutElementsAndStyles;
+- (void)mapFloatingDrawablesForPageAtIndex:(unsigned int)arg0;
+- (NSObject *)sectionStyleForPageIndex:(int)arg0;
+- (NSObject *)sectionStyleRunForRunBeforePageIndex:(int)arg0;
+- (struct ?)rangeForSectionStyleAtPageIndex:(int)arg0;
+- (id)wrapPointSetForPage:(int)arg0;
+- (char)isMappingHeadersFooters;
+- (void)startSection;
+- (struct __CFString *)cssZOrderClassForDrawablePagesOrder:(int)arg0;
+- (unsigned int)tocDepth;
+- (void)clearFloatingDrawables;
+- (void)setCurrentParagraphStyle:(NSParagraphStyle *)arg0 baseStyle:(struct _xmlNode *)arg1 cachedClass:(struct __CFString *)arg2;
+- (void)setCurrentSpanStyle:(NSObject *)arg0 baseStyle:(struct _xmlNode *)arg1 cachedClass:(struct __CFString *)arg2;
+- (BOOL)splitNextAttachment;
+- (void)finishedWithSplitAttachment;
+- (double)moveToNextAttachmentPosition;
+- (long)firstAttachmentId;
+- (void)insertAttachmentPlaceholder;
+- (void)setHasLayoutDrawables:(char)arg0;
+- (char)hasLayoutDrawables;
+- (int)pageNumberForHeaderOrFooter;
+- (void)setOutlineStyleType:(int)arg0;
+- (char)needAbsolutelyPositionedTables;
+- (void)openStateLayoutElementsAndStyles;
+- (void)dealloc;
+- (void)setMode:(int)arg0;
+- (int)mode;
+- (void).cxx_construct;
+- (int)currentPageIndex;
+- (void)setCurrentPageIndex:(int)arg0;
+- (void)inContent;
+- (NSObject *)drawableAtIndex:(int)arg0;
+- (struct CGSize)pageSize;
+- (void)setOutlineLevel:(int)arg0;
+- (void)setHeaders:(struct __CFArray *)arg0;
+
+@end

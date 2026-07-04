@@ -1,0 +1,118 @@
+/* Runtime dump - ML3Container
+ * Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
+ */
+
+@interface ML3Container : ML3Entity
+
+@property (readonly) ML3Predicate * staticPredicate;
+@property (readonly) ML3Predicate * dynamicPredicate;
+@property (readonly) char limitedByCount;
+@property (readonly) char limitOrderingDescending;
+@property (readonly, copy) NSString * limitingProperty;
+@property (readonly, copy) NSArray * limitOrderingTerms;
+@property (readonly) long long limitValue;
+@property (readonly, copy) NSArray * cloudDisplayOrderingTerms;
+@property (readonly, copy) NSArray * displayOrderingTerms;
+
++ (NSObject *)propertyForMPMediaEntityProperty:(NSObject *)arg0;
++ (void)initialize;
++ (int)revisionTrackingCode;
++ (ML3Container *)persistentIDColumnForTable:(id)arg0;
++ (NSObject *)joinClausesForProperty:(NSString *)arg0;
++ (NSObject *)foreignDatabaseTableForProperty:(NSString *)arg0;
++ (NSObject *)foreignColumnForProperty:(NSString *)arg0;
++ (ML3DatabaseTable *)databaseTable;
++ (char)libraryContentsChangeForProperty:(NSString *)arg0;
++ (char)libraryDynamicChangeForProperty:(NSString *)arg0;
++ (ML3Container *)extraTablesToDelete;
++ (char)deleteFromLibrary:(NSObject *)arg0 deletionType:(int)arg1 persistentIDs:(long long *)arg2 count:(long long)arg3;
++ (ML3Container *)defaultFilterPredicates;
++ (ML3Container *)defaultOrderingTerms;
++ (NSObject *)sectionPropertyForProperty:(NSString *)arg0;
++ (void)populateDynamicContainersInLibrary:(NSObject *)arg0;
++ (void)populateStaticItemsOfDynamicContainersInLibrary:(NSObject *)arg0;
++ (void)populateSortOrdersOfPropertyValues:(NSArray *)arg0 inLibrary:(NSObject *)arg1 cachedNameOrders:(id)arg2;
++ (void)populateMediaTypesOfStaticContainersInLibrary:(NSObject *)arg0;
++ (char)hasCriterionInCriteriaList:(struct SearchCriteriaList *)arg0 forITDBTrackField:(int)arg1;
++ (NSObject *)nextFilepathForPlaylistType:(int)arg0 withPersistentID:(unsigned long long)arg1 inLibrary:(NSObject *)arg2;
++ (NSArray *)predicateForCriteriaList:(struct SearchCriteriaList *)arg0 dynamicCriteria:(char)arg1 parentMatchedAny:(char)arg2;
++ (void)_insertNewSmartPlaylist:(id)arg0 criteriaBlob:(id)arg1 evaluationOrder:(unsigned long)arg2 limited:(char)arg3 trackOrder:(unsigned long)arg4 distinguishedKind:(int)arg5 inLibrary:(NSObject *)arg6 cachedNameOrders:(id)arg7;
++ (void)populateDynamicContainersWithTrackPersistentID:(NSObject *)arg0 inLibrary:(NSObject *)arg1 createBuiltinSmartPlaylists:(char)arg2;
++ (void)populateDynamicContainersWithTrackPersistentID:(NSObject *)arg0 inLibrary:(NSObject *)arg1 createBuiltinSmartPlaylists:(char)arg2 usingConnection:(NSURLConnection *)arg3;
++ (char)createMissingBuiltInSmartPlaylists:(id)arg0;
++ (NSURLConnection *)__mediaTypesForTracksWithDatabaseConnection:(ML3DatabaseConnection *)arg0 tracksPersistentIDsEnumerationBlock:(id /* block */)arg1;
++ (void)_updateContainedMediaTypeInContainerWithPersistentID:(long long)arg0 connection:(NSURLConnection *)arg1 itemUpdateBlock:(id /* block */)arg2;
++ (void)_clearContainerMediaTypeInContainerWithPersistentID:(long long)arg0 connection:(NSURLConnection *)arg1;
++ (NSObject *)_mediaTypesForTracksInContainerWithPersistentID:(long long)arg0 connection:(NSURLConnection *)arg1;
++ (void)_addMediaTypesToContainerWithPersistentID:(long long)arg0 mediaTypes:(NSArray *)arg1 connection:(NSURLConnection *)arg2;
++ (void)reloadContainedMediaTypesForContainerWithPersistID:(long long)arg0 connection:(NSURLConnection *)arg1;
++ (void)_removeMediaTypesFromContainerWithPersistentID:(long long)arg0 mediaTypes:(NSArray *)arg1 connection:(NSURLConnection *)arg2;
++ (NSArray *)_mediaTypesForTracksWithSwappedPersistentIDsInArray:(NSArray *)arg0 connection:(NSURLConnection *)arg1;
++ (ML3Container *)_mediaTypesForTracksWithSwappedPersistentIDs:(long long *)arg0 count:(long long)arg1 connection:(int)arg2;
++ (char)smartCriteriaCanBeEvaluated:(id)arg0;
++ (char)updateBuiltInSmartPlaylistNamesForCurrentLanguage:(NSString *)arg0;
++ (ML3Container *)autoCreatedBuiltInSmartPlaylistsPIDs:(id)arg0;
++ (void)deleteAutoCreatedBuiltInSmartPlaylistsPIDs:(id)arg0 inLibrary:(NSObject *)arg1;
++ (void)populateDynamicContainersInLibrary:(NSObject *)arg0 createBuiltinSmartPlaylists:(char)arg1;
++ (void)populateDynamicContainersWithTrackPersistentID:(NSObject *)arg0 inLibrary:(NSObject *)arg1;
++ (int)protocolSortTypeFromTrackOrder:(unsigned long)arg0;
++ (unsigned long)trackOrderFromProtocolSortType:(int)arg0;
+
+- (ML3Container *)initWithDictionary:(NSDictionary *)arg0 inLibrary:(NSObject *)arg1 cachedNameOrders:(id)arg2 usingConnection:(NSURLConnection *)arg3;
+- (void)setValues:(NSArray *)arg0 forProperties:(id *)arg1 async:(char)arg2 withCompletionBlock:(id /* block */)arg3;
+- (void)_setContainerSeedItemPersistentIDValue:(id)arg0;
+- (struct SearchCriteriaList *)importedCriteriaList;
+- (char)isEvaluationOrderingDescending;
+- (char)isLimitOrderingDescending;
+- (NSArray *)limitOrderingTerms;
+- (id)evaluationOrderingTerms;
+- (ML3Predicate *)staticPredicate;
+- (NSObject *)populateSQLWithStaticTrackPersistentID:(NSObject *)arg0;
+- (NSObject *)populateStatementParametersWithStaticTrackPersistentID:(NSObject *)arg0;
+- (char)setTracksWithPersistentIDs:(long long *)arg0 count:(long long)arg1;
+- (char)setContainsTrack:(char)arg0 forPersistentID:(long long)arg1 notify:(char)arg2;
+- (char)_setSwappedItemPersistentIDs:(long long *)arg0 reloadContainedMediaTypes:(long long)arg1 mediaTypesToRemove:(char)arg2 mediaTypesToAdd:(id)arg3 size:(struct CGSize)arg4 notify:(int)arg5;
+- (char)_setSwappedItemPersistentIDs:(long long *)arg0 reloadContainedMediaTypes:(long long)arg1 size:(char)arg2 notify:(int)arg3;
+- (char)removeTracksAtIndexes:(NSArray *)arg0 notify:(char)arg1;
+- (void)_accessCurrentSwappedPersisentIDsUsingBlock:(id /* block */)arg0;
+- (char)_setSwappedItemPersistentIDs:(long long *)arg0 mediaTypesToRemove:(long long)arg1 mediaTypesToAdd:(id)arg2 size:(struct CGSize)arg3 notify:(int)arg4;
+- (char)addTracksWithPersistentIDs:(long long *)arg0 count:(unsigned int)arg1 notify:(char)arg2;
+- (char)removeTracksAtIndexes:(NSArray *)arg0 notify:(char)arg1 indexesTransformBlock:(id /* block */)arg2;
+- (char)addTracksWithPersistentIDs:(long long *)arg0 count:(unsigned int)arg1;
+- (char)_setSwappedItemPersistentIDs:(long long *)arg0 reloadContainedMediaTypes:(long long)arg1 size:(char)arg2;
+- (char)setTracksWithPersistentIDs:(long long *)arg0 count:(long long)arg1 notify:(unsigned int)arg2;
+- (ML3Predicate *)dynamicPredicate;
+- (char)isLimitedByCount;
+- (NSString *)limitingProperty;
+- (long long)limitValue;
+- (NSArray *)cloudDisplayOrderingTerms;
+- (NSArray *)displayOrderingTerms;
+- (char)removeAllTracks;
+- (char)removeFirstTrack;
+- (char)removeTracksAtIndexes:(NSArray *)arg0;
+- (char)removeTracksWithPersistentIDs:(long long *)arg0 atFilteredIndexes:(long long)arg1;
+- (char)addTrackWithPersistentID:(long long)arg0;
+- (char)moveTrackFromIndex:(unsigned int)arg0 toIndex:(unsigned int)arg1;
+- (char)setTracksWithSwappedPersistentIDData:(NSData *)arg0;
+- (id)trackPersistentIds;
+- (id)childPlaylistPersistentIds;
+- (char)isBuiltInSmartPlaylist;
+- (NSString *)multiverseIdentifier;
+- (NSObject *)protocolItem;
+- (NSString *)_criteriaListDescription:(struct SearchCriteriaList *)arg0 level:(int)arg1;
+- (NSString *)_stringForCriterionMatchKey:(struct ?)arg0;
+- (NSObject *)_stringForCriterionMatchType:(struct ?)arg0;
+- (NSObject *)_stringForCriterionBuffer:(struct ?)arg0;
+- (NSDictionary *)_addUnitesForCriterionInfo:(struct ?)arg0;
+- (NSDictionary *)_booleanStringForCriteriaInfo:(struct ?)arg0;
+- (NSString *)_stringForTrackFieldMediaKind:(long long)arg0;
+- (NSString *)_stringForTrackFieldCloudStatus:(long long)arg0;
+- (NSString *)_convertNumericValueFromCriterionMatchKey:(unsigned long)arg0 criteriaValue:(long long)arg1;
+- (id)_formatTime:(long long)arg0;
+- (NSDictionary *)_stringStringForCriteriaInfo:(struct ?)arg0;
+- (NSDictionary *)_numericStringForCriteriaInfo:(struct ?)arg0;
+- (NSDictionary *)_nonzeroStringForCriteriaInfo:(struct ?)arg0;
+- (NSDictionary *)_dateStringForCriteriaInfo:(struct ?)arg0;
+- (NSString *)criteriaListDescription;
+
+@end

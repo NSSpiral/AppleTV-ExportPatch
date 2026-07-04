@@ -1,0 +1,19 @@
+/* Runtime dump - WKFormSelectControl
+ * Image: /System/Library/Frameworks/WebKit.framework/WebKit
+ */
+
+@interface WKFormSelectControl : NSObject <WKFormPeripheral>
+{
+    struct RetainPtr<id<WKFormControl> > _control;
+}
+
++ (NSObject *)createPeripheralWithView:(NSObject *)arg0;
+
+- (void)beginEditing;
+- (void)endEditing;
+- (WKFormSelectControl *)initWithView:(WKContentView *)arg0;
+- (void).cxx_construct;
+- (NSObject *)assistantView;
+- (void).cxx_destruct;
+
+@end

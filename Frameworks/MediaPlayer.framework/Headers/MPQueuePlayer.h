@@ -1,0 +1,120 @@
+/* Runtime dump - MPQueuePlayer
+ * Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
+ */
+
+@interface MPQueuePlayer : NSObject <MPAVRoutingControllerDelegate>
+{
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    MPAVRoutingController * _routingController;
+    AVPlayerItem * _currentItem;
+    struct ? _currentTime;
+    char _isExternalPlaybackActive;
+    char _pausedForPlaybackQueueTransaction;
+    MPAVRoute * _lastPickedRoute;
+    id _playbackQueueCommitHandler;
+    int _playbackQueueTransactionCount;
+    AVQueuePlayer * _player;
+    NSMutableArray * _queuedOperations;
+    float _rate;
+    float _rateBeforePlaybackQueueTransaction;
+    char _routeDidChangeDuringPlaybackQueueTransaction;
+    int _status;
+    int _defaultItemEQPresetType;
+    char _outputObscuredDueToInsufficientExternalProtection;
+}
+
+@property (readonly, nonatomic) int status;
+@property (readonly, nonatomic) NSError * error;
+@property (readonly, nonatomic) float playerRate;
+@property (nonatomic) float rate;
+@property (nonatomic) int actionAtItemEnd;
+@property (nonatomic) char closedCaptionDisplayEnabled;
+@property (nonatomic) char allowsExternalPlayback;
+@property (readonly, nonatomic) char externalPlaybackActive;
+@property (nonatomic) char usesExternalPlaybackWhileExternalScreenIsActive;
+@property (nonatomic) char usesAudioOnlyModeForExternalPlayback;
+@property (readonly, nonatomic) int externalPlaybackType;
+@property (nonatomic) int defaultItemEQPresetType;
+@property (readonly, nonatomic) char outputObscuredDueToInsufficientExternalProtection;
+@property (readonly, nonatomic) AVPlayerItem * currentItem;
+@property (copy, nonatomic) id playbackQueueCommitHandler;
+@property (readonly, nonatomic) char isPlaybackQueueTransactionActive;
+@property (readonly, nonatomic) NSArray * items;
+@property (readonly, nonatomic) AVPlayer * _player;
+@property (readonly, nonatomic) int _externalProtectionStatus;
+@property (copy, nonatomic) NSString * externalPlaybackVideoGravity;
+@property (readonly, nonatomic) id playerAVAudioSession;
+@property (nonatomic) char disallowsAMRAudio;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString * description;
+@property (readonly, copy) NSString * debugDescription;
+
+- (AVPlayer *)_player;
+- (void)play;
+- (char)disallowsAMRAudio;
+- (void)setDisallowsAMRAudio:(char)arg0;
+- (void)setActionAtItemEnd:(int)arg0;
+- (void)_setEQPreset:(int)arg0;
+- (void)_setStoppingFadeOutDuration:(float)arg0;
+- (id)addPeriodicTimeObserverForInterval:(struct ?)arg0 queue:(NSObject *)arg1 usingBlock:(id /* block */)arg2;
+- (id)addBoundaryTimeObserverForTimes:(id)arg0 queue:(NSObject *)arg1 usingBlock:(id /* block */)arg2;
+- (char)isClosedCaptionDisplayEnabled;
+- (float)playerRate;
+- (char)usesExternalPlaybackWhileExternalScreenIsActive;
+- (float)_userVolume;
+- (void)_setUserVolume:(float)arg0;
+- (void)setUsesAudioOnlyModeForExternalPlayback:(char)arg0;
+- (NSString *)externalPlaybackVideoGravity;
+- (NSObject *)playerAVAudioSession;
+- (void)setExternalPlaybackVideoGravity:(NSString *)arg0;
+- (void)seekToTime:(struct ?)arg0 toleranceBefore:(struct ?)arg1 toleranceAfter:(struct ?)arg2;
+- (char)_CALayerDestinationIsTVOut;
+- (void)_setCALayerDestinationIsTVOut:(char)arg0;
+- (void)_setPreferredLanguageList:(NSArray *)arg0;
+- (void)_setPreparesItemsForPlaybackAsynchronously:(char)arg0;
+- (int)actionAtItemEnd;
+- (char)_resumePlayback:(double)arg0 error:(id *)arg1;
+- (void)_setExpectedAssetTypes:(NSArray *)arg0;
+- (void)routingControllerAvailableRoutesDidChange:(NSDictionary *)arg0;
+- (char)outputObscuredDueToInsufficientExternalProtection;
+- (char)usesAudioOnlyModeForExternalPlayback;
+- (void)beginPlaybackQueueTransactionAndPause:(char)arg0;
+- (void)setCurrentPlaybackQueueTransactionDisplayTime:(struct ?)arg0;
+- (void)commitPlaybackQueueTransaction;
+- (int)defaultItemEQPresetType;
+- (void)insertItem:(NSObject *)arg0 afterItem:(NSObject *)arg1;
+- (void)removeAllItems;
+- (void)_setWantsVolumeChangesWhenPausedOrInactive:(char)arg0;
+- (void)advanceToNextItem;
+- (int)_externalProtectionStatus;
+- (void)prepareItem:(NSObject *)arg0 withCompletionHandler:(id /* block */)arg1;
+- (void)setMediaSelectionCriteria:(AVPlayerMediaSelectionCriteria *)arg0 forMediaCharacteristic:(id)arg1;
+- (void)setDefaultItemEQPresetType:(int)arg0;
+- (char)isPlaybackQueueTransactionActive;
+- (id /* block */)playbackQueueCommitHandler;
+- (void)setPlaybackQueueCommitHandler:(id /* block */)arg0;
+- (void)dealloc;
+- (MPQueuePlayer *)init;
+- (NSArray *)items;
+- (AVPlayerItem *)currentItem;
+- (void)observeValueForKeyPath:(NSString *)arg0 ofObject:(NSObject *)arg1 change:(NSDictionary *)arg2 context:(void *)arg3;
+- (void)removeItem:(void *)arg0;
+- (void).cxx_destruct;
+- (void)pause;
+- (int)status;
+- (NSError *)error;
+- (float)rate;
+- (void)setRate:(float)arg0;
+- (void)_setClientName:(NSString *)arg0;
+- (void)removeTimeObserver:(NSObject *)arg0;
+- (void)setAllowsExternalPlayback:(char)arg0;
+- (struct ?)currentTime;
+- (void)setClosedCaptionDisplayEnabled:(char)arg0;
+- (char)isExternalPlaybackActive;
+- (char)allowsExternalPlayback;
+- (void)setUsesExternalPlaybackWhileExternalScreenIsActive:(char)arg0;
+- (void)seekToTime:(struct ?)arg0;
+- (int)externalPlaybackType;
+
+@end

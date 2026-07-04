@@ -1,0 +1,127 @@
+/* Runtime dump - UIActivityGroupViewController
+ * Image: /System/Library/Frameworks/UIKit.framework/UIKit
+ */
+
+@interface UIActivityGroupViewController : UICollectionViewController <_UIActivityGroupViewDelegateFlowLayout, UIGestureRecognizerDelegate>
+{
+    char _darkStyleOnLegacyApp;
+    char _embedded;
+    char _picker;
+    char _hasActivities;
+    char _activityIndexDidChangeWhileDragging;
+    char _allowsUserCustomization;
+    <UIActivityGroupViewControllerDelegate> * _delegate;
+    int _activityCategory;
+    NSDictionary * _customActivityTitles;
+    NSArray * _activities;
+    <UIActivityGroupViewControllerDataSource> * _dataSource;
+    NSArray * _visibleActivities;
+    _UIActivityUserDefaults * _userDefaults;
+    _UIUserDefaultsActivity * _userDefaultsActivity;
+    _UIActivityGroupActivityCell * _prototypeActivityCell;
+    UILongPressGestureRecognizer * _editingGestureRecognizer;
+    NSIndexPath * _indexPathForMenuActivity;
+    NSMutableDictionary * _cachedPreferredItemSizesByString;
+    struct CGPoint _initialDraggingLocation;
+}
+
+@property (nonatomic) <UIActivityGroupViewControllerDelegate> * delegate;
+@property (nonatomic) int activityCategory;
+@property (copy, nonatomic) NSDictionary * customActivityTitles;
+@property (copy, nonatomic) NSArray * activities;
+@property (nonatomic) char darkStyleOnLegacyApp;
+@property (nonatomic) char embedded;
+@property (nonatomic) char picker;
+@property (nonatomic) <UIActivityGroupViewControllerDataSource> * dataSource;
+@property (nonatomic) char hasActivities;
+@property (copy, nonatomic) NSArray * visibleActivities;
+@property (retain, nonatomic) _UIActivityUserDefaults * userDefaults;
+@property (retain, nonatomic) _UIUserDefaultsActivity * userDefaultsActivity;
+@property (retain, nonatomic) _UIActivityGroupActivityCell * prototypeActivityCell;
+@property (retain, nonatomic) UILongPressGestureRecognizer * editingGestureRecognizer;
+@property (nonatomic) struct CGPoint initialDraggingLocation;
+@property (nonatomic) char activityIndexDidChangeWhileDragging;
+@property (copy, nonatomic) NSIndexPath * indexPathForMenuActivity;
+@property (nonatomic) char allowsUserCustomization;
+@property (retain, nonatomic) NSMutableDictionary * cachedPreferredItemSizesByString;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString * description;
+@property (readonly, copy) NSString * debugDescription;
+
+- (void)dealloc;
+- (void)setDataSource:(<UIActivityGroupViewControllerDataSource> *)arg0;
+- (void)setDelegate:(<UIActivityGroupViewControllerDelegate> *)arg0;
+- (<UIActivityGroupViewControllerDataSource> *)dataSource;
+- (<UIActivityGroupViewControllerDelegate> *)delegate;
+- (char)gestureRecognizerShouldBegin:(UIGestureRecognizer *)arg0;
+- (int)collectionView:(UICollectionView *)arg0 numberOfItemsInSection:(int)arg1;
+- (UICollectionViewCell *)collectionView:(UICollectionView *)arg0 cellForItemAtIndexPath:(NSIndexPath *)arg1;
+- (char)collectionView:(UICollectionView *)arg0 shouldHighlightItemAtIndexPath:(NSIndexPath *)arg1;
+- (char)collectionView:(UICollectionView *)arg0 shouldSelectItemAtIndexPath:(NSIndexPath *)arg1;
+- (void)collectionView:(UICollectionView *)arg0 didSelectItemAtIndexPath:(NSIndexPath *)arg1;
+- (void)collectionView:(UICollectionView *)arg0 willDisplayCell:(UITableViewCell *)arg1 forItemAtIndexPath:(NSIndexPath *)arg2;
+- (void)traitCollectionDidChange:(NSDictionary *)arg0;
+- (char)canBecomeFirstResponder;
+- (void)viewDidLayoutSubviews;
+- (void)setEditing:(char)arg0 animated:(char)arg1;
+- (void)viewDidLoad;
+- (UIActivityGroupViewController *)initWithActivityCategory:(int)arg0 userDefaults:(_UIActivityUserDefaults *)arg1 userDefaultsIdentifier:(NSString *)arg2;
+- (void)setAllowsUserCustomization:(char)arg0;
+- (void)setPicker:(char)arg0;
+- (void)setCachedPreferredItemSizesByString:(NSMutableDictionary *)arg0;
+- (void)setActivityCategory:(int)arg0;
+- (void)setUserDefaults:(_UIActivityUserDefaults *)arg0;
+- (char)allowsUserCustomization;
+- (_UIActivityUserDefaults *)userDefaults;
+- (void)setUserDefaultsActivity:(_UIUserDefaultsActivity *)arg0;
+- (void)unregisterForActivityUserDefaultsChanges;
+- (void)handleEditingGesture:(NSObject *)arg0;
+- (NSObject *)activityGroupViewLayout;
+- (void)setEditingGestureRecognizer:(UILongPressGestureRecognizer *)arg0;
+- (void)registerForActivityUserDefaultsChanges;
+- (void)setActivities:(NSArray *)arg0 animated:(char)arg1;
+- (_UIUserDefaultsActivity *)userDefaultsActivity;
+- (void)_setActivities:(id)arg0 animated:(char)arg1;
+- (void)_updateVisibleActivitiesAnimated:(char)arg0;
+- (NSArray *)activities;
+- (void)_setVisibleActivities:(id)arg0 animated:(char)arg1;
+- (NSIndexPath *)indexPathForMenuActivity;
+- (void)hideItemAtIndexPath:(NSIndexPath *)arg0;
+- (NSArray *)visibleActivities;
+- (NSString *)activityForItemAtIndexPath:(NSIndexPath *)arg0;
+- (id)_titleTextForActivity:(id)arg0;
+- (char)darkStyleOnLegacyApp;
+- (int)activityCategory;
+- (void)_updateItemSizeIfNeeded;
+- (UILongPressGestureRecognizer *)editingGestureRecognizer;
+- (void)setIndexPathForMenuActivity:(NSIndexPath *)arg0;
+- (void)setActivityIndexDidChangeWhileDragging:(char)arg0;
+- (char)activityIndexDidChangeWhileDragging;
+- (void)hideActivity:(id)arg0;
+- (NSString *)targetIndexPathForMoveFromRowAtIndexPath:(NSIndexPath *)arg0 toProposedIndexPath:(NSIndexPath *)arg1;
+- (void)ignoreUserDefaultsChangesWhileUsingBlock:(id /* block */)arg0;
+- (_UIActivityGroupActivityCell *)prototypeActivityCell;
+- (void)setPrototypeActivityCell:(_UIActivityGroupActivityCell *)arg0;
+- (struct CGSize)_cachedPreferredItemSizeForString:(NSString *)arg0;
+- (void)activityUserDefaultsDidChange:(NSDictionary *)arg0;
+- (NSObject *)collectionView:(UICollectionView *)arg0 layout:(NSObject *)arg1 moveItemAtIndexPath:(NSIndexPath *)arg2 toIndexPath:(NSIndexPath *)arg3;
+- (NSObject *)collectionView:(UICollectionView *)arg0 layout:(NSObject *)arg1 needsContainerViewForDraggingItemAtIndexPath:(NSIndexPath *)arg2;
+- (struct CGSize)collectionView:(UICollectionView *)arg0 layout:(NSObject *)arg1 preferredSizeForItemAtIndexPath:(NSIndexPath *)arg2;
+- (UIActivityGroupViewController *)initWithActivityCategory:(int)arg0 userDefaults:(_UIActivityUserDefaults *)arg1;
+- (void)setActivities:(NSArray *)arg0;
+- (void)reloadItemForActivityOfTypeIfNeeded:(id)arg0;
+- (NSDictionary *)customActivityTitles;
+- (void)setCustomActivityTitles:(NSDictionary *)arg0;
+- (void)setDarkStyleOnLegacyApp:(char)arg0;
+- (char)isEmbedded;
+- (void)setEmbedded:(char)arg0;
+- (char)isPicker;
+- (char)hasActivities;
+- (void)setHasActivities:(char)arg0;
+- (void)setVisibleActivities:(NSArray *)arg0;
+- (struct CGPoint)initialDraggingLocation;
+- (void)setInitialDraggingLocation:(struct CGPoint)arg0;
+- (NSMutableDictionary *)cachedPreferredItemSizesByString;
+
+@end

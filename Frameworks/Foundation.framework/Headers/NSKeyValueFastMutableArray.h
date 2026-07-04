@@ -1,0 +1,21 @@
+/* Runtime dump - NSKeyValueFastMutableArray
+ * Image: /System/Library/Frameworks/Foundation.framework/Foundation
+ */
+
+@interface NSKeyValueFastMutableArray : NSKeyValueMutableArray
+{
+    NSKeyValueMutatingArrayMethodSet * _mutatingMethods;
+}
+
+- (NSObject *)_proxyInitWithContainer:(NSObject *)arg0 getter:(SEL)arg1;
+- (void)_proxyNonGCFinalize;
+- (void)addObject:(struct objc_method *)arg0;
+- (void)removeLastObject;
+- (void)replaceObjectAtIndex:(unsigned int)arg0 withObject:(NSObject *)arg1;
+- (void)insertObject:(NSObject *)arg0 atIndex:(unsigned int)arg1;
+- (void)removeObjectsAtIndexes:(struct objc_method *)arg0;
+- (void)removeObjectAtIndex:(unsigned int)arg0;
+- (void)insertObjects:(NSArray *)arg0 atIndexes:(NSArray *)arg1;
+- (void)replaceObjectsAtIndexes:(struct objc_method *)arg0 withObjects:(id *)arg1;
+
+@end

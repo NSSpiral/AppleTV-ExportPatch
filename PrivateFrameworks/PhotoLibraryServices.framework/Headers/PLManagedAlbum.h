@@ -1,0 +1,135 @@
+/* Runtime dump - PLManagedAlbum
+ * Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
+ */
+
+@interface PLManagedAlbum : _PLManagedAlbum <PLUserEditableAlbumProtocol>
+{
+    char _resolvingConflicts;
+    char _albumShouldBeAutomaticallyDeleted;
+    char _needsPersistenceUpdate;
+}
+
+@property (retain, nonatomic) NSOrderedSet * assets;
+@property (retain, nonatomic) NSSet * assetOrders;
+@property (nonatomic) char resolvingConflicts;
+@property (nonatomic) char albumShouldBeAutomaticallyDeleted;
+@property (nonatomic) char needsPersistenceUpdate;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString * description;
+@property (readonly, copy) NSString * debugDescription;
+@property (readonly, retain, nonatomic) NSString * uuid;
+@property (readonly, retain, nonatomic) NSString * title;
+@property (readonly, copy, nonatomic) NSString * localizedTitle;
+@property (readonly, nonatomic) unsigned int approximateCount;
+@property (readonly, nonatomic) unsigned int assetsCount;
+@property (readonly, nonatomic) unsigned int photosCount;
+@property (readonly, nonatomic) unsigned int videosCount;
+@property (readonly, nonatomic) char isEmpty;
+@property (retain, nonatomic) PLManagedAsset * keyAsset;
+@property (retain, nonatomic) PLManagedAsset * secondaryKeyAsset;
+@property (retain, nonatomic) PLManagedAsset * tertiaryKeyAsset;
+@property (readonly, nonatomic) char canShowComments;
+@property (readonly, nonatomic) char canShowAvalancheStacks;
+@property (readonly, copy, nonatomic) NSArray * localizedLocationNames;
+@property (readonly, retain, nonatomic) NSDate * startDate;
+@property (readonly, retain, nonatomic) NSDate * endDate;
+@property (readonly, retain, nonatomic) NSNumber * kind;
+@property (readonly, nonatomic) int kindValue;
+@property (readonly, retain, nonatomic) NSMutableOrderedSet * mutableAssets;
+@property (nonatomic) char hasUnseenContentBoolValue;
+@property (readonly, copy, nonatomic) NSString * name;
+@property (readonly, retain, nonatomic) UIImage * posterImage;
+@property (readonly, nonatomic) char isLibrary;
+@property (readonly, nonatomic) char isCameraAlbum;
+@property (readonly, nonatomic) char isPanoramasAlbum;
+@property (readonly, nonatomic) char isWallpaperAlbum;
+@property (readonly, nonatomic) char isPhotoStreamAlbum;
+@property (readonly, nonatomic) char isCloudSharedAlbum;
+@property (readonly, nonatomic) char isPendingPhotoStreamAlbum;
+@property (readonly, nonatomic) char isStandInAlbum;
+@property (readonly, nonatomic) char isFolder;
+@property (readonly, nonatomic) char isInTrash;
+@property (readonly, nonatomic) char isOwnedCloudSharedAlbum;
+@property (readonly, nonatomic) char isFamilyCloudSharedAlbum;
+@property (readonly, nonatomic) char isMultipleContributorCloudSharedAlbum;
+@property (readonly, nonatomic) char isRecentlyAddedAlbum;
+@property (readonly, nonatomic) char isUserLibraryAlbum;
+@property (readonly, nonatomic) char canContributeToCloudSharedAlbum;
+@property (readonly, nonatomic) char shouldDeleteWhenEmpty;
+@property (retain, nonatomic) NSDictionary * slideshowSettings;
+@property (retain, nonatomic) NSString * importSessionID;
+@property (readonly, retain, nonatomic) NSURL * groupURL;
+@property (readonly, copy, nonatomic) id sortingComparator;
+@property (nonatomic) int pendingItemsCount;
+@property (nonatomic) int pendingItemsType;
+@property (nonatomic) unsigned int batchSize;
+@property (readonly, retain, nonatomic) NSMutableOrderedSet * userEditableAssets;
+
++ (void)clearAssetOrderByAbumUUIDs;
++ (NSPredicate *)baseSearchIndexPredicate;
++ (PLManagedAlbum *)pathToAssetAlbumOrderStructure;
++ (PLManagedAlbum *)assetOrderByAbumUUIDs;
++ (NSPredicate *)albumSupportsAssetOrderKeysPredicate;
++ (PLManagedAlbum *)childKeyForOrdering;
++ (NSNumber *)keyPathsForValuesAffectingApproximateCount;
++ (NSNumber *)keyPathsForValuesAffectingPhotosCount;
++ (NSNumber *)keyPathsForValuesAffectingVideosCount;
+
+- (char)isEmpty;
+- (void)observeValueForKeyPath:(NSString *)arg0 ofObject:(NSObject *)arg1 change:(NSDictionary *)arg2 context:(void *)arg3;
+- (NSPredicate *)filteredIndexesForPredicate:(NSPredicate *)arg0;
+- (NSMutableOrderedSet *)mutableAssets;
+- (char)canPerformEditOperation:(unsigned int)arg0;
+- (unsigned int)approximateCount;
+- (unsigned int)assetsCount;
+- (unsigned int)photosCount;
+- (unsigned int)videosCount;
+- (void)addAssetUsingiTunesAlbumOrder:(id)arg0;
+- (void)refreshAssets;
+- (void)persistMetadataToFileSystem;
+- (id)searchIndexContents;
+- (NSArray *)descriptionOfAssetOrderValues;
+- (void)_updateKeyAssetsAndCountsIfNeeded;
+- (void)prepareForDeletion;
+- (char)isValidKindForPersistence;
+- (void)removePersistedFileSystemData;
+- (void)willSave;
+- (void)setNeedsPersistenceUpdate:(char)arg0;
+- (void)didSave;
+- (char)albumShouldBeAutomaticallyDeleted;
+- (void)setAlbumShouldBeAutomaticallyDeleted:(char)arg0;
+- (char)needsPersistenceUpdate;
+- (void)insertInternalUserEditableAssets:(NSArray *)arg0 atIndexes:(NSArray *)arg1 trimmedVideoPathInfo:(NSDictionary *)arg2 commentText:(NSString *)arg3;
+- (char)_shouldCopyAssetToCameraRollBeforeAdding:(id)arg0;
+- (void)_updateKeyAssetsIfNeeded:(id)arg0;
+- (void)_updateCountsIfNeeded:(id)arg0;
+- (NSArray *)_expectedKeyAssets:(NSArray *)arg0;
+- (id)_keysToBeObserved;
+- (void)registerForChanges;
+- (void)unregisterForChanges;
+- (unsigned int)_albumStandInCount;
+- (id)_assetOrderByAssetUUID;
+- (NSSet *)_orderComparisonValueForAsset:(NSSet *)arg0 iTunesLookupOrder:(id)arg1;
+- (id)childKeyForOrdering;
+- (NSMutableOrderedSet *)userEditableAssets;
+- (char)supportsAssetOrderKeys;
+- (unsigned int)countOfInternalUserEditableAssets;
+- (unsigned int)indexInInternalUserEditableAssetsOfObject:(NSObject *)arg0;
+- (NSObject *)objectInInternalUserEditableAssetsAtIndex:(unsigned int)arg0;
+- (void)getInternalUserEditableAssets:(id *)arg0 range:(struct _NSRange)arg1;
+- (NSIndexSet *)internalUserEditableAssetsAtIndexes:(NSArray *)arg0;
+- (void)insertInternalUserEditableAssets:(NSArray *)arg0 atIndexes:(NSArray *)arg1;
+- (void)removeInternalUserEditableAssetsAtIndexes:(NSArray *)arg0;
+- (unsigned int)_cachedCountForMigration;
+- (void)insertAssets:(NSArray *)arg0 atIndexes:(NSArray *)arg1;
+- (void)removeAssetsAtIndexes:(NSArray *)arg0;
+- (void)replaceAssetsAtIndexes:(NSArray *)arg0 withAssets:(NSOrderedSet *)arg1;
+- (void)_recalculateCachedCounts;
+- (void)sortAssetsUsingiTunesAlbumOrder;
+- (char)resolvingConflicts;
+- (void)setResolvingConflicts:(char)arg0;
+- (NSObject *)migration_sortedOrderKeysForChildrenUsingMap:(NSObject *)arg0;
+- (NSObject *)migration_newOrderKeyChild:(NSObject *)arg0;
+
+@end

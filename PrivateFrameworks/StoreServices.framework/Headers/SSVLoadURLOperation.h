@@ -1,0 +1,121 @@
+/* Runtime dump - SSVLoadURLOperation
+ * Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
+ */
+
+@interface SSVLoadURLOperation : NSOperation <NSURLConnectionDelegate>
+{
+    NSMutableData * _dataBuffer;
+    SSVURLDataConsumer * _dataConsumer;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    NSData * _inputData;
+    char _iTunesStoreRequest;
+    int _machineDataRetryCount;
+    int _machineDataStyle;
+    SSMetricsPageEvent * _metricsPageEvent;
+    id _outputBlock;
+    id _prepareRequestBlock;
+    NSMutableSet * _protocolRedirectURLs;
+    char _recordsMetrics;
+    NSURL * _redirectURL;
+    NSString * _referrerApplicationName;
+    NSString * _referrerURLString;
+    NSHTTPURLResponse * _response;
+    NSRunLoop * _runLoop;
+    SSVFairPlaySAPSession * _sapSession;
+    SSVSAPSignaturePolicy * _sapSignaturePolicy;
+    NSString * _storeFrontSuffix;
+    char _stopped;
+    SSURLBag * _urlBag;
+    SSVURLBagInterpreter * _urlBagInterpreter;
+    NSURLRequest * _urlRequest;
+}
+
+@property (readonly) NSURL * URL;
+@property (readonly) NSURLRequest * URLRequest;
+@property (readonly) NSCachedURLResponse * cachedURLResponse;
+@property (retain) SSVURLDataConsumer * dataConsumer;
+@property char ITunesStoreRequest;
+@property (readonly) SSMetricsPageEvent * metricsPageEvent;
+@property char recordsMetrics;
+@property (copy) NSString * referrerApplicationName;
+@property (copy) NSString * referrerURLString;
+@property (copy) NSString * storeFrontSuffix;
+@property (readonly) NSHTTPURLResponse * URLResponse;
+@property (copy) id expiredOutputBlock;
+@property (copy) id outputBlock;
+@property (copy) id prepareRequestBlock;
+@property int machineDataStyle;
+@property (retain) SSVFairPlaySAPSession * SAPSession;
+@property (copy) SSVSAPSignaturePolicy * SAPSignaturePolicy;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString * description;
+@property (readonly, copy) NSString * debugDescription;
+
+- (void)setITunesStoreRequest:(char)arg0;
+- (NSHTTPURLResponse *)URLResponse;
+- (SSVLoadURLOperation *)initWithURLRequest:(NSString *)arg0;
+- (void)cancel;
+- (SSVLoadURLOperation *)init;
+- (SSVLoadURLOperation *)initWithURL:(NSURL *)arg0;
+- (NSURL *)URL;
+- (void)connection:(NSURLConnection *)arg0 didFailWithError:(NSError *)arg1;
+- (void)connection:(NSURLConnection *)arg0 didReceiveData:(char)arg1;
+- (void)connectionDidFinishLoading:(NSURLConnection *)arg0;
+- (void)connection:(NSURLConnection *)arg0 didReceiveResponse:(char)arg1;
+- (void)main;
+- (void).cxx_destruct;
+- (void)setOutputBlock:(id /* block */)arg0;
+- (void)setSAPSession:(NSObject *)arg0;
+- (void)setSAPSignaturePolicy:(NSObject *)arg0;
+- (void)setMachineDataStyle:(int)arg0;
+- (NSURLConnection *)connection:(NSURLConnection *)arg0 willSendRequest:(NSURLRequest *)arg1 redirectResponse:(NSURLResponse *)arg2;
+- (void)setDataConsumer:(SSVURLDataConsumer *)arg0;
+- (SSVURLDataConsumer *)dataConsumer;
+- (SSVLoadURLOperation *)initWithURLRequestProperties:(NSDictionary *)arg0;
+- (char)isITunesStoreRequest;
+- (NSURLRequest *)URLRequest;
+- (SSMetricsPageEvent *)metricsPageEvent;
+- (NSString *)storeFrontSuffix;
+- (SSVLoadURLOperation *)_initSSVLoadURLOperation;
+- (char)recordsMetrics;
+- (int)machineDataStyle;
+- (NSURL *)_newURLRequestWithRedirectURL:(NSURL *)arg0;
+- (void)_stopRunLoop;
+- (void)_finishWithData:(NSData *)arg0;
+- (void)_runOnce;
+- (void)setPrepareRequestBlock:(id /* block */)arg0;
+- (void)_finishWithOutput:(AVPlayerLayer *)arg0 error:(NSError *)arg1;
+- (void)_applyResponseToMetrics:(id)arg0;
+- (char)_shouldRetryAfterMachineDataRequest:(NSURLRequest *)arg0;
+- (NSData *)_outputForData:(NSData *)arg0 error:(id *)arg1;
+- (id /* block */)outputBlock;
+- (void)_releaseOutputBlocks;
+- (void)_configureWithURLBagInterpreter:(id)arg0;
+- (void)_addMachineDataHeadersToRequest:(NSURLRequest *)arg0 withAccountIdentifier:(NSString *)arg1;
+- (void)_addSAPSignatureToRequest:(NSURLRequest *)arg0;
+- (id /* block */)prepareRequestBlock;
+- (void)_loadURLBagInterpreter;
+- (void)_stopIfCancelled;
+- (long)_runRunLoopUntilStopped;
+- (void)_keepAliveTimer:(NSObject *)arg0;
+- (SSVLoadURLOperation *)initWithData:(NSData *)arg0 fromOperation:(NSObject *)arg1;
+- (NSCachedURLResponse *)cachedURLResponse;
+- (void)configureWithURLBag:(NSString *)arg0;
+- (void)configureWithURLBagDictionary:(NSDictionary *)arg0;
+- (void)dispatchAsync:(id)arg0;
+- (void)dispatchSync:(id)arg0;
+- (id /* block */)expiredOutputBlock;
+- (NSString *)referrerApplicationName;
+- (NSString *)referrerURLString;
+- (SSVFairPlaySAPSession *)SAPSession;
+- (SSVSAPSignaturePolicy *)SAPSignaturePolicy;
+- (void)setExpiredOutputBlock:(id /* block */)arg0;
+- (void)setRecordsMetrics:(char)arg0;
+- (void)setReferrerApplicationName:(NSString *)arg0;
+- (void)setReferrerURLString:(NSString *)arg0;
+- (void)setStoreFrontSuffix:(NSString *)arg0;
+- (NSURLResponse *)_dataForCachedResponse:(struct _CFCachedURLResponse *)arg0;
+- (void)connection:(NSURLConnection *)arg0 willSendRequestForAuthenticationChallenge:(NSObject *)arg1;
+
+@end

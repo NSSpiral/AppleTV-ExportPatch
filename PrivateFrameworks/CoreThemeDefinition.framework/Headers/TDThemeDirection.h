@@ -1,0 +1,7 @@
+/* Runtime dump - TDThemeDirection
+ * Image: /System/Library/PrivateFrameworks/CoreThemeDefinition.framework/CoreThemeDefinition
+ */
+
+@interface TDThemeDirection : TDThemeConstant
+
+@end

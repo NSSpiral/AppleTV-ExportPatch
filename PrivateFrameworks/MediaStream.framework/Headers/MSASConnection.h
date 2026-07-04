@@ -1,0 +1,131 @@
+/* Runtime dump - MSASConnection
+ * Image: /System/Library/PrivateFrameworks/MediaStream.framework/MediaStream
+ */
+
+@interface MSASConnection : NSObject <XPCNSClientConnectionDelegate>
+{
+    XPCNSClientConnection * _connection;
+    XPCNSClientConnection * _noWakeConnection;
+    NSMutableDictionary * _foregroundPingTimerContextByPersonID;
+    NSMutableDictionary * _focusAlbumTimerByPersonID;
+    NSMutableDictionary * _focusAlbumGUIDByPersonID;
+    NSMutableDictionary * _serverSideConfigurationDictionaryByPersonID;
+    NSObject<OS_dispatch_queue> * _memberQueue;
+}
+
+@property (retain, nonatomic) XPCNSClientConnection * connection;
+@property (retain, nonatomic) XPCNSClientConnection * noWakeConnection;
+@property (retain, nonatomic) NSMutableDictionary * foregroundPingTimerContextByPersonID;
+@property (retain, nonatomic) NSMutableDictionary * focusAlbumTimerByPersonID;
+@property (retain, nonatomic) NSMutableDictionary * focusAlbumGUIDByPersonID;
+@property (retain, nonatomic) NSObject<OS_dispatch_queue> * memberQueue;
+@property (retain, nonatomic) NSMutableDictionary * serverSideConfigurationDictionaryByPersonID;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString * description;
+@property (readonly, copy) NSString * debugDescription;
+
++ (MSASConnection *)sharedConnection;
+
+- (MSASConnection *)init;
+- (NSObject<OS_dispatch_queue> *)memberQueue;
+- (void)setMemberQueue:(NSObject<OS_dispatch_queue> *)arg0;
+- (void).cxx_destruct;
+- (XPCNSClientConnection *)connection;
+- (void)setConnection:(XPCNSClientConnection *)arg0;
+- (void)refreshResetSync:(char)arg0 personID:(NSString *)arg1 info:(NSDictionary *)arg2;
+- (void)refreshContentOfAlbumWithGUID:(NSString *)arg0 resetSync:(char)arg1 personID:(NSString *)arg2 info:(NSDictionary *)arg3;
+- (void)refreshCommentsForAssetCollectionWithGUID:(NSString *)arg0 resetSync:(char)arg1 personID:(NSString *)arg2 info:(NSDictionary *)arg3;
+- (void)addAlbum:(MSASAlbum *)arg0 personID:(NSString *)arg1 info:(NSDictionary *)arg2;
+- (void)modifyAlbumMetadata:(NSDictionary *)arg0 personID:(NSString *)arg1 info:(NSDictionary *)arg2;
+- (void)deleteAlbumWithGUID:(NSString *)arg0 personID:(NSString *)arg1 info:(NSDictionary *)arg2;
+- (void)markAlbumGUIDAsViewed:(id)arg0 personID:(NSString *)arg1 info:(NSDictionary *)arg2;
+- (void)subscribeToAlbumWithGUID:(NSString *)arg0 personID:(NSString *)arg1 info:(NSDictionary *)arg2;
+- (void)unsubscribeFromAlbumWithGUID:(NSString *)arg0 personID:(NSString *)arg1 info:(NSDictionary *)arg2;
+- (void)acceptInvitationWithToken:(NSString *)arg0 personID:(NSString *)arg1 info:(NSDictionary *)arg2 completionBlock:(id /* block */)arg3;
+- (void)acceptInvitationWithGUID:(NSString *)arg0 personID:(NSString *)arg1 info:(NSDictionary *)arg2;
+- (void)rejectInvitationWithGUID:(NSString *)arg0 personID:(NSString *)arg1 info:(NSDictionary *)arg2;
+- (void)addAccessControlEntries:(NSArray *)arg0 toAlbumWithGUID:(NSString *)arg1 personID:(NSString *)arg2 info:(NSDictionary *)arg3;
+- (void)removeAccessControlEntryWithGUID:(NSString *)arg0 personID:(NSString *)arg1 info:(NSDictionary *)arg2;
+- (void)setPublicAccessEnabled:(char)arg0 forAlbumWithGUID:(NSString *)arg1 personID:(NSString *)arg2 info:(NSDictionary *)arg3 completionBlock:(id /* block */)arg4;
+- (void)setMultipleContributorsEnabled:(char)arg0 forAlbumWithGUID:(NSString *)arg1 personID:(NSString *)arg2 info:(NSDictionary *)arg3 completionBlock:(id /* block */)arg4;
+- (void)addAssetCollections:(id)arg0 toAlbumWithGUID:(NSString *)arg1 personID:(NSString *)arg2 info:(NSDictionary *)arg3;
+- (void)deleteAssetCollectionWithGUID:(NSString *)arg0 personID:(NSString *)arg1 info:(NSDictionary *)arg2;
+- (void)markCommentsForAssetCollectionWithGUID:(NSString *)arg0 asViewedWithLastViewedDate:(CKDPDate *)arg1 personID:(NSString *)arg2 info:(NSDictionary *)arg3;
+- (void)addComments:(id)arg0 toAssetCollectionWithGUID:(NSString *)arg1 personID:(NSString *)arg2 info:(NSDictionary *)arg3;
+- (void)deleteCommentWithGUID:(NSString *)arg0 personID:(NSString *)arg1 info:(NSDictionary *)arg2;
+- (void)setFocusAlbumGUID:(NSString *)arg0 forPersonID:(NSObject *)arg1;
+- (void)cancelActivitiesForPersonID:(NSObject *)arg0;
+- (void)refreshContentOfAlbumWithGUID:(NSString *)arg0 resetSync:(char)arg1 personID:(NSString *)arg2;
+- (void)refreshCommentsForAssetCollectionWithGUID:(NSString *)arg0 resetSync:(char)arg1 personID:(NSString *)arg2;
+- (void)markAlbumGUIDAsViewed:(id)arg0 personID:(NSString *)arg1;
+- (void)acceptInvitationWithGUID:(NSString *)arg0 personID:(NSString *)arg1;
+- (void)rejectInvitationWithGUID:(NSString *)arg0 personID:(NSString *)arg1;
+- (void)deleteAssetCollectionWithGUID:(NSString *)arg0 personID:(NSString *)arg1;
+- (void)retrieveAssets:(NSArray *)arg0 inAlbumWithGUID:(NSString *)arg1 personID:(NSString *)arg2;
+- (void)_sendMessageReliably:(id)arg0 data:(NSData *)arg1 successHandler:(id /* block */)arg2 failureHandler:(/* block */ id)arg3;
+- (void)_sendMessageReliably:(id)arg0;
+- (XPCNSClientConnection *)noWakeConnection;
+- (void)setNoWakeConnection:(XPCNSClientConnection *)arg0;
+- (void)timerPingQueueSendSetUIForeground:(char)arg0 personID:(NSString *)arg1;
+- (void)timerPingQueueForegroundPingTimerExpiredContext:(NSObject *)arg0 personID:(NSString *)arg1;
+- (NSMutableDictionary *)foregroundPingTimerContextByPersonID;
+- (NSMutableDictionary *)serverSideConfigurationDictionaryByPersonID;
+- (void)refreshAccessControlListForAlbumWithGUID:(NSString *)arg0 personID:(NSString *)arg1 info:(NSDictionary *)arg2;
+- (NSError *)_communicationFailureError;
+- (void)XPCNSClientConnection:(NSURLConnection *)arg0 didReceiveRequest:(NSURLRequest *)arg1;
+- (NSMutableDictionary *)focusAlbumTimerByPersonID;
+- (NSMutableDictionary *)focusAlbumGUIDByPersonID;
+- (NSArray *)_cloneArray:(NSArray *)arg0;
+- (void)nextActivityDateHandler:(id /* block */)arg0;
+- (void)isInRetryStateHandler:(id /* block */)arg0;
+- (void)handlePushNotificationForPersonID:(NSObject *)arg0;
+- (void)activityIsThrottledByLackOfDiskSpacePersonID:(NSObject *)arg0 completionBlock:(id /* block */)arg1;
+- (void)pingForeground;
+- (void)albumGUIDsForPersonID:(NSObject *)arg0 completionBlock:(id /* block */)arg1;
+- (void)albumWithGUID:(NSString *)arg0 personID:(NSString *)arg1 completionBlock:(id /* block */)arg2;
+- (void)accessControlGUIDsForAlbumWithGUID:(NSString *)arg0 personID:(NSString *)arg1 completionBlock:(id /* block */)arg2;
+- (void)accessControlWithGUID:(NSString *)arg0 personID:(NSString *)arg1 completionBlock:(id /* block */)arg2;
+- (void)invitationGUIDsForPersonID:(NSObject *)arg0 completionBlock:(id /* block */)arg1;
+- (void)invitationWithGUID:(NSString *)arg0 personID:(NSString *)arg1 completionBlock:(id /* block */)arg2;
+- (void)videoURLForAssetCollectionWithGUID:(NSString *)arg0 personID:(NSString *)arg1 completionBlock:(id /* block */)arg2;
+- (void)isAssetCollectionWithGUID:(NSString *)arg0 markedAsUnviewedPersonID:(NSObject *)arg1 completionBlock:(id /* block */)arg2;
+- (void)setForegroundPingTimerContextByPersonID:(NSMutableDictionary *)arg0;
+- (void)setFocusAlbumTimerByPersonID:(NSMutableDictionary *)arg0;
+- (void)setFocusAlbumGUIDByPersonID:(NSMutableDictionary *)arg0;
+- (void)setServerSideConfigurationDictionaryByPersonID:(NSMutableDictionary *)arg0;
+- (void)refreshResetSync:(char)arg0 personID:(NSString *)arg1;
+- (void)retryOutstandingActivitiesForPersonID:(NSObject *)arg0;
+- (void)retryOutstandingActivities;
+- (void)setIsUIForeground:(char)arg0 forPersonID:(NSObject *)arg1;
+- (void)forgetEverythingAboutPersonID:(NSObject *)arg0;
+- (void)serverSideConfigurationDictionaryForPersonID:(NSObject *)arg0 completionBlock:(id /* block */)arg1;
+- (void)addAlbum:(MSASAlbum *)arg0 personID:(NSString *)arg1;
+- (void)deleteAlbumWithGUID:(NSString *)arg0 personID:(NSString *)arg1;
+- (void)modifyAlbumMetadata:(NSDictionary *)arg0 personID:(NSString *)arg1;
+- (void)setPublicAccessEnabled:(char)arg0 forAlbumWithGUID:(NSString *)arg1 personID:(NSString *)arg2 completionBlock:(id /* block */)arg3;
+- (void)setMultipleContributorsEnabled:(char)arg0 forAlbumWithGUID:(NSString *)arg1 personID:(NSString *)arg2 completionBlock:(id /* block */)arg3;
+- (void)addAssetCollections:(id)arg0 toAlbumWithGUID:(NSString *)arg1 personID:(NSString *)arg2;
+- (void)deleteAssetCollectionsWithGUIDs:(id)arg0 personID:(NSString *)arg1;
+- (void)videoURLsForAssetCollectionWithGUID:(NSString *)arg0 forMediaAssetType:(unsigned int)arg1 personID:(NSString *)arg2 completionBlock:(id /* block */)arg3;
+- (void)removeAccessControlEntryWithGUID:(NSString *)arg0 personID:(NSString *)arg1;
+- (void)unsubscribeFromAlbumWithGUID:(NSString *)arg0 personID:(NSString *)arg1;
+- (void)acceptInvitationWithToken:(NSString *)arg0 personID:(NSString *)arg1 completionBlock:(id /* block */)arg2;
+- (void)subscribeToAlbumWithGUID:(NSString *)arg0 personID:(NSString *)arg1;
+- (void)refreshAccessControlListForAlbumWithGUID:(NSString *)arg0 personID:(NSString *)arg1;
+- (void)addComments:(id)arg0 toAssetCollectionWithGUID:(NSString *)arg1 personID:(NSString *)arg2;
+- (void)deleteCommentWithGUID:(NSString *)arg0 personID:(NSString *)arg1;
+- (void)markAlbumGUIDAsViewed:(id)arg0 personID:(NSString *)arg1 moveLastViewedAssetCollectionMarker:(char)arg2 info:(NSDictionary *)arg3;
+- (void)markCommentsForAssetCollectionWithGUID:(NSString *)arg0 asViewedWithLastViewedDate:(CKDPDate *)arg1 personID:(NSString *)arg2;
+- (void)commentWithGUID:(NSString *)arg0 personID:(NSString *)arg1 completionBlock:(id /* block */)arg2;
+- (void)commentGUIDsForAssetCollectionWithGUID:(NSString *)arg0 personID:(NSString *)arg1 completionBlock:(id /* block */)arg2;
+- (void)assetCollectionWithGUID:(NSString *)arg0 personID:(NSString *)arg1 completionBlock:(id /* block */)arg2;
+- (void)assetCollectionGUIDsInAlbumWithGUID:(NSString *)arg0 personID:(NSString *)arg1 completionBlock:(id /* block */)arg2;
+- (void)setFocusAlbum:(id)arg0 forPersonID:(NSObject *)arg1;
+- (void)setFocusAssetCollectionGUID:(NSString *)arg0 forPersonID:(NSObject *)arg1;
+- (void)retrieveAssetsFromAssetCollectionsWithGUIDs:(id)arg0 assetTypeFlags:(int)arg1 personID:(NSString *)arg2;
+- (void)isBusyCompletionBlock:(id /* block */)arg0;
+- (void)assetsInDownloadQueueCountForPersonID:(NSObject *)arg0 completionBlock:(id /* block */)arg1;
+- (void)addAccessControlEntries:(NSArray *)arg0 toAlbumWithGUID:(NSString *)arg1 personID:(NSString *)arg2;
+
+@end

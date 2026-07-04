@@ -1,0 +1,7 @@
+/* Runtime dump - AVMetadataItemFilterInternal
+ * Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
+ */
+
+@interface AVMetadataItemFilterInternal : NSObject
+
+@end

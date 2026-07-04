@@ -1,0 +1,120 @@
+/* Runtime dump - CKDPAsset
+ * Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
+ */
+
+@interface CKDPAsset : PBCodable <NSCopying>
+{
+    long long _downloadURLExpiration;
+    long long _size;
+    NSString * _contentBaseURL;
+    NSData * _data;
+    NSString * _derivedContentType;
+    NSString * _downloadBaseURL;
+    NSData * _downloadRequest;
+    NSString * _downloadToken;
+    NSData * _header;
+    NSString * _owner;
+    CKDPProtectionInfo * _protectionInfo;
+    CKDPRecordIdentifier * _recordId;
+    NSData * _referenceSignature;
+    NSString * _requestor;
+    NSData * _signature;
+    NSString * _uploadReceipt;
+    struct ? _has;
+}
+
+@property (readonly, nonatomic) char hasOwner;
+@property (retain, nonatomic) NSString * owner;
+@property (readonly, nonatomic) char hasSignature;
+@property (retain, nonatomic) NSData * signature;
+@property (readonly, nonatomic) char hasHeader;
+@property (retain, nonatomic) NSData * header;
+@property (nonatomic) char hasSize;
+@property (nonatomic) long long size;
+@property (readonly, nonatomic) char hasDownloadToken;
+@property (retain, nonatomic) NSString * downloadToken;
+@property (readonly, nonatomic) char hasDownloadRequest;
+@property (retain, nonatomic) NSData * downloadRequest;
+@property (readonly, nonatomic) char hasDerivedContentType;
+@property (retain, nonatomic) NSString * derivedContentType;
+@property (readonly, nonatomic) char hasContentBaseURL;
+@property (retain, nonatomic) NSString * contentBaseURL;
+@property (readonly, nonatomic) char hasRequestor;
+@property (retain, nonatomic) NSString * requestor;
+@property (readonly, nonatomic) char hasRecordId;
+@property (retain, nonatomic) CKDPRecordIdentifier * recordId;
+@property (readonly, nonatomic) char hasUploadReceipt;
+@property (retain, nonatomic) NSString * uploadReceipt;
+@property (readonly, nonatomic) char hasData;
+@property (retain, nonatomic) NSData * data;
+@property (readonly, nonatomic) char hasDownloadBaseURL;
+@property (retain, nonatomic) NSString * downloadBaseURL;
+@property (nonatomic) char hasDownloadURLExpiration;
+@property (nonatomic) long long downloadURLExpiration;
+@property (readonly, nonatomic) char hasProtectionInfo;
+@property (retain, nonatomic) CKDPProtectionInfo * protectionInfo;
+@property (readonly, nonatomic) char hasReferenceSignature;
+@property (retain, nonatomic) NSData * referenceSignature;
+
+- (long long)size;
+- (char)isEqual:(NSObject *)arg0;
+- (unsigned int)hash;
+- (NSString *)description;
+- (CKDPAsset *)copyWithZone:(struct _NSZone *)arg0;
+- (NSData *)data;
+- (void)setData:(NSData *)arg0;
+- (void)setSize:(long long)arg0;
+- (NSDictionary *)dictionaryRepresentation;
+- (void).cxx_destruct;
+- (void)setSignature:(NSData *)arg0;
+- (char)hasSignature;
+- (NSData *)signature;
+- (long long)downloadURLExpiration;
+- (NSString *)owner;
+- (void)setProtectionInfo:(CKDPProtectionInfo *)arg0;
+- (char)hasProtectionInfo;
+- (CKDPProtectionInfo *)protectionInfo;
+- (void)setReferenceSignature:(NSData *)arg0;
+- (NSData *)referenceSignature;
+- (NSString *)uploadReceipt;
+- (void)setUploadReceipt:(NSString *)arg0;
+- (NSString *)downloadBaseURL;
+- (void)setRecordId:(CKDPRecordIdentifier *)arg0;
+- (char)hasRecordId;
+- (CKDPRecordIdentifier *)recordId;
+- (NSString *)contentBaseURL;
+- (NSString *)requestor;
+- (void)setContentBaseURL:(NSString *)arg0;
+- (void)setRequestor:(NSString *)arg0;
+- (char)hasOwner;
+- (void)setDownloadToken:(NSString *)arg0;
+- (void)setDownloadRequest:(NSData *)arg0;
+- (void)setDerivedContentType:(NSString *)arg0;
+- (void)setDownloadBaseURL:(NSString *)arg0;
+- (char)hasDownloadToken;
+- (char)hasDownloadRequest;
+- (char)hasDerivedContentType;
+- (char)hasContentBaseURL;
+- (char)hasRequestor;
+- (char)hasUploadReceipt;
+- (char)hasData;
+- (char)hasDownloadBaseURL;
+- (void)setDownloadURLExpiration:(long long)arg0;
+- (void)setHasDownloadURLExpiration:(char)arg0;
+- (char)hasDownloadURLExpiration;
+- (char)hasReferenceSignature;
+- (NSString *)downloadToken;
+- (NSData *)downloadRequest;
+- (NSString *)derivedContentType;
+- (void)setHeader:(NSData *)arg0;
+- (char)hasHeader;
+- (NSData *)header;
+- (void)mergeFrom:(NSObject *)arg0;
+- (char)readFrom:(NSObject *)arg0;
+- (void)writeTo:(NSObject *)arg0;
+- (void)copyTo:(NSObject *)arg0;
+- (char)hasSize;
+- (void)setHasSize:(char)arg0;
+- (void)setOwner:(NSString *)arg0;
+
+@end

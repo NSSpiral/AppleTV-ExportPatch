@@ -1,0 +1,54 @@
+// NetworkExtension.framework umbrella header
+// Auto-generated from iOS 8.4.3 dyld_shared_cache (AppleTV 3,2)
+
+#import <Foundation/Foundation.h>
+
+#import <NetworkExtension/NEAOVPN.h>
+#import <NetworkExtension/NEAOVPNException.h>
+#import <NetworkExtension/NEAgentFilterPlugin.h>
+#import <NetworkExtension/NEConfiguration.h>
+#import <NetworkExtension/NEConfigurationManager.h>
+#import <NetworkExtension/NEContentFilter.h>
+#import <NetworkExtension/NEContentFilterPlugin.h>
+#import <NetworkExtension/NEDNSSettings.h>
+#import <NetworkExtension/NEEvaluateConnectionRule.h>
+#import <NetworkExtension/NEFilterManager.h>
+#import <NetworkExtension/NEFilterSource.h>
+#import <NetworkExtension/NEHasher.h>
+#import <NetworkExtension/NEHelper.h>
+#import <NetworkExtension/NEIPC.h>
+#import <NetworkExtension/NEIPCHandle.h>
+#import <NetworkExtension/NEIPv4Settings.h>
+#import <NetworkExtension/NEIPv6Settings.h>
+#import <NetworkExtension/NEIdentityKeychainItem.h>
+#import <NetworkExtension/NEKeychainItem.h>
+#import <NetworkExtension/NEOnDemandRule.h>
+#import <NetworkExtension/NEOnDemandRuleConnect.h>
+#import <NetworkExtension/NEOnDemandRuleDisconnect.h>
+#import <NetworkExtension/NEOnDemandRuleEvaluateConnection.h>
+#import <NetworkExtension/NEOnDemandRuleIgnore.h>
+#import <NetworkExtension/NEPluginPreferences.h>
+#import <NetworkExtension/NEProfileIngestion.h>
+#import <NetworkExtension/NEProfileIngestionPayloadInfo.h>
+#import <NetworkExtension/NEProfilePayloadAOVPN.h>
+#import <NetworkExtension/NEProfilePayloadBase.h>
+#import <NetworkExtension/NEProfilePayloadBaseVPN.h>
+#import <NetworkExtension/NEProfilePayloadContentFilter.h>
+#import <NetworkExtension/NEProxyServer.h>
+#import <NetworkExtension/NEProxySettings.h>
+#import <NetworkExtension/NEUserNotification.h>
+#import <NetworkExtension/NEVPN.h>
+#import <NetworkExtension/NEVPNApp.h>
+#import <NetworkExtension/NEVPNAppRule.h>
+#import <NetworkExtension/NEVPNAppRuleExecutable.h>
+#import <NetworkExtension/NEVPNConnection.h>
+#import <NetworkExtension/NEVPNIKEv1ProposalParameters.h>
+#import <NetworkExtension/NEVPNIKEv2SecurityAssociationParameters.h>
+#import <NetworkExtension/NEVPNManager.h>
+#import <NetworkExtension/NEVPNProtocol.h>
+#import <NetworkExtension/NEVPNProtocolIKEv2.h>
+#import <NetworkExtension/NEVPNProtocolIPSec.h>
+#import <NetworkExtension/NEVPNProtocolL2TP.h>
+#import <NetworkExtension/NEVPNProtocolPPP.h>
+#import <NetworkExtension/NEVPNProtocolPPTP.h>
+#import <NetworkExtension/NEVPNProtocolPlugin.h>

@@ -1,0 +1,122 @@
+/* Runtime dump - AVPlaybackControlsViewController
+ * Image: /System/Library/Frameworks/AVKit.framework/AVKit
+ */
+
+@interface AVPlaybackControlsViewController : UIViewController
+{
+    AVPlayerController * _playerController;
+    AVPlayerControllerTimeResolver * _intervalTimeResolver;
+    AVPlayerControllerTimeResolver * _resolutionTimeResolver;
+    id _AVSystemControllerCurrentRouteHasVolumeControlDidChangeObserver;
+    char _showsDoneButton;
+    char _playing;
+    char _scrubberEnabled;
+    char _scanBackwardButtonEnabled;
+    char _playPauseButtonEnabled;
+    char _scanForwardButtonEnabled;
+    char _showsStreamingControls;
+    char _skipBackwardThirtySecondsButtonEnabled;
+    char _gotoEndOfSeekableRangesButtonEnabled;
+    char _showsScaleButton;
+    char _showsLoadingIndicator;
+    char _showsMediaSelectionButton;
+    char _showsExitFullScreenButton;
+    char _showsVolumeSlider;
+    AVPlayerViewController * _playerViewController;
+    float _scrubberWidth;
+    NSArray * _scrubberLoadedTimeRanges;
+    int _scaleButtonType;
+}
+
+@property (retain, nonatomic) AVPlayerController * playerController;
+@property (weak, nonatomic) AVPlayerViewController * playerViewController;
+@property (readonly, nonatomic) float scrubberWidth;
+@property (nonatomic) char showsDoneButton;
+@property (nonatomic) char playing;
+@property (nonatomic) char scrubberEnabled;
+@property (retain, nonatomic) NSArray * scrubberLoadedTimeRanges;
+@property (nonatomic) char scanBackwardButtonEnabled;
+@property (nonatomic) char playPauseButtonEnabled;
+@property (nonatomic) char scanForwardButtonEnabled;
+@property (nonatomic) char showsStreamingControls;
+@property (nonatomic) char skipBackwardThirtySecondsButtonEnabled;
+@property (nonatomic) char gotoEndOfSeekableRangesButtonEnabled;
+@property (nonatomic) char showsScaleButton;
+@property (nonatomic) int scaleButtonType;
+@property (nonatomic) char showsLoadingIndicator;
+@property (nonatomic) char showsMediaSelectionButton;
+@property (nonatomic) char showsExitFullScreenButton;
+@property (nonatomic) char showsVolumeSlider;
+
+- (void)_updateVolumeSliderVisibility;
+- (void)setShowsDoneButton:(char)arg0;
+- (AVPlayerViewController *)playerViewController;
+- (char)showsExitFullScreenButton;
+- (void)setShowsExitFullScreenButton:(char)arg0;
+- (void)setScrubberEnabled:(char)arg0;
+- (void)updateScrubberMinimumValue:(float)arg0;
+- (void)updateScrubberMaximumValue:(float)arg0;
+- (void)setScrubberLoadedTimeRanges:(NSArray *)arg0;
+- (void)updateVolumeSliderValue:(float)arg0;
+- (void)setScanBackwardButtonEnabled:(char)arg0;
+- (void)setPlayPauseButtonEnabled:(char)arg0;
+- (void)setScanForwardButtonEnabled:(char)arg0;
+- (void)setShowsStreamingControls:(char)arg0;
+- (void)setShowsMediaSelectionButton:(char)arg0;
+- (void)updateElapsedTimeLabel:(NSString *)arg0;
+- (void)updateRemainingTimeLabel:(NSString *)arg0;
+- (void)setSkipBackwardThirtySecondsButtonEnabled:(char)arg0;
+- (void)setGotoEndOfSeekableRangesButtonEnabled:(char)arg0;
+- (void)updateScrubberValue:(float)arg0;
+- (void)_userInteractionObservationControlTouchDown:(id)arg0;
+- (void)_userInteractionObservationControlTouchUp:(id)arg0;
+- (void)scaleButtonTapped:(id)arg0;
+- (void)mediaSelectionButtonTapped:(id)arg0;
+- (void)fullScreenButtonTapped:(id)arg0;
+- (void)addControlForUserInteractionObservation:(id)arg0;
+- (void)removeControlForUserInteractionObservation:(id)arg0;
+- (void)scrubberValueChanged:(NSNotification *)arg0;
+- (void)volumeSliderValueChanged:(NSNotification *)arg0;
+- (char)showsDoneButton;
+- (char)isScrubberEnabled;
+- (NSArray *)scrubberLoadedTimeRanges;
+- (char)isScanBackwardButtonEnabled;
+- (char)isPlayPauseButtonEnabled;
+- (char)isScanForwardButtonEnabled;
+- (char)showsStreamingControls;
+- (char)isSkipBackwardThirtySecondsButtonEnabled;
+- (char)isGotoEndOfSeekableRangesButtonEnabled;
+- (char)showsScaleButton;
+- (void)setShowsScaleButton:(char)arg0;
+- (int)scaleButtonType;
+- (void)setScaleButtonType:(int)arg0;
+- (char)showsLoadingIndicator;
+- (void)setShowsLoadingIndicator:(char)arg0;
+- (char)showsMediaSelectionButton;
+- (void)setShowsVolumeSlider:(char)arg0;
+- (char)showsVolumeSlider;
+- (void)dealloc;
+- (AVPlaybackControlsViewController *)initWithNibName:(NSString *)arg0 bundle:(NSObject *)arg1;
+- (void)didMoveToParentViewController:(BRController *)arg0;
+- (void)viewDidLoad;
+- (void)willMoveToParentViewController:(BRController *)arg0;
+- (void)observeValueForKeyPath:(NSString *)arg0 ofObject:(NSObject *)arg1 change:(NSDictionary *)arg2 context:(void *)arg3;
+- (void).cxx_destruct;
+- (AVPlayerController *)playerController;
+- (void)doneButtonTapped:(id)arg0;
+- (float)scrubberWidth;
+- (void)togglePlayback:(id)arg0;
+- (char)isPlaying;
+- (void)setPlaying:(char)arg0;
+- (void)skipBackwardThirtySeconds:(id)arg0;
+- (void)gotoEndOfSeekableRanges:(NSArray *)arg0;
+- (void)beginScanningForward:(id)arg0;
+- (void)endScanningForward:(id)arg0;
+- (void)beginScanningBackward:(id)arg0;
+- (void)endScanningBackward:(id)arg0;
+- (void)seekChapterBackward:(id)arg0;
+- (void)seekChapterForward:(id)arg0;
+- (void)setPlayerController:(AVPlayerController *)arg0;
+- (void)setPlayerViewController:(AVPlayerViewController *)arg0;
+
+@end

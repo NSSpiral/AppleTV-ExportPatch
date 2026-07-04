@@ -1,0 +1,120 @@
+/* Runtime dump - MKAnnotationContainerView
+ * Image: /System/Library/Frameworks/MapKit.framework/MapKit
+ */
+
+@interface MKAnnotationContainerView : UIView <MKAnnotationCalloutControllerDelegate>
+{
+    NSMutableArray * _annotationViews;
+    NSMutableArray * _awaitingDropPins;
+    MKAnnotationView * _selectedAnnotationView;
+    MKAnnotationView * _annotationViewToSelect;
+    <MKAnnotationContainerViewDelegate> * _delegate;
+    MKAnnotationView * _draggingAnnotationView;
+    struct CGPoint _mouseDownPoint;
+    struct CGPoint _draggingAnnotationViewCenter;
+    unsigned int _mapType;
+    char _clickedOnAnnotationView;
+    char _didDragAnnotationView;
+    MKAnnotationView * _userLocationView;
+    float _annotationViewsRotationRadians;
+    struct CGAffineTransform _mapTransform;
+    char _addingSubview;
+    NSMutableSet * _viewsToAnimate;
+    MKAnnotationCalloutController * _calloutController;
+    float _mapPitchRadians;
+    unsigned int _mapDisplayStyle;
+}
+
+@property (readonly, nonatomic) UIPopoverController * popoverController;
+@property (nonatomic) char allowsPopoverWhenNotInWindow;
+@property (readonly, nonatomic) MKAnnotationView * calloutAnnotationView;
+@property (readonly, nonatomic) MKAnnotationView * userLocationView;
+@property (weak, nonatomic) <MKAnnotationContainerViewDelegate> * delegate;
+@property (readonly, nonatomic) NSMutableArray * annotationViews;
+@property (nonatomic) unsigned int mapType;
+@property (readonly, nonatomic) struct ? currentComparisonContext;
+@property (readonly, nonatomic) char hasDroppingPins;
+@property (readonly, nonatomic) char hasPendingAnimations;
+@property (readonly, nonatomic) MKPinAnnotationView * bubblePin;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString * description;
+@property (readonly, copy) NSString * debugDescription;
+
+- (void)deselectAnnotationView:(NSObject *)arg0 animated:(char)arg1;
+- (char)allowsPopoverWhenNotInWindow;
+- (void)setAllowsPopoverWhenNotInWindow:(char)arg0;
+- (MKAnnotationView *)userLocationView;
+- (NSObject *)annotationViewForPoint:(struct CGPoint)arg0;
+- (NSObject *)_annotationViewForSelectionAtPoint:(struct CGPoint)arg0 avoidCurrent:(char)arg1 maxDistance:(float)arg2;
+- (void)_dropDraggingAnnotationViewAnimated:(char)arg0;
+- (MKAnnotationView *)calloutAnnotationView;
+- (void)draggingTouchMovedToPoint:(struct CGPoint)arg0;
+- (void)_liftForDragging:(id)arg0 mouseDownPoint:(struct CGPoint)arg1;
+- (char)calloutContainsPoint:(struct CGPoint)arg0;
+- (char)isCalloutExpanded;
+- (void)updateAnnotationLocationsDuringAnimation:(char)arg0;
+- (void)setAnnotationViewsRotationRadians:(float)arg0 animation:(CAAnimation *)arg1;
+- (void)setMapPitchRadians:(float)arg0;
+- (void)_updateAnnotationViewPerspective;
+- (struct UIEdgeInsets)accessoryPadding;
+- (struct ?)coordinateForAnnotationView:(NSObject *)arg0;
+- (struct CGPoint)convertCoordinate:(struct ?)arg0 toPointToView:(struct UIView *)arg1;
+- (void)suppressUpdates;
+- (void)stopSuppressingUpdates;
+- (void)transitionFrom:(int)arg0 to:(int)arg1 duration:(double)arg2;
+- (void)setUserLocationView:(MKAnnotationView *)arg0;
+- (void)addAnnotationView:(NSObject *)arg0 allowAnimation:(char)arg1;
+- (void)removeAnnotationView:(NSObject *)arg0;
+- (void)selectAnnotationView:(NSObject *)arg0 animated:(char)arg1 avoid:(struct CGRect)arg2;
+- (void)updateAnnotationView:(NSObject *)arg0;
+- (struct ?)_mapRectWithFraction:(float)arg0 ofVisible:(SEL)arg1;
+- (void)finishAddingAnnotationViews;
+- (void)dropPinsIfNeeded;
+- (void)calloutController:(MKAnnotationCalloutController *)arg0 annotationView:(MKAnnotationView *)arg1 calloutAccessoryControlTapped:(UIControl *)arg2;
+- (struct CGRect)calloutController:(MKAnnotationCalloutController *)arg0 visibleCenteringRectInAnnotationView:(SEL)arg1;
+- (struct CGRect)_visibleCenteringRectInView:(NSObject *)arg0;
+- (void)calloutController:(MKAnnotationCalloutController *)arg0 scrollToRevealCalloutWithOffset:(struct CGPoint)arg1 annotationCoordinate:(struct ?)arg2 completionHandler:(id /* block */)arg3;
+- (void)calloutDidAppearForAnnotationView:(MKAnnotationView *)arg0 inCalloutController:(MKAnnotationCalloutController *)arg1;
+- (void)calloutControllerDidFinishMapsTransitionExpanding:(MKAnnotationCalloutController *)arg0;
+- (void)_updateAnnotationView:(NSObject *)arg0;
+- (void)_updateAddedAnnotationRotation:(id)arg0;
+- (void)pinDidDrop:(id)arg0 animated:(char)arg1;
+- (void)annotationViewDidChangeCenterOffset:(NSSet *)arg0;
+- (void)annotationViewDidChangeZIndex:(NSObject *)arg0;
+- (NSMutableArray *)annotationViews;
+- (void)_showBubbleForAnnotationView:(NSObject *)arg0 bounce:(char)arg1 scrollToFit:(char)arg2 avoid:(struct CGRect)arg3;
+- (void)_setSelectedAnnotationView:(NSObject *)arg0 bounce:(char)arg1 pressed:(char)arg2 scrollToFit:(char)arg3 avoid:(struct CGRect)arg4;
+- (struct ?)currentComparisonContext;
+- (void)_findNextView:(id *)arg0 orientation:(int *)arg1 context:(NSObject *)arg2;
+- (void)_updateOrientationOfViewsCorrect:(id)arg0 relative:(id)arg1 projectionView:(struct UIView *)arg2;
+- (void)_updateOrientationOfViewsFast:(id)arg0 relative:(id)arg1 projectionView:(struct UIView *)arg2;
+- (void)_updateOrientationOfViews:(id)arg0 relative:(id)arg1 projectionView:(struct UIView *)arg2;
+- (void)_updateOrientationOfViews:(id)arg0;
+- (struct CGPoint)draggingAnnotationViewDropPoint;
+- (char)hasDroppingPins;
+- (MKPinAnnotationView *)bubblePin;
+- (void)updateUserLocationView;
+- (struct CGRect)_visibleCenteringRect;
+- (void)_willRemoveInternalAnnotationView:(NSObject *)arg0;
+- (void)_dropPinsIfNeeded:(char)arg0;
+- (unsigned int)indexForAnnotationView:(NSObject *)arg0;
+- (struct CGRect)_visibleRect;
+- (void)removeAnnotationViewsRotationAnimations;
+- (void)_showBubbleForAnnotationView:(NSObject *)arg0 bounce:(char)arg1 scrollToFit:(char)arg2;
+- (void)_setSelectedAnnotationView:(NSObject *)arg0 bounce:(char)arg1 pressed:(char)arg2 scrollToFit:(char)arg3;
+- (struct CGPoint)draggingAnnotationViewDropPointForPoint:(struct CGPoint)arg0;
+- (MKAnnotationContainerView *)initWithFrame:(struct CGRect)arg0;
+- (void)dealloc;
+- (void)setDelegate:(<MKAnnotationContainerViewDelegate> *)arg0;
+- (void)addSubview:(_UIVisualEffectSubview *)arg0;
+- (<MKAnnotationContainerViewDelegate> *)delegate;
+- (void).cxx_destruct;
+- (UIPopoverController *)popoverController;
+- (char)hasPendingAnimations;
+- (unsigned int)mapType;
+- (void)setMapType:(unsigned int)arg0;
+- (void)setMapDisplayStyle:(unsigned int)arg0;
+- (struct CGPoint)pointForCoordinate:(struct ?)arg0;
+
+@end

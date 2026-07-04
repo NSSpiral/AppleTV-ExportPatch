@@ -1,0 +1,125 @@
+/* Runtime dump - UIKeyboardCandidateGrid
+ * Image: /System/Library/Frameworks/UIKit.framework/UIKit
+ */
+
+@interface UIKeyboardCandidateGrid : UIView <UIKeyboardCandidateList, UIKeyboardCandidateListDelegate, UIKeyboardCandidateGridCollectionViewControllerDelegate, UIKeyboardCandidateRowViewControllerDelegate>
+{
+    UIImageView * _backgroundView;
+    UIView * _topBarShadow;
+    UIView * _bottomBarShadow;
+    UIKeyboardCandidateSortControl * _sortBar;
+    UIKeyboardCandidateGridHeader * _gridHeader;
+    char _drawTopShadow;
+    char _drawBottomShadow;
+    char _secondaryCandidatesViewIsCurrent;
+    <UIKeyboardCandidateListDelegate> * _candidateListDelegate;
+    TIKeyboardCandidateResultSet * _candidateSet;
+    NSMutableDictionary * _collectionViewControllers;
+    UIKeyboardCandidateGridCollectionViewController * _collectionViewController;
+    unsigned int _numberOfColumns;
+    <UICollectionViewDelegate> * _scrollViewDelegate;
+    int _candidatesVisualStyle;
+    UIKBBackdropView * _backdropView;
+    NSArray * _sortedCandidates;
+    NSString * _inlineText;
+    UIKeyboardCandidateRowViewController * _secondaryCandidatesViewController;
+}
+
+@property (nonatomic) char drawTopShadow;
+@property (nonatomic) char drawBottomShadow;
+@property (retain, nonatomic) TIKeyboardCandidateResultSet * candidateSet;
+@property (retain, nonatomic) NSArray * sortedCandidates;
+@property (retain, nonatomic) NSString * inlineText;
+@property (nonatomic) unsigned int numberOfColumns;
+@property (nonatomic) int candidatesVisualStyle;
+@property (nonatomic) UIKeyboardCandidateSortControl * sortBar;
+@property (nonatomic) UIKeyboardCandidateGridHeader * gridHeader;
+@property (nonatomic) <UICollectionViewDelegate> * scrollViewDelegate;
+@property (nonatomic) <UIKeyboardCandidateListDelegate> * candidateListDelegate;
+@property (readonly, nonatomic) NSMutableDictionary * collectionViewControllers;
+@property (retain, nonatomic) UIKeyboardCandidateGridCollectionViewController * collectionViewController;
+@property (retain, nonatomic) UIKeyboardCandidateRowViewController * secondaryCandidatesViewController;
+@property (nonatomic) char secondaryCandidatesViewIsCurrent;
+@property (retain, nonatomic) UIKBBackdropView * backdropView;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString * description;
+@property (readonly, copy) NSString * debugDescription;
+
+- (UIKeyboardCandidateGrid *)initWithFrame:(struct CGRect)arg0;
+- (void)dealloc;
+- (void)layoutSubviews;
+- (void)scrollViewDidScroll:(UIScrollView *)arg0;
+- (void)scrollViewWillBeginDragging:(UIScrollView *)arg0;
+- (unsigned int)numberOfColumns;
+- (void)layout;
+- (void)showCandidateAtIndex:(unsigned int)arg0;
+- (void)showNextCandidate;
+- (<UIKeyboardCandidateListDelegate> *)candidateListDelegate;
+- (void)candidateListAcceptCandidate:(NSDate *)arg0;
+- (TIKeyboardCandidateResultSet *)candidateSet;
+- (char)hasCandidates;
+- (void)setCandidateSet:(TIKeyboardCandidateResultSet *)arg0;
+- (void)setCandidates:(TIKeyboardBehaviors_WaitingForCandidates *)arg0 inlineText:(NSString *)arg1 inlineRect:(struct CGRect)arg2 maxX:(struct CGSize)arg3 layout:(NSObject *)arg4;
+- (void)setCandidateListDelegate:(<UIKeyboardCandidateListDelegate> *)arg0;
+- (NSString *)statisticsIdentifier;
+- (void)candidateListSelectionDidChange:(NSDictionary *)arg0;
+- (char)isExtendedList;
+- (char)isHiddenCandidatesList;
+- (void)setUIKeyboardCandidateListDelegate:(NSObject *)arg0;
+- (char)showCandidate:(NSDate *)arg0;
+- (void)showPreviousCandidate;
+- (void)showNextPage;
+- (void)showPreviousPage;
+- (void)showNextRow;
+- (void)showPreviousRow;
+- (TIKeyboardCandidate *)currentCandidate;
+- (unsigned int)currentIndex;
+- (void)candidateAcceptedAtIndex:(unsigned int)arg0;
+- (TIKeyboardBehaviors *)keyboardBehaviors;
+- (unsigned int)selectedSortIndex;
+- (void)setCandidates:(TIKeyboardBehaviors_WaitingForCandidates *)arg0 type:(int)arg1 inlineText:(NSString *)arg2 inlineRect:(struct CGRect)arg3 maxX:(struct CGSize)arg4 layout:(NSObject *)arg5;
+- (void)setInlineText:(NSString *)arg0;
+- (char)handleNumberKey:(unsigned int)arg0;
+- (char)handleTabKeyWithShift:(char)arg0;
+- (char)hasNextPage;
+- (char)hasPreviousPage;
+- (void)candidatesDidChange;
+- (void)revealHiddenCandidates;
+- (NSString *)inlineText;
+- (void)setCandidatesVisualStyle:(int)arg0;
+- (int)candidatesVisualStyle;
+- (char)padInlineFloatingViewIsExpanded:(id)arg0;
+- (void)setSecondaryCandidatesViewIsCurrent:(char)arg0;
+- (char)secondaryCandidatesViewIsCurrent;
+- (unsigned int)gridCollectionViewNumberOfColumns:(NSArray *)arg0;
+- (unsigned int)gridCollectionViewSelectedSortMethodIndex:(NSObject *)arg0;
+- (void)candidateViewWillBeginExtendingWithVisibleCandidates:(id)arg0;
+- (void)candidateViewDidFinishExtending;
+- (void)candidateListShouldBeDismissed:(id)arg0;
+- (UIKeyboardCandidateGridCollectionViewController *)collectionViewController;
+- (void)setCollectionViewController:(UIKeyboardCandidateGridCollectionViewController *)arg0;
+- (void)sortSelectionBarAction:(NSObject *)arg0;
+- (void)setBackdropView:(UIKBBackdropView *)arg0;
+- (UIKBBackdropView *)backdropView;
+- (void)setDrawTopShadow:(char)arg0;
+- (void)setDrawBottomShadow:(char)arg0;
+- (void)statusBarFrameWillChange:(NSDictionary *)arg0;
+- (void)setSortBar:(UIKeyboardCandidateSortControl *)arg0;
+- (void)setGridHeader:(UIKeyboardCandidateGridHeader *)arg0;
+- (UIKeyboardCandidateSortControl *)sortBar;
+- (char)drawTopShadow;
+- (char)drawBottomShadow;
+- (UIKeyboardCandidateRowViewController *)secondaryCandidatesViewController;
+- (void)setSecondaryCandidatesViewController:(UIKeyboardCandidateRowViewController *)arg0;
+- (UIKeyboardCandidateGridHeader *)gridHeader;
+- (void)clearViews;
+- (NSMutableDictionary *)collectionViewControllers;
+- (<UICollectionViewDelegate> *)scrollViewDelegate;
+- (void)showArrowButton:(char)arg0;
+- (void)setNumberOfColumns:(unsigned int)arg0;
+- (void)setScrollViewDelegate:(<UICollectionViewDelegate> *)arg0;
+- (NSArray *)sortedCandidates;
+- (void)setSortedCandidates:(NSArray *)arg0;
+
+@end

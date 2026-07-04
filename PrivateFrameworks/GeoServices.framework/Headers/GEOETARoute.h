@@ -1,0 +1,126 @@
+/* Runtime dump - GEOETARoute
+ * Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
+ */
+
+@interface GEOETARoute : PBCodable <NSCopying>
+{
+    struct ? _incidentEndOffsetsInETARoutes;
+    struct ? _trafficColorOffsets;
+    struct ? _trafficColors;
+    unsigned int _historicTravelTime;
+    NSMutableArray * _incidentsOffReRoutes;
+    NSMutableArray * _incidentsOnETARoutes;
+    NSMutableArray * _incidentsOnReRoutes;
+    NSMutableArray * _invalidSectionZilchPoints;
+    NSMutableArray * _reroutedRoutes;
+    NSData * _routeID;
+    NSMutableArray * _steps;
+    NSData * _zilchPoints;
+    char _routeNoLongerValid;
+    struct ? _has;
+}
+
+@property (readonly, nonatomic) double expectedTime;
+@property (readonly, nonatomic) char hasRouteID;
+@property (retain, nonatomic) NSData * routeID;
+@property (retain, nonatomic) NSMutableArray * steps;
+@property (readonly, nonatomic) char hasZilchPoints;
+@property (retain, nonatomic) NSData * zilchPoints;
+@property (nonatomic) char hasRouteNoLongerValid;
+@property (nonatomic) char routeNoLongerValid;
+@property (retain, nonatomic) NSMutableArray * reroutedRoutes;
+@property (retain, nonatomic) NSMutableArray * invalidSectionZilchPoints;
+@property (readonly, nonatomic) unsigned int trafficColorsCount;
+@property (readonly, nonatomic) unsigned int * trafficColors;
+@property (readonly, nonatomic) unsigned int trafficColorOffsetsCount;
+@property (readonly, nonatomic) unsigned int * trafficColorOffsets;
+@property (retain, nonatomic) NSMutableArray * incidentsOnETARoutes;
+@property (retain, nonatomic) NSMutableArray * incidentsOnReRoutes;
+@property (retain, nonatomic) NSMutableArray * incidentsOffReRoutes;
+@property (nonatomic) char hasHistoricTravelTime;
+@property (nonatomic) unsigned int historicTravelTime;
+@property (readonly, nonatomic) unsigned int incidentEndOffsetsInETARoutesCount;
+@property (readonly, nonatomic) unsigned int * incidentEndOffsetsInETARoutes;
+
+- (void)dealloc;
+- (char)isEqual:(NSObject *)arg0;
+- (unsigned int)hash;
+- (NSString *)description;
+- (GEOETARoute *)copyWithZone:(struct _NSZone *)arg0;
+- (NSDictionary *)dictionaryRepresentation;
+- (void)setRouteID:(NSData *)arg0;
+- (void)setZilchPoints:(NSData *)arg0;
+- (char)hasRouteID;
+- (char)hasZilchPoints;
+- (NSData *)routeID;
+- (NSData *)zilchPoints;
+- (double)expectedTime;
+- (NSObject *)stepAtIndex:(unsigned int)arg0;
+- (double)remainingTimeAlongRoute:(unsigned int)arg0 currentStepRemainingDistance:(double)arg1;
+- (void)setSteps:(NSMutableArray *)arg0;
+- (void)addStep:(NSObject *)arg0;
+- (void)clearSteps;
+- (void)clearTrafficColors;
+- (unsigned int)trafficColorAtIndex:(unsigned int)arg0;
+- (void)addTrafficColor:(unsigned int)arg0;
+- (void)clearTrafficColorOffsets;
+- (unsigned int)trafficColorOffsetAtIndex:(unsigned int)arg0;
+- (void)addTrafficColorOffset:(unsigned int)arg0;
+- (void)setTrafficColors:(unsigned int *)arg0 count:(unsigned int)arg1;
+- (void)setTrafficColorOffsets:(unsigned int *)arg0 count:(unsigned int)arg1;
+- (void)setHistoricTravelTime:(unsigned int)arg0;
+- (void)setHasHistoricTravelTime:(char)arg0;
+- (char)hasHistoricTravelTime;
+- (unsigned int)historicTravelTime;
+- (unsigned int)incidentsOnETARoutesCount;
+- (NSMutableArray *)incidentsOnETARoutes;
+- (void)addIncidentsOnETARoute:(id)arg0;
+- (unsigned int)reroutedRoutesCount;
+- (NSObject *)reroutedRouteAtIndex:(unsigned int)arg0;
+- (void)setReroutedRoutes:(NSMutableArray *)arg0;
+- (char)routeNoLongerValid;
+- (NSMutableArray *)incidentsOnReRoutes;
+- (NSMutableArray *)incidentsOffReRoutes;
+- (void)setInvalidSectionZilchPoints:(NSMutableArray *)arg0;
+- (void)setIncidentsOnETARoutes:(NSMutableArray *)arg0;
+- (void)setIncidentsOnReRoutes:(NSMutableArray *)arg0;
+- (void)setIncidentsOffReRoutes:(NSMutableArray *)arg0;
+- (void)addReroutedRoute:(id)arg0;
+- (void)addInvalidSectionZilchPoints:(id)arg0;
+- (void)addIncidentsOnReRoutes:(id)arg0;
+- (void)addIncidentsOffReRoutes:(id)arg0;
+- (void)clearReroutedRoutes;
+- (unsigned int)invalidSectionZilchPointsCount;
+- (void)clearInvalidSectionZilchPoints;
+- (NSObject *)invalidSectionZilchPointsAtIndex:(unsigned int)arg0;
+- (void)clearIncidentsOnETARoutes;
+- (NSObject *)incidentsOnETARouteAtIndex:(unsigned int)arg0;
+- (unsigned int)incidentsOnReRoutesCount;
+- (void)clearIncidentsOnReRoutes;
+- (NSObject *)incidentsOnReRoutesAtIndex:(unsigned int)arg0;
+- (unsigned int)incidentsOffReRoutesCount;
+- (void)clearIncidentsOffReRoutes;
+- (NSObject *)incidentsOffReRoutesAtIndex:(unsigned int)arg0;
+- (unsigned int)incidentEndOffsetsInETARoutesCount;
+- (void)clearIncidentEndOffsetsInETARoutes;
+- (unsigned int)incidentEndOffsetsInETARouteAtIndex:(unsigned int)arg0;
+- (void)addIncidentEndOffsetsInETARoute:(unsigned int)arg0;
+- (void)setRouteNoLongerValid:(char)arg0;
+- (void)setHasRouteNoLongerValid:(char)arg0;
+- (char)hasRouteNoLongerValid;
+- (unsigned int *)incidentEndOffsetsInETARoutes;
+- (void)setIncidentEndOffsetsInETARoutes:(unsigned int *)arg0 count:(unsigned int)arg1;
+- (NSMutableArray *)reroutedRoutes;
+- (NSMutableArray *)invalidSectionZilchPoints;
+- (void)mergeFrom:(NSObject *)arg0;
+- (char)readFrom:(NSObject *)arg0;
+- (void)writeTo:(NSObject *)arg0;
+- (void)copyTo:(NSObject *)arg0;
+- (unsigned int)trafficColorsCount;
+- (unsigned int)trafficColorOffsetsCount;
+- (unsigned int *)trafficColorOffsets;
+- (unsigned int *)trafficColors;
+- (unsigned int)stepsCount;
+- (NSMutableArray *)steps;
+
+@end

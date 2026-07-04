@@ -1,0 +1,136 @@
+/* Runtime dump - TSTCellRegion
+ * Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
+ */
+
+@interface TSTCellRegion : NSObject <NSCopying>
+{
+    unsigned int mCellRangesCount;
+    struct TSUColumnRowRect * mCellRanges;
+    struct TSUColumnRowRect mBoundingCellRange;
+    unsigned int mCellCount;
+    NSIndexSet * mIntersectingColumnsIndexSet;
+    NSIndexSet * mIntersectingRowsIndexSet;
+    struct ? mFirstCellID;
+    struct ? mLastCellID;
+}
+
+@property (readonly, nonatomic) struct TSUColumnRowRect boundingCellRange;
+@property (readonly, nonatomic) unsigned int cellCount;
+@property (readonly, nonatomic) char isEmpty;
+@property (readonly, nonatomic) char isRectangle;
+@property (readonly, nonatomic) struct ? firstCellID;
+@property (readonly, nonatomic) struct ? lastCellID;
+@property (readonly, nonatomic) struct ? boundingTopLeftCellID;
+@property (readonly, nonatomic) struct ? boundingBottomRightCellID;
+@property (readonly, nonatomic) unsigned short numberOfIntersectingColumns;
+@property (readonly, nonatomic) unsigned short numberOfIntersectingRows;
+
++ (NSObject *)invalidRegion;
++ (NSObject *)regionFromRange:(struct TSUColumnRowRect)arg0;
++ (TSTCellRegion *)regionFromCellIDVector:(struct vector<TSUColumnRowCoordinate, std::__1::allocator<TSUColumnRowCoordinate> > *)arg0;
++ (NSIndexSet *)regionFromColumnIndexes:(NSArray *)arg0 rowIndexes:(NSArray *)arg1;
++ (NSObject *)region:(NSObject *)arg0 addingRange:(struct TSUColumnRowRect)arg1;
++ (NSArray *)regionFromMergeList:(struct vector<TSUColumnRowRect, std::__1::allocator<TSUColumnRowRect> > *)arg0;
++ (TSTCellRegion *)regionFromRowIndices:(id)arg0;
++ (TSTCellRegion *)regionFromColumnIndices:(id)arg0;
++ (NSObject *)regionFromMergeMap:(NSObject *)arg0;
++ (NSArray *)regionFromMergeActionArray:(NSArray *)arg0 withTableInfo:(TSTTableInfo *)arg1;
++ (NSObject *)region:(NSObject *)arg0 subtractingRange:(struct TSUColumnRowRect)arg1;
++ (NSObject *)region:(NSObject *)arg0 intersectingRange:(struct TSUColumnRowRect)arg1;
++ (NSObject *)unionEveryRangeInRegion:(NSObject *)arg0 withRange:(struct TSUColumnRowRect)arg1;
++ (NSObject *)region:(NSObject *)arg0 addingRegion:(NSObject *)arg1;
++ (NSObject *)region:(NSObject *)arg0 subtractingRegion:(NSObject *)arg1;
++ (NSObject *)region:(NSObject *)arg0 intersectingRegion:(NSObject *)arg1;
++ (NSObject *)regionFromCellMap:(NSObject *)arg0 withTableInfo:(TSTTableInfo *)arg1;
++ (NSObject *)regionFromCellDiffMap:(NSObject *)arg0 withTableInfo:(TSTTableInfo *)arg1;
++ (NSObject *)regionFillingColumnsFromRegion:(NSObject *)arg0;
++ (NSObject *)regionFillingRowsFromRegion:(NSObject *)arg0;
++ (NSDictionary *)regionFromPropertyListRepresentation:(NSDictionary *)arg0;
+
+- (void)saveToMessage:(struct CellRegion *)arg0;
+- (TSTCellRegion *)initFromMessage:(struct CellRegion *)arg0;
+- (struct TSUColumnRowRect)boundingCellRange;
+- (char)isRectangle;
+- (char)partiallyIntersectsCellRange:(struct TSUColumnRowRect)arg0;
+- (NSObject *)regionByAddingRange:(struct TSUColumnRowRect)arg0;
+- (struct NSObject *)iterator;
+- (NSObject *)regionByIntersectingRange:(struct TSUColumnRowRect)arg0;
+- (id)regionOffsetBy:(struct ?)arg0;
+- (struct NSObject *)rightToLeftIterator;
+- (void)enumerateMissingRowsIntersectingCellRange:(struct TSUColumnRowRect)arg0 usingBlock:(struct ?)arg1;
+- (void)enumerateRowsIntersectingCellRange:(struct TSUColumnRowRect)arg0 usingBlock:(struct ?)arg1;
+- (void)enumerateMissingColumnsIntersectingCellRange:(struct TSUColumnRowRect)arg0 usingBlock:(struct ?)arg1;
+- (void)enumerateColumnsIntersectingCellRange:(struct TSUColumnRowRect)arg0 usingBlock:(struct ?)arg1;
+- (void)enumerateCellRangesUsingBlock:(id /* block */)arg0;
+- (NSObject *)regionByAddingRegion:(NSObject *)arg0;
+- (char)intersectsCellRange:(struct TSUColumnRowRect)arg0;
+- (char)containsCellRange:(struct TSUColumnRowRect)arg0;
+- (struct vector<TSUColumnRowRect, std::__1::allocator<TSUColumnRowRect> >)cellRanges;
+- (NSObject *)regionBySubtractingRegion:(NSObject *)arg0;
+- (char)equalsCellRegion:(NSObject *)arg0;
+- (NSObject *)regionByUnioningEveryRangeInRegionWithRange:(struct TSUColumnRowRect)arg0;
+- (void)enumerateColumnsUsingBlock:(id /* block */)arg0;
+- (NSIndexSet *)intersectingColumnsIndexSet;
+- (NSArray *)regionByRemovingColumns:(NSArray *)arg0;
+- (NSArray *)regionByAddingColumns:(NSArray *)arg0;
+- (NSIndexSet *)intersectingRowsIndexSet;
+- (NSArray *)regionByRemovingRows:(NSArray *)arg0;
+- (NSArray *)regionByAddingRows:(NSArray *)arg0;
+- (void)enumerateColumnRangesUsingBlock:(id /* block */)arg0;
+- (void)enumerateRowRangesInReverseUsingBlock:(id /* block */)arg0;
+- (void)enumerateColumnRangesInReverseUsingBlock:(id /* block */)arg0;
+- (void)enumerateCellIDsUsingBlock:(id /* block */)arg0;
+- (struct ?)suitableAnchor;
+- (struct ?)suitableCursor;
+- (struct ?)firstCellID;
+- (struct ?)lastCellID;
+- (char)containsCellID:(struct ?)arg0;
+- (NSObject *)regionBySubtractingRange:(struct TSUColumnRowRect)arg0;
+- (char)equalsCellRange:(struct TSUColumnRowRect)arg0;
+- (char)containsCellRegion:(NSObject *)arg0;
+- (struct ?)boundingTopLeftCellID;
+- (unsigned short)numberOfIntersectingRows;
+- (unsigned short)numberOfIntersectingColumns;
+- (void)p_calculateAncillaryInformation;
+- (void)p_insertRangeIntoRegion:(struct TSUColumnRowRect)arg0;
+- (id)p_copy;
+- (id)regionByIntersectingRowIndices:(id)arg0;
+- (id)regionByIntersectingColumnIndices:(id)arg0;
+- (void)p_calculateIntersectingColumns;
+- (void)p_calculateIntersectingRows;
+- (void)p_calculateUpperLeftAndBottomRightCellIDAndBoundingCellRange;
+- (NSObject *)regionByIntersectingRegion:(NSObject *)arg0;
+- (id)regionByApplyingRowMapping:(id)arg0;
+- (NSObject *)regionByMovingRowsFromRange:(struct _NSRange)arg0 toIndex:(unsigned short)arg1;
+- (NSObject *)regionByMovingColumnsFromRange:(struct _NSRange)arg0 toIndex:(unsigned short)arg1;
+- (NSObject *)regionUpToColumnIndex:(unsigned char)arg0;
+- (id)regionUpToColumnIndexRtoL:(unsigned char)arg0 maxColumnIndex:(unsigned char)arg1;
+- (NSObject *)regionAfterColumnIndex:(unsigned char)arg0;
+- (id)regionAfterColumnIndexRtoL:(unsigned char)arg0;
+- (NSObject *)regionUpToRowIndex:(unsigned short)arg0;
+- (NSObject *)regionAfterRowIndex:(unsigned short)arg0;
+- (struct ?)boundingBottomRightCellID;
+- (struct TSUColumnRowRect)largestRangeContainingCellID:(NSObject *)arg0;
+- (char)intersectsColumn:(unsigned char)arg0;
+- (char)intersectsRow:(unsigned short)arg0;
+- (struct NSObject *)topToBottomIterator;
+- (void)enumerateColumnsInReverseUsingBlock:(id /* block */)arg0;
+- (void)enumerateRowsInReverseUsingBlock:(id /* block */)arg0;
+- (void)enumerateInDirection:(int)arg0 usingBlock:(id /* block */)arg1;
+- (void)enumerateRowRangesUsingBlock:(id /* block */)arg0;
+- (void)enumerateGridColumnsUsingBlock:(id /* block */)arg0;
+- (void)enumerateGridRowsUsingBlock:(id /* block */)arg0;
+- (void)fillCellRangeRowMajorSet:(struct set<TSUColumnRowRect, TSTCellRangeRowMajorLess, std::__1::allocator<TSUColumnRowRect> > *)arg0 leftToRight:(struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<TSUColumnRowRect, void *> > >)arg1;
+- (void)fillCellRangeColMajorSet:(struct set<TSUColumnRowRect, TSTCellRangeColumnMajorLess, std::__1::allocator<TSUColumnRowRect> > *)arg0 leftToRight:(struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<TSUColumnRowRect, void *> > >)arg1;
+- (void)dealloc;
+- (TSTCellRegion *)init;
+- (NSString *)description;
+- (char)isValid;
+- (TSTCellRegion *)copyWithZone:(struct _NSZone *)arg0;
+- (char)isEmpty;
+- (void).cxx_construct;
+- (unsigned int)cellCount;
+- (void)enumerateRowsUsingBlock:(id /* block */)arg0;
+- (NSDictionary *)propertyListRepresentation;
+
+@end

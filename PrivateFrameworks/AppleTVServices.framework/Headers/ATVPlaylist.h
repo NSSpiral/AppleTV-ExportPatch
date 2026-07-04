@@ -1,0 +1,131 @@
+/* Runtime dump - ATVPlaylist
+ * Image: /System/Library/PrivateFrameworks/AppleTVServices.framework/AppleTVServices
+ */
+
+@interface ATVPlaylist : NSObject
+{
+    NSMutableArray * _historyItems;
+    NSMutableArray * _playQueueItems;
+    NSMutableArray * _playQueueHistory;
+    NSMutableArray * _trackList;
+    NSMutableArray * _shuffledItems;
+    unsigned int _activeListIndex;
+    NSArray * _activeList;
+    NSArray * _upcomingItems;
+    char _isCollection;
+    char _windowed;
+    char _shuffleEnabled;
+    char _skipExplicit;
+    char _playQueueActive;
+    char _bracketChanges;
+    NSObject<ATVMediaItem> * _currentMediaItem;
+    NSObject<ATVMediaItem> * _nextMediaItem;
+    NSObject<ATVMediaItem> * _previousMediaItem;
+    int _endAction;
+    unsigned int _currentIndex;
+    unsigned int _count;
+    NSString * _name;
+    int _repeatMode;
+    NSDictionary * _changeContext;
+    unsigned int _upcomingItemsLimit;
+    unsigned int _historyLimit;
+    id _playQueueModificationHandler;
+}
+
+@property (retain, nonatomic) NSObject<ATVMediaItem> * currentMediaItem;
+@property (retain, nonatomic) NSObject<ATVMediaItem> * nextMediaItem;
+@property (retain, nonatomic) NSObject<ATVMediaItem> * previousMediaItem;
+@property (readonly, nonatomic) NSArray * trackList;
+@property (nonatomic) int endAction;
+@property (nonatomic) unsigned int currentIndex;
+@property (nonatomic) unsigned int count;
+@property (nonatomic) char windowed;
+@property (retain, nonatomic) NSString * name;
+@property (nonatomic) char shuffleEnabled;
+@property (readonly, nonatomic) char supportsShuffle;
+@property (nonatomic) int repeatMode;
+@property (readonly, nonatomic) char supportsRepeat;
+@property (nonatomic) char skipExplicit;
+@property (retain, nonatomic) NSDictionary * changeContext;
+@property (readonly, nonatomic) NSArray * upcomingItems;
+@property (nonatomic) unsigned int upcomingItemsLimit;
+@property (copy, nonatomic) NSArray * historyItems;
+@property (nonatomic) unsigned int historyLimit;
+@property (readonly, nonatomic) NSArray * playQueueItems;
+@property (nonatomic) char playQueueActive;
+@property (nonatomic) char bracketChanges;
+@property (copy, nonatomic) id playQueueModificationHandler;
+@property (retain, nonatomic) NSMutableArray * playQueueHistory;
+
++ (NSString *)keyPathsForValuesAffectingValueForKey:(NSString *)arg0;
+
+- (int)repeatMode;
+- (void)setRepeatMode:(int)arg0;
+- (NSObject<ATVMediaItem> *)currentMediaItem;
+- (unsigned int)count;
+- (void)setName:(NSString *)arg0;
+- (NSString *)name;
+- (void)setCount:(unsigned int)arg0;
+- (unsigned int)currentIndex;
+- (void)addItem:(NSObject *)arg0;
+- (void)addItems:(NSArray *)arg0;
+- (void).cxx_destruct;
+- (void)insertItem:(NSObject *)arg0 atIndex:(unsigned int)arg1;
+- (void)removeItemAtIndex:(unsigned int)arg0;
+- (int)endAction;
+- (void)setEndAction:(int)arg0;
+- (void)setCurrentMediaItem:(NSObject<ATVMediaItem> *)arg0;
+- (NSDictionary *)changeContext;
+- (ATVPlaylist *)initWithMediaItems:(NSArray *)arg0 index:(int)arg1 isCollection:(char)arg2;
+- (char)moreItemsAvailable:(int)arg0;
+- (void)changeMedia:(int)arg0;
+- (void)changeMedia:(int)arg0 withContext:(NSObject *)arg1;
+- (void)_updateCurrent:(char)arg0 andNextItems:(char)arg1 withContext:(NSObject *)arg2;
+- (void)_addItemToHistory:(NSArray *)arg0;
+- (void)_updatePlayQueueActive;
+- (void)_updateShuffleFill;
+- (NSArray *)upcomingItems;
+- (void)setChangeContext:(NSDictionary *)arg0;
+- (void)setCurrentIndex:(unsigned int)arg0;
+- (char)playQueueActive;
+- (char)windowed;
+- (char)supportsShuffle;
+- (void)_shuffle;
+- (NSArray *)trackList;
+- (char)supportsRepeat;
+- (void)insertItems:(NSArray *)arg0 atIndexes:(NSArray *)arg1;
+- (void)removeItemsAtIndexes:(NSArray *)arg0;
+- (void)setPlayQueueActive:(char)arg0;
+- (void)addItemsToPlayQueue:(NSObject *)arg0 withAction:(int)arg1 isCollection:(char)arg2;
+- (void)_initializePlayQueueIfNecessary:(char)arg0;
+- (void)insertItemsInPlayQueue:(NSObject *)arg0 atIndexes:(NSArray *)arg1;
+- (NSMutableArray *)playQueueHistory;
+- (void)removeItemFromPlayQueueAtIndexes:(NSArray *)arg0;
+- (void)setWindowed:(char)arg0;
+- (void)setShuffleEnabled:(char)arg0;
+- (void)setUpcomingItemsLimit:(unsigned int)arg0;
+- (void)clearPlayQueueItems;
+- (void)addItemToPlayQueue:(NSObject *)arg0 withAction:(int)arg1;
+- (void)insertItemInPlayQueue:(NSObject *)arg0 atIndex:(unsigned int)arg1;
+- (void)removeItemFromPlayQueueAtIndex:(unsigned int)arg0;
+- (void)clearHistoryItems;
+- (NSObject<ATVMediaItem> *)nextMediaItem;
+- (void)setNextMediaItem:(NSObject<ATVMediaItem> *)arg0;
+- (NSObject<ATVMediaItem> *)previousMediaItem;
+- (void)setPreviousMediaItem:(NSObject<ATVMediaItem> *)arg0;
+- (char)shuffleEnabled;
+- (char)skipExplicit;
+- (void)setSkipExplicit:(char)arg0;
+- (unsigned int)upcomingItemsLimit;
+- (NSArray *)historyItems;
+- (void)setHistoryItems:(NSArray *)arg0;
+- (unsigned int)historyLimit;
+- (void)setHistoryLimit:(unsigned int)arg0;
+- (NSArray *)playQueueItems;
+- (char)bracketChanges;
+- (void)setBracketChanges:(char)arg0;
+- (id /* block */)playQueueModificationHandler;
+- (void)setPlayQueueModificationHandler:(id /* block */)arg0;
+- (void)setPlayQueueHistory:(NSMutableArray *)arg0;
+
+@end

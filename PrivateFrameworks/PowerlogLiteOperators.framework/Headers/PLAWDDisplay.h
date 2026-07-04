@@ -1,0 +1,135 @@
+/* Runtime dump - PLAWDDisplay
+ * Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
+ */
+
+@interface PLAWDDisplay : PLAWDAuxMetrics
+{
+    char _prevDisplayOn;
+    char _prevDeviceCharging;
+    char _prevMieOn;
+    char _filterFirstEntry;
+    char _prevAlsOn;
+    PLEntryNotificationOperatorComposition * _displayEventCallback;
+    PLEntryNotificationOperatorComposition * _backlightEventCallback;
+    PLEntryNotificationOperatorComposition * _alsUserPreferencesEventCallback;
+    PLEntryNotificationOperatorComposition * _batteryEventCallback;
+    PLEntryNotificationOperatorComposition * _backlightRailCallback;
+    PLEntryNotificationOperatorComposition * _touchEventCallback;
+    PLEntryNotificationOperatorComposition * _alsEnabledEventCallback;
+    PLEntryNotificationOperatorComposition * _ioReportEventCallback;
+    long _prevBklBucketIdx;
+    long _dispSubmitCnt;
+    long _touchSubmitCnt;
+    double _displayOnTimeStamp;
+    double _mieOnTimeStamp;
+    double _bklTimeStamp;
+    double _prevBklChgTimeStamp;
+    long long _startTouchEntryId;
+    double _bklPowerRailTimeStamp;
+    double _prevBklPower;
+}
+
+@property (weak) PLOperator * operator;
+@property (retain, nonatomic) NSMutableSet * runningMetrics;
+@property (retain) PLEntryNotificationOperatorComposition * displayEventCallback;
+@property (retain) PLEntryNotificationOperatorComposition * backlightEventCallback;
+@property (retain) PLEntryNotificationOperatorComposition * alsUserPreferencesEventCallback;
+@property (retain) PLEntryNotificationOperatorComposition * batteryEventCallback;
+@property (retain) PLEntryNotificationOperatorComposition * backlightRailCallback;
+@property (retain) PLEntryNotificationOperatorComposition * touchEventCallback;
+@property (retain) PLEntryNotificationOperatorComposition * alsEnabledEventCallback;
+@property (retain) PLEntryNotificationOperatorComposition * ioReportEventCallback;
+@property char prevDisplayOn;
+@property double displayOnTimeStamp;
+@property char prevDeviceCharging;
+@property char prevMieOn;
+@property double mieOnTimeStamp;
+@property double bklTimeStamp;
+@property long prevBklBucketIdx;
+@property double prevBklChgTimeStamp;
+@property long long startTouchEntryId;
+@property double bklPowerRailTimeStamp;
+@property char filterFirstEntry;
+@property long dispSubmitCnt;
+@property long touchSubmitCnt;
+@property char prevAlsOn;
+@property double prevBklPower;
+
++ (PLAWDDisplay *)getSharedObjWithOperator:(PLOperator *)arg0;
++ (NSArray *)entryAggregateDefinitions;
++ (PLAWDDisplay *)entryAggregateDefinitionAwdDisplayAndAls;
+
+- (void).cxx_destruct;
+- (void)startMetricCollection:(id)arg0;
+- (void)stopMetricCollection:(id)arg0;
+- (char)submitDataToAWDServer:(NSObject *)arg0 withAwdConn:(id)arg1;
+- (void)handleBatteryCallback:(id /* block */)arg0;
+- (void)setBatteryEventCallback:(PLEntryNotificationOperatorComposition *)arg0;
+- (void)handleDisplayCallback:(id /* block */)arg0;
+- (void)setDisplayEventCallback:(PLEntryNotificationOperatorComposition *)arg0;
+- (void)setPrevDeviceCharging:(char)arg0;
+- (char)prevDeviceCharging;
+- (PLEntryNotificationOperatorComposition *)batteryEventCallback;
+- (PLEntryNotificationOperatorComposition *)displayEventCallback;
+- (void)initDisplayBacklightAlsStats;
+- (void)registerForDisplayAgentNotifications;
+- (void)initTouchStats;
+- (void)registerForTouchNotifications;
+- (void)setBacklightEventCallback:(PLEntryNotificationOperatorComposition *)arg0;
+- (void)setAlsUserPreferencesEventCallback:(PLEntryNotificationOperatorComposition *)arg0;
+- (void)setBacklightRailCallback:(PLEntryNotificationOperatorComposition *)arg0;
+- (void)setAlsEnabledEventCallback:(PLEntryNotificationOperatorComposition *)arg0;
+- (void)setIoReportEventCallback:(PLEntryNotificationOperatorComposition *)arg0;
+- (void)setTouchEventCallback:(PLEntryNotificationOperatorComposition *)arg0;
+- (void)handleTouchCallback:(id /* block */)arg0;
+- (PLEntryNotificationOperatorComposition *)touchEventCallback;
+- (char)prevMieOn;
+- (void)handleBacklightCallback:(id /* block */)arg0;
+- (void)handleAlsUserPreferencesCallback:(id /* block */)arg0;
+- (void)handleBacklightRailCallback:(id /* block */)arg0;
+- (void)handleAlsEnabledCallback:(id /* block */)arg0;
+- (void)handleIOReportCallback:(id /* block */)arg0;
+- (PLEntryNotificationOperatorComposition *)ioReportEventCallback;
+- (void)setTouchSubmitCnt:(long)arg0;
+- (void)setStartTouchEntryId:(long long)arg0;
+- (long long)startTouchEntryId;
+- (void)setDispSubmitCnt:(long)arg0;
+- (void)setPrevDisplayOn:(char)arg0;
+- (void)setPrevMieOn:(char)arg0;
+- (void)setPrevBklBucketIdx:(long)arg0;
+- (void)setBklTimeStamp:(double)arg0;
+- (void)setDisplayOnTimeStamp:(double)arg0;
+- (void)setMieOnTimeStamp:(double)arg0;
+- (void)setFilterFirstEntry:(char)arg0;
+- (void)setPrevBklPower:(double)arg0;
+- (void)setBklPowerRailTimeStamp:(double)arg0;
+- (void)resetDisplayAlsTable;
+- (void)setPrevAlsOn:(char)arg0;
+- (void)addEntryToDisplayAlsTable:(id)arg0 withValue:(double)arg1;
+- (char)prevDisplayOn;
+- (long)getBklbucketIdx:(long)arg0 withLux:(long)arg1;
+- (long)prevBklBucketIdx;
+- (double)prevBklPower;
+- (char)prevAlsOn;
+- (long)getLuxBucket:(long)arg0;
+- (long)getUAmpsBucket:(long)arg0;
+- (double)displayOnTimeStamp;
+- (double)bklPowerRailTimeStamp;
+- (void)updateDisplayMetrics:(char)arg0 withState:(char)arg1;
+- (void)updateMieMetrics:(char)arg0;
+- (double)bklTimeStamp;
+- (char)filterFirstEntry;
+- (void)processIOReportEntry:(id)arg0;
+- (double)mieOnTimeStamp;
+- (void)finalizeDisplayAlsTable;
+- (long)dispSubmitCnt;
+- (void)reInitDisplayBacklightAlsStats;
+- (long)touchSubmitCnt;
+- (PLEntryNotificationOperatorComposition *)backlightEventCallback;
+- (PLEntryNotificationOperatorComposition *)alsUserPreferencesEventCallback;
+- (PLEntryNotificationOperatorComposition *)backlightRailCallback;
+- (PLEntryNotificationOperatorComposition *)alsEnabledEventCallback;
+- (double)prevBklChgTimeStamp;
+- (void)setPrevBklChgTimeStamp:(double)arg0;
+
+@end

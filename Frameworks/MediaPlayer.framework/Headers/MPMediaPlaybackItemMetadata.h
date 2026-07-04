@@ -1,0 +1,120 @@
+/* Runtime dump - MPMediaPlaybackItemMetadata
+ * Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
+ */
+
+@interface MPMediaPlaybackItemMetadata : NSObject
+{
+    char _allowsInitiatingPlayWhileDownload;
+    char _isExplicitTrack;
+    char _requiresPlayWhileDownload;
+    char _shouldReportPlayEventsToStore;
+    NSString * _albumArtistName;
+    NSString * _albumTitle;
+    NSString * _artistName;
+    NSString * _buyParameters;
+    NSString * _composerName;
+    NSString * _contentTitle;
+    unsigned int _contentType;
+    NSString * _copyrightText;
+    int _endpointType;
+    NSString * _genreTitle;
+    NSURL * _localNetworkContentURL;
+    MPMediaItem * _mediaItem;
+    NSURL * _protectedContentSupportStorageURL;
+    float _volumeNormalization;
+    NSNumber * _iTunesStoreContentID;
+    NSNumber * _iTunesStoreContentDSID;
+    long long _albumStoreAdamID;
+    double _expectedDuration;
+    long long _mediaLibraryPersistentID;
+    unsigned long long _storeAccountID;
+    long long _storeAdamID;
+    long long _storeSubscriptionAdamID;
+    unsigned long long _storeSagaID;
+}
+
+@property (readonly, nonatomic) char allowsInitiatingPlayWhileDownload;
+@property (readonly, copy, nonatomic) NSString * albumArtistName;
+@property (readonly, nonatomic) long long albumStoreAdamID;
+@property (readonly, copy, nonatomic) NSString * albumTitle;
+@property (readonly, nonatomic) char allowsAssetCaching;
+@property (readonly, copy, nonatomic) NSString * artistName;
+@property (readonly, nonatomic) NSString * buyParameters;
+@property (readonly, copy, nonatomic) NSString * composerName;
+@property (readonly, copy, nonatomic) NSString * contentTitle;
+@property (readonly, nonatomic) unsigned int contentType;
+@property (readonly, copy, nonatomic) NSString * copyrightText;
+@property (readonly, nonatomic) int endpointType;
+@property (readonly, nonatomic) double expectedDuration;
+@property (readonly, copy, nonatomic) NSString * genreTitle;
+@property (readonly, nonatomic) char isExplicitTrack;
+@property (readonly, nonatomic) int likedState;
+@property (readonly, copy, nonatomic) NSURL * localNetworkContentURL;
+@property (readonly, nonatomic) MPMediaItem * mediaItem;
+@property (readonly, nonatomic) long long mediaLibraryPersistentID;
+@property (readonly, copy, nonatomic) NSURL * protectedContentSupportStorageURL;
+@property (readonly, nonatomic) char requiresPlayWhileDownload;
+@property (readonly, nonatomic) char shouldReportPlayEventsToStore;
+@property (readonly, nonatomic) unsigned long long storeAccountID;
+@property (readonly, nonatomic) long long storeAdamID;
+@property (readonly, nonatomic) long long storeSubscriptionAdamID;
+@property (readonly, nonatomic) unsigned long long storeSagaID;
+@property (readonly, nonatomic) float volumeNormalization;
+@property (readonly, copy, nonatomic) NSNumber * iTunesStoreContentID;
+@property (readonly, copy, nonatomic) NSString * iTunesStoreContentType;
+@property (readonly, copy, nonatomic) NSString * iTunesStoreContentDownloadParameters;
+@property (readonly, copy, nonatomic) NSNumber * iTunesStoreContentDSID;
+@property (readonly, copy, nonatomic) NSString * iTunesStoreContentPurchasedMediaKind;
+@property (readonly, copy, nonatomic) NSString * iTunesStoreContentUserAgent;
+
+- (char)isExplicitTrack;
+- (NSString *)copyrightText;
+- (long long)storeSubscriptionAdamID;
+- (NSString *)buyParameters;
+- (id)artworkCatalogForPlaybackTime:(double)arg0;
+- (int)endpointType;
+- (unsigned long long)storeSagaID;
+- (long long)storeAdamID;
+- (NSURL *)protectedContentSupportStorageURL;
+- (void)loadMediaItemWithCompletionHandler:(id /* block */)arg0;
+- (long long)mediaLibraryPersistentID;
+- (NSString *)streamingPlaybackPurchaseBundleDestinationFilePathForAssetFilePath:(NSString *)arg0;
+- (void)setCachedLocalPlaybackAssetFilePath:(NSString *)arg0 protectionType:(unsigned int)arg1 assetQuality:(unsigned int)arg2 withCompletionHandler:(id /* block */)arg3;
+- (NSString *)albumArtistName;
+- (long long)albumStoreAdamID;
+- (NSString *)albumTitle;
+- (char)allowsInitiatingPlayWhileDownload;
+- (id)cachedLocalPlaybackAssetFilePathReturningAssetQuality:(unsigned int *)arg0 protectionType:(unsigned int *)arg1 usesPurchaseBundle:(char *)arg2;
+- (NSString *)contentTitle;
+- (double)expectedDuration;
+- (NSNumber *)iTunesStoreContentID;
+- (NSNumber *)iTunesStoreContentDSID;
+- (NSURL *)localNetworkContentURL;
+- (void)clearLocalPlaybackAssetFilePathWithCompletionHandler:(id /* block */)arg0;
+- (char)shouldReportPlayEventsToStore;
+- (id)streamingPlaybackAssetDestinationFilePathForAssetQuality:(unsigned int)arg0 assetFlavor:(NSString *)arg1 protectionType:(unsigned int)arg2 pathExtension:(NSString *)arg3;
+- (float)volumeNormalization;
+- (NSString *)genreTitle;
+- (char)canDownloadContentForNetworkType:(int)arg0;
+- (char)requiresPlayWhileDownload;
+- (NSString *)iTunesStoreContentType;
+- (NSString *)iTunesStoreContentDownloadParameters;
+- (NSString *)iTunesStoreContentPurchasedMediaKind;
+- (NSString *)iTunesStoreContentUserAgent;
+- (void)setLikedState:(int)arg0 withCompletionHandler:(id /* block */)arg1;
+- (void)_cloudControllerIsCellularDataRestrictedDidChangeNotification:(NSNotification *)arg0;
+- (void)_contentTasteControllerDidChangeNotification:(NSNotification *)arg0;
+- (char)allowsAssetCaching;
+- (void)getNetworkConstraintsForDownloadKind:(id)arg0 withCompletionHandler:(id /* block */)arg1;
+- (void)dealloc;
+- (MPMediaPlaybackItemMetadata *)init;
+- (char)isEqual:(NSObject *)arg0;
+- (void).cxx_destruct;
+- (NSString *)artistName;
+- (MPMediaItem *)mediaItem;
+- (NSString *)composerName;
+- (unsigned long long)storeAccountID;
+- (int)likedState;
+- (unsigned int)contentType;
+
+@end

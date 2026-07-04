@@ -1,0 +1,7 @@
+/* Runtime dump - OADBulletProperties
+ * Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
+ */
+
+@interface OADBulletProperties : NSObject
+
+@end

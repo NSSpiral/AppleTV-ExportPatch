@@ -1,0 +1,122 @@
+/* Runtime dump - UIImageView
+ * Image: /System/Library/Frameworks/UIKit.framework/UIKit
+ */
+
+@interface UIImageView : UIView
+{
+    id _storage;
+    struct UIEdgeInsets _cachedEdgeInsetsForEffects;
+    char _templateSettingsAreInvalid;
+    char _edgeInsetsForEffectsAreValid;
+    char __animatesContents;
+}
+
+@property (retain, nonatomic) UIImage * image;
+@property (retain, nonatomic) UIImage * highlightedImage;
+@property (nonatomic) char userInteractionEnabled;
+@property (nonatomic) char highlighted;
+@property (copy, nonatomic) NSArray * animationImages;
+@property (copy, nonatomic) NSArray * highlightedAnimationImages;
+@property (nonatomic) double animationDuration;
+@property (nonatomic) int animationRepeatCount;
+@property (retain, nonatomic) UIColor * tintColor;
+@property (nonatomic) int drawMode;
+@property (nonatomic) unsigned int _templateImageRenderingEffects;
+@property (nonatomic) char _animatesContents;
+@property (nonatomic) int _defaultRenderingMode;
+@property (readonly, nonatomic) struct UIEdgeInsets _edgeInsetsForEffects;
+@property (nonatomic) char _edgeInsetsForEffectsAreValid;
+@property (nonatomic) char _masksTemplateImages;
+@property (readonly, nonatomic) char _templateSettingsAreInvalid;
+
+- (UIImageView *)initWithFrame:(struct CGRect)arg0;
+- (void)dealloc;
+- (void)drawRect:(struct CGRect)arg0;
+- (void)setImage:(UIImage *)arg0;
+- (void)setBackgroundColor:(UIColor *)arg0;
+- (UIImageView *)initWithCoder:(NSCoder *)arg0;
+- (void)encodeWithCoder:(NSCoder *)arg0;
+- (struct CGSize)_intrinsicSizeWithinSize:(struct CGSize)arg0;
+- (void)setFrame:(struct CGRect)arg0;
+- (void)layoutSubviews;
+- (void)setBounds:(struct CGRect)arg0;
+- (struct CGSize)sizeThatFits:(struct CGSize)arg0;
+- (UIImageView *)initWithImage:(UIImage *)arg0;
+- (void)setTranslatesAutoresizingMaskIntoConstraints:(char)arg0;
+- (void)setAnimationDuration:(double)arg0;
+- (void)encodeRestorableStateWithCoder:(NSCoder *)arg0;
+- (void)decodeRestorableStateWithCoder:(NSCoder *)arg0;
+- (struct UIEdgeInsets)alignmentRectInsets;
+- (UIImage *)image;
+- (struct CGImage *)imageRef;
+- (char)_shouldAnimatePropertyWithKey:(NSString *)arg0;
+- (char)useBlockyMagnificationInClassic;
+- (char)_canDrawContent;
+- (void)traitCollectionDidChange:(NSDictionary *)arg0;
+- (UIImage *)_generateBackdropMaskImage;
+- (void)tintColorDidChange;
+- (void)_didMoveFromWindow:(NSObject *)arg0 toWindow:(NSObject *)arg1;
+- (void)setAnimationRepeatCount:(int)arg0;
+- (void)setHighlighted:(char)arg0;
+- (unsigned int)_templateImageRenderingEffects;
+- (void)_setDefaultRenderingMode:(int)arg0;
+- (void)_setTemplateImageRenderingEffects:(unsigned int)arg0;
+- (char)isHighlighted;
+- (NSArray *)animationImages;
+- (NSArray *)highlightedAnimationImages;
+- (UIImage *)highlightedImage;
+- (void)setHighlightedImage:(UIImage *)arg0;
+- (int)_defaultRenderingMode;
+- (char)_masksTemplateImages;
+- (UIImage *)_currentImage;
+- (UIImage *)_currentHighlightedImage;
+- (char)_shouldDrawImage:(UIImage *)arg0;
+- (UIImage *)_cachedPretiledImageForImage:(UIImage *)arg0;
+- (char)_needsImageEffectsForImage:(UIImage *)arg0;
+- (UIImage *)_effectiveTintColorWithImage:(UIImage *)arg0;
+- (char)_needsImageEffectsForImage:(UIImage *)arg0 suppressColorizing:(char)arg1;
+- (void)_drawImageEffectsForImage:(UIImage *)arg0 inRect:(struct CGRect)arg1;
+- (char)isAnimating;
+- (char)_setImageViewContents:(id)arg0;
+- (void)_setDecompressingImage:(UIImage *)arg0 forType:(unsigned int)arg1;
+- (void)stopAnimating;
+- (void)_clearPretiledImageCacheForImage:(UIImage *)arg0;
+- (void)_updateImageViewForOldImage:(UIImage *)arg0 newImage:(UIImage *)arg1;
+- (void)_updatePretiledImageCacheForImage:(UIImage *)arg0;
+- (void)_updateState;
+- (void)_updateTemplateProperties;
+- (char)_recomputePretilingState;
+- (void)_setViewGeometry:(struct CGRect)arg0 forMetric:(struct CGSize)arg1;
+- (struct UIEdgeInsets)_edgeInsetsForEffects;
+- (UIImage *)_activeImage;
+- (NSObject *)_decompressingImageForType:(unsigned int)arg0;
+- (char)_shouldTreatImageAsTemplate:(id)arg0;
+- (void)_updateMasking;
+- (void)_templateSettingsDidChange;
+- (void)_invalidateTemplateSettings;
+- (void)_resolveImageForTrait:(id)arg0;
+- (void)startAnimating;
+- (char)_animatesContents;
+- (UIImage *)_adaptiveImageForImage:(UIImage *)arg0 assignedImage:(UIImage *)arg1 currentImage:(UIImage *)arg2 hasAdapted:(char *)arg3;
+- (UIImageView *)initWithImage:(UIImage *)arg0 highlightedImage:(UIImage *)arg1;
+- (void)setAnimationImages:(NSArray *)arg0;
+- (void)setHighlightedAnimationImages:(NSArray *)arg0;
+- (double)animationDuration;
+- (int)animationRepeatCount;
+- (void)_setMasksTemplateImages:(char)arg0;
+- (int)drawMode;
+- (void)setDrawMode:(int)arg0;
+- (void)setCGImageRef:(struct CGImage *)arg0;
+- (void)setAnimating:(char)arg0;
+- (id)_checkImageForAdaptation:(id)arg0 hasAdapted:(char *)arg1;
+- (id)_checkHighlightedImageForAdaptation:(id)arg0 hadAdapted:(char *)arg1;
+- (char)_templateSettingsAreInvalid;
+- (char)_edgeInsetsForEffectsAreValid;
+- (void)_setEdgeInsetsForEffectsAreValid:(char)arg0;
+- (void)_setAnimatesContents:(char)arg0;
+- (unsigned long long)defaultAccessibilityTraits;
+- (char)isAccessibilityElementByDefault;
+- (char)isElementAccessibilityExposedToInterfaceBuilder;
+- (void)_applySettingsForLegibilityStyle:(int)arg0;
+
+@end

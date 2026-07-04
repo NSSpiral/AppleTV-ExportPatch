@@ -1,0 +1,132 @@
+/* Runtime dump - MRMarimbaFBO
+ * Image: /System/Library/PrivateFrameworks/ATVSlideshow.framework/ATVSlideshow
+ */
+
+@interface MRMarimbaFBO : NSObject <MRMarimbaPlayback, MRMarimbaHitBlobSupport, EAGLDrawable, MRMarimbaBasicPlayback>
+{
+    char _masterClockIsSet;
+    char _bailTimeWatcher;
+    char _stopWithVideo;
+    char _readOnly;
+    char _enableSlideDidChangeNotification;
+    NSString * _lastSlideChange;
+    EAGLContext * _context;
+    MRTexture * _texture;
+    MPDocument * _document;
+    MRRenderer * _renderer;
+    struct CGSize _size;
+}
+
+@property (nonatomic) struct CGSize size;
+@property (copy) NSDictionary * drawableProperties;
+@property (retain, nonatomic) MPDocument * document;
+@property (nonatomic) double time;
+@property (readonly, nonatomic) double timeRemaining;
+@property (readonly, nonatomic) char isPlaying;
+@property (nonatomic) float volume;
+@property (nonatomic) char stopWithVideo;
+@property (nonatomic) char displaysFPS;
+@property (readonly, nonatomic) MRRenderer * renderer;
+@property (nonatomic) char enableSlideDidChangeNotification;
+
++ (void)releaseResources;
++ (NSObject *)fboWithDocument:(MPDocument *)arg0 size:(struct CGSize)arg1 context:(EAGLContext *)arg2;
++ (NSObject *)fboWithDocument:(MPDocument *)arg0 size:(struct CGSize)arg1;
+
+- (void)play;
+- (void)togglePlayback;
+- (void)beginGesture:(NSObject *)arg0;
+- (void)dealloc;
+- (struct CGSize)size;
+- (MRMarimbaFBO *)init;
+- (void)setSize:(struct CGSize)arg0;
+- (char)isInTransition;
+- (void)setTime:(double)arg0;
+- (double)time;
+- (void)goBack;
+- (MPDocument *)document;
+- (void)cleanup;
+- (void)setDocument:(MPDocument *)arg0;
+- (void)pause;
+- (double)relativeTime;
+- (void)setBailTimeWatcher:(char)arg0;
+- (void)watcherThread:(NSObject *)arg0;
+- (NSObject *)_currentEffectContainer;
+- (void)moveToEffectContainer:(NSObject *)arg0 withStartOffset:(double)arg1 toStopOffset:(double)arg2 blocking:(char)arg3;
+- (id)displayedEffectContainers;
+- (int)_mainLayerIndex;
+- (NSObject *)_firstEffectContainer;
+- (id)_effectContainerForTime:(double)arg0;
+- (char)bailTimeWatcher;
+- (id)currentSlides;
+- (void)gotoSlide:(id)arg0;
+- (void)moveToNextEffectContainer;
+- (void)moveToPreviousEffectContainer;
+- (double)relativeTimeForBackgroundAudio;
+- (double)relativeTimeForLayer:(id)arg0;
+- (void)moveToTitleSlide;
+- (void)moveToSubtitleForSlide:(id)arg0;
+- (KNSlide *)currentSlide;
+- (void)gotoNextSlide;
+- (void)gotoPreviousSlide;
+- (unsigned int)textureName;
+- (void)goForth;
+- (char)effect:(struct CGRect)arg0 requestedNumberOfSlides:(unsigned int)arg1 firstSlideIndexStillNeeded:(unsigned int)arg2;
+- (void)requestRendering:(char)arg0;
+- (char)nearingEndForSerializer:(NSObject *)arg0;
+- (void)callbackThread:(NSObject *)arg0;
+- (CALayer *)_currentEffectLayer;
+- (void)lockRendering;
+- (void)unlockRendering;
+- (NSString *)lastSlideChange;
+- (void)setLastSlideChange:(NSString *)arg0;
+- (void)_postNotificationForSlideChange:(NSDictionary *)arg0;
+- (void)whenTransitionIsFinishedSendAction:(SEL)arg0 toTarget:(NSObject *)arg1;
+- (void)removeEffectContainersBeforeTime:(double)arg0;
+- (void)_slideDidAppear:(id)arg0;
+- (char)beginLiveUpdateForHitBlob:(id)arg0;
+- (struct CGPoint)convertPoint:(struct CGPoint)arg0 toHitBlob:(MRHitBlob *)arg1;
+- (char)endLiveUpdateForHitBlob:(id)arg0;
+- (void)endGesture:(NSObject *)arg0;
+- (NSObject *)blobHitAtPoint:(struct CGPoint)arg0 fromObjectsForObjectIDs:(id)arg1 localPoint:(struct CGPoint *)arg2;
+- (char)getOnScreenVertices:(id)arg0 forHitBlob:(struct CGPoint)arg1;
+- (void)doGesture:(NSObject *)arg0;
+- (void)cancelGesture:(NSObject *)arg0;
+- (void)setEAGLContext:(NSObject *)arg0;
+- (void)didLiveChanged:(NSNotification *)arg0;
+- (void)didAddEffects:(CUIPSDLayerEffects *)arg0;
+- (void)pauseWhenStill;
+- (char)displaysFPS;
+- (void)setDisplaysFPS:(char)arg0;
+- (char)nearingEndForSerializerAfterDelay:(id)arg0;
+- (char)effectRequestedSlidesAfterDelay:(id)arg0;
+- (void)touchesBegan:(NSSet *)arg0;
+- (void)touchesMoved:(NSSet *)arg0;
+- (char)touchesEnded:(NSSet *)arg0;
+- (void)touchesCancelled:(NSSet *)arg0;
+- (void)gotoBeginning;
+- (void)gotoEnd;
+- (void)nextFrame;
+- (void)prevFrame;
+- (struct CGImage *)snapshotAsCGImageForTime:(double)arg0 withSize:(struct CGSize)arg1;
+- (struct CGImage *)snapshotAsCGImage;
+- (void)warmupRenderer;
+- (double)timeRemaining;
+- (char)stopWithVideo;
+- (void)setStopWithVideo:(char)arg0;
+- (char)enableSlideDidChangeNotification;
+- (void)setEnableSlideDidChangeNotification:(char)arg0;
+- (void)aspectRatioChangedTo:(id)arg0;
+- (void)setSlaveFrameMode:(char)arg0;
+- (void)_warmupRendererThreaded:(id)arg0;
+- (void)switchToDirectInCALayer:(id)arg0;
+- (void)switchToTexture;
+- (NSDictionary *)drawableProperties;
+- (MRRenderer *)renderer;
+- (MRTexture *)texture;
+- (void)setDrawableProperties:(NSDictionary *)arg0;
+- (float)volume;
+- (void)setVolume:(float)arg0;
+- (char)isPlaying;
+
+@end

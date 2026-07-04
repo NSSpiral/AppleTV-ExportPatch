@@ -1,0 +1,25 @@
+/* Runtime dump - RUIRetailScreenSaver
+ * Image: /Applications/AppleTV.app/AppleTV
+ */
+
+
+@protocol ATVScreenSaverPluginProtocol;
+
+@class BRControl, RUIRetailControl;
+@interface RUIRetailScreenSaver : NSObject <ATVScreenSaverPluginProtocol>
+{
+    RUIRetailControl * _control;
+}
+
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString * description;
+@property (readonly, copy) NSString * debugDescription;
+
+- (BRControl *)screenSaverControl;
+- (void)setScreenSaverAutoFired:(char)arg0;
+- (char)usesVideoPlayback;
+- (RUIRetailScreenSaver *)init;
+- (void).cxx_destruct;
+
+@end

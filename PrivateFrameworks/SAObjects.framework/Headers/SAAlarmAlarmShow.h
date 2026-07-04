@@ -1,0 +1,21 @@
+/* Runtime dump - SAAlarmAlarmShow
+ * Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
+ */
+
+@interface SAAlarmAlarmShow : AceObject <SAAlarmAlarmAction>
+
+@property (copy, nonatomic) NSArray * alarmIds;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString * description;
+@property (readonly, copy) NSString * debugDescription;
+
++ (SAAlarmAlarmShow *)alarmShow;
++ (NSDictionary *)alarmShowWithDictionary:(NSDictionary *)arg0 context:(NSObject *)arg1;
+
+- (NSString *)groupIdentifier;
+- (NSString *)encodedClassName;
+- (NSArray *)alarmIds;
+- (void)setAlarmIds:(NSArray *)arg0;
+
+@end

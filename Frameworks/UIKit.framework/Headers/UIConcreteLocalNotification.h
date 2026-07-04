@@ -1,0 +1,110 @@
+/* Runtime dump - UIConcreteLocalNotification
+ * Image: /System/Library/Frameworks/UIKit.framework/UIKit
+ */
+
+@interface UIConcreteLocalNotification : UILocalNotification
+{
+    NSDate * fireDate;
+    NSTimeZone * timeZone;
+    unsigned int repeatInterval;
+    NSCalendar * repeatCalendar;
+    int totalRepeatCount;
+    int remainingRepeatCount;
+    CLRegion * region;
+    char regionTriggersOnce;
+    NSString * alertBody;
+    char hasAction;
+    NSString * alertAction;
+    NSString * alertLaunchImage;
+    NSString * alertTitle;
+    NSString * soundName;
+    int applicationIconBadgeNumber;
+    NSData * userInfoData;
+    char hideAlertTitle;
+    char allowSnooze;
+    int soundType;
+    char interruptAudioAndLockDevice;
+    char resumeApplicationInBackground;
+    char fireNotificationsWhenAppRunning;
+    char showAlarmStatusBarItem;
+    NSString * customLockSliderLabel;
+    NSString * firedNotificationName;
+    NSString * snoozedNotificationName;
+    NSString * category;
+    char isTransient;
+}
+
+- (void)dealloc;
+- (UIConcreteLocalNotification *)initWithCoder:(NSCoder *)arg0;
+- (void)encodeWithCoder:(NSCoder *)arg0;
+- (UIConcreteLocalNotification *)init;
+- (char)isEqual:(NSObject *)arg0;
+- (unsigned int)hash;
+- (NSString *)description;
+- (void)setCategory:(NSString *)arg0;
+- (NSString *)category;
+- (char)isValid;
+- (void)setUserInfo:(NSDictionary *)arg0;
+- (void)setFireDate:(NSDate *)arg0;
+- (void)setTimeZone:(NSTimeZone *)arg0;
+- (void)setRepeatInterval:(unsigned int)arg0;
+- (NSString *)alertBody;
+- (NSString *)soundName;
+- (int)applicationIconBadgeNumber;
+- (void)validate;
+- (void)setApplicationIconBadgeNumber:(int)arg0;
+- (UIConcreteLocalNotification *)copyWithZone:(struct _NSZone *)arg0;
+- (NSDictionary *)userInfo;
+- (unsigned int)repeatInterval;
+- (NSTimeZone *)timeZone;
+- (void)setTotalRepeatCount:(int)arg0;
+- (void)setSoundType:(int)arg0;
+- (void)setRepeatCalendar:(NSCalendar *)arg0;
+- (void)setRemainingRepeatCount:(int)arg0;
+- (void)setAlertBody:(NSString *)arg0;
+- (void)setHasAction:(char)arg0;
+- (void)setAlertAction:(NSString *)arg0;
+- (void)setAlertLaunchImage:(NSString *)arg0;
+- (void)setAlertTitle:(NSString *)arg0;
+- (void)setSoundName:(NSString *)arg0;
+- (void)_setUserInfoData:(NSData *)arg0;
+- (void)setHideAlertTitle:(char)arg0;
+- (void)setAllowSnooze:(char)arg0;
+- (void)setInterruptAudioAndLockDevice:(char)arg0;
+- (void)setResumeApplicationInBackground:(char)arg0;
+- (void)setFireNotificationsWhenAppRunning:(char)arg0;
+- (void)setShowAlarmStatusBarItem:(char)arg0;
+- (void)setCustomLockSliderLabel:(NSString *)arg0;
+- (void)setFiredNotificationName:(NSString *)arg0;
+- (void)setSnoozedNotificationName:(NSString *)arg0;
+- (void)setIsTransient:(char)arg0;
+- (void)setRegion:(CLRegion *)arg0;
+- (void)setRegionTriggersOnce:(char)arg0;
+- (NSDate *)fireDate;
+- (NSCalendar *)repeatCalendar;
+- (int)totalRepeatCount;
+- (char)hasAction;
+- (NSString *)alertAction;
+- (NSString *)alertLaunchImage;
+- (NSString *)alertTitle;
+- (char)hideAlertTitle;
+- (char)allowSnooze;
+- (int)soundType;
+- (char)interruptAudioAndLockDevice;
+- (char)resumeApplicationInBackground;
+- (char)fireNotificationsWhenAppRunning;
+- (char)showAlarmStatusBarItem;
+- (NSString *)customLockSliderLabel;
+- (NSString *)firedNotificationName;
+- (NSString *)snoozedNotificationName;
+- (CLRegion *)region;
+- (char)regionTriggersOnce;
+- (NSDate *)nextFireDateForLastFireDate:(NSDate *)arg0;
+- (char)isTriggeredByDate;
+- (NSDate *)nextFireDateAfterDate:(NSDate *)arg0 localTimeZone:(NSObject *)arg1;
+- (int)compareFireDates:(id)arg0;
+- (void)clearNonSystemProperties;
+- (int)remainingRepeatCount;
+- (char)isTransient;
+
+@end

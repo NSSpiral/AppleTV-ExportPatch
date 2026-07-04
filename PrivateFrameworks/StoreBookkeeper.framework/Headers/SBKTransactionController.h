@@ -1,0 +1,123 @@
+/* Runtime dump - SBKTransactionController
+ * Image: /System/Library/PrivateFrameworks/StoreBookkeeper.framework/StoreBookkeeper
+ */
+
+@interface SBKTransactionController : NSObject <ISStoreURLOperationDelegate>
+{
+    char _enabled;
+    char _shouldAuthenticateIfNecessary;
+    char _isResolvingError;
+    <SBKTransactionControllerDelegate> * _delegate;
+    NSString * _domain;
+    NSURL * _requestURL;
+    SBKStoreAuthenticationController * _authenticationController;
+    SBKTransaction * _currentTransaction;
+    SSAccount * _account;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSOperationQueue * _operationQueue;
+    NSMutableArray * _pendingTransactions;
+    SBKTaskAssertion * _backgroundTaskAssertion;
+    id _networkTypeObserver;
+    int _conflictResolutionAttempts;
+}
+
+@property (weak) <SBKTransactionControllerDelegate> * delegate;
+@property (readonly, copy) NSString * domain;
+@property (readonly) NSURL * requestURL;
+@property (readonly) char enabled;
+@property (readonly) char idle;
+@property (retain) SBKStoreAuthenticationController * authenticationController;
+@property char shouldAuthenticateIfNecessary;
+@property (retain, nonatomic) SBKTransaction * currentTransaction;
+@property (retain) SSAccount * account;
+@property (retain) NSObject<OS_dispatch_queue> * queue;
+@property (retain) NSOperationQueue * operationQueue;
+@property (retain) NSMutableArray * pendingTransactions;
+@property char isResolvingError;
+@property (retain) SBKTaskAssertion * backgroundTaskAssertion;
+@property (weak) id networkTypeObserver;
+@property int conflictResolutionAttempts;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString * description;
+@property (readonly, copy) NSString * debugDescription;
+
+- (void)operation:(ISURLOperation *)arg0 failedWithError:(NSError *)arg1;
+- (void)_endBackgroundTask;
+- (void)dealloc;
+- (void)setDelegate:(<SBKTransactionControllerDelegate> *)arg0;
+- (<SBKTransactionControllerDelegate> *)delegate;
+- (NSString *)domain;
+- (void)setEnabled:(char)arg0;
+- (char)isEnabled;
+- (void)setOperationQueue:(NSOperationQueue *)arg0;
+- (void).cxx_destruct;
+- (void)operation:(ISURLOperation *)arg0 didReceiveResponse:(char)arg1;
+- (void)operation:(ISURLOperation *)arg0 finishedWithOutput:(AVPlayerLayer *)arg1;
+- (void)setDomain:(NSString *)arg0;
+- (NSObject<OS_dispatch_queue> *)queue;
+- (void)setQueue:(NSObject<OS_dispatch_queue> *)arg0;
+- (NSOperationQueue *)operationQueue;
+- (SSAccount *)account;
+- (void)setAccount:(SSAccount *)arg0;
+- (NSURL *)requestURL;
+- (NSMutableArray *)pendingTransactions;
+- (void)setPendingTransactions:(NSMutableArray *)arg0;
+- (void)_networkTypeChangedNotification:(NSNotification *)arg0;
+- (void)_onQueue_endBackgroundTask;
+- (NSObject *)_onQueue_clampsController;
+- (void)_onQueue_processPendingTransactions;
+- (void)_onQueue_cancelAllPendingTransactions:(id)arg0;
+- (char)_onQueue_isIdle;
+- (void)scheduleTransaction:(NSObject *)arg0;
+- (char)_delegateShouldScheduleTransaction:(NSObject *)arg0 error:(id *)arg1;
+- (void)_onQueue_scheduleTransaction:(NSObject *)arg0 isRetry:(char)arg1;
+- (void)_onQueue_transactionDidFail:(id)arg0 withError:(NSError *)arg1;
+- (void)_onQueue_cancelTransaction:(NSObject *)arg0 error:(NSError *)arg1;
+- (void)_storeOperationDidComplete:(id)arg0;
+- (void)_onQueue_resolveError:(NSError *)arg0 resolution:(int)arg1;
+- (void)_onQueue_beginBackgroundTask;
+- (SBKTaskAssertion *)backgroundTaskAssertion;
+- (void)_onQueue_transactionDidCancel:(id)arg0 withError:(NSError *)arg1;
+- (void)_onQueue_processCurrentTransaction;
+- (char)_onQueue_authenticationCanProcessTransaction:(NSObject *)arg0 error:(id *)arg1;
+- (void)_enqueueStoreOperation:(NSObject *)arg0;
+- (char)_onQueue_canScheduleTransaction:(NSObject *)arg0 error:(id *)arg1;
+- (void)_onQueue_addPendingTransaction:(NSObject *)arg0;
+- (char)_onQueue_isEnabledForTransaction:(NSObject *)arg0 error:(id *)arg1;
+- (void)_onQueue_assertIsTransactionValid:(id)arg0 error:(id *)arg1;
+- (char)_onQueue_clampsCanScheduleTransaction:(NSObject *)arg0 error:(id *)arg1;
+- (void)_delegateTransactionDidFinish:(id)arg0;
+- (char)_delegateTransactionDidFail:(id)arg0 withError:(NSError *)arg1;
+- (void)_resolveError:(NSError *)arg0 resolution:(int)arg1;
+- (void)_delegateTransactionDidCancel:(id)arg0 withError:(NSError *)arg1;
+- (void)_onQueue_currentTransactionDidFinish;
+- (void)_processDataInResponse:(NSURLResponse *)arg0;
+- (char)shouldAuthenticateIfNecessary;
+- (void)_onQueue_performRetryErrorHandlingForError:(NSError *)arg0;
+- (void)_onQueue_performCancelErrorHandlingForError:(NSError *)arg0;
+- (void)_onQueue_performDefaultErrorHandlingForError:(NSError *)arg0;
+- (char)_sendFinishedBlockForTransaction:(NSObject *)arg0 success:(char)arg1 cancelled:(char)arg2 error:(NSError *)arg3 handledAsFinishedBlock:(char *)arg4;
+- (void)_onQueue_processOperationOutput:(NSObject *)arg0 operation:(ISURLOperation *)arg1 operationAuthenticated:(char)arg2;
+- (SBKTransactionController *)initWithDomain:(NSString *)arg0 requestURL:(NSURL *)arg1;
+- (void)setRequestURL:(NSURL *)arg0;
+- (char)isIdle;
+- (void)scheduleTransaction:(NSObject *)arg0 withTransactionFinishedBlock:(id /* block */)arg1;
+- (void)cancelScheduledTransaction:(NSObject *)arg0;
+- (void)cancelAllTransactions;
+- (void)cancelAllTransactionsCancelCode:(int)arg0;
+- (SBKStoreAuthenticationController *)authenticationController;
+- (void)setAuthenticationController:(SBKStoreAuthenticationController *)arg0;
+- (void)setShouldAuthenticateIfNecessary:(char)arg0;
+- (SBKTransaction *)currentTransaction;
+- (void)setCurrentTransaction:(SBKTransaction *)arg0;
+- (char)isResolvingError;
+- (void)setIsResolvingError:(char)arg0;
+- (void)setBackgroundTaskAssertion:(SBKTaskAssertion *)arg0;
+- (NSObject *)networkTypeObserver;
+- (void)setNetworkTypeObserver:(NSObject *)arg0;
+- (int)conflictResolutionAttempts;
+- (void)setConflictResolutionAttempts:(int)arg0;
+- (void)_beginBackgroundTask;
+
+@end

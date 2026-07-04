@@ -1,0 +1,131 @@
+/* Runtime dump - ISDialog
+ * Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
+ */
+
+@interface ISDialog : NSObject <SSXPCCoding>
+{
+    char _allowsBioAuthorization;
+    char _allowDuplicates;
+    SSAuthenticationContext * _authenticationContext;
+    char _authorizationIsForced;
+    NSArray * _buttons;
+    int _defaultButtonIndex;
+    NSString * _displayCountKey;
+    char _dismissOnHomeButton;
+    char _dismissOnLock;
+    char _expectsResponse;
+    char _groupsTextFields;
+    int _kind;
+    NSLock * _lock;
+    int _maxDisplayCount;
+    NSString * _message;
+    char _noDefaultButton;
+    char _oneButtonPerLine;
+    char _shouldDismissAfterUnlock;
+    char _shouldDisplayAsTopMost;
+    char _shouldPendInSetupIfNotAllowed;
+    NSArray * _textFields;
+    NSString * _title;
+    int _unlockActionButtonIndex;
+    NSMutableDictionary * _userInfo;
+    struct __CFDictionary * _userNotificationValues;
+    char _displaysOnLockscreen;
+}
+
+@property (retain) NSArray * buttons;
+@property int defaultButtonIndex;
+@property char oneButtonPerLine;
+@property int unlockActionButtonIndex;
+@property char groupsTextFields;
+@property (retain) NSArray * textFields;
+@property (retain) NSString * message;
+@property (retain) NSString * title;
+@property char allowDuplicates;
+@property char authorizationIsForced;
+@property char dismissOnHomeButton;
+@property char dismissOnLock;
+@property char expectsResponse;
+@property char shouldDismissAfterUnlock;
+@property char shouldDisplayAsTopMost;
+@property char shouldPendInSetupIfNotAllowed;
+@property char displaysOnLockscreen;
+@property char noDefaultButton;
+@property int kind;
+@property (copy) SSAuthenticationContext * authenticationContext;
+@property (copy) NSString * displayCountKey;
+@property int maximumDisplayCount;
+@property (readonly) char displayable;
+@property (readonly) char allowsBioAuthorization;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString * description;
+@property (readonly, copy) NSString * debugDescription;
+
++ (int)displayCountForKey:(NSString *)arg0;
+
+- (void)setTextFields:(NSArray *)arg0;
+- (void)setAuthenticationContext:(SSAuthenticationContext *)arg0;
+- (NSDictionary *)copyXPCEncoding;
+- (ISDialog *)initWithXPCEncoding:(NSString *)arg0;
+- (void)dealloc;
+- (ISDialog *)init;
+- (void)setTitle:(NSString *)arg0;
+- (char)isEqual:(NSObject *)arg0;
+- (NSString *)title;
+- (NSString *)message;
+- (int)defaultButtonIndex;
+- (void)setMessage:(NSString *)arg0;
+- (NSArray *)textFields;
+- (void)setDefaultButtonIndex:(int)arg0;
+- (void)setGroupsTextFields:(char)arg0;
+- (char)groupsTextFields;
+- (NSArray *)buttons;
+- (int)kind;
+- (ISDialog *)initWithDialogDictionary:(NSDictionary *)arg0;
+- (ISDialog *)initWithTitle:(NSString *)arg0 message:(NSString *)arg1;
+- (SSAuthenticationContext *)authenticationContext;
+- (void)setKind:(int)arg0;
+- (ISDialog *)initWithError:(NSError *)arg0;
+- (void)setButtons:(NSArray *)arg0;
+- (char)allowsBioAuthorization;
+- (char)noDefaultButton;
+- (char)isDisplayable;
+- (NSNotification *)copyUserNotification;
+- (char)allowDuplicates;
+- (void)incrementDisplayCount;
+- (ISDialog *)initWithAuthenticationChallege:(id)arg0;
+- (void)setAllowDuplicates:(char)arg0;
+- (void)setExpectsResponse:(char)arg0;
+- (void)setAuthorizationIsForced:(char)arg0;
+- (int)_kindForString:(NSString *)arg0;
+- (int)unlockActionButtonIndex;
+- (char)displaysOnLockscreen;
+- (char)dismissOnHomeButton;
+- (char)dismissOnLock;
+- (char)oneButtonPerLine;
+- (char)shouldDisplayAsTopMost;
+- (char)shouldDismissAfterUnlock;
+- (char)shouldPendInSetupIfNotAllowed;
+- (ISDialog *)initWithOfferDeviceError:(NSError *)arg0;
+- (void *)copyValueForCFUserNotificationKey:(struct __CFString *)arg0;
+- (NSString *)displayCountKey;
+- (int)maximumDisplayCount;
+- (void)setButtonsWithTitles:(id)arg0;
+- (void)setDisplayCountKey:(NSString *)arg0;
+- (void)setMaximumDisplayCount:(int)arg0;
+- (void)setValue:(NSObject *)arg0 forUserInfoKey:(NSString *)arg1;
+- (void)setValue:(void *)arg0 forCFUserNotificationKey:(struct __CFString *)arg1;
+- (NSString *)valueForUserInfoKey:(NSString *)arg0;
+- (char)authorizationIsForced;
+- (void)setDismissOnHomeButton:(char)arg0;
+- (void)setDismissOnLock:(char)arg0;
+- (char)expectsResponse;
+- (void)setNoDefaultButton:(char)arg0;
+- (void)setOneButtonPerLine:(char)arg0;
+- (void)setShouldDismissAfterUnlock:(char)arg0;
+- (void)setShouldDisplayAsTopMost:(char)arg0;
+- (void)setShouldPendInSetupIfNotAllowed:(char)arg0;
+- (void)setUnlockActionButtonIndex:(int)arg0;
+- (void)setDisplaysOnLockscreen:(char)arg0;
+
+@end

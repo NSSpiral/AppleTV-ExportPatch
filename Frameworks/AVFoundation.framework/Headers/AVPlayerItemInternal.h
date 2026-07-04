@@ -1,0 +1,107 @@
+/* Runtime dump - AVPlayerItemInternal
+ * Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
+ */
+
+@interface AVPlayerItemInternal : NSObject
+{
+    NSObject<OS_dispatch_queue> * ivarAccessQueue;
+    AVWeakReference * weakReference;
+    NSObject<OS_dispatch_queue> * figConfigurationQueue;
+    struct OpaqueVTPixelBufferAttributesMediator * pixelBufferAttributeMediator;
+    struct OpaqueCMTimebase * proxyTimebase;
+    char isCurrentPlayerItem;
+    NSArray * cachedTracks;
+    NSMutableArray * syncLayers;
+    NSArray * itemOutputs;
+    NSMutableArray * itemVideoOutputs;
+    NSMutableDictionary * itemLegibleOutputsForKeys;
+    NSMutableDictionary * itemMetadataOutputsForKeys;
+    char suppressesVideoLayers;
+    struct OpaqueCMTimebase * figTimebase;
+    struct OpaqueFigPlaybackItem * figPlaybackItem;
+    AVPlayerItem * previousItem;
+    AVPlayerItem * nextItem;
+    struct OpaqueFigCPEProtector * figCPEProtector;
+    <AVPlayerItemDelegate> * delegate;
+    AVWeakReference * playerReference;
+    AVPlayerConnection * playerConnection;
+    NSObject<OS_dispatch_queue> * stateDispatchQueue;
+    AVPropertyStorage * propertyStorage;
+    int status;
+    NSError * error;
+    NSURL * URL;
+    AVAsset * asset;
+    NSArray * automaticallyLoadedAssetKeys;
+    AVAsset * assetWithFigPlaybackItem;
+    NSArray * trackIDsForAssetWithFigPlaybackItem;
+    NSArray * timedMetadata;
+    struct ? initialTime;
+    struct ? initialToleranceBefore;
+    struct ? initialToleranceAfter;
+    struct ? forwardPlaybackEndTime;
+    struct ? reversePlaybackEndTime;
+    NSDate * initialDate;
+    NSDate * initialEstimatedDate;
+    char initialLimitReadAhead;
+    char allowsExtendedReadAhead;
+    struct ? maximumTrailingBufferDuration;
+    int initialPlaybackLikelyToKeepUpTrigger;
+    char initialAlwaysMonitorsPlayability;
+    char initialWillNeverSeekBackwardsHint;
+    char initialContinuesPlayingDuringPrerollForSeek;
+    char initialContinuesPlayingDuringPrerollForRateChange;
+    char usesIFrameOnlyPlaybackForHighRateScaledEdits;
+    char usesIFrameOnlyPlaybackForHighRateScaledEditsWasSet;
+    struct ? minimumIntervalForIFrameOnlyPlayback;
+    char minimumIntervalForIFrameOnlyPlaybackWasSet;
+    float speedThresholdForIFrameOnlyPlayback;
+    char speedThresholdForIFrameOnlyPlaybackWasSet;
+    struct __CFString * initialFigTimePitchAlgorithm;
+    char savesDownloadedDataToDiskWhenDone;
+    char nonForcedSubtitlesEnabled;
+    char networkUsuallyExceedsMaxBitRate;
+    char allowProgressiveSwitchUp;
+    double preferredPeakBitRate;
+    AVAudioMix * audioMix;
+    AVVideoComposition * videoComposition;
+    AVWeakReference * clientsOriginalVideoComposition;
+    void * figVideoCompositor;
+    AVCustomVideoCompositorSession * customVideoCompositorSession;
+    char seekingWaitsForVideoCompositionRendering;
+    NSArray * textStyleRules;
+    NSDictionary * gaplessInfo;
+    int initialVariantIndex;
+    NSDictionary * audibleDRMInfo;
+    NSDictionary * rampInOutInfo;
+    float soundCheckVolumeNormalization;
+    float volumeAdjustment;
+    NSMutableArray * handlersToCallWhenReadyForEnqueueing;
+    NSMutableDictionary * mediaOptionsSelectedByClient;
+    char haveInitialSamples;
+    char haveCPEProtector;
+    char didSetAssetToAssetWithFigPlaybackItem;
+    char didBecomeReadyForBasicInspection;
+    char didBecomeReadyForInspectionOfMediaSelectionOptions;
+    char didBecomeReadyForInspectionOfTracks;
+    char didBecomeReadyForInspectionOfPresentationSize;
+    char didBecomeReadyForInspectionOfDuration;
+    char didInformObserversAboutAvailabilityOfTracks;
+    char didFireKVOForAssetForNonStreamingItem;
+    char wasInitializedWithURL;
+    char needTimedMetadataNotification;
+    char externalSubtitlesEnabled;
+    char externalProtectionRequested;
+    char requiresAccessLog;
+    int eqPreset;
+    struct OpaqueFigSimpleMutex * seekIDMutex;
+    unsigned int nextSeekIDToGenerate;
+    int pendingSeekID;
+    id seekCompletionHandler;
+    NSString * dataYouTubeID;
+    unsigned int RTCReportingFlags;
+    NSString * serviceIdentifier;
+    NSString * mediaKind;
+    unsigned int restrictions;
+}
+
+@end

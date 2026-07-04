@@ -1,0 +1,137 @@
+/* Runtime dump - TSDTexturedRectangle
+ * Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
+ */
+
+@interface TSDTexturedRectangle : NSObject <NSCopying>
+{
+    struct CGPoint mOffset;
+    struct CGPoint mOriginalPosition;
+    struct CGSize mSize;
+    struct CGRect mContentRect;
+    struct CGRect mOriginalFrame;
+    CALayer * mLayer;
+    id mRenderBlock;
+    struct CGImage * mSourceImage;
+    struct CGImage * mBakedImage;
+    TSDTextureSet * mParent;
+    int mTextureType;
+    float mTextureOpacity;
+    unsigned int mSingleTextureName;
+    char mSingleTextureContainsMipmaps;
+    char mIsFlattened;
+    char mDidInitFromGLTexture;
+    NSMutableDictionary * mAttributes;
+    NSMutableArray * mTags;
+    struct CGColorSpace * mColorSpace;
+    TSDBitmapRenderingQualityInfo * mBitmapRenderingQualityInfo;
+    char _isVerticalText;
+    float _textBaseline;
+    float _textXHeight;
+    TSUColor * _textColor;
+    NSString * _text;
+    struct CGSize _singleTextureSize;
+    struct _NSRange _textRange;
+}
+
+@property (readonly, nonatomic) unsigned int singleTextureName;
+@property (readonly, nonatomic) struct CGSize singleTextureSize;
+@property (readonly, nonatomic) unsigned int singleTextureTarget;
+@property (nonatomic) struct CGPoint originalPosition;
+@property (nonatomic) struct CGPoint offset;
+@property (nonatomic) struct CGSize size;
+@property (readonly, nonatomic) struct CGRect frame;
+@property (readonly, nonatomic) struct CGRect frameOnCanvas;
+@property (nonatomic) struct CGRect contentRect;
+@property (nonatomic) TSDTextureSet * parent;
+@property (readonly, nonatomic) CALayer * layer;
+@property (readonly, nonatomic) struct CGImage * image;
+@property (retain, nonatomic) NSMutableArray * tags;
+@property (nonatomic) int textureType;
+@property (nonatomic) float textureOpacity;
+@property (readonly, nonatomic) float singleTextureOpacity;
+@property (nonatomic) char isFlattened;
+@property (nonatomic) struct CGColorSpace * colorSpace;
+@property (readonly, nonatomic) char isRenderable;
+@property (readonly, nonatomic) char isImageSource;
+@property (readonly, nonatomic) char isBackgroundTexture;
+@property (readonly, nonatomic) CALayer * parentLayer;
+@property (nonatomic) char isVerticalText;
+@property (nonatomic) float textBaseline;
+@property (nonatomic) float textXHeight;
+@property (retain, nonatomic) TSUColor * textColor;
+@property (copy, nonatomic) NSString * text;
+@property (nonatomic) struct _NSRange textRange;
+@property (retain, nonatomic) TSDBitmapRenderingQualityInfo * bitmapRenderingQualityInfo;
+
++ (struct CGRect)boundingRectForTextures:(id)arg0;
++ (struct CGRect)boundingRectOnCanvasForTextures:(id)arg0;
+
+- (TSDBitmapRenderingQualityInfo *)bitmapRenderingQualityInfo;
+- (TSDTexturedRectangle *)initWithSize:(struct CGSize)arg0 offset:(struct CGPoint)arg1 renderBlock:(id /* block */)arg2;
+- (void)setTextureOpacity:(float)arg0;
+- (struct CGRect)frameOnCanvas;
+- (void)releaseSingleTexture;
+- (void)p_updateFrame;
+- (struct CGColorSpace *)p_colorSpace;
+- (struct CGImage *)p_newImageAndBufferWithAngle:(float)arg0 scale:(float)arg1 offset:(struct CGPoint)arg2;
+- (void)resetToSourceImage;
+- (unsigned int)singleTextureTarget;
+- (void)setupSingleTextureAndGenerateMipMaps:(char)arg0;
+- (void)setupSingleTexture;
+- (TSDTexturedRectangle *)initWithTextureInfo:(NSDictionary *)arg0 frame:(struct CGRect)arg1;
+- (char)isImageSource;
+- (void)adjustAnchorRelativeToCenterOfRotation:(struct CGPoint)arg0;
+- (void)resetAnchorPoint;
+- (char)isRenderable;
+- (void)renderLayerContentsIfNeeded;
+- (unsigned int)singleTextureName;
+- (struct CGSize)singleTextureSize;
+- (float)singleTextureOpacity;
+- (void)bakeLayerWithAngle:(float)arg0 scale:(float)arg1;
+- (void)renderIntoContext:(struct CGContext *)arg0;
+- (char)isBackgroundTexture;
+- (struct CGRect)convertToCanvasCoordinates:(id)arg0;
+- (void)setBitmapRenderingQualityInfo:(TSDBitmapRenderingQualityInfo *)arg0;
+- (struct CGPoint)originalPosition;
+- (void)setOriginalPosition:(struct CGPoint)arg0;
+- (float)textureOpacity;
+- (float)textXHeight;
+- (void)setTextXHeight:(float)arg0;
+- (void)setColorSpace:(struct CGColorSpace *)arg0;
+- (struct CGColorSpace *)colorSpace;
+- (int)textureType;
+- (void)setTextureType:(int)arg0;
+- (void)dealloc;
+- (struct CGSize)size;
+- (CALayer *)layer;
+- (struct CGRect)frame;
+- (NSString *)description;
+- (TSDTexturedRectangle *)copyWithZone:(struct _NSZone *)arg0;
+- (void)setTextColor:(TSUColor *)arg0;
+- (NSString *)text;
+- (void)setText:(NSString *)arg0;
+- (TSDTexturedRectangle *)initWithCGImage:(struct CGImage *)arg0;
+- (struct CGImage *)image;
+- (void)setSize:(struct CGSize)arg0;
+- (TSUColor *)textColor;
+- (NSMutableArray *)tags;
+- (struct CGRect)contentRect;
+- (void)setOffset:(struct CGPoint)arg0;
+- (struct CGPoint)offset;
+- (void)setContentRect:(struct CGRect)arg0;
+- (TSDTexturedRectangle *)initWithLayer:(CALayer *)arg0;
+- (struct _NSRange)textRange;
+- (void)setTextRange:(struct _NSRange)arg0;
+- (CALayer *)parentLayer;
+- (void)setTags:(NSMutableArray *)arg0;
+- (void)teardown;
+- (void)setIsVerticalText:(char)arg0;
+- (char)isVerticalText;
+- (void)setIsFlattened:(char)arg0;
+- (char)isFlattened;
+- (TSDTextureSet *)parent;
+- (void)setParent:(TSDTextureSet *)arg0;
+- (float)textBaseline;
+- (void)setTextBaseline:(float)arg0;
+
+@end

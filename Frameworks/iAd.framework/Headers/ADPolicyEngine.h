@@ -1,0 +1,138 @@
+/* Runtime dump - ADPolicyEngine
+ * Image: /System/Library/Frameworks/iAd.framework/iAd
+ */
+
+@interface ADPolicyEngine : NSObject <ADBannerViewInternalDelegate, ADInterstitialAdDelegate>
+{
+    char _visuallyEngaged;
+    char _enabled;
+    char _canAutoEnable;
+    char _sharedInterstitialAdIsInUse;
+    char _sharedMediaPlayerVideoAdClaimed;
+    NSObject<OS_dispatch_queue> * _policyEngineQueue;
+    NSMutableArray * _queuedCommands;
+    NSData * _heartbeatToken;
+    NSError * _heartbeatTokenError;
+    ADInterstitialAd * _sharedInterstitialAd;
+    NSString * _sharedInterstitialSection;
+    NSURL * _sharedInterstitialServerURL;
+    NSString * _sharedInterstitialAuthenticationUserName;
+    ADBannerView * _sharedMediaPlayerVideoAd;
+    NSError * _lastSharedMediaPlayerVideoAdError;
+    NSData * _currentStationData;
+    NSData * _currentSongData;
+    double _nextInterstitialPresentationTime;
+    double _nextPrerollPlaybackTime;
+    double _heartbeatTokenExpiration;
+}
+
+@property (nonatomic) char visuallyEngaged;
+@property (nonatomic) double nextInterstitialPresentationTime;
+@property (nonatomic) double nextPrerollPlaybackTime;
+@property (retain, nonatomic) NSObject<OS_dispatch_queue> * policyEngineQueue;
+@property (readonly, nonatomic) NSMutableArray * queuedCommands;
+@property (nonatomic) char enabled;
+@property (nonatomic) char canAutoEnable;
+@property (retain, nonatomic) NSData * heartbeatToken;
+@property (retain, nonatomic) NSError * heartbeatTokenError;
+@property (nonatomic) double heartbeatTokenExpiration;
+@property (retain, nonatomic) ADInterstitialAd * sharedInterstitialAd;
+@property (nonatomic) char sharedInterstitialAdIsInUse;
+@property (copy, nonatomic) NSString * sharedInterstitialSection;
+@property (copy, nonatomic) NSURL * sharedInterstitialServerURL;
+@property (copy, nonatomic) NSString * sharedInterstitialAuthenticationUserName;
+@property (retain, nonatomic) ADBannerView * sharedMediaPlayerVideoAd;
+@property (nonatomic) char sharedMediaPlayerVideoAdClaimed;
+@property (retain, nonatomic) NSError * lastSharedMediaPlayerVideoAdError;
+@property (retain, nonatomic) NSData * currentStationData;
+@property (retain, nonatomic) NSData * currentSongData;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString * description;
+@property (readonly, copy) NSString * debugDescription;
+
++ (ADPolicyEngine *)sharedEngine;
+
+- (ADPolicyEngine *)init;
+- (void)setEnabled:(char)arg0;
+- (char)enabled;
+- (void)bannerViewActionDidFinish:(ADBannerView *)arg0;
+- (char)bannerViewActionShouldBegin:(ADBannerView *)arg0 willLeaveApplication:(char)arg1;
+- (void)bannerViewWillLoadAd:(ADBannerView *)arg0;
+- (void)bannerViewDidLoadAd:(ADBannerView *)arg0;
+- (void)bannerView:(ADBannerView *)arg0 didFailToReceiveAdWithError:(NSError *)arg1;
+- (void)interstitialAdDidUnload:(ADInterstitialAd *)arg0;
+- (void)interstitialAdDidLoad:(ADInterstitialAd *)arg0;
+- (void)interstitialAd:(ADInterstitialAd *)arg0 didFailWithError:(NSError *)arg1;
+- (void)setHeartbeatToken:(NSData *)arg0 expirationDate:(double)arg1 error:(NSError *)arg2;
+- (void)adSheetDidIdleDisablePolicyEngine;
+- (void)setNextInterstitialPresentationTime:(double)arg0;
+- (void)finishedPresentingSharedInterstitialAd;
+- (char)visuallyEngaged;
+- (void)_adSheetConnectionBootstrapped;
+- (NSObject<OS_dispatch_queue> *)policyEngineQueue;
+- (void)_enablePolicyEngineWithReason:(NSString *)arg0;
+- (void)disablePolicyEngine;
+- (NSMutableArray *)queuedCommands;
+- (void)setHeartbeatToken:(NSData *)arg0;
+- (void)setHeartbeatTokenError:(NSError *)arg0;
+- (void)setHeartbeatTokenExpiration:(double)arg0;
+- (NSError *)heartbeatTokenError;
+- (NSData *)heartbeatToken;
+- (double)heartbeatTokenExpiration;
+- (char)canAutoEnable;
+- (void)_performWhenAdSheetConnectionEstablished:(id)arg0;
+- (void)acquireMatchSlotWithBodyParameters:(NSMutableDictionary *)arg0 completionHandler:(id /* block */)arg1;
+- (NSURL *)sharedInterstitialServerURL;
+- (NSString *)sharedInterstitialSection;
+- (NSString *)sharedInterstitialAuthenticationUserName;
+- (ADInterstitialAd *)sharedInterstitialAd;
+- (char)sharedInterstitialAdIsInUse;
+- (double)nextInterstitialPresentationTime;
+- (void)setSharedInterstitialAdIsInUse:(char)arg0;
+- (void)setSharedMediaPlayerVideoAd:(ADBannerView *)arg0;
+- (ADBannerView *)sharedMediaPlayerVideoAd;
+- (char)sharedMediaPlayerVideoAdClaimed;
+- (NSError *)lastSharedMediaPlayerVideoAdError;
+- (double)nextPrerollPlaybackTime;
+- (void)setSharedMediaPlayerVideoAdClaimed:(char)arg0;
+- (void)setLastSharedMediaPlayerVideoAdError:(NSError *)arg0;
+- (void)sharedMediaPlayerVideoAdWillLoad;
+- (void)sharedMediaPlayerVideoAdDidLoad;
+- (void)sharedMediaPlayerVideoAdDidFailToReceiveAdWithError:(NSError *)arg0;
+- (void)sharedMediaPlayerVideoAdActionDidFinish;
+- (void)songBeganWithTags:(id)arg0 completionHandler:(id /* block */)arg1;
+- (void)enablePolicyEngine;
+- (NSString *)heartbeatToken:(id *)arg0;
+- (void)setVisuallyEngaged:(char)arg0;
+- (void)requestAdsForSlot:(id)arg0 completionHandler:(id /* block */)arg1;
+- (void)didEnterStation:(id)arg0;
+- (void)didBeginPlaybackOnStation:(id)arg0 song:(id)arg1;
+- (void)didStopPlaybackOnStation:(id)arg0;
+- (void)reportStationTileImpression:(id)arg0;
+- (void)reportClientEvent:(NSObject *)arg0;
+- (void)acquireMatchSlotWithUserConfirmation:(char)arg0 completionHandler:(id /* block */)arg1;
+- (void)optimalTransmissionWindowDidOpen;
+- (void)removeRecordForAccountWithIdentifier:(NSString *)arg0;
+- (void)setSharedInterstitialSection:(NSString *)arg0;
+- (void)setSharedInterstitialServerURL:(NSURL *)arg0;
+- (void)setSharedInterstitialAuthenticationUserName:(NSString *)arg0;
+- (char)canPresentSharedInterstitialAdWithResultMessage:(id *)arg0;
+- (char)claimSharedMediaPlayerVideoAdWithError:(id *)arg0;
+- (void)relinquishSharedMediaPlayerVideoAd;
+- (void)setStationData:(NSData *)arg0 withInitialTrackBlobs:(id)arg1;
+- (void)stationChanged:(id)arg0 completionHandler:(id /* block */)arg1;
+- (void)songBeganWithTags:(id)arg0;
+- (void)songStopped;
+- (void)songSkipped;
+- (void)reportListeningPresenceEvent:(int)arg0;
+- (void)setNextPrerollPlaybackTime:(double)arg0;
+- (void)setPolicyEngineQueue:(NSObject<OS_dispatch_queue> *)arg0;
+- (void)setCanAutoEnable:(char)arg0;
+- (void)setSharedInterstitialAd:(ADInterstitialAd *)arg0;
+- (NSData *)currentStationData;
+- (void)setCurrentStationData:(NSData *)arg0;
+- (NSData *)currentSongData;
+- (void)setCurrentSongData:(NSData *)arg0;
+
+@end

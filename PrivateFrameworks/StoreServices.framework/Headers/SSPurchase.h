@@ -1,0 +1,130 @@
+/* Runtime dump - SSPurchase
+ * Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
+ */
+
+@interface SSPurchase : NSObject <SSXPCCoding, NSCoding, NSCopying>
+{
+    NSNumber * _accountIdentifier;
+    NSString * _affiliateIdentifier;
+    char _backgroundPurchase;
+    int _batchIdentifier;
+    NSString * _buyParameters;
+    char _createsDownloads;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    char _displaysOnLockScreen;
+    SSDownloadPolicy * _downloadPolicy;
+    NSMutableDictionary * _downloadProperties;
+    NSNumber * _enabledServiceType;
+    long long _expectedDownloadFileSize;
+    NSArray * _filteredAssetTypes;
+    NSArray * _gratisIdentifiers;
+    char _ignoresForcedPasswordRestriction;
+    SSItem * _item;
+    SSItemOffer * _itemOffer;
+    SSNetworkConstraints * _networkConstraints;
+    long long _placeholderDownloadIdentifier;
+    char _preauthenticated;
+    SSURLRequestProperties * _requestProperties;
+    id _requiredDeviceCapabilities;
+    long long _uniqueIdentifier;
+    char _usesLocalRedownloadParametersIfPossible;
+}
+
+@property (retain) NSNumber * accountIdentifier;
+@property (copy) NSString * affiliateIdentifier;
+@property (copy) NSString * buyParameters;
+@property (nonatomic) char createsDownloads;
+@property (copy) NSArray * filteredAssetTypes;
+@property char backgroundPurchase;
+@property long long placeholderDownloadIdentifier;
+@property (copy) SSURLRequestProperties * requestProperties;
+@property (copy) NSDictionary * downloadProperties;
+@property char displaysOnLockScreen;
+@property (copy) SSDownloadPolicy * downloadPolicy;
+@property char ignoresForcedPasswordRestriction;
+@property (copy) SSNetworkConstraints * networkConstraints;
+@property int batchIdentifier;
+@property (copy) NSNumber * enabledServiceType;
+@property long long expectedDownloadFileSize;
+@property (copy) NSArray * gratisIdentifiers;
+@property (copy) id requiredDeviceCapabilities;
+@property long long uniqueIdentifier;
+@property char usesLocalRedownloadParametersIfPossible;
+@property char preauthenticated;
+@property (readonly) NSData * databaseEncoding;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString * description;
+@property (readonly, copy) NSString * debugDescription;
+
++ (NSDictionary *)purchaseWithBuyParameters:(NSString *)arg0;
++ (NSString *)newPurchaseWithDatabaseEncoding:(NSData *)arg0;
++ (NSString *)newPurchaseWithXPCEncoding:(NSString *)arg0;
+
+- (NSString *)buyParameters;
+- (void)setBuyParameters:(NSString *)arg0;
+- (NSDictionary *)copyXPCEncoding;
+- (SSPurchase *)initWithXPCEncoding:(NSString *)arg0;
+- (long long)placeholderDownloadIdentifier;
+- (void)setIgnoresForcedPasswordRestriction:(char)arg0;
+- (void)setDownloadPolicy:(SSDownloadPolicy *)arg0;
+- (void)setBackgroundPurchase:(char)arg0;
+- (void)setDisplaysOnLockScreen:(char)arg0;
+- (void)setValue:(NSObject *)arg0 forDownloadProperty:(NSObject *)arg1;
+- (NSObject *)valueForDownloadProperty:(NSObject *)arg0;
+- (void)setAccountIdentifier:(NSNumber *)arg0;
+- (void)dealloc;
+- (SSPurchase *)initWithCoder:(NSCoder *)arg0;
+- (void)encodeWithCoder:(NSCoder *)arg0;
+- (SSPurchase *)init;
+- (char)isEqual:(NSObject *)arg0;
+- (unsigned int)hash;
+- (SSItem *)item;
+- (SSPurchase *)copyWithZone:(struct _NSZone *)arg0;
+- (SSPurchase *)initWithItem:(SSItem *)arg0;
+- (long long)uniqueIdentifier;
+- (void)setUniqueIdentifier:(long long)arg0;
+- (void)setCreatesDownloads:(char)arg0;
+- (NSNumber *)accountIdentifier;
+- (SSURLRequestProperties *)requestProperties;
+- (void)setRequestProperties:(SSURLRequestProperties *)arg0;
+- (SSDownloadPolicy *)downloadPolicy;
+- (SSNetworkConstraints *)networkConstraints;
+- (void)setNetworkConstraints:(SSNetworkConstraints *)arg0;
+- (SSPurchase *)initWithItem:(SSItem *)arg0 offer:(NSDictionary *)arg1;
+- (NSArray *)requiredDeviceCapabilities;
+- (void)setRequiredDeviceCapabilities:(NSArray *)arg0;
+- (char)createsDownloads;
+- (SSPurchase *)_initSSPurchase;
+- (void)_setValuesUsingDatabaseEncoding:(NSString *)arg0;
+- (void)_addEntriesToDatabaseEncoding:(NSString *)arg0;
+- (NSString *)affiliateIdentifier;
+- (char)displaysOnLockScreen;
+- (NSDictionary *)downloadProperties;
+- (NSArray *)filteredAssetTypes;
+- (char)ignoresForcedPasswordRestriction;
+- (char)isBackgroundPurchase;
+- (void)setAffiliateIdentifier:(NSString *)arg0;
+- (void)setDownloadProperties:(NSDictionary *)arg0;
+- (void)setFilteredAssetTypes:(NSArray *)arg0;
+- (SSPurchase *)initWithDatabaseEncoding:(NSData *)arg0;
+- (int)batchIdentifier;
+- (NSData *)databaseEncoding;
+- (NSNumber *)enabledServiceType;
+- (long long)expectedDownloadFileSize;
+- (NSArray *)gratisIdentifiers;
+- (SSItemOffer *)itemOffer;
+- (char)isPreauthenticated;
+- (void)setBatchIdentifier:(int)arg0;
+- (void)setDefaultUserAgent:(id)arg0;
+- (void)setEnabledServiceType:(NSNumber *)arg0;
+- (void)setExpectedDownloadFileSize:(long long)arg0;
+- (void)setGratisIdentifiers:(NSArray *)arg0;
+- (void)setPlaceholderDownloadIdentifier:(long long)arg0;
+- (void)setPreauthenticated:(char)arg0;
+- (void)setUsesLocalRedownloadParametersIfPossible:(char)arg0;
+- (char)usesLocalRedownloadParametersIfPossible;
+- (NSDictionary *)downloadMetadata;
+- (void)setDownloadMetadata:(NSData *)arg0;
+
+@end

@@ -1,0 +1,10 @@
+/* Runtime dump - AVCaptureAudioChannelInternal
+ * Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
+ */
+
+@interface AVCaptureAudioChannelInternal : NSObject
+{
+    AVCaptureConnection * connection;
+}
+
+@end

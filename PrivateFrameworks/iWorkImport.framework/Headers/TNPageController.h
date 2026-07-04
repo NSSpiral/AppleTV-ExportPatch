@@ -1,0 +1,131 @@
+/* Runtime dump - TNPageController
+ * Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
+ */
+
+@interface TNPageController : NSObject
+{
+    TNDocumentRoot * mDocumentRoot;
+    TNPageCoordinateDictionary * mPageLayoutCache;
+    TSUPointerKeyDictionary * mHintCacheDictionary;
+    TSUPointerKeyDictionary * mSheetPageCountCache;
+    TNSheet * mSheet;
+    struct ? mMaxPageCoordinate;
+    char mMaxPageCoordinateValid;
+    NSMutableDictionary * mCachedAutoFitContentScaleDictionary;
+    TNPageCoordinateDictionary * mHeaderLayerCache;
+    TNPageCoordinateDictionary * mFooterLayerCache;
+    int mCachedPageCountDuringDynamicContentScaleChange;
+    int mPriorPageCount;
+    int mSubsequentPageCount;
+    char mPageCountsValid;
+    char mComputingPageCounts;
+    char mInDynamicContentScaleChange;
+    float mHeaderTextHeight;
+    float mFooterTextHeight;
+    NSObject<TNPageControllerDelegate> * mDelegate;
+    TNPrintProperties * _printProperties;
+    float mUserViewScale;
+}
+
+@property (nonatomic) TNDocumentRoot * documentRoot;
+@property (nonatomic) NSObject<TNPageControllerDelegate> * delegate;
+@property (nonatomic) TNSheet * sheet;
+@property (readonly) struct CGSize pageSize;
+@property (readonly) struct CGRect contentFrame;
+@property (readonly) TNPrintProperties * printProperties;
+@property (readonly) char portrait;
+@property (readonly) unsigned int numPages;
+@property (readonly) float contentScale;
+@property (nonatomic) float userViewScale;
+@property (nonatomic) float headerTextHeight;
+@property (nonatomic) float footerTextHeight;
+@property (readonly, nonatomic) char inDynamicContentScaleChange;
+@property (readonly) struct CGSize pageSizeWithGutter;
+
++ (float)p_contentScaleAutoFitForSheet:(NSObject *)arg0;
++ (NSDictionary *)p_cachedAutoFitContentScaleDictionary;
++ (float)autoFitContentScaleForSheet:(NSObject *)arg0;
+
+- (TNPageController *)initWithDocumentRoot:(TNDocumentRoot *)arg0;
+- (char)isPagePlaceholderAtPageCoordinate:(struct ?)arg0;
+- (id)pageLayoutGeometryForPrintingAtPageCoordinate:(struct ?)arg0;
+- (id)pageLayoutGeometryForPageCoordinate:(struct ?)arg0;
+- (struct ?)pageCoordinateForPageIndex:(unsigned int)arg0;
+- (void)registerPageLayout:(NSObject *)arg0 atPageCoordinate:(struct ?)arg1;
+- (void)layoutAtPageIndex:(unsigned int)arg0 forLayoutController:(BRController *)arg1;
+- (TNPrintProperties *)printProperties;
+- (void)i_invalidatePageLayoutCache;
+- (void)i_invalidateHintCache;
+- (unsigned int)pageNumberForPageCoordinate:(struct ?)arg0;
+- (struct CGRect)firstPartitionFrameForInfo:(NSDictionary *)arg0 outStartPageCoordinate:(SEL)arg1;
+- (void)syncPositionOfLayout:(NSObject *)arg0 atCoordinate:(struct ?)arg1;
+- (float)userViewScale;
+- (void)setHeaderTextHeight:(float)arg0;
+- (void)setFooterTextHeight:(float)arg0;
+- (void)p_willBeginDynamicContentScaleChange:(NSDictionary *)arg0;
+- (void)p_didEndDynamicContentScaleChange:(NSDictionary *)arg0;
+- (void)invalidateCachedAutoFitContentScaleForSheet:(NSObject *)arg0;
+- (void)updateUserViewScale;
+- (void)p_clearHintCache;
+- (void)p_computePriorPageCountForCurrentSheet;
+- (void)p_computeSubsequentPageCountForCurrentSheet;
+- (int)p_updateCachedPageCountForCurrentSheet;
+- (int)p_pageCountForSheet:(NSObject *)arg0;
+- (float)headerTextHeight;
+- (float)footerTextHeight;
+- (void)p_measureHeadersAndFooters;
+- (void)updateViewScale;
+- (float)p_printViewDefaultUserViewScale;
+- (void)setUserViewScale:(float)arg0;
+- (void)invalidatePageLayoutGeometries;
+- (struct ?)pageRangeForContentWithUpperBound:(id)arg0;
+- (struct ?)pageRangeForInfo:(NSDictionary *)arg0 upperBound:(SEL)arg1;
+- (struct ?)p_pageCoordinateForPageLayoutAtDevicePoint:(struct CGPoint)arg0;
+- (struct ?)pageCoordinateForMaxVisiblePage;
+- (struct ?)pageRangeForContent;
+- (int)p_priorPageCount;
+- (struct ?)pageCoordinateForDrawableAtUnscaledPoint:(struct CGPoint)arg0;
+- (void)p_updateVisiblePageRange:(struct ?)arg0 forLayoutController:(struct ?)arg1;
+- (struct CGSize)pageSizeWithGutter;
+- (void)p_layoutInfo:(NSDictionary *)arg0 intoPageLayout:(NSObject *)arg1 atPageCoordinate:(struct ?)arg2;
+- (void)removeLayoutsFromPages;
+- (void)invalidateDrawableLayouts;
+- (void)p_invalidatePageCounts;
+- (char)p_headersOrFootersContainPageNumberRelatedAttachments;
+- (struct ?)pageRangeWithPlaceholdersWithUpperBound:(id)arg0;
+- (id)p_pageLayoutAtCoordinate:(struct ?)arg0;
+- (void)p_enumerateOverPageRange:(struct ?)arg0 usingBlock:(struct ?)arg1;
+- (NSDictionary *)p_hintCacheForInfo:(NSDictionary *)arg0;
+- (NSDictionary *)p_layoutForInfo:(NSDictionary *)arg0 atCoordinate:(struct ?)arg1 parentLayout:(TSWPTextParentLayout *)arg2;
+- (NSObject *)p_pageInfoForPageAtIndex:(unsigned int)arg0;
+- (struct ?)pageRangeForPageIndex:(NSObject *)arg0;
+- (void)p_layoutInfo:(NSDictionary *)arg0 intoPageRange:(struct ?)arg1;
+- (void)canvasViewScaleDidChange:(float)arg0;
+- (void)updateContentScale;
+- (void)updatePrintMargins;
+- (struct CGSize)contentSizeForCanvasLayer;
+- (void)layoutInPageRange:(struct ?)arg0 forLayoutController:(struct ?)arg1;
+- (struct ?)pageCoordinateForPageLayoutAtUnscaledPoint:(struct CGPoint)arg0;
+- (struct CGRect)printingLayoutRectForPageIndex:(NSObject *)arg0;
+- (void)willExitPrintView;
+- (void)invalidatePageLayout;
+- (NSObject *)i_layerForHeaderType:(int)arg0 fragment:(int)arg1 atPageCoordinate:(struct ?)arg2;
+- (void)i_setLayer:(id)arg0 forHeaderType:(int)arg1 fragment:(int)arg2 atPageCoordinate:(struct ?)arg3;
+- (NSObject *)pageInfoForPageIndex:(unsigned int)arg0;
+- (char)inDynamicContentScaleChange;
+- (unsigned int)numPages;
+- (char)isPortrait;
+- (void)dealloc;
+- (void)setDelegate:(NSObject<TNPageControllerDelegate> *)arg0;
+- (NSObject<TNPageControllerDelegate> *)delegate;
+- (unsigned int)pageCount;
+- (void).cxx_construct;
+- (float)contentScale;
+- (struct CGSize)pageSize;
+- (void)setSheet:(TNSheet *)arg0;
+- (TNDocumentRoot *)documentRoot;
+- (void)setDocumentRoot:(TNDocumentRoot *)arg0;
+- (TNSheet *)sheet;
+- (struct CGRect)contentFrame;
+
+@end

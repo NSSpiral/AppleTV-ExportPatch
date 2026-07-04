@@ -1,0 +1,137 @@
+/* Runtime dump - PLCloudSharedAlbum
+ * Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
+ */
+
+@interface PLCloudSharedAlbum : PLManagedAlbum <PLCloudSharedAlbumProtocol>
+{
+    char _deleteFromDBOnly;
+}
+
+@property (retain, nonatomic) NSOrderedSet * assets;
+@property (nonatomic) short cloudAlbumSubtype;
+@property (retain, nonatomic) NSNumber * cloudRelationshipState;
+@property (retain, nonatomic) NSNumber * cloudRelationshipStateLocal;
+@property (retain, nonatomic) NSNumber * isOwned;
+@property (retain, nonatomic) NSNumber * hasUnseenContent;
+@property (retain, nonatomic) NSNumber * cloudOwnerEmailKey;
+@property (nonatomic) char cloudNotificationsEnabled;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString * description;
+@property (readonly, copy) NSString * debugDescription;
+@property (readonly, retain, nonatomic) NSString * uuid;
+@property (readonly, retain, nonatomic) NSString * title;
+@property (readonly, copy, nonatomic) NSString * localizedTitle;
+@property (readonly, nonatomic) unsigned int approximateCount;
+@property (readonly, nonatomic) unsigned int assetsCount;
+@property (readonly, nonatomic) unsigned int photosCount;
+@property (readonly, nonatomic) unsigned int videosCount;
+@property (readonly, nonatomic) char isEmpty;
+@property (retain, nonatomic) PLManagedAsset * keyAsset;
+@property (retain, nonatomic) PLManagedAsset * secondaryKeyAsset;
+@property (retain, nonatomic) PLManagedAsset * tertiaryKeyAsset;
+@property (readonly, nonatomic) char canShowComments;
+@property (readonly, nonatomic) char canShowAvalancheStacks;
+@property (readonly, copy, nonatomic) NSArray * localizedLocationNames;
+@property (readonly, retain, nonatomic) NSDate * startDate;
+@property (readonly, retain, nonatomic) NSDate * endDate;
+@property (readonly, retain, nonatomic) NSNumber * kind;
+@property (readonly, nonatomic) int kindValue;
+@property (readonly, retain, nonatomic) NSMutableOrderedSet * mutableAssets;
+@property (nonatomic) char hasUnseenContentBoolValue;
+@property (readonly, copy, nonatomic) NSString * name;
+@property (readonly, retain, nonatomic) UIImage * posterImage;
+@property (readonly, nonatomic) char isLibrary;
+@property (readonly, nonatomic) char isCameraAlbum;
+@property (readonly, nonatomic) char isPanoramasAlbum;
+@property (readonly, nonatomic) char isWallpaperAlbum;
+@property (readonly, nonatomic) char isPhotoStreamAlbum;
+@property (readonly, nonatomic) char isCloudSharedAlbum;
+@property (readonly, nonatomic) char isPendingPhotoStreamAlbum;
+@property (readonly, nonatomic) char isStandInAlbum;
+@property (readonly, nonatomic) char isFolder;
+@property (readonly, nonatomic) char isInTrash;
+@property (readonly, nonatomic) char isOwnedCloudSharedAlbum;
+@property (readonly, nonatomic) char isFamilyCloudSharedAlbum;
+@property (readonly, nonatomic) char isMultipleContributorCloudSharedAlbum;
+@property (readonly, nonatomic) char isRecentlyAddedAlbum;
+@property (readonly, nonatomic) char isUserLibraryAlbum;
+@property (readonly, nonatomic) char canContributeToCloudSharedAlbum;
+@property (readonly, nonatomic) char shouldDeleteWhenEmpty;
+@property (retain, nonatomic) NSDictionary * slideshowSettings;
+@property (retain, nonatomic) NSString * importSessionID;
+@property (readonly, retain, nonatomic) NSURL * groupURL;
+@property (readonly, copy, nonatomic) id sortingComparator;
+@property (nonatomic) int pendingItemsCount;
+@property (nonatomic) int pendingItemsType;
+@property (nonatomic) unsigned int batchSize;
+@property (retain, nonatomic) NSString * cloudGUID;
+@property (retain, nonatomic) NSDictionary * cloudMetadata;
+@property (retain, nonatomic) NSString * cloudOwnerFirstName;
+@property (retain, nonatomic) NSString * cloudOwnerLastName;
+@property (retain, nonatomic) NSString * cloudOwnerFullName;
+@property (retain, nonatomic) NSString * cloudOwnerEmail;
+@property (retain, nonatomic) NSString * cloudOwnerHashedPersonID;
+@property (retain, nonatomic) NSDate * cloudSubscriptionDate;
+@property (retain, nonatomic) NSString * publicURL;
+@property (retain, nonatomic) NSOrderedSet * invitationRecords;
+@property (retain, nonatomic) NSNumber * unseenAssetsCount;
+@property unsigned int unseenAssetsCountIntegerValue;
+@property (retain, nonatomic) NSNumber * cloudPublicURLEnabled;
+@property (retain, nonatomic) NSNumber * cloudPublicURLEnabledLocal;
+@property (retain, nonatomic) NSNumber * cloudMultipleContributorsEnabled;
+@property (retain, nonatomic) NSNumber * cloudMultipleContributorsEnabledLocal;
+@property (retain, nonatomic) NSDate * cloudLastInterestingChangeDate;
+@property (retain, nonatomic) NSDate * cloudCreationDate;
+@property (retain, nonatomic) NSDate * cloudLastContributionDate;
+@property (retain, nonatomic) NSString * cloudPersonID;
+@property (readonly) int cloudRelationshipStateValue;
+@property (readonly) int cloudRelationshipStateLocalValue;
+@property (readonly, retain, nonatomic) NSString * localizedSharedWithLabel;
+@property (readonly, retain, nonatomic) NSOrderedSet * cloudAlbumSubscriberRecords;
+@property (readonly, retain, nonatomic) NSDate * cloudFirstRecentBatchDate;
+
++ (NSString *)entityName;
++ (NSString *)entityInManagedObjectContext:(NSObject *)arg0;
++ (NSObject *)allCloudSharedAlbumsInLibrary:(NSObject *)arg0;
++ (NSString *)cloudSharedAlbumWithGUID:(NSString *)arg0 inLibrary:(NSObject *)arg1;
++ (NSString *)localizedSharedByLabelWithFirstName:(NSString *)arg0 lastName:(NSString *)arg1 fullName:(NSString *)arg2 emailKey:(NSString *)arg3 isOwned:(char)arg4 allowsEmail:(char)arg5;
++ (NSString *)cloudOwnerDisplayNameWithFirstName:(NSString *)arg0 lastName:(NSString *)arg1 fullName:(NSString *)arg2 emailKey:(NSString *)arg3 includingEmail:(char)arg4 allowsEmail:(char)arg5;
+
+- (NSArray *)activityViewControllerPlaceholderItems:(NSArray *)arg0;
+- (NSObject *)activityViewController:(BRController *)arg0 thumbnailForActivityType:(NSObject *)arg1;
+- (id)activityViewControllerSubject:(id)arg0;
+- (NSObject *)activityViewController:(BRController *)arg0 itemsForActivityType:(NSObject *)arg1;
+- (id)localizedSharedByLabelAllowsEmail:(char)arg0;
+- (NSString *)cloudOwnerDisplayNameIncludingEmail:(char)arg0 allowsEmail:(char)arg1;
+- (void)updateCloudLastInterestingChangeDateWithDate:(NSDate *)arg0;
+- (void)updateCloudLastContributionDateWithDate:(NSDate *)arg0;
+- (void)getUnseenStartMarkerIndex:(unsigned int *)arg0 count:(unsigned int *)arg1 showsProgress:(char *)arg2;
+- (void)userDeleteSubscriberRecord:(NSObject *)arg0;
+- (NSString *)cloudOwnerEmail;
+- (void)setCloudOwnerEmail:(NSString *)arg0;
+- (unsigned int)unseenAssetsCountIntegerValue;
+- (void)setUnseenAssetsCountIntegerValue:(unsigned int)arg0;
+- (int)cloudRelationshipStateValue;
+- (int)cloudRelationshipStateLocalValue;
+- (NSString *)localizedSharedWithLabel;
+- (NSOrderedSet *)cloudAlbumSubscriberRecords;
+- (NSDate *)cloudFirstRecentBatchDate;
+- (char)hasUnseenContentBoolValue;
+- (void)setHasUnseenContentBoolValue:(char)arg0;
+- (char)isOwnedCloudSharedAlbum;
+- (char)isFamilyCloudSharedAlbum;
+- (char)isMultipleContributorCloudSharedAlbum;
+- (char)canContributeToCloudSharedAlbum;
+- (id /* block */)sortingComparator;
+- (void)delete;
+- (void)awakeFromInsert;
+- (void)prepareForDeletion;
+- (void)willSave;
+- (void)publishBatchOfOriginalAssets:(NSArray *)arg0 withBatchCommentText:(NSString *)arg1 andTrimmedVideoPathInfo:(NSDictionary *)arg2 isNewAlbum:(char)arg3;
+- (NSArray *)_expectedKeyAssets:(NSArray *)arg0;
+- (void)deleteFromDatabaseOnly;
+- (NSString *)albumDirectoryPath;
+- (void)persistRecoveryMetadata;
+
+@end

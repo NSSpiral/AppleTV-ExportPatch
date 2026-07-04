@@ -1,0 +1,123 @@
+/* Runtime dump - CoreDAVContainerSyncTaskGroup
+ * Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
+ */
+
+@interface CoreDAVContainerSyncTaskGroup : CoreDAVTaskGroup <CoreDAVDeleteTaskDelegate, CoreDAVPutTaskDelegate, CoreDAVGetTaskDelegate>
+{
+    int _phase;
+    NSURL * _folderURL;
+    NSString * _previousCTag;
+    NSString * _nextCTag;
+    char _ensureUpdatedCTag;
+    char _useSyncCollection;
+    NSString * _previousSyncToken;
+    NSString * _nextSyncToken;
+    NSMutableArray * _actions;
+    unsigned int _multiGetBatchSize;
+    NSMutableArray * _unsubmittedTasks;
+    unsigned int _maxIndependentTasks;
+    NSURL * _addMemberURL;
+    char _useMultiGet;
+    NSDictionary * _bulkRequests;
+    NSString * _bulkChangeCheckCTag;
+    NSMutableSet * _syncReportDeletedURLs;
+    NSMutableDictionary * _urlToETag;
+    Class _appSpecificDataItemClass;
+    char _syncItemOrder;
+    NSMutableArray * _localItemURLOrder;
+    NSMutableDictionary * _remainingUUIDsToAddActions;
+    NSMutableDictionary * _remainingHREFsToModDeleteActions;
+    char _actionsOnly;
+}
+
+@property (readonly, nonatomic) NSURL * folderURL;
+@property (retain, nonatomic) NSString * previousCTag;
+@property (retain, nonatomic) NSString * previousSyncToken;
+@property (nonatomic) char useSyncCollection;
+@property (nonatomic) unsigned int multiGetBatchSize;
+@property (nonatomic) char useMultiGet;
+@property (nonatomic) <CoreDAVLocalDBInfoProvider> * delegate;
+@property (nonatomic) unsigned int maxIndependentTasks;
+@property (retain, nonatomic) NSURL * addMemberURL;
+@property (retain, nonatomic) NSDictionary * bulkRequests;
+@property (retain, nonatomic) NSString * bulkChangeCheckCTag;
+@property (nonatomic) char actionsOnly;
+@property (readonly, nonatomic) NSArray * localItemURLOrder;
+@property (nonatomic) char ensureUpdatedCTag;
+@property (retain, nonatomic) NSString * nextCTag;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString * description;
+@property (readonly, copy) NSString * debugDescription;
+
+- (NSDictionary *)bulkRequests;
+- (void)setBulkRequests:(NSDictionary *)arg0;
+- (void)dealloc;
+- (NSString *)description;
+- (void)task:(NSObject *)arg0 didFinishWithError:(NSError *)arg1;
+- (void)setAddMemberURL:(NSURL *)arg0;
+- (NSURL *)addMemberURL;
+- (void)taskGroupWillCancelWithError:(NSError *)arg0;
+- (void)bailWithError:(NSError *)arg0;
+- (void)propFindTask:(NSObject *)arg0 parsedResponses:(id)arg1 error:(NSError *)arg2;
+- (void)startTaskGroup;
+- (void)_tearDownAllUnsubmittedTasks;
+- (void)cancelTaskGroup;
+- (unsigned int)_submitTasks;
+- (void)_getETags;
+- (NSString *)dataContentType;
+- (NSObject *)copyPostTaskWithPayloadItem:(NSObject *)arg0 forAction:(NSObject *)arg1;
+- (NSObject *)copyPutTaskWithPayloadItem:(NSObject *)arg0 forAction:(NSObject *)arg1;
+- (void)_getCTag;
+- (Class)bulkChangeTaskClass;
+- (void)_pushActions;
+- (void)_sendNextBatch;
+- (id)copyAdditionalResourcePropertiesToFetch;
+- (id)copyGetEtagTaskWithPropertiesToFind:(NSSet *)arg0;
+- (void)_getDataPayloads;
+- (id)copyMultiGetTaskWithURLs:(id)arg0;
+- (void)_configureMultiGet:(id)arg0;
+- (void)_getTask:(NSObject *)arg0 finishedWithParsedContents:(char)arg1 deletedItems:(NSArray *)arg2 error:(NSError *)arg3;
+- (char)shouldDownloadResource:(NSObject *)arg0 localETag:(NSString *)arg1 serverETag:(NSString *)arg2;
+- (void)deleteResourceURLs:(id)arg0;
+- (NSURL *)copyGetTaskWithURL:(NSString *)arg0;
+- (void)_bulkChange;
+- (char)isWhitelistedError:(NSError *)arg0;
+- (void)applyAdditionalPropertiesFromPutTask:(NSObject *)arg0;
+- (void)applyAdditionalPropertiesFromPostTask:(NSObject *)arg0;
+- (void)setPreviousSyncToken:(NSString *)arg0;
+- (void)setUseSyncCollection:(char)arg0;
+- (char)shouldFetchResourceWithEtag:(NSString *)arg0 propertiesToValues:(NSArray *)arg1;
+- (void)receivedPropertiesToValues:(NSArray *)arg0 forURL:(NSURL *)arg1;
+- (void)_getOrder;
+- (NSString *)nextCTag;
+- (void)setBulkChangeCheckCTag:(NSString *)arg0;
+- (void)_postTask:(NSObject *)arg0 didFinishWithError:(NSError *)arg1;
+- (void)_syncReportTask:(NSObject *)arg0 didFinishWithError:(NSError *)arg1;
+- (void)_bulkChangeTask:(NSObject *)arg0 didFinishWithError:(NSError *)arg1;
+- (void)setNextCTag:(NSString *)arg0;
+- (char)shouldFetchMoreETags;
+- (void)deleteTask:(NSObject *)arg0 completedWithError:(NSError *)arg1;
+- (void)putTask:(NSObject *)arg0 completedWithNewETag:(NSString *)arg1 error:(NSError *)arg2;
+- (void)getTask:(NSObject *)arg0 data:(NSData *)arg1 error:(NSError *)arg2;
+- (CoreDAVContainerSyncTaskGroup *)initWithFolderURL:(NSURL *)arg0 previousCTag:(NSString *)arg1 previousSyncToken:(NSString *)arg2 actions:(NSMutableArray *)arg3 syncItemOrder:(char)arg4 context:(NSObject *)arg5 accountInfoProvider:(NSObject *)arg6 taskManager:(NSObject *)arg7;
+- (void)syncAway;
+- (unsigned int)multiGetBatchSize;
+- (void)setMultiGetBatchSize:(unsigned int)arg0;
+- (unsigned int)maxIndependentTasks;
+- (void)setMaxIndependentTasks:(unsigned int)arg0;
+- (char)useMultiGet;
+- (void)setUseMultiGet:(char)arg0;
+- (NSURL *)folderURL;
+- (NSString *)previousCTag;
+- (void)setPreviousCTag:(NSString *)arg0;
+- (char)ensureUpdatedCTag;
+- (void)setEnsureUpdatedCTag:(char)arg0;
+- (NSString *)previousSyncToken;
+- (char)useSyncCollection;
+- (NSArray *)localItemURLOrder;
+- (NSString *)bulkChangeCheckCTag;
+- (char)actionsOnly;
+- (void)setActionsOnly:(char)arg0;
+
+@end

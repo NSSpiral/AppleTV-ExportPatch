@@ -1,0 +1,138 @@
+/* Runtime dump - MCRestrictionManager
+ * Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
+ */
+
+@interface MCRestrictionManager : NSObject
+{
+    NSMutableDictionary * _memberQueueRestrictions;
+    NSMutableDictionary * _memberQueueClientRestrictions;
+    NSMutableDictionary * _memberQueueUserSettings;
+    NSMutableDictionary * _memberQueueEffectiveUserSettings;
+    NSObject<OS_dispatch_queue> * _memberQueue;
+    NSMutableDictionary * _memberQueueProfileRestrictions;
+}
+
+@property (readonly, nonatomic) NSDictionary * currentRestrictions;
+@property (readonly, nonatomic) NSDictionary * defaultRestrictions;
+@property (readonly, nonatomic) NSDictionary * defaultSettings;
+@property (readonly, copy, nonatomic) NSDictionary * userSettings;
+@property (readonly, copy, nonatomic) NSDictionary * effectiveUserSettings;
+@property (readonly, copy, nonatomic) NSDictionary * profileRestrictions;
+@property (readonly, copy, nonatomic) NSDictionary * combinedProfileRestrictions;
+@property (retain, nonatomic) NSObject<OS_dispatch_queue> * memberQueue;
+@property (retain, nonatomic) NSMutableDictionary * memberQueueRestrictions;
+@property (retain, nonatomic) NSMutableDictionary * memberQueueProfileRestrictions;
+@property (retain, nonatomic) NSMutableDictionary * memberQueueClientRestrictions;
+@property (retain, nonatomic) NSMutableDictionary * memberQueueUserSettings;
+@property (retain, nonatomic) NSMutableDictionary * memberQueueEffectiveUserSettings;
+@property (readonly, nonatomic) NSMutableDictionary * memberQueueCombinedProfileRestrictions;
+
++ (NSDictionary *)defaultSettings;
++ (NSObject *)unionValuesForFeature:(NSObject *)arg0 withRestrictionsDictionary:(NSDictionary *)arg1;
++ (NSObject *)intersectedValuesForFeature:(NSObject *)arg0 withRestrictionsDictionary:(NSDictionary *)arg1;
++ (NSDictionary *)filterRestrictionDictionary:(NSDictionary *)arg0 toIncludeOnlyRestrictionsThatDifferFromRestrictions:(id)arg1;
++ (int)restrictedBoolForFeature:(NSObject *)arg0 withRestrictionsDictionary:(NSDictionary *)arg1;
++ (NSObject *)valueForFeature:(NSObject *)arg0 withRestrictionsDictionary:(NSDictionary *)arg1;
++ (MCRestrictionManager *)defaultValueForSetting:(id)arg0;
++ (int)boolSettingForFeature:(NSObject *)arg0 withUserSettingDictionary:(NSDictionary *)arg1;
++ (int)defaultBoolValueForSetting:(id)arg0;
++ (MCRestrictionManager *)defaultIntersectedValuesForSetting:(id)arg0;
++ (MCRestrictionManager *)defaultUnionValuesForSetting:(id)arg0;
++ (MCRestrictionManager *)defaultParametersForBoolSetting:(id)arg0;
++ (MCRestrictionManager *)defaultParametersForValueSetting:(id)arg0;
++ (MCRestrictionManager *)defaultParametersForIntersectedValuesSetting:(id)arg0;
++ (MCRestrictionManager *)defaultParametersForUnionValuesSetting:(id)arg0;
++ (NSObject *)valueSettingForFeature:(NSObject *)arg0 withUserSettingDictionary:(NSDictionary *)arg1;
++ (char)isWebContentFilterUIActiveWithRestrictionDictionary:(NSDictionary *)arg0;
++ (NSObject *)unionValuesSettingForFeature:(NSObject *)arg0 withUserSettingDictionary:(NSDictionary *)arg1;
++ (NSDictionary *)restrictionsAfterApplyingRestrictionsDictionary:(NSDictionary *)arg0 toRestrictionsDictionary:(NSDictionary *)arg1 outChangeDetected:(char *)arg2 outError:(id *)arg3;
++ (int)appWhitelistStateWithSettingsDictionary:(NSDictionary *)arg0;
++ (char)isInSingleAppModeWithSettingsDictionary:(NSDictionary *)arg0;
++ (char)isPasscodeRequiredToAccessWhitelistedAppsWithSettingsDictionary:(NSDictionary *)arg0;
++ (char)mayEnterPasscodeToAccessNonWhitelistedAppsWithSettingsDictionary:(NSDictionary *)arg0;
++ (MCRestrictionManager *)defaultRestrictionFilePath;
++ (NSDictionary *)filterRestrictionDictionary:(NSDictionary *)arg0 acceptedKeysDict:(id)arg1;
++ (NSObject *)objectForFeature:(NSObject *)arg0 withRestrictionsDictionary:(NSDictionary *)arg1;
++ (NSObject *)intersectedValuesSettingForFeature:(NSObject *)arg0 withUserSettingDectionary:(id)arg1;
++ (MCRestrictionManager *)restrictionsWithCurrentRestrictions:(NSDictionary *)arg0 defaultRestrictions:(NSDictionary *)arg1 profileRestrictions:(NSDictionary *)arg2 clientRestrictions:(id)arg3 outRestrictionsChanged:(char *)arg4 outError:(id *)arg5;
++ (MCRestrictionManager *)filterRestrictionDictionaryForPublicUse:(id)arg0;
++ (MCRestrictionManager *)filterUserSettingsForPublicUse:(id)arg0;
++ (char)restrictedBool:(id)arg0 changedBetweenOldRestrictions:(id)arg1 andNewRestrictions:(id)arg2;
++ (char)restrictedValue:(id)arg0 changedBetweenOldRestrictions:(id)arg1 andNewRestrictions:(id)arg2;
++ (char)intersectedValuesForFeature:(NSObject *)arg0 changedBetweenOldRestrictions:(id)arg1 andNewRestrictions:(id)arg2;
++ (char)unionValuesForFeature:(NSObject *)arg0 changedBetweenOldRestrictions:(id)arg1 andNewRestrictions:(id)arg2;
++ (MCRestrictionManager *)newEffectiveSettingsByApplyingRestrictions:(id)arg0 toSettings:(NSDictionary *)arg1;
++ (char)boolSetting:(id)arg0 valueChangedBetweenOldSettings:(NSDictionary *)arg1 andNewSettings:(NSDictionary *)arg2;
++ (char)valueSetting:(id)arg0 valueChangedBetweenOldSettings:(NSDictionary *)arg1 andNewSettings:(NSDictionary *)arg2;
++ (char)intersectedValuesSetting:(id)arg0 valueChangedBetweenOldSettings:(NSDictionary *)arg1 andNewSettings:(NSDictionary *)arg2;
++ (char)unionValuesSetting:(id)arg0 valueChangedBetweenOldSettings:(NSDictionary *)arg1 andNewSettings:(NSDictionary *)arg2;
++ (MCRestrictionManager *)allowedOpenInAppBundleIDsWithOriginalAppBundleIDs:(id)arg0 managedAppBundleIDs:(id)arg1 localAppBundleID:(NSObject *)arg2 localAccountIsManaged:(char)arg3 mayOpenFromUnmanagedToManaged:(char)arg4 mayOpenFromManagedToUnmanaged:(char)arg5 isAppBundleIDExemptBlock:(id /* block */)arg6 isAppBundleIDAccountBasedBlock:(/* block */ id)arg7;
++ (MCRestrictionManager *)allowedImportFromAppBundleIDsWithOriginalAppBundleIDs:(id)arg0 managedAppBundleIDs:(id)arg1 localAppBundleID:(NSObject *)arg2 localAccountIsManaged:(char)arg3 mayOpenFromUnmanagedToManaged:(char)arg4 mayOpenFromManagedToUnmanaged:(char)arg5 isAppBundleIDExemptBlock:(id /* block */)arg6 isAppBundleIDAccountBasedBlock:(/* block */ id)arg7;
++ (MCRestrictionManager *)allowedKeyboardBundleIDsAfterApplyingFilterToBundleIDs:(id)arg0 managedAppBundleIDs:(id)arg1 hostAppIsManaged:(char)arg2 mayOpenFromUnmanagedToManaged:(char)arg3 mayOpenFromManagedToUnmanaged:(char)arg4;
++ (MCRestrictionManager *)sharedManager;
+
+- (int)appWhitelistState;
+- (MCRestrictionManager *)init;
+- (NSString *)description;
+- (NSObject<OS_dispatch_queue> *)memberQueue;
+- (void)setMemberQueue:(NSObject<OS_dispatch_queue> *)arg0;
+- (void).cxx_destruct;
+- (char)isSettingLockedDownByRestrictions:(id)arg0;
+- (NSDictionary *)defaultSettings;
+- (id)userInfoForClientUUID:(id)arg0;
+- (NSDictionary *)defaultRestrictions;
+- (void)invalidateRestrictions;
+- (void)invalidateSettings;
+- (id)effectiveUnionValuesForSetting:(id)arg0;
+- (int)restrictedBoolForFeature:(NSObject *)arg0;
+- (NSObject *)valueForFeature:(NSObject *)arg0;
+- (NSObject *)objectForFeature:(NSObject *)arg0;
+- (NSDictionary *)currentRestrictions;
+- (id)clientRestrictions;
+- (NSObject *)allClientUUIDsForClientType:(NSObject *)arg0;
+- (NSDictionary *)userSettings;
+- (id)effectiveParametersForBoolSetting:(id)arg0;
+- (id)effectiveParametersForIntersectedSetting:(id)arg0;
+- (id)effectiveParametersForUnionSetting:(id)arg0;
+- (id)effectiveParametersForValueSetting:(id)arg0;
+- (NSDictionary *)profileIdentifiersRestrictingSettings:(NSDictionary *)arg0;
+- (NSDictionary *)exchangeUUIDsRestrictingSettings:(NSDictionary *)arg0;
+- (char)isBoolSettingLockedDownByRestrictions:(id)arg0;
+- (char)isValueSettingLockedDownByRestrictions:(id)arg0;
+- (char)isIntersectionSettingLockedDownByRestrictions:(id)arg0;
+- (char)isUnionSettingLockedDownByRestrictions:(id)arg0;
+- (NSDictionary *)effectiveUserSettings;
+- (NSDictionary *)profileRestrictions;
+- (NSDictionary *)combinedProfileRestrictions;
+- (int)effectiveRestrictedBoolForSetting:(id)arg0;
+- (id)effectiveIntersectedValuesForSetting:(id)arg0;
+- (int)boolSettingForFeature:(NSObject *)arg0;
+- (NSObject *)intersectedValuesForFeature:(NSObject *)arg0;
+- (void)setMemberQueueRestrictions:(NSMutableDictionary *)arg0;
+- (void)setMemberQueueProfileRestrictions:(NSMutableDictionary *)arg0;
+- (void)setMemberQueueClientRestrictions:(NSMutableDictionary *)arg0;
+- (void)setMemberQueueUserSettings:(NSMutableDictionary *)arg0;
+- (void)setMemberQueueEffectiveUserSettings:(NSMutableDictionary *)arg0;
+- (NSMutableDictionary *)memberQueueRestrictions;
+- (NSMutableDictionary *)memberQueueProfileRestrictions;
+- (NSMutableDictionary *)memberQueueCombinedProfileRestrictions;
+- (NSMutableDictionary *)memberQueueClientRestrictions;
+- (id)memberQueueClientRestrictionsForClientUUID:(id)arg0;
+- (id)memberQueueUserInfoForClientUUID:(id)arg0;
+- (char)_isBoolSettingLockedDown:(id)arg0;
+- (char)_isValueSettingLockedDown:(id)arg0 effectiveSetting:(id)arg1;
+- (id)_effectiveIntersectedValuesForSetting:(id)arg0 effectiveUserSettings:(NSDictionary *)arg1;
+- (id)_effectiveUnionValuesForSetting:(id)arg0 effectiveUserSettings:(NSDictionary *)arg1;
+- (NSMutableDictionary *)memberQueueUserSettings;
+- (NSMutableDictionary *)memberQueueEffectiveUserSettings;
+- (NSDictionary *)potentialRestrictionsAfterApplyingRestrictionsDictionary:(NSDictionary *)arg0 outChangeDetected:(char *)arg1 outError:(id *)arg2;
+- (NSObject *)unionValuesForFeature:(NSObject *)arg0;
+- (id)memberQueueClientTypeForClientUUID:(id)arg0;
+- (id)clientRestrictionsForClientUUID:(id)arg0;
+- (void)memberQueueCommitUserSettingsToDisk;
+- (NSObject *)valueSettingForFeature:(NSObject *)arg0;
+- (NSObject *)intersectedValuesSettingForFeature:(NSObject *)arg0;
+- (NSObject *)unionValuesSettingForFeature:(NSObject *)arg0;
+- (id)effectiveValueForSetting:(id)arg0;
+
+@end

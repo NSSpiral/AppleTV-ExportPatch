@@ -1,0 +1,132 @@
+/* Runtime dump - MFMailboxUid
+ * Image: /System/Library/PrivateFrameworks/Message.framework/Message
+ */
+
+@interface MFMailboxUid : NSObject <NSCopying>
+{
+    NSString * uniqueId;
+    unsigned int _mailboxID;
+    MFWeakReferenceHolder * _account;
+    NSString * _pathComponent;
+    unsigned int _attributes;
+    MFWeakReferenceHolder * _parent;
+    NSMutableArray * _children;
+    MailAccount * _representedAccount;
+    MFMessageCriterion * _criterion;
+    char allCriteriaMustBeSatisfied;
+    NSString * _realFullPath;
+    NSArray * _extraAttributes;
+    NSNumber * _pendingLevel;
+    int _type;
+    NSMutableDictionary * _userInfo;
+    NSString * _permanentTag;
+}
+
+@property (retain, nonatomic) NSArray * extraAttributes;
+@property (retain, nonatomic) NSString * permanentTag;
+
++ (NSObject *)specialNameForType:(int)arg0;
++ (char)isSpecialMailboxUidType:(int)arg0;
++ (char)isOutgoingMailboxType:(int)arg0;
++ (char)isDraftsMailboxType:(int)arg0;
++ (char)isSentMailboxType:(int)arg0;
+
+- (void)setExtraAttributes:(NSArray *)arg0;
+- (NSSQLCore *)store;
+- (void)dealloc;
+- (MFMailboxUid *)init;
+- (NSString *)description;
+- (void)setName:(NSString *)arg0;
+- (NSString *)name;
+- (void)invalidate;
+- (char)isValid;
+- (void)setType:(int)arg0;
+- (int)type;
+- (MFMailboxUid *)copyWithZone:(struct _NSZone *)arg0;
+- (NSURL *)URL;
+- (char)isVisible;
+- (void)removeChild:(NSObject *)arg0;
+- (NSString *)uniqueId;
+- (unsigned int)attributes;
+- (NSString *)displayName;
+- (char)isContainer;
+- (void)setAttributes:(unsigned int)arg0;
+- (NSString *)URLString;
+- (char)isSelectable;
+- (void)setUserInfoObject:(NSObject *)arg0 forKey:(NSString *)arg1;
+- (MFMailboxUid *)initWithAccount:(MFWeakReferenceHolder *)arg0;
+- (MFWeakReferenceHolder *)account;
+- (NSString *)accountRelativePath;
+- (unsigned int)unreadCount;
+- (unsigned int)serverUnreadOnlyOnServerCount;
+- (MailAccount *)representedAccount;
+- (char)shouldRestoreMessagesAfterFailedDelete;
+- (NSString *)lastViewedMessageID;
+- (NSDate *)lastViewedMessageDate;
+- (unsigned int)unreadCountMatchingCriterion:(id)arg0;
+- (NSString *)tildeAbbreviatedPath;
+- (NSArray *)mutableCopyOfChildren;
+- (NSEnumerator *)depthFirstEnumerator;
+- (void)flushCriteria;
+- (char)setUnreadCount:(unsigned int)arg0;
+- (NSString *)childWithName:(NSString *)arg0;
+- (NSObject *)childWithExtraAttribute:(NSObject *)arg0;
+- (NSString *)childWithPermanentTag:(NSString *)arg0;
+- (char)setChildren:(NSMutableArray *)arg0;
+- (void)setRepresentedAccount:(MailAccount *)arg0;
+- (MFMailboxUid *)initWithName:(NSString *)arg0 attributes:(unsigned int)arg1 forAccount:(NSObject *)arg2 permanentTag:(NSString *)arg3;
+- (MFMailboxUid *)initWithName:(NSString *)arg0 attributes:(unsigned int)arg1 forAccount:(NSObject *)arg2 extraAttributes:(NSArray *)arg3;
+- (id)pathRelativeToMailbox:(id)arg0;
+- (NSString *)permanentTag;
+- (NSString *)_initWithName:(NSString *)arg0 attributes:(unsigned int)arg1 forAccount:(NSObject *)arg2;
+- (NSArray *)_mutableChildren;
+- (NSArray *)childEnumeratorIncludingHiddenChildren:(char)arg0;
+- (unsigned int)numberOfDescendants;
+- (id)URLStringNonNil;
+- (id)fullPathNonNil;
+- (char)isStore;
+- (id)topMailbox;
+- (id)rootMailbox;
+- (NSNumber *)ancestralAccount;
+- (MFMessageCriterion *)criterion;
+- (NSDictionary *)_loadUserInfo;
+- (char)mergeWithUserInfo:(NSMutableDictionary *)arg0;
+- (NSNumber *)URLStringWithAccount:(MFWeakReferenceHolder *)arg0;
+- (void)addToPostOrderTraversal:(id)arg0;
+- (NSArray *)displayNameUsingSpecialNames;
+- (unsigned int)nonDeletedCount;
+- (char)hasChildren;
+- (NSEnumerator *)childEnumerator;
+- (unsigned int)numberOfChildren;
+- (unsigned int)indexOfChild:(NSObject *)arg0;
+- (NSObject *)descendantWithExtraAttribute:(NSObject *)arg0;
+- (NSString *)descendantWithPermanentTag:(NSString *)arg0;
+- (void)sortChildren;
+- (char)isSpecialMailboxUid;
+- (char)isOutgoingMailboxUid;
+- (NSString *)realFullPath;
+- (NSObject *)pathRelativeToMailboxForDisplay:(NSObject *)arg0;
+- (NSString *)oldURLString;
+- (unsigned int)mailboxID;
+- (int)compareWithMailboxUid:(MFMailboxUid *)arg0;
+- (int)indexToInsertChildMailboxUid:(id)arg0;
+- (char)isDescendantOfMailbox:(id)arg0;
+- (char)userInfoBoolForKey:(NSString *)arg0;
+- (void)setUserInfoBool:(char)arg0 forKey:(NSString *)arg1;
+- (NSDictionary *)userInfoDictionary;
+- (void)setUserInfoWithDictionary:(NSDictionary *)arg0;
+- (id)userInfoForSerialization;
+- (void)setCriterion:(MFMessageCriterion *)arg0;
+- (char)alwaysWriteFullMessageFile;
+- (void)setLastViewedMessageID:(NSString *)arg0;
+- (void)setPermanentTag:(NSString *)arg0;
+- (NSArray *)extraAttributes;
+- (NSObject *)childAtIndex:(unsigned int)arg0;
+- (NSString *)userInfoObjectForKey:(NSString *)arg0;
+- (void)saveUserInfo;
+- (NSString *)fullPath;
+- (MFWeakReferenceHolder *)parent;
+- (void)setParent:(MFWeakReferenceHolder *)arg0;
+- (NSMutableArray *)children;
+
+@end

@@ -1,0 +1,7 @@
+/* Runtime dump - MKOldAnnotationContainerView
+ * Image: /System/Library/Frameworks/MapKit.framework/MapKit
+ */
+
+@interface MKOldAnnotationContainerView : MKAnnotationContainerView
+
+@end

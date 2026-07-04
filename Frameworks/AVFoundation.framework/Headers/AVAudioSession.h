@@ -1,0 +1,135 @@
+/* Runtime dump - AVAudioSession
+ * Image: /System/Library/Frameworks/AVFoundation.framework/libAVFAudio.dylib
+ */
+
+@interface AVAudioSession : NSObject
+{
+    void * _impl;
+}
+
+@property (readonly) NSString * category;
+@property (readonly) unsigned int categoryOptions;
+@property (readonly) NSString * mode;
+@property (readonly) char otherAudioPlaying;
+@property (readonly) char secondaryAudioShouldBeSilencedHint;
+@property (readonly) AVAudioSessionRouteDescription * currentRoute;
+@property (readonly) AVAudioSessionPortDescription * preferredInput;
+@property (readonly) NSArray * availableInputs;
+
++ (void)privateAllocInitSingleton;
++ (AVAudioSession *)sharedInstance;
++ (AVAudioSession *)allocWithZone:(struct _NSZone *)arg0;
+
+- (int)inputNumberOfChannels;
+- (char)setActive:(char)arg0 withFlags:(int)arg1 error:(id *)arg2;
+- (char)setPreferredHardwareSampleRate:(double)arg0 error:(id *)arg1;
+- (double)preferredHardwareSampleRate;
+- (char)inputIsAvailable;
+- (double)currentHardwareSampleRate;
+- (int)currentHardwareInputNumberOfChannels;
+- (int)currentHardwareOutputNumberOfChannels;
+- (float)outputVolume;
+- (void)privateMarkKVOPropertiesDirty:(unsigned int)arg0;
+- (char)privateSetPropertyValue:(unsigned long)arg0 withBool:(char)arg1 error:(id *)arg2;
+- (char)setActive:(char)arg0 withOptions:(unsigned int)arg1 error:(id *)arg2;
+- (void)privateUpdateInputGain:(id)arg0;
+- (AVAudioSessionRouteDescription *)currentRoute;
+- (id)privateGetDataSources:(char)arg0;
+- (NSObject *)privateGetSelectedDataSource:(char)arg0;
+- (NSString *)privateConfigureRouteDescription:(NSString *)arg0;
+- (id)privateRefreshAvailableInputs;
+- (char)isInputAvailable;
+- (double)preferredSampleRate;
+- (void)privateUpdateOutputVolume:(id)arg0;
+- (void)privateUpdateDataSources:(id)arg0 forInput:(char)arg1;
+- (void)privateUpdatePromptStyle:(NSObject *)arg0;
+- (void)privateUpdateAudioFormats:(id)arg0;
+- (void)privateUpdateAudioFormat:(NSString *)arg0;
+- (void)privateUpdateInputChannelCount:(NSObject *)arg0;
+- (void)privateUpdateOutputChannelCount:(NSObject *)arg0;
+- (unsigned int)categoryOptions;
+- (unsigned int)recordPermission;
+- (void)requestRecordPermission:(NSObject *)arg0;
+- (char)setPreferredIOBufferFrameSize:(unsigned int)arg0 error:(id *)arg1;
+- (char)setPreferredInputNumberOfChannels:(int)arg0 error:(id *)arg1;
+- (char)setPreferredOutputNumberOfChannels:(int)arg0 error:(id *)arg1;
+- (char)setInputGain:(float)arg0 error:(id *)arg1;
+- (char)setInputDataSource:(NSObject *)arg0 error:(id *)arg1;
+- (char)setOutputDataSource:(NSObject *)arg0 error:(id *)arg1;
+- (char)isEarpieceActiveNoiseCancelationEnabled;
+- (char)forceSoundCheck;
+- (char)setForceSoundCheck:(char)arg0 error:(id *)arg1;
+- (char)allowAllBuiltInDataSources;
+- (void)setAllowAllBuiltInDataSources:(char)arg0;
+- (char)isHardwareFormatFixedToMultiChannel;
+- (char)fixHardwareFormatToMultiChannel:(char)arg0 error:(id *)arg1;
+- (float)inputGain;
+- (struct AVAudioSessionImpl *)privateGetImplementation;
+- (id)inputDataSources;
+- (NSObject *)inputDataSource;
+- (id)outputDataSources;
+- (NSObject *)outputDataSource;
+- (char)isInputGainSettable;
+- (char)isOtherAudioPlaying;
+- (char)secondaryAudioShouldBeSilencedHint;
+- (double)inputSafetyOffset;
+- (double)outputSafetyOffset;
+- (unsigned int)IOBufferFrameSize;
+- (unsigned int)preferredIOBufferFrameSize;
+- (int)preferredInputNumberOfChannels;
+- (int)preferredOutputNumberOfChannels;
+- (int)maximumInputNumberOfChannels;
+- (int)maximumOutputNumberOfChannels;
+- (char)overrideOutputAudioPort:(unsigned int)arg0 error:(id *)arg1;
+- (char)setPreferredInput:(AVAudioSessionPortDescription *)arg0 error:(id *)arg1;
+- (AVAudioSessionPortDescription *)preferredInput;
+- (unsigned int)opaqueSessionID;
+- (double)speechDetectionDeviceSampleRate;
+- (NSArray *)availableInputs;
+- (void)privateHandleServerReturned;
+- (char)setActivationContext:(NSString *)arg0 error:(id *)arg1;
+- (char)setDefaultChatMode:(id)arg0 error:(id *)arg1;
+- (char)setIAmTheAssistant:(char)arg0 error:(id *)arg1;
+- (char)clearInputPreferences:(id *)arg0;
+- (void)privateInputIsAvailableChanged:(NSNotification *)arg0;
+- (void)privateBeginInterruption;
+- (void)privateEndInterruptionWithFlags:(id)arg0;
+- (void)privateHandleInputGainChange:(NSDictionary *)arg0;
+- (void)privateHandleOutputVolumeChange:(NSDictionary *)arg0;
+- (void)privateHandleInputDataSourcesChange:(NSDictionary *)arg0;
+- (void)privateHandleOutputDataSourcesChange:(NSDictionary *)arg0;
+- (void)privateHandlePromptStyleChange:(NSDictionary *)arg0;
+- (void)privateHandleFormatsChange:(NSDictionary *)arg0;
+- (void)privateHandleFormatChange:(NSDictionary *)arg0;
+- (void)privateHandleInputChannelCount:(NSObject *)arg0;
+- (void)privateHandleOutputChannelCount:(NSObject *)arg0;
+- (void)privateHandleServerDied;
+- (void)privateHandleSecondaryAudioHintChange:(NSDictionary *)arg0;
+- (char)silenceOutput:(unsigned int)arg0 error:(id *)arg1;
+- (NSArray *)audioFormats;
+- (char)setMode:(NSString *)arg0 error:(id *)arg1;
+- (AVAudioSession *)retain;
+- (void)release;
+- (void)setDelegate:(NSObject *)arg0;
+- (AVAudioSession *)init;
+- (AVAudioSession *)autorelease;
+- (unsigned int)retainCount;
+- (NSObject *)delegate;
+- (NSString *)category;
+- (AVAudioSession *)copyWithZone:(struct _NSZone *)arg0;
+- (NSString *)mode;
+- (char)setCategory:(NSString *)arg0 withOptions:(unsigned int)arg1 error:(id *)arg2;
+- (char)setPreferredSampleRate:(double)arg0 error:(id *)arg1;
+- (double)IOBufferDuration;
+- (double)inputLatency;
+- (double)outputLatency;
+- (unsigned int)promptStyle;
+- (int)audioFormat;
+- (double)sampleRate;
+- (char)setCategory:(NSString *)arg0 error:(id *)arg1;
+- (int)outputNumberOfChannels;
+- (char)setActive:(char)arg0 error:(id *)arg1;
+- (double)preferredIOBufferDuration;
+- (char)setPreferredIOBufferDuration:(double)arg0 error:(id *)arg1;
+
+@end

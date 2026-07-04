@@ -1,0 +1,52 @@
+// MIME.framework umbrella header
+// Auto-generated from iOS 8.4.3 dyld_shared_cache (AppleTV 3,2)
+
+#import <Foundation/Foundation.h>
+
+#import <MIME/MFBase64Decoder.h>
+#import <MIME/MFBase64Encoder.h>
+#import <MIME/MFBaseFilterDataConsumer.h>
+#import <MIME/MFBufferedDataConsumer.h>
+#import <MIME/MFByteSet.h>
+#import <MIME/MFConditionLock.h>
+#import <MIME/MFCountingDataConsumer.h>
+#import <MIME/MFData.h>
+#import <MIME/MFDataMessageStore.h>
+#import <MIME/MFDiagnostics.h>
+#import <MIME/MFEmailSet.h>
+#import <MIME/MFFuture.h>
+#import <MIME/MFHTMLParser.h>
+#import <MIME/MFLineEndingConverterFilter.h>
+#import <MIME/MFLock.h>
+#import <MIME/MFMessage.h>
+#import <MIME/MFMessageBody.h>
+#import <MIME/MFMessageDataContainer.h>
+#import <MIME/MFMessageFileWrapper.h>
+#import <MIME/MFMessageHeaders.h>
+#import <MIME/MFMessageStore.h>
+#import <MIME/MFMessageStoreObjectCache.h>
+#import <MIME/MFMessageTextAttachment.h>
+#import <MIME/MFMimeBody.h>
+#import <MIME/MFMimeCharset.h>
+#import <MIME/MFMimePart.h>
+#import <MIME/MFMimeTextAttachment.h>
+#import <MIME/MFMutableByteSet.h>
+#import <MIME/MFMutableData.h>
+#import <MIME/MFMutableFilterDataConsumer.h>
+#import <MIME/MFMutableMessageHeaders.h>
+#import <MIME/MFNullDataConsumer.h>
+#import <MIME/MFPartialNetworkDataConsumer.h>
+#import <MIME/MFPlaceholderFileWrapper.h>
+#import <MIME/MFPriorityDesignator.h>
+#import <MIME/MFProgressFilterDataConsumer.h>
+#import <MIME/MFQuotedPrintableDecoder.h>
+#import <MIME/MFQuotedPrintableEncoder.h>
+#import <MIME/MFRangedDataFilter.h>
+#import <MIME/MFRecursiveLock.h>
+#import <MIME/MFUUDecoder.h>
+#import <MIME/MFWeakDictionary.h>
+#import <MIME/MFWeakProxy.h>
+#import <MIME/MFWeakReferenceHolder.h>
+#import <MIME/MFWeakSet.h>
+#import <MIME/_MFEmailSetEmail.h>
+#import <MIME/_MFEmailSetEnumerator.h>

@@ -1,0 +1,15 @@
+/* Runtime dump - CTCellularPlanSubscriptionDataUsageParser
+ * Image: /System/Library/PrivateFrameworks/CellularPlanManager.framework/CellularPlanManager
+ */
+
+@interface CTCellularPlanSubscriptionDataUsageParser : NSObject <CTCellularPlanValidating>
+
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString * description;
+@property (readonly, copy) NSString * debugDescription;
+
++ (char)validate:(NSDate *)arg0 parseTo:(id *)arg1;
++ (char)validate:(NSDate *)arg0;
+
+@end

@@ -1,0 +1,135 @@
+/* Runtime dump - VKAnnotationMarker
+ * Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
+ */
+
+@interface VKAnnotationMarker : VKAnnotationMarkerLayer <VKAnchorDelegate, VKTrackableAnnotationPresentation, MKCalloutSource>
+{
+    <VKAnnotation> * _annotation;
+    NSString * _reuseIdentifier;
+    struct VKPoint _projectedPoint;
+    struct VKPoint _projectedGroundPoint;
+    char _selected;
+    char _canShowCallout;
+    int _dragState;
+    char _draggable;
+    char _tracking;
+    char _animatingToCoordinate;
+    VKAnimation * _coordinateAnimation;
+    char _followsTerrain;
+    struct ? _presentationCoordinate;
+    struct CGPoint _presentationPoint;
+    char _useScreenSpacePoint;
+    float _dropFraction;
+    VKAnchor * _anchor;
+    struct ? _styleTransitionState;
+    <VKAnnotationMarkerDelegate> * _delegate;
+    char _hidden;
+    struct CGPoint _calloutOffset;
+}
+
+@property (retain, nonatomic) UIView * leftCalloutAccessoryView;
+@property (retain, nonatomic) UIView * rightCalloutAccessoryView;
+@property (retain, nonatomic) UIView * detailCalloutAccessoryView;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString * description;
+@property (readonly, copy) NSString * debugDescription;
+@property (readonly, copy, nonatomic) NSString * subtitle;
+@property (nonatomic) <VKAnnotationMarkerDelegate> * delegate;
+@property (readonly, nonatomic) NSString * reuseIdentifier;
+@property (retain, nonatomic) <VKAnnotation> * annotation;
+@property (readonly, copy, nonatomic) NSString * title;
+@property (nonatomic) struct ? presentationCoordinate;
+@property (nonatomic) struct CGPoint presentationPoint;
+@property (nonatomic) char useScreenSpacePoint;
+@property (nonatomic) char followsTerrain;
+@property (nonatomic) char selected;
+@property (nonatomic) char canShowCallout;
+@property (nonatomic) struct CGPoint calloutOffset;
+@property (nonatomic) char draggable;
+@property (nonatomic) int dragState;
+@property (nonatomic) struct ? styleTransitionState;
+@property (readonly, nonatomic) char canAnimateIn;
+@property (nonatomic) char tracking;
+@property (nonatomic) char animatingToCoordinate;
+@property (nonatomic) char hidden;
+@property (nonatomic) struct VKPoint projectedPoint;
+@property (nonatomic) struct VKPoint projectedGroundPoint;
+@property (nonatomic) float dropFraction;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString * description;
+@property (readonly, copy) NSString * debugDescription;
+
++ (unsigned int)_zIndex;
++ (unsigned int)_selectedZIndex;
++ (NSString *)keyPathsForValuesAffectingTitle;
++ (NSString *)keyPathsForValuesAffectingSubtitle;
+
+- (void)setLeftCalloutAccessoryView:(UIView *)arg0;
+- (UIView *)leftCalloutAccessoryView;
+- (void)setRightCalloutAccessoryView:(UIView *)arg0;
+- (UIView *)rightCalloutAccessoryView;
+- (void)setDetailCalloutAccessoryView:(UIView *)arg0;
+- (UIView *)detailCalloutAccessoryView;
+- (void)_setHiddenForOffscreen:(char)arg0;
+- (void)dealloc;
+- (void)setDelegate:(<VKAnnotationMarkerDelegate> *)arg0;
+- (void)setHidden:(char)arg0;
+- (VKAnnotationMarker *)init;
+- (<VKAnnotationMarkerDelegate> *)delegate;
+- (NSString *)title;
+- (char)isTracking;
+- (NSString *)reuseIdentifier;
+- (char)isSelected;
+- (void)prepareForReuse;
+- (void)setSelected:(char)arg0;
+- (void)setTracking:(char)arg0;
+- (NSString *)subtitle;
+- (void).cxx_construct;
+- (char)isPersistent;
+- (<VKAnnotation> *)annotation;
+- (void)setAnnotation:(<VKAnnotation> *)arg0;
+- (void)setPresentationPoint:(struct CGPoint)arg0;
+- (struct CGPoint)presentationPoint;
+- (void)setStyleTransitionState:(struct ?)arg0;
+- (struct ?)styleTransitionState;
+- (char)canAnimateIn;
+- (struct ?)presentationCoordinate;
+- (char)followsTerrain;
+- (void)setDragState:(int)arg0 animated:(char)arg1;
+- (void)setAnimatingToCoordinate:(char)arg0;
+- (struct CGRect)frameWithCanvasSize:(NSObject *)arg0;
+- (NSString *)anchorWithContext:(NSObject *)arg0;
+- (struct CGPoint)calloutOffset;
+- (struct CGPoint)calloutAnchorPointWithCanvasSize:(struct CGSize)arg0 canvasScale:(float)arg1 snapToPixels:(char)arg2;
+- (void)anchorWorldPointDidChange:(void *)arg0;
+- (void)setPresentationCoordinate:(struct ?)arg0;
+- (VKAnnotationMarker *)initWithAnnotation:(<VKAnnotation> *)arg0 reuseIdentifier:(NSString *)arg1;
+- (void)setFollowsTerrain:(char)arg0;
+- (void)setDragState:(int)arg0;
+- (void)animateFromCoordinate:(struct ?)arg0 duration:(double)arg1;
+- (double)animateInWithCanvasSize:(struct CGSize)arg0 delay:(double)arg1 completionHandler:(id /* block */)arg2;
+- (struct CGPoint)pointToDropAtForPoint:(struct CGPoint)arg0;
+- (struct CGRect)significantFrameWithCanvasSize:(NSObject *)arg0;
+- (struct VKPoint)pointInWorldWithContext:(NSObject *)arg0;
+- (struct CGPoint)screenPointToScrollRelativeToWithCanvasSize:(struct CGSize)arg0 canvasScale:(float)arg1;
+- (NSString *)debugAnchorPointString;
+- (struct VKPoint)projectedPoint;
+- (void)setProjectedPoint:(struct VKPoint)arg0;
+- (struct VKPoint)projectedGroundPoint;
+- (void)setProjectedGroundPoint:(struct VKPoint)arg0;
+- (char)canShowCallout;
+- (void)setCanShowCallout:(char)arg0;
+- (int)dragState;
+- (char)isDraggable;
+- (void)setDraggable:(char)arg0;
+- (void)setCalloutOffset:(struct CGPoint)arg0;
+- (char)animatingToCoordinate;
+- (char)useScreenSpacePoint;
+- (void)setUseScreenSpacePoint:(char)arg0;
+- (float)dropFraction;
+- (void)setDropFraction:(float)arg0;
+- (char)hidden;
+
+@end

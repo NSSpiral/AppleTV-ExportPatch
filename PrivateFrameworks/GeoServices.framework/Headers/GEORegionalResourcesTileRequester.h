@@ -1,0 +1,16 @@
+/* Runtime dump - GEORegionalResourcesTileRequester
+ * Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
+ */
+
+@interface GEORegionalResourcesTileRequester : GEOTileRequester
+{
+    NSMutableArray * _loaders;
+}
+
++ (unsigned char)tileProviderIdentifier;
+
+- (void)cancel;
+- (void)dealloc;
+- (void)start;
+
+@end

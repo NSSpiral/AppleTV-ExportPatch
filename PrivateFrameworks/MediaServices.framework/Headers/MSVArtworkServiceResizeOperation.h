@@ -1,0 +1,9 @@
+/* Runtime dump - MSVArtworkServiceResizeOperation
+ * Image: /System/Library/PrivateFrameworks/MediaServices.framework/MediaServices
+ */
+
+@interface MSVArtworkServiceResizeOperation : MSVArtworkServiceOperation
+
+- (void)main;
+
+@end

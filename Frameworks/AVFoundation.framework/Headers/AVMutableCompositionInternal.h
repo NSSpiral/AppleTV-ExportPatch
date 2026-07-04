@@ -1,0 +1,7 @@
+/* Runtime dump - AVMutableCompositionInternal
+ * Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
+ */
+
+@interface AVMutableCompositionInternal : NSObject
+
+@end

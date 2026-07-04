@@ -1,0 +1,13 @@
+/* Runtime dump - CIFourfoldTranslatedTile
+ * Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
+ */
+
+@interface CIFourfoldTranslatedTile : CITile2Filter
+
++ (NSArray *)customAttributes;
+
+- (NSString *)_kernel_name;
+- (NSObject *)_kernel_source;
+- (CIImage *)outputImage;
+
+@end

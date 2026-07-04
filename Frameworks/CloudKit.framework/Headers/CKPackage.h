@@ -1,0 +1,135 @@
+/* Runtime dump - CKPackage
+ * Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
+ */
+
+@interface CKPackage : NSObject <NSSecureCoding, CKRecordValue>
+{
+    struct _OpaquePCSShareProtection * _recordPCS;
+    char _wasCached;
+    char _uploaded;
+    char _downloaded;
+    char _hasSize;
+    char _open;
+    char _transaction;
+    char _ownsTheAnchor;
+    NSArray * _assets;
+    CKRecord * _record;
+    NSString * _recordKey;
+    NSURL * _fileURL;
+    NSString * _applicationBundleID;
+    NSString * _UUID;
+    NSString * _anchorPath;
+    CKSQLite * _sqlite;
+    int _packageID;
+    unsigned int _nextItemIndex;
+    unsigned long long _size;
+}
+
+@property (copy, nonatomic) NSData * signature;
+@property (copy, nonatomic) NSArray * assets;
+@property (weak, nonatomic) CKRecord * record;
+@property (copy, nonatomic) NSString * recordKey;
+@property (nonatomic) struct _OpaquePCSShareProtection * recordPCS;
+@property (retain, nonatomic) NSURL * fileURL;
+@property (retain, nonatomic) NSString * applicationBundleID;
+@property (nonatomic) unsigned long long size;
+@property (nonatomic) char wasCached;
+@property (nonatomic) char uploaded;
+@property (nonatomic) char downloaded;
+@property (nonatomic) char hasSize;
+@property (retain, nonatomic) NSString * UUID;
+@property (retain, nonatomic) NSString * anchorPath;
+@property (retain, nonatomic) CKSQLite * sqlite;
+@property (nonatomic) int packageID;
+@property (nonatomic) unsigned int nextItemIndex;
+@property (nonatomic) char open;
+@property (nonatomic) char transaction;
+@property (nonatomic) char ownsTheAnchor;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString * description;
+@property (readonly, copy) NSString * debugDescription;
+
++ (NSObject *)_packagesPathForBundleID:(NSObject *)arg0;
++ (char)supportsSecureCoding;
++ (void)destroyPackageAnchoredAtURL:(NSURL *)arg0;
++ (NSObject *)BRBundleID;
+
+- (NSDictionary *)_prettyDictionaryRepresentation;
+- (NSString *)anchorPath;
+- (CKPackage *)initWithArchivedAnchoredPackage:(CKArchivedAnchoredPackage *)arg0;
+- (void)setAnchorPath:(NSString *)arg0;
+- (NSString *)_initWithPath:(NSString *)arg0 UUID:(NSString *)arg1;
+- (id)_packageDatabasePathWithUUID:(id)arg0;
+- (CKSQLite *)sqlite;
+- (int)packageID;
+- (char)ownsTheAnchor;
+- (void)setOwnsTheAnchor:(char)arg0;
+- (void)destroy;
+- (void)_setReferenceCount:(int)arg0;
+- (char)isAnchorStillValid;
+- (void)setSqlite:(CKSQLite *)arg0;
+- (void)incReferenceCount;
+- (char)inTransaction;
+- (char)decReferenceCount;
+- (NSString *)_itemWithColumnsByName:(NSString *)arg0;
+- (NSObject *)_itemOrNilAtIndex:(unsigned int)arg0;
+- (void)setTransaction:(char)arg0;
+- (void)updateItemAtIndex:(int)arg0 withFileURL:(NSURL *)arg1;
+- (void)setPackageID:(int)arg0;
+- (unsigned int)nextItemIndex;
+- (void)setNextItemIndex:(unsigned int)arg0;
+- (NSCoder *)replacementObjectForCoder:(NSCoder *)arg0;
+- (void)dealloc;
+- (unsigned long long)size;
+- (CKPackage *)initWithCoder:(NSCoder *)arg0;
+- (void)encodeWithCoder:(NSCoder *)arg0;
+- (CKPackage *)init;
+- (NSString *)description;
+- (void)setSize:(unsigned long long)arg0;
+- (NSString *)UUID;
+- (CKPackage *)initWithBundleIdentifier:(NSString *)arg0;
+- (void)addItem:(NSObject *)arg0;
+- (void)close;
+- (void).cxx_destruct;
+- (NSURL *)fileURL;
+- (void)setWasCached:(char)arg0;
+- (char)wasCached;
+- (void)setSignature:(NSData *)arg0;
+- (NSData *)signature;
+- (void)open;
+- (CKRecord *)record;
+- (void)setRecord:(CKRecord *)arg0;
+- (unsigned int)itemCount;
+- (BRControl *)itemAtIndex:(unsigned int)arg0;
+- (CKPackage *)initWithAnchorURL:(NSURL *)arg0;
+- (void)beginTransaction;
+- (void)endTransaction;
+- (NSString *)applicationBundleID;
+- (NSString *)CKPropertiesDescription;
+- (void)setApplicationBundleID:(NSString *)arg0;
+- (NSString *)recordKey;
+- (void)setDownloaded:(char)arg0;
+- (void)updateItemsAtIndexes:(NSArray *)arg0 fileURLs:(NSArray *)arg1;
+- (NSObject *)sectionAtIndex:(unsigned int)arg0;
+- (unsigned int)sectionCount;
+- (char)downloaded;
+- (char)uploaded;
+- (NSEnumerator *)itemEnumerator;
+- (void)addSection:(UITableViewSection *)arg0;
+- (void)updateItemAtIndex:(int)arg0 withSignature:(NSData *)arg1 size:(unsigned long long)arg2 itemID:(unsigned long long)arg3 sectionIndex:(unsigned int)arg4;
+- (void)setUploaded:(char)arg0;
+- (NSObject *)itemEnumeratorForSectionAtIndex:(unsigned int)arg0;
+- (void)setRecordKey:(NSString *)arg0;
+- (struct _OpaquePCSShareProtection *)recordPCS;
+- (void)setRecordPCS:(struct _OpaquePCSShareProtection *)arg0;
+- (char)isOpen;
+- (NSArray *)assets;
+- (void)setUUID:(NSSet *)arg0;
+- (void)setAssets:(NSArray *)arg0;
+- (void)setFileURL:(NSURL *)arg0;
+- (char)hasSize;
+- (void)setHasSize:(char)arg0;
+- (void)setOpen:(char)arg0;
+
+@end

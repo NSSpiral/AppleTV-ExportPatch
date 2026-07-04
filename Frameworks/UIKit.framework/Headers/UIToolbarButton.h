@@ -1,0 +1,136 @@
+/* Runtime dump - UIToolbarButton
+ * Image: /System/Library/Frameworks/UIKit.framework/UIKit
+ */
+
+@interface UIToolbarButton : UIControl
+{
+    struct CGRect _hitRect;
+    UIView * _info;
+    UILabel * _label;
+    UIToolbarButtonBadge * _badge;
+    _UIPressedIndicatorView * _pressedIndicator;
+    int _barStyle;
+    int _style;
+    struct UIEdgeInsets _glowAdjust;
+    char _onState;
+    char _barHeight;
+    char _badgeAnimated;
+    char _bezel;
+    float _minimumWidth;
+    float _maximumWidth;
+    float _labelHeight;
+    struct UIEdgeInsets _infoInsets;
+    UIColor * _toolbarTintColor;
+    char _isAnimatedTrashButton;
+    id _appearanceStorage;
+    char _isInTopBar;
+    Class _appearanceGuideClass;
+    struct UIEdgeInsets __additionalSelectionInsets;
+}
+
+@property (nonatomic) struct UIEdgeInsets _additionalSelectionInsets;
+@property (nonatomic) char animatedTrashButton;
+@property (retain, nonatomic) UIColor * _tintColor;
+@property (nonatomic) Class _appearanceGuideClass;
+@property (nonatomic) char _createdByBarButtonItem;
+
++ (UIFont *)_defaultLabelFont;
++ (UIColor *)_defaultLabelColor;
+
+- (void)dealloc;
+- (void)setImage:(UIImage *)arg0;
+- (NSObject *)hitTest:(struct CGPoint)arg0 withEvent:(Event *)arg1;
+- (char)pointInside:(struct CGPoint)arg0 withEvent:(Event *)arg1;
+- (void)setFrame:(struct CGRect)arg0;
+- (void)layoutSubviews;
+- (struct CGSize)sizeThatFits:(struct CGSize)arg0;
+- (char)gestureRecognizerShouldBegin:(UIGestureRecognizer *)arg0;
+- (char)pointInside:(struct CGPoint)arg0 forEvent:(struct __GSEvent *)arg1;
+- (void)setEnabled:(char)arg0;
+- (struct UIEdgeInsets)alignmentRectInsets;
+- (char)_canHandleStatusBarTouchAtLocation:(struct CGPoint)arg0;
+- (Class)_appearanceGuideClass;
+- (NSObject *)hitTest:(struct CGPoint)arg0 forEvent:(struct __GSEvent *)arg1;
+- (void)_applyBarButtonAppearanceStorage:(id)arg0 withTaggedSelectors:(char)arg1;
+- (char)_wantsAccessibilityButtonShapes;
+- (void)setHighlighted:(char)arg0;
+- (void)setBarStyle:(int)arg0;
+- (void)_UIAppearance_setTintColor:(UIColor *)arg0;
+- (void)_setTintColor:(UIColor *)arg0;
+- (char)_showsAccessibilityBackgroundWhenEnabled;
+- (void)_setWantsBlendModeForAccessibilityBackgrounds:(char)arg0;
+- (float)_backgroundVerticalPositionAdjustmentForBarMetrics:(int)arg0;
+- (NSObject *)_defaultTitleColorForState:(unsigned int)arg0;
+- (struct CGSize)_defaultTitleShadowOffsetForState:(unsigned int)arg0;
+- (NSObject *)_defaultTitleShadowColorForState:(unsigned int)arg0;
+- (void)_updateShadowOffsetWithAttributes:(NSDictionary *)arg0 forState:(unsigned int)arg1;
+- (UIColor *)_tintColor;
+- (NSObject *)_customOrAccessibilityBackgroundImageForState:(unsigned int)arg0 style:(int)arg1 isMini:(char)arg2;
+- (void)_setBackgroundImage:(UIImage *)arg0 forState:(unsigned int)arg1 style:(int)arg2 barMetrics:(int)arg3;
+- (void)_UIAppearance_setBackgroundImage:(UIImage *)arg0 forState:(unsigned int)arg1 style:(int)arg2 barMetrics:(int)arg3;
+- (void)_UIAppearance_setBackgroundImage:(UIImage *)arg0 forState:(unsigned int)arg1 barMetrics:(int)arg2;
+- (void)_UIAppearance_setTitleTextAttributes:(NSDictionary *)arg0 forState:(unsigned int)arg1;
+- (void)_UIAppearance_setBackgroundVerticalPositionAdjustment:(float)arg0 forBarMetrics:(int)arg1;
+- (void)_UIAppearance_setTitlePositionAdjustment:(struct UIOffset)arg0 forBarMetrics:(int)arg1;
+- (void)_setTitleTextAttributes:(NSDictionary *)arg0 forState:(unsigned int)arg1;
+- (void)_setTitlePositionAdjustment:(struct UIOffset)arg0 forBarMetrics:(int)arg1;
+- (void)_setBackgroundVerticalPositionAdjustment:(float)arg0 forBarMetrics:(int)arg1;
+- (void)_setWantsLetterpressContent;
+- (void)_setBackgroundImage:(UIImage *)arg0 forState:(unsigned int)arg1 barMetrics:(int)arg2;
+- (NSObject *)_backgroundImageForState:(unsigned int)arg0 barMetrics:(int)arg1;
+- (NSObject *)_titleTextAttributesForState:(unsigned int)arg0;
+- (void)_UIAppearance_setBackButtonBackgroundImage:(UIImage *)arg0 forState:(unsigned int)arg1 barMetrics:(int)arg2;
+- (void)_setBackButtonBackgroundImage:(UIImage *)arg0 forState:(unsigned int)arg1 barMetrics:(int)arg2;
+- (struct UIOffset)_titlePositionAdjustmentForBarMetrics:(int)arg0;
+- (void)_UIAppearance_setBackButtonTitlePositionAdjustment:(struct UIOffset)arg0 forBarMetrics:(int)arg1;
+- (void)_setBackButtonTitlePositionAdjustment:(struct UIOffset)arg0 forBarMetrics:(int)arg1;
+- (void)_UIAppearance_setBackButtonBackgroundVerticalPositionAdjustment:(float)arg0 forBarMetrics:(int)arg1;
+- (void)_setBackButtonBackgroundVerticalPositionAdjustment:(float)arg0 forBarMetrics:(int)arg1;
+- (char)_createdByBarButtonItem;
+- (void)_setCreatedByBarButtonItem:(char)arg0;
+- (void)_setAppearanceGuideClass:(Class)arg0;
+- (struct UIEdgeInsets)_additionalSelectionInsets;
+- (void)_setAdditionalSelectionInsets:(struct UIEdgeInsets)arg0;
+- (void)_setLastHighlightSuccessful:(char)arg0;
+- (char)pointMostlyInside:(struct CGPoint)arg0 withEvent:(Event *)arg1;
+- (void)_setTouchHasHighlighted:(char)arg0;
+- (NSMutableDictionary *)_info;
+- (void)_sizeView:(NSObject *)arg0 toPossibleTitles:(id)arg1 pressedTitle:(NSString *)arg2;
+- (id)_newButton;
+- (void)_adjustPushButtonForMiniBar:(char)arg0 isChangingBarHeight:(char)arg1;
+- (char)_isBordered;
+- (void)_setPressed:(char)arg0;
+- (char)_infoIsButton;
+- (void)_positionBadge;
+- (void)_badgeAnimationDidStop:(id)arg0 finished:(id /* block */)arg1;
+- (void)_adjustToolbarButtonInfo;
+- (char)isAnimatedTrashButton;
+- (char)_isBorderedOtherThanAccessibility;
+- (char)_shouldApplyPadding;
+- (void)_animateImage:(float)arg0 withButtonBar:(UIToolbar *)arg1 target:(NSObject *)arg2 didFinishSelector:(SEL)arg3;
+- (char)_useSilverLook;
+- (void)_adjustToolbarButtonInfoTintColorHasChanged:(char)arg0;
+- (void)_updateInfoTextColorsForState:(unsigned int)arg0;
+- (void)_setInTopBar:(char)arg0;
+- (UIToolbarButton *)initWithImage:(UIImage *)arg0 pressedImage:(UIImage *)arg1 label:(UILabel *)arg2 labelHeight:(float)arg3 withBarStyle:(int)arg4 withStyle:(int)arg5 withInsets:(struct UIEdgeInsets)arg6 possibleTitles:(NSSet *)arg7 possibleSystemItems:(NSSet *)arg8 withToolbarTintColor:(UIColor *)arg9 bezel:(char)arg10 imageInsets:(struct UIEdgeInsets)arg11 glowInsets:(struct UIEdgeInsets)arg12 landscape:(char)arg13;
+- (void)setSizesToFitImage:(char)arg0;
+- (void)_setButtonBarHitRect:(struct CGRect)arg0;
+- (struct CGRect)_buttonBarHitRect;
+- (void)_showPressedIndicator:(char)arg0;
+- (void)setUseSelectedImage:(char)arg0;
+- (void)_setBadgeValue:(id)arg0;
+- (void)_setBadgeAnimated:(char)arg0;
+- (void)_setInfoWidth:(float)arg0;
+- (void)_setInfoExtremityWidth:(float)arg0 isMin:(char)arg1;
+- (void)_setInfoFlexibleWidth:(char)arg0;
+- (char)_canGetPadding;
+- (float)_paddingForLeft:(char)arg0;
+- (void)_setOn:(char)arg0;
+- (char)_isOn;
+- (void)_animateImage:(float)arg0 withButtonBar:(UIToolbar *)arg1;
+- (void)_setBarHeight:(float)arg0;
+- (char)_useBarHeight;
+- (void)setToolbarTintColor:(UIColor *)arg0;
+- (void)setAnimatedTrashButton:(char)arg0;
+
+@end

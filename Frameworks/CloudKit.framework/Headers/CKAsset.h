@@ -1,0 +1,138 @@
+/* Runtime dump - CKAsset
+ * Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
+ */
+
+@interface CKAsset : NSObject <CKRecordValue, NSSecureCoding>
+{
+    char _wasCached;
+    char _hasSize;
+    char _uploaded;
+    char _downloaded;
+    NSURL * _fileURL;
+    NSData * _signature;
+    NSNumber * _deviceID;
+    NSNumber * _fileID;
+    NSNumber * _generationCountToSave;
+    NSString * _assetHandleUUID;
+    NSURL * _downloadURL;
+    NSDate * _downloadURLExpiration;
+    NSData * _assetKey;
+    NSData * _wrappedAssetKey;
+    NSData * _referenceSignature;
+    NSString * _uploadReceipt;
+    int _arrayIndex;
+    CKRecordID * _recordID;
+    CKRecord * _record;
+    NSString * _recordKey;
+    NSURL * _contentBaseURL;
+    NSString * _owner;
+    NSString * _requestor;
+    NSString * _authToken;
+    NSData * _authRequest;
+    NSData * _inlineData;
+    NSString * _downloadBaseURL;
+    unsigned long long _size;
+}
+
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString * description;
+@property (readonly, copy) NSString * debugDescription;
+@property (copy, nonatomic) NSURL * fileURL;
+@property (copy, nonatomic) NSData * signature;
+@property (nonatomic) unsigned long long size;
+@property (readonly, nonatomic) NSNumber * deviceID;
+@property (readonly, nonatomic) NSNumber * fileID;
+@property (retain, nonatomic) NSNumber * generationCountToSave;
+@property (retain, nonatomic) NSString * assetHandleUUID;
+@property (retain, nonatomic) NSURL * downloadURL;
+@property (retain, nonatomic) NSDate * downloadURLExpiration;
+@property (retain, nonatomic) NSData * assetKey;
+@property (retain, nonatomic) NSData * wrappedAssetKey;
+@property (retain, nonatomic) NSData * referenceSignature;
+@property (copy, nonatomic) NSString * uploadReceipt;
+@property (nonatomic) char wasCached;
+@property (nonatomic) char hasSize;
+@property (nonatomic) char uploaded;
+@property (nonatomic) char downloaded;
+@property (nonatomic) int arrayIndex;
+@property (retain, nonatomic) CKRecordID * recordID;
+@property (weak, nonatomic) CKRecord * record;
+@property (copy, nonatomic) NSString * recordKey;
+@property (retain, nonatomic) NSURL * contentBaseURL;
+@property (retain, nonatomic) NSString * owner;
+@property (retain, nonatomic) NSString * requestor;
+@property (copy, nonatomic) NSString * authToken;
+@property (copy, nonatomic) NSData * authRequest;
+@property (copy, nonatomic) NSData * inlineData;
+@property (retain, nonatomic) NSString * downloadBaseURL;
+
++ (CKAsset *)assetWithFileURL:(NSURL *)arg0;
++ (char)supportsSecureCoding;
+
+- (NSString *)assetHandleUUID;
+- (CKAsset *)initWithFileURL:(NSURL *)arg0 signature:(NSData *)arg1 assetHandleUUID:(NSString *)arg2;
+- (void)setGenerationCountToSave:(NSNumber *)arg0;
+- (unsigned long long)size;
+- (CKAsset *)initWithCoder:(NSCoder *)arg0;
+- (void)encodeWithCoder:(NSCoder *)arg0;
+- (CKAsset *)init;
+- (NSString *)description;
+- (void)setSize:(unsigned long long)arg0;
+- (void).cxx_destruct;
+- (NSURL *)fileURL;
+- (CKAsset *)initWithFileURL:(NSURL *)arg0;
+- (void)setWasCached:(char)arg0;
+- (char)wasCached;
+- (NSNumber *)deviceID;
+- (NSNumber *)fileID;
+- (void)setSignature:(NSData *)arg0;
+- (NSData *)signature;
+- (CKRecord *)record;
+- (CKRecordID *)recordID;
+- (void)setRecordID:(CKRecordID *)arg0;
+- (void)setRecord:(CKRecord *)arg0;
+- (CKAsset *)initWithDeviceID:(NSNumber *)arg0 fileID:(NSNumber *)arg1 generationID:(unsigned int *)arg2;
+- (NSURL *)downloadURL;
+- (NSDate *)downloadURLExpiration;
+- (NSString *)owner;
+- (NSData *)inlineData;
+- (void)setAuthToken:(NSString *)arg0;
+- (NSString *)CKPropertiesDescription;
+- (NSString *)recordKey;
+- (NSString *)authToken;
+- (void)setAssetHandleUUID:(NSString *)arg0;
+- (void)setDownloaded:(char)arg0;
+- (char)downloaded;
+- (void)setArrayIndex:(int)arg0;
+- (char)uploaded;
+- (void)setUploaded:(char)arg0;
+- (void)setAssetKey:(NSData *)arg0;
+- (NSData *)assetKey;
+- (void)setReferenceSignature:(NSData *)arg0;
+- (NSData *)referenceSignature;
+- (NSString *)uploadReceipt;
+- (void)setUploadReceipt:(NSString *)arg0;
+- (CKAsset *)_initBare;
+- (void)setRecordKey:(NSString *)arg0;
+- (void)setWrappedAssetKey:(NSData *)arg0;
+- (NSString *)downloadBaseURL;
+- (NSData *)wrappedAssetKey;
+- (void)setDownloadURL:(NSURL *)arg0;
+- (NSData *)authRequest;
+- (NSURL *)contentBaseURL;
+- (NSString *)requestor;
+- (NSNumber *)generationCountToSave;
+- (void)setContentBaseURL:(NSURL *)arg0;
+- (void)setRequestor:(NSString *)arg0;
+- (void)setAuthRequest:(NSData *)arg0;
+- (void)setDownloadBaseURL:(NSString *)arg0;
+- (void)setDownloadURLExpiration:(NSDate *)arg0;
+- (int)arrayIndex;
+- (void)setInlineData:(NSData *)arg0;
+- (void)setFileURL:(NSURL *)arg0;
+- (char)hasSize;
+- (void)setHasSize:(char)arg0;
+- (void)setOwner:(NSString *)arg0;
+
+@end

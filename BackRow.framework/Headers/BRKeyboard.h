@@ -1,0 +1,122 @@
+/* Runtime dump - BRKeyboard
+ * Image: /Applications/AppleTV.app/AppleTV
+ */
+
+
+@class BRControl, BRGridControl, BRGridView, BRKeyboardControl, BRTextEntryControl;
+@interface BRKeyboard : NSObject
+{
+    BRTextEntryControl * _textEntryControl;
+    BRControl * _baseKeyControl;
+    BRKeyboard * _baseKeyboard;
+    NSString * _name;
+    BRKeyboardControl * _keyboardControl;
+    BRGridView * _mainKeysGrid;
+    NSMutableArray * _mainKeyControls;
+    BRControl * _actionKeysContainer;
+    NSMutableArray * _actionKeyControls;
+    NSArray * _keyDataDictionaries;
+    char _shouldShowLanguageSwitchButton;
+    char _constrainCursorToPopupKeyboard;
+    char _canWrapHorizontally;
+    char _canWrapVertically;
+}
+
+- (void)grid:(BRGridControl *)arg0 didSelectItemAtIndex:(long)arg1;
+- (long)numberOfItemsInGrid:(BRGridControl *)arg0;
+- (long)numberOfColumnsInGrid:(BRGridControl *)arg0;
+- (BRControl *)grid:(BRGridControl *)arg0 itemAtIndex:(long)arg1;
+- (void)setCanWrapHorizontally:(char)arg0;
+- (void)startSpinning;
+- (void)stopSpinning;
+- (float)grid:(BRGridControl *)arg0 heightForItemAtIndex:(long)arg1;
+- (char)canShowLanguageSwitchButton;
+- (void)setShouldShowLanguageSwitchButton:(char)arg0;
+- (void)setCanWrapVertically:(char)arg0;
+- (void)setBaseKeyControl:(BRControl *)arg0;
+- (void)setBaseKeyboard:(BRKeyboard *)arg0;
+- (void)setTextEntryControl:(BRTextEntryControl *)arg0;
+- (void)_createMainAndActionKeyControls;
+- (float)_mainKeysHorizontalSpacing;
+- (float)_mainKeysVerticalSpacing;
+- (float)_preferredColumnWidthForMainKeysGrid;
+- (float)_actionKeysContainerWidth;
+- (float)_actionKeysContainerSpacing;
+- (void)_handleActionKeySelectionEvent:(NSObject *)arg0;
+- (Class)_keyboardControlClass;
+- (float)_verticalGapBetweenMainAndActionKeys;
+- (char)_popupKeyboardValidForGlyph:(id)arg0;
+- (BRKeyboard *)initWithBaseKeyControl:(BRControl *)arg0 baseKeyboard:(BRKeyboard *)arg1 textEntryControl:(BRTextEntryControl *)arg2;
+- (BRTextEntryControl *)textEntryControl;
+- (NSObject *)_optionCharactersForKeyboardInput;
+- (NSString *)_popupKeyboardDataFileName;
+- (id)_processGlyphDataChunk:(id)arg0;
+- (int)_numberOfMainKeyColumns;
+- (id)actionDictionaryForKeyControl:(BRControl *)arg0;
+- (NSString *)switchToThisKeyboardIdentifier;
+- (NSArray *)customizedTextEntryFieldControls;
+- (void)customizedTextFieldControlsWereRemoved;
+- (NSArray *)customizeTextEntryControls:(id)arg0;
+- (void)removeCustomizedTextEntryControls:(id)arg0;
+- (NSString *)attributesForTextFieldLabel;
+- (char)canWrapHorizontally;
+- (char)canWrapVertically;
+- (int)numberOfKeyboardsForCurrentKeyboardType;
+- (BRControl *)baseKeyControl;
+- (BRKeyboard *)baseKeyboard;
+- (BRKeyboardControl *)keyboardControl;
+- (NSMutableArray *)mainKeyControls;
+- (NSArray *)keyDataDictionaries;
+- (char)textEntryControlShouldHandleMainKeysEvents;
+- (char)textEntryControlShouldHandleActionKeysEvents;
+- (id)popupKeyboardForKeyControl:(BRControl *)arg0 textEntryControl:(BRTextEntryControl *)arg1;
+- (struct CGRect)frameForPopupKeyboardControl:(BRControl *)arg0 baseKeyControl:(SEL)arg1;
+- (char)popupKeyboardShouldBeRightAlignedForKey:(NSString *)arg0;
+- (char)popupKeyboardShouldRemainDisplayedAfterCharacterSelection;
+- (int)visualIndexOfFocusedControlForRow:(id)arg0;
+- (int)visualIndexOfControlWithName:(NSString *)arg0 forRow:(id)arg1;
+- (void)setFocusedControlWithVisualIndex:(int)arg0 forRow:(id)arg1;
+- (id)focusedControlForRow:(id)arg0;
+- (NSObject *)focusedControlForActionKeysContainer:(NSObject *)arg0;
+- (int)mapVisualIndex:(int)arg0 toRow:(id)arg1;
+- (char)shouldShowLanguageSwitchButton;
+- (char)requiresTextFieldLabel;
+- (void)setConstrainCursorToPopupKeyboard:(char)arg0;
+- (char)isLastCharacterSelected;
+- (NSSet *)keyboardCharacterSet;
+- (NSSet *)allPopupkeyboardsCharacterSet;
+- (NSString *)_keyboardDataFileName;
+- (NSData *)_filterRawKeyboardData:(NSData *)arg0;
+- (int)_numberOfMainKeyRows;
+- (int)_numberOfMainKeysInLastRow;
+- (NSData *)_controlForData:(NSData *)arg0;
+- (int)_numberOfActionKeyRows;
+- (int)_numberOfActionKeyColumns;
+- (NSString *)_glyphDataForTextString:(NSString *)arg0 attributes:(NSDictionary *)arg1;
+- (NSArray *)_glyphDataForStrings:(id)arg0 attributes:(NSDictionary *)arg1;
+- (UIImage *)_glyphDataForImage:(UIImage *)arg0;
+- (struct CGColor *)_createColorFromDictionary:(NSDictionary *)arg0;
+- (void)_accessibilityApplyImageLabel:(NSString *)arg0 name:(NSString *)arg1;
+- (struct CGSize)_preferredGlyphSize:(NSObject *)arg0;
+- (float)_preferredGlyphWidth:(id)arg0;
+- (float)_preferredGlyphHeight:(id)arg0;
+- (void)_replaceActionKeysContainerWithContainer:(NSObject *)arg0;
+- (NSObject *)_mainKeyRowPlane;
+- (float)_preferredTextEntryControlWidth;
+- (float)layoutGapBelowKeyboardControl;
+- (float)layoutGapBelowTabControl;
+- (struct CGRect)playPauseFrame;
+- (struct CGRect)keyboardControlFrame;
+- (struct CGRect)candidatesBackgroundFrame;
+- (struct CGRect)candidatesContainerFrame;
+- (struct CGRect)textFieldLabelFrame;
+- (struct CGRect)textFieldBackgroundFrame;
+- (struct CGRect)textFieldFrame;
+- (struct CGRect)tabControlFrame;
+- (struct CGRect)spinnerFrame;
+- (void)dealloc;
+- (BRKeyboard *)init;
+- (NSString *)name;
+- (char)handleEvent:(NSDictionary *)arg0;
+
+@end

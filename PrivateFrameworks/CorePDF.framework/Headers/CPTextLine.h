@@ -1,0 +1,126 @@
+/* Runtime dump - CPTextLine
+ * Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
+ */
+
+@interface CPTextLine : CPTextObject <CPDisposable>
+{
+    CPCharSequence * charSequence;
+    struct ? * wordArray;
+    unsigned int wordCount;
+    struct CPInlineContainer * inlineList;
+    int lineNumber;
+    int columnNumber;
+    float baseline;
+    char baseLineIsNull;
+    char hasBeenSplit;
+    char hasBeenProcessed;
+    char maySplit;
+    char hasTabs;
+    NSArray * columnBreaks;
+    NSArray * xsegments;
+    int levels;
+    float maximumLetterGap;
+    float maximumWordGap;
+    int tabsBefore;
+    char irregular;
+    unsigned int leftSpacerIndex;
+    unsigned int rightSpacerIndex;
+    char isListItem;
+    unsigned int listSpacerIndex;
+    char lineBreakAfter;
+    struct CPPDFStyle * uniformStyle;
+    unsigned short uniformStyleFlags;
+    float monospaceWidth;
+    unsigned int * spacesBefore;
+    char disposed;
+}
+
+@property (nonatomic) unsigned int leftSpacerIndex;
+@property (nonatomic) unsigned int rightSpacerIndex;
+@property (nonatomic) char isListItem;
+@property (nonatomic) unsigned int listSpacerIndex;
+@property (nonatomic) char lineBreakAfter;
+
+- (void)dealloc;
+- (struct CGRect)bounds;
+- (CPTextLine *)init;
+- (CPTextLine *)copyWithZone:(struct _NSZone *)arg0;
+- (NSDictionary *)attributes;
+- (struct CGPoint)anchor;
+- (NSDictionary *)properties;
+- (long)zOrder;
+- (void)fitBoundsToChildren;
+- (void)accept:(id)arg0;
+- (void)translateObjectYBy:(float)arg0;
+- (void)dispose;
+- (char)isIndivisible;
+- (char)isMonospaced;
+- (unsigned int)inlineCount;
+- (char)styleIsUniform:(struct CPPDFStyle * *)arg0 styleFlags:(struct CPPDFStyle)arg1;
+- (CPCharSequence *)charSequence;
+- (float)monospaceWidth;
+- (char)hasDropCap;
+- (struct ? *)wordAtIndex:(NSObject *)arg0;
+- (struct CPInlineContainer *)inlineList;
+- (unsigned int)spacesBeforeWordAtIndex:(unsigned int)arg0;
+- (char)lineBreakAfter;
+- (struct ? *)firstWord;
+- (struct ? *)lastWord;
+- (void)setCharSequence:(CPCharSequence *)arg0;
+- (struct ? *)wordArrayOfSize:(NSObject *)arg0;
+- (void)recomputeLevels;
+- (id)newTextLineFromWordAt:(unsigned int)arg0 lengthInWords:(unsigned int)arg1;
+- (void)recomputeBaseline;
+- (char)overlapsHorizontally:(struct CGRect)arg0;
+- (char)mapToWordsWithIndex:(/* block */ id *)arg0 passing:(void *)arg1;
+- (struct ? *)wordArray;
+- (struct CGRect)boundsOfWordAtIndex:(NSObject *)arg0;
+- (void)anchorChunk:(id)arg0 atWordIndex:(unsigned int)arg1;
+- (char)hasJustifiedAlignment;
+- (char)changesFontAt:(id)arg0;
+- (char)removeTextLines:(id)arg0 whereTrue:(/* block */ id *)arg1 passing:(void *)arg2;
+- (char)mapToWords:(/* block */ id *)arg0 passing:(void *)arg1;
+- (char)mapToWordPairs:(/* block */ id *)arg0 passing:(void *)arg1;
+- (char)mapToWordPairsWithIndex:(/* block */ id *)arg0 passing:(void *)arg1;
+- (void)setHasBeenSplit:(char)arg0;
+- (char)hasBeenSplit;
+- (void)setHasBeenProcessed:(char)arg0;
+- (char)hasBeenProcessed;
+- (NSArray *)columnBreaks;
+- (void)setColumnBreaks:(NSArray *)arg0;
+- (void)setHasTabs:(char)arg0;
+- (char)hasTabs;
+- (void)setTabsBefore:(int)arg0;
+- (int)tabsBefore;
+- (int)baseLineAscending:(id)arg0;
+- (int)baseLineDescending:(id)arg0;
+- (char)overlapsWith:(id)arg0;
+- (char)hyphenated;
+- (void)setBaselineToNull;
+- (void)setSpaces:(unsigned int)arg0 beforeWordAtIndex:(unsigned int)arg1;
+- (int)levels;
+- (void)setLevels:(int)arg0;
+- (float)maximumLetterGap;
+- (void)setMaximumLetterGap:(float)arg0;
+- (float)maximumWordGap;
+- (void)setMaximumWordGap:(float)arg0;
+- (char)irregular;
+- (void)setIrregular:(char)arg0;
+- (int)topIsAbove:(id)arg0;
+- (float)medianFontSize;
+- (unsigned int)leftSpacerIndex;
+- (void)setLeftSpacerIndex:(unsigned int)arg0;
+- (unsigned int)rightSpacerIndex;
+- (void)setRightSpacerIndex:(unsigned int)arg0;
+- (void)setIsListItem:(char)arg0;
+- (unsigned int)listSpacerIndex;
+- (void)setListSpacerIndex:(unsigned int)arg0;
+- (void)setLineBreakAfter:(char)arg0;
+- (char)isListItem;
+- (float)baseline;
+- (void)setBaseline:(float)arg0;
+- (void)finalize;
+- (int)align;
+- (unsigned int)wordCount;
+
+@end

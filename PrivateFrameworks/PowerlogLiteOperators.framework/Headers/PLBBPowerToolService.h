@@ -1,0 +1,138 @@
+/* Runtime dump - PLBBPowerToolService
+ * Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
+ */
+
+@interface PLBBPowerToolService : PLService
+{
+    unsigned char _exclusionMask;
+    char _sendAWD;
+    char _doesCurrPackageHasProblem;
+    char _doesPrevPackageHasProblem;
+    char _isUIAlertEnabled;
+    PLEntryNotificationOperatorComposition * _audioEventCallback;
+    PLEntryNotificationOperatorComposition * _displayEventCallback;
+    PLEntryNotificationOperatorComposition * _hotspotEventCallback;
+    PLEntryNotificationOperatorComposition * _bbHwOtherCallback;
+    PLEntryNotificationOperatorComposition * _msgLiteCallback;
+    PLEntryNotificationOperatorComposition * _wcdmaRRCCallback;
+    PLEntryNotificationOperatorComposition * _lteRRCCallback;
+    PLEntryNotificationOperatorComposition * _telActivityCallback;
+    PLNSNotificationOperatorComposition * _dailyTaskNotification;
+    NSMutableArray * _startExclusionPeriods;
+    NSMutableArray * _endExclusionPeriods;
+    NSDate * _samplingDate;
+    PLTelephonyConnection * _connection;
+    int _gPerepherialMax;
+    NSDate * _notToRemoveDate;
+    double _elapsedDenumerator;
+    double _totalNormalARMUtility;
+    double _gArmUtil;
+}
+
+@property unsigned char exclusionMask;
+@property (retain) PLEntryNotificationOperatorComposition * audioEventCallback;
+@property (retain) PLEntryNotificationOperatorComposition * displayEventCallback;
+@property (retain) PLEntryNotificationOperatorComposition * hotspotEventCallback;
+@property (retain) PLEntryNotificationOperatorComposition * bbHwOtherCallback;
+@property (retain) PLEntryNotificationOperatorComposition * msgLiteCallback;
+@property (retain) PLEntryNotificationOperatorComposition * wcdmaRRCCallback;
+@property (retain) PLEntryNotificationOperatorComposition * lteRRCCallback;
+@property (retain) PLEntryNotificationOperatorComposition * telActivityCallback;
+@property (retain) PLNSNotificationOperatorComposition * dailyTaskNotification;
+@property (retain) NSMutableArray * startExclusionPeriods;
+@property (retain) NSMutableArray * endExclusionPeriods;
+@property double elapsedDenumerator;
+@property double totalNormalARMUtility;
+@property (retain) NSDate * samplingDate;
+@property (weak) PLTelephonyConnection * connection;
+@property double gArmUtil;
+@property int gPerepherialMax;
+@property (retain) NSDate * notToRemoveDate;
+@property char sendAWD;
+@property char doesCurrPackageHasProblem;
+@property char doesPrevPackageHasProblem;
+@property char isUIAlertEnabled;
+
++ (void)load;
++ (NSArray *)entryEventPointDefinitions;
++ (NSArray *)entryAggregateDefinitions;
++ (NSObject *)entryCauseDefinition;
++ (NSObject *)entryCauseHelperDefinition;
++ (PLBBPowerToolService *)entryArmUtil;
+
+- (PLBBPowerToolService *)init;
+- (void).cxx_destruct;
+- (PLTelephonyConnection *)connection;
+- (void)setConnection:(PLTelephonyConnection *)arg0;
+- (void)initOperatorDependancies;
+- (void)handleDisplayCallback:(id /* block */)arg0;
+- (void)setDisplayEventCallback:(PLEntryNotificationOperatorComposition *)arg0;
+- (PLEntryNotificationOperatorComposition *)displayEventCallback;
+- (PLNSNotificationOperatorComposition *)dailyTaskNotification;
+- (void)setDailyTaskNotification:(PLNSNotificationOperatorComposition *)arg0;
+- (void)setExclusionMask:(unsigned char)arg0;
+- (void)setStartExclusionPeriods:(NSMutableArray *)arg0;
+- (void)setEndExclusionPeriods:(NSMutableArray *)arg0;
+- (void)setNotToRemoveDate:(NSDate *)arg0;
+- (void)setSendAWD:(char)arg0;
+- (void)setDoesCurrPackageHasProblem:(char)arg0;
+- (void)setDoesPrevPackageHasProblem:(char)arg0;
+- (void)setIsUIAlertEnabled:(char)arg0;
+- (void)resetAllCounters:(id)arg0;
+- (void)handleAudioCallback:(id /* block */)arg0;
+- (void)setAudioEventCallback:(PLEntryNotificationOperatorComposition *)arg0;
+- (void)handleHotspotCallback:(id /* block */)arg0;
+- (void)setHotspotEventCallback:(PLEntryNotificationOperatorComposition *)arg0;
+- (void)handleMavBBHwOtherCallback:(id /* block */)arg0;
+- (void)setBbHwOtherCallback:(PLEntryNotificationOperatorComposition *)arg0;
+- (void)msgLiteCallback:(PLEntryNotificationOperatorComposition *)arg0;
+- (void)setMsgLiteCallback:(PLEntryNotificationOperatorComposition *)arg0;
+- (void)wcdmaRRCCallback:(PLEntryNotificationOperatorComposition *)arg0;
+- (void)setWcdmaRRCCallback:(PLEntryNotificationOperatorComposition *)arg0;
+- (void)lteRRCCallback:(PLEntryNotificationOperatorComposition *)arg0;
+- (void)setLteRRCCallback:(PLEntryNotificationOperatorComposition *)arg0;
+- (void)telActivityCallback:(PLEntryNotificationOperatorComposition *)arg0;
+- (void)setTelActivityCallback:(PLEntryNotificationOperatorComposition *)arg0;
+- (void)submitAWD;
+- (void)setupInitExclusions;
+- (NSDate *)notToRemoveDate;
+- (void)writeToHelperTable:(id)arg0 WithValue:(double)arg1 withDate:(NSDate *)arg2;
+- (void)setElapsedDenumerator:(double)arg0;
+- (void)setTotalNormalARMUtility:(double)arg0;
+- (char)doesCurrPackageHasProblem;
+- (void)handleExclusionWithState:(char)arg0 withExclusion:(unsigned char)arg1;
+- (unsigned char)exclusionMask;
+- (NSMutableArray *)startExclusionPeriods;
+- (NSMutableArray *)endExclusionPeriods;
+- (char)isPackageValidWithEntry:(struct archive_entry *)arg0;
+- (void)collectExtraDataForPackage:(id)arg0;
+- (double)elapsedDenumerator;
+- (char)doesCurrPeriodHaveProblem:(id)arg0;
+- (char)isUIAlertEnabled;
+- (void)handleProblemWithEntry:(struct archive_entry *)arg0;
+- (void)setSamplingDate:(NSDate *)arg0;
+- (NSDate *)samplingDate;
+- (char)doesPrevPackageHasProblem;
+- (double)gArmUtil;
+- (int)gPerepherialMax;
+- (double)totalNormalARMUtility;
+- (void)setGArmUtil:(double)arg0;
+- (id)findCauseWithEntry:(struct archive_entry *)arg0;
+- (void)resetStructuresWithSnapshot:(struct CauseSnapshot *)arg0 withDuration:(struct CauseDurations *)arg1;
+- (void)analazeIntervalWithSnapshot:(struct CauseSnapshot *)arg0 withDuration:(struct CauseDurations *)arg1 withInterval:(double)arg2 withEntry:(struct archive_entry *)arg3;
+- (id)analazeCauseResultsReturnCause:(struct CauseDurations *)arg0;
+- (double)calculateMaxPerepherialPercentageWithEntry:(struct archive_entry *)arg0;
+- (void)setGPerepherialMax:(int)arg0;
+- (char)isPackageTimeValidWithEntry:(struct archive_entry *)arg0;
+- (char)containsExclusionsAfterCleanupWithDate:(NSDate *)arg0;
+- (double)percentageHistogramFromArray:(NSArray *)arg0;
+- (PLEntryNotificationOperatorComposition *)audioEventCallback;
+- (PLEntryNotificationOperatorComposition *)hotspotEventCallback;
+- (PLEntryNotificationOperatorComposition *)bbHwOtherCallback;
+- (PLEntryNotificationOperatorComposition *)msgLiteCallback;
+- (PLEntryNotificationOperatorComposition *)wcdmaRRCCallback;
+- (PLEntryNotificationOperatorComposition *)lteRRCCallback;
+- (PLEntryNotificationOperatorComposition *)telActivityCallback;
+- (char)sendAWD;
+
+@end

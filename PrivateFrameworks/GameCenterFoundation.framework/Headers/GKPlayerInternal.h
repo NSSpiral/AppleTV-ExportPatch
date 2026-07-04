@@ -1,0 +1,133 @@
+/* Runtime dump - GKPlayerInternal
+ * Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
+ */
+
+@interface GKPlayerInternal : GKInternalRepresentation
+{
+    NSString * _playerID;
+    NSString * _alias;
+    NSDictionary * _photos;
+    unsigned short _numberOfFriends;
+    unsigned short _numberOfGames;
+    unsigned short _numberOfFriendsInCommon;
+    unsigned short _numberOfGamesInCommon;
+    unsigned int _numberOfAchievements;
+    unsigned int _numberOfAchievementPoints;
+    id _flags;
+}
+
+@property (retain, nonatomic) NSString * playerID;
+@property (retain, nonatomic) NSString * alias;
+@property (retain, nonatomic) NSDictionary * photos;
+@property (readonly, nonatomic) char isFriend;
+@property (readonly, nonatomic) char isLocalPlayer;
+@property (readonly, nonatomic) char isAnonymousPlayer;
+@property (readonly, nonatomic) char isUnknownPlayer;
+@property (readonly, nonatomic) char isAutomatchPlayer;
+@property (readonly, nonatomic) char isLoaded;
+@property (nonatomic) unsigned short numberOfFriendsInCommon;
+@property (nonatomic) unsigned short numberOfGamesInCommon;
+@property (retain, nonatomic) NSString * firstName;
+@property (retain, nonatomic) NSString * lastName;
+@property (retain, nonatomic) NSString * compositeName;
+@property (retain, nonatomic) NSString * status;
+@property (retain, nonatomic) NSDate * lastPlayedDate;
+@property (retain, nonatomic) GKGameInternal * lastPlayedGame;
+@property (nonatomic) unsigned short numberOfFriends;
+@property (nonatomic) unsigned short numberOfGames;
+@property (nonatomic) unsigned int numberOfAchievements;
+@property (nonatomic) unsigned int numberOfAchievementPoints;
+@property (retain, nonatomic) NSString * accountName;
+@property (retain, nonatomic) NSArray * emailAddresses;
+@property (retain, nonatomic) NSArray * friends;
+@property (nonatomic) char purpleBuddyAccount;
+@property (nonatomic) char underage;
+@property (nonatomic) char findable;
+@property (nonatomic) char photoPending;
+@property (nonatomic) unsigned short numberOfRequests;
+@property (nonatomic) unsigned short numberOfTurns;
+@property (nonatomic) unsigned short numberOfChallenges;
+@property (retain, nonatomic) NSString * facebookUserID;
+@property (retain, nonatomic) NSNumber * iCloudUserID;
+@property (nonatomic) unsigned int flags;
+
++ (NSArray *)secureCodedPropertyKeys;
++ (NSDictionary *)displayNameWithOptions:(unsigned char)arg0 alias:(NSString *)arg1 composite:(id)arg2;
++ (NSString *)compositeNameForFirstName:(NSString *)arg0 lastName:(NSString *)arg1;
++ (Class)classForFamiliarity:(int)arg0;
+
+- (void)setFlags:(unsigned int)arg0;
+- (NSDate *)lastPlayedDate;
+- (void)setLastPlayedDate:(NSDate *)arg0;
+- (void)dealloc;
+- (char)isEqual:(NSObject *)arg0;
+- (unsigned int)hash;
+- (char)isLoaded;
+- (NSString *)cacheKey;
+- (NSString *)status;
+- (void)setStatus:(NSString *)arg0;
+- (void)setAccountName:(NSString *)arg0;
+- (NSString *)accountName;
+- (void)setFirstName:(NSString *)arg0;
+- (void)setLastName:(NSString *)arg0;
+- (NSString *)firstName;
+- (NSString *)lastName;
+- (void)setAlias:(NSString *)arg0;
+- (NSString *)alias;
+- (NSDictionary *)serverRepresentation;
+- (unsigned int)numberOfAchievements;
+- (NSString *)conciseDescription;
+- (id)minimalInternal;
+- (char)isLocalPlayer;
+- (NSArray *)friends;
+- (void)setFriends:(NSArray *)arg0;
+- (char)isUnderage;
+- (unsigned short)numberOfFriends;
+- (void)setNumberOfFriends:(unsigned short)arg0;
+- (NSDictionary *)displayNameWithOptions:(unsigned char)arg0;
+- (GKGameInternal *)lastPlayedGame;
+- (unsigned short)numberOfFriendsInCommon;
+- (unsigned short)numberOfGames;
+- (unsigned short)numberOfGamesInCommon;
+- (unsigned int)numberOfAchievementPoints;
+- (unsigned short)numberOfRequests;
+- (unsigned short)numberOfChallenges;
+- (unsigned short)numberOfTurns;
+- (int)defaultFamiliarity;
+- (char)isUnknownPlayer;
+- (char)isAnonymousPlayer;
+- (char)isAutomatchPlayer;
+- (char)isFriend;
+- (void)setNumberOfAchievements:(unsigned int)arg0;
+- (NSString *)compositeName;
+- (void)setCompositeName:(NSString *)arg0;
+- (void)setLastPlayedGame:(GKGameInternal *)arg0;
+- (NSString *)facebookUserID;
+- (void)setFacebookUserID:(NSString *)arg0;
+- (NSNumber *)iCloudUserID;
+- (void)setICloudUserID:(NSNumber *)arg0;
+- (char)isPurpleBuddyAccount;
+- (void)setPurpleBuddyAccount:(char)arg0;
+- (void)setUnderage:(char)arg0;
+- (char)isFindable;
+- (void)setFindable:(char)arg0;
+- (char)isPhotoPending;
+- (void)setPhotoPending:(char)arg0;
+- (char)allowNearbyMultiplayer;
+- (void)setAllowNearbyMultiplayer:(char)arg0;
+- (void)setNumberOfRequests:(unsigned short)arg0;
+- (void)setNumberOfTurns:(unsigned short)arg0;
+- (void)setNumberOfChallenges:(unsigned short)arg0;
+- (void)setNumberOfFriendsInCommon:(unsigned short)arg0;
+- (void)setNumberOfGames:(unsigned short)arg0;
+- (void)setNumberOfGamesInCommon:(unsigned short)arg0;
+- (void)setNumberOfAchievementPoints:(unsigned int)arg0;
+- (unsigned int)flags;
+- (NSString *)playerID;
+- (void)setPlayerID:(NSString *)arg0;
+- (void)setPhotos:(NSDictionary *)arg0;
+- (NSDictionary *)photos;
+- (NSArray *)emailAddresses;
+- (void)setEmailAddresses:(NSArray *)arg0;
+
+@end

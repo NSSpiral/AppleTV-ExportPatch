@@ -1,0 +1,125 @@
+/* Runtime dump - UWLPlayEvent
+ * Image: /Applications/AppleTV.app/AppleTV
+ */
+
+@interface UWLPlayEvent : PBCodable <NSCopying>
+{
+    long long _mainContentLengthInMilliseconds;
+    long long _mainContentPlayHeadInMilliseconds;
+    long long _mediaLengthInMilliseconds;
+    long long _millisecondsSinceEvent;
+    long long _playHeadInMilliseconds;
+    NSString * _brandId;
+    NSString * _bundleId;
+    NSString * _canonicalId;
+    NSString * _canonicalShowId;
+    NSString * _externalPlayableId;
+    NSString * _externalShowId;
+    NSString * _internalLegId;
+    int _mediaType;
+    NSString * _profileId;
+    char _isCurrent;
+    char _isDone;
+    char _isShowOpen;
+    struct ? _has;
+}
+
+@property (retain, nonatomic) NSString * bundleId;
+@property (retain, nonatomic) NSString * externalPlayableId;
+@property (nonatomic) long long playHeadInMilliseconds;
+@property (nonatomic) long long millisecondsSinceEvent;
+@property (nonatomic) char hasIsDone;
+@property (nonatomic) char isDone;
+@property (readonly, nonatomic) char hasExternalShowId;
+@property (retain, nonatomic) NSString * externalShowId;
+@property (nonatomic) char hasMediaLengthInMilliseconds;
+@property (nonatomic) long long mediaLengthInMilliseconds;
+@property (nonatomic) char hasMediaType;
+@property (nonatomic) int mediaType;
+@property (readonly, nonatomic) char hasProfileId;
+@property (retain, nonatomic) NSString * profileId;
+@property (readonly, nonatomic) char hasBrandId;
+@property (retain, nonatomic) NSString * brandId;
+@property (nonatomic) char hasIsCurrent;
+@property (nonatomic) char isCurrent;
+@property (nonatomic) char hasIsShowOpen;
+@property (nonatomic) char isShowOpen;
+@property (readonly, nonatomic) char hasCanonicalId;
+@property (retain, nonatomic) NSString * canonicalId;
+@property (readonly, nonatomic) char hasCanonicalShowId;
+@property (retain, nonatomic) NSString * canonicalShowId;
+@property (readonly, nonatomic) char hasInternalLegId;
+@property (retain, nonatomic) NSString * internalLegId;
+@property (nonatomic) char hasMainContentLengthInMilliseconds;
+@property (nonatomic) long long mainContentLengthInMilliseconds;
+@property (nonatomic) char hasMainContentPlayHeadInMilliseconds;
+@property (nonatomic) long long mainContentPlayHeadInMilliseconds;
+
+- (void)setMillisecondsSinceEvent:(long long)arg0;
+- (void)setExternalPlayableId:(NSString *)arg0;
+- (void)setBrandId:(NSString *)arg0;
+- (void)setPlayHeadInMilliseconds:(long long)arg0;
+- (void)setMediaLengthInMilliseconds:(long long)arg0;
+- (void)setMainContentPlayHeadInMilliseconds:(long long)arg0;
+- (void)setMainContentLengthInMilliseconds:(long long)arg0;
+- (void)setExternalShowId:(NSString *)arg0;
+- (void)setCanonicalId:(NSString *)arg0;
+- (void)setInternalLegId:(NSString *)arg0;
+- (void)setCanonicalShowId:(NSString *)arg0;
+- (void)setIsShowOpen:(char)arg0;
+- (void)setIsCurrent:(char)arg0;
+- (char)hasBrandId;
+- (NSString *)brandId;
+- (char)hasProfileId;
+- (long long)millisecondsSinceEvent;
+- (void)setHasIsDone:(char)arg0;
+- (char)hasIsDone;
+- (char)hasExternalShowId;
+- (void)setHasMediaLengthInMilliseconds:(char)arg0;
+- (char)hasMediaLengthInMilliseconds;
+- (NSString *)mediaTypeAsString:(int)arg0;
+- (int)StringAsMediaType:(NSObject *)arg0;
+- (void)setHasIsCurrent:(char)arg0;
+- (char)hasIsCurrent;
+- (void)setHasIsShowOpen:(char)arg0;
+- (char)hasIsShowOpen;
+- (char)hasCanonicalId;
+- (char)hasCanonicalShowId;
+- (char)hasInternalLegId;
+- (void)setHasMainContentLengthInMilliseconds:(char)arg0;
+- (char)hasMainContentLengthInMilliseconds;
+- (void)setHasMainContentPlayHeadInMilliseconds:(char)arg0;
+- (char)hasMainContentPlayHeadInMilliseconds;
+- (NSString *)externalPlayableId;
+- (long long)playHeadInMilliseconds;
+- (NSString *)externalShowId;
+- (long long)mediaLengthInMilliseconds;
+- (char)isShowOpen;
+- (NSString *)canonicalId;
+- (NSString *)canonicalShowId;
+- (NSString *)internalLegId;
+- (long long)mainContentLengthInMilliseconds;
+- (long long)mainContentPlayHeadInMilliseconds;
+- (NSString *)bundleId;
+- (char)isEqual:(NSObject *)arg0;
+- (unsigned int)hash;
+- (NSString *)description;
+- (UWLPlayEvent *)copyWithZone:(struct _NSZone *)arg0;
+- (NSDictionary *)dictionaryRepresentation;
+- (void).cxx_destruct;
+- (char)isCurrent;
+- (NSString *)profileId;
+- (void)setProfileId:(NSString *)arg0;
+- (char)isDone;
+- (void)setIsDone:(char)arg0;
+- (void)setHasMediaType:(char)arg0;
+- (char)hasMediaType;
+- (int)mediaType;
+- (void)setMediaType:(int)arg0;
+- (void)setBundleId:(NSString *)arg0;
+- (void)mergeFrom:(NSObject *)arg0;
+- (char)readFrom:(NSObject *)arg0;
+- (void)writeTo:(NSObject *)arg0;
+- (void)copyTo:(NSObject *)arg0;
+
+@end

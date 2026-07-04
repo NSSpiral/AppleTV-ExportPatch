@@ -1,0 +1,57 @@
+// PhotoEditSupport.framework umbrella header
+// Auto-generated from iOS 8.4.3 dyld_shared_cache (AppleTV 3,2)
+
+#import <Foundation/Foundation.h>
+
+#import <PhotoEditSupport/AutoEncodeDecodeObject.h>
+#import <PhotoEditSupport/BLAdjustmentModel.h>
+#import <PhotoEditSupport/BLAuraFilter.h>
+#import <PhotoEditSupport/BLBaseLayerStack.h>
+#import <PhotoEditSupport/BLBlackAndWhiteFilter.h>
+#import <PhotoEditSupport/BLBrushStroke.h>
+#import <PhotoEditSupport/BLCGImage.h>
+#import <PhotoEditSupport/BLCGPixelImageBuffer.h>
+#import <PhotoEditSupport/BLCIImage.h>
+#import <PhotoEditSupport/BLCVPixelImageBuffer.h>
+#import <PhotoEditSupport/BLCannyEdgeAutoThres.h>
+#import <PhotoEditSupport/BLColorMatrix.h>
+#import <PhotoEditSupport/BLCropModel.h>
+#import <PhotoEditSupport/BLDramaFilter.h>
+#import <PhotoEditSupport/BLDuotoneFilter.h>
+#import <PhotoEditSupport/BLEdgeAwareMaskFilter.h>
+#import <PhotoEditSupport/BLEffectManager.h>
+#import <PhotoEditSupport/BLHistogramAnalysis.h>
+#import <PhotoEditSupport/BLHorizonDetection.h>
+#import <PhotoEditSupport/BLImage.h>
+#import <PhotoEditSupport/BLImageBuffer.h>
+#import <PhotoEditSupport/BLImagePatch.h>
+#import <PhotoEditSupport/BLImagePatchList.h>
+#import <PhotoEditSupport/BLKey.h>
+#import <PhotoEditSupport/BLPEModel.h>
+#import <PhotoEditSupport/BLPerceptualBlendFilter.h>
+#import <PhotoEditSupport/BLPhotoEffectsModel.h>
+#import <PhotoEditSupport/BLPhotoFiltersFilter.h>
+#import <PhotoEditSupport/BLPixelImageBuffer.h>
+#import <PhotoEditSupport/BLProbabalisticHoughTransform.h>
+#import <PhotoEditSupport/BLPromiseImage.h>
+#import <PhotoEditSupport/BLRedEyeBrushTap.h>
+#import <PhotoEditSupport/BLRepairBrushStroke.h>
+#import <PhotoEditSupport/BLRepairLayerStack.h>
+#import <PhotoEditSupport/BLRepairModel.h>
+#import <PhotoEditSupport/BLRetouchBlurLayer.h>
+#import <PhotoEditSupport/BLRetouchEffectLayer.h>
+#import <PhotoEditSupport/BLRetouchExposureLayer.h>
+#import <PhotoEditSupport/BLRetouchImageLayer.h>
+#import <PhotoEditSupport/BLRetouchLayer.h>
+#import <PhotoEditSupport/BLRetouchLayerStack.h>
+#import <PhotoEditSupport/BLRetouchModel.h>
+#import <PhotoEditSupport/BLRetouchRedEyeLayer.h>
+#import <PhotoEditSupport/BLRetouchReefBlurOperator.h>
+#import <PhotoEditSupport/BLRetouchReefRepairOperator.h>
+#import <PhotoEditSupport/BLRetouchRepairLayer.h>
+#import <PhotoEditSupport/BLRetouchSaturationLayer.h>
+#import <PhotoEditSupport/BLSleepAssertionManager.h>
+#import <PhotoEditSupport/BLTextureImageBuffer.h>
+#import <PhotoEditSupport/BLUIImage.h>
+#import <PhotoEditSupport/BLUnderwaterBalanceFilter.h>
+#import <PhotoEditSupport/BLVintageFilter.h>

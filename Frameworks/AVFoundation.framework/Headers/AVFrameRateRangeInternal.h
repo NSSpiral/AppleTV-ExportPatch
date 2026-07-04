@@ -1,0 +1,11 @@
+/* Runtime dump - AVFrameRateRangeInternal
+ * Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
+ */
+
+@interface AVFrameRateRangeInternal : NSObject
+{
+    int minFrameRate;
+    int maxFrameRate;
+}
+
+@end

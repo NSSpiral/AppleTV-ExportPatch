@@ -1,0 +1,10 @@
+/* Runtime dump - AVAssetCacheInternal
+ * Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
+ */
+
+@interface AVAssetCacheInternal : NSObject
+{
+    NSURL * url;
+}
+
+@end

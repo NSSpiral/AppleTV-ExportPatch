@@ -1,0 +1,133 @@
+/* Runtime dump - PLMoviePlayerController
+ * Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
+ */
+
+@interface PLMoviePlayerController : NSObject
+{
+    AVPlayerItem * _playerItem;
+    AVPlayer * _player;
+    PLMoviePlayerView * _view;
+    UIAlertView * _alertView;
+    PLTVOutWindow * _tvOutWindow;
+    char _hasPendingTime;
+    double _pendingTime;
+    unsigned int _pendingTimeSnapOption;
+    char _forceUpdateCurrentTime;
+    char _isExternalPlayback;
+    char _exited;
+    double _lastSetCurrentTimeTime;
+    char _isSeeking;
+    unsigned int _backgroundTaskId;
+    char _audioSessionActive;
+    NSString * _originalAudioCategory;
+    char _TVOutEnabled;
+    char _forceDisableTVOut;
+    char _isPreparedForPlayback;
+    char _isActiveController;
+    <PLMoviePlayerControllerDelegate> * _delegate;
+    unsigned int _bufferingState;
+    unsigned int _playbackState;
+}
+
+@property (nonatomic) <PLMoviePlayerControllerDelegate> * delegate;
+@property (readonly, retain, nonatomic) AVPlayer * player;
+@property (readonly, retain, nonatomic) PLMoviePlayerView * view;
+@property (readonly, nonatomic) float playbackRate;
+@property (readonly, nonatomic) unsigned int playbackState;
+@property (readonly, nonatomic) double duration;
+@property (nonatomic) double currentTime;
+@property (readonly, nonatomic) unsigned int bufferingState;
+@property (readonly, nonatomic) char isPreparedForPlayback;
+@property (nonatomic) char TVOutEnabled;
+@property (nonatomic) char forceDisableTVOut;
+@property (nonatomic) char isActiveController;
+
++ (NSString *)AVAssetURLWithPath:(NSString *)arg0;
++ (char)_isStreamableAsset:(NSSet *)arg0;
++ (char)_isNetworkSupportedPath:(NSString *)arg0;
+
+- (NSSet *)_asset;
+- (char)_allowsExternalPlayback;
+- (void)_unregisterForNotifications;
+- (unsigned int)playbackState;
+- (void)play;
+- (void)_simpleRemoteNotification:(NSNotification *)arg0;
+- (unsigned int)bufferingState;
+- (char)TVOutEnabled;
+- (void)setTVOutEnabled:(char)arg0;
+- (void)_willEnterForegroundNotification:(NSNotification *)arg0;
+- (void)_didEnterBackgroundNotification:(NSNotification *)arg0;
+- (char)videoOutActive;
+- (void)setCurrentTime:(double)arg0 timeSnapOption:(unsigned int)arg1;
+- (void)_exitPlayer:(int)arg0;
+- (void)_willSuspendNotification:(NSNotification *)arg0;
+- (void)_willBeginSuspendAnimationNotification:(NSNotification *)arg0;
+- (void)_willResignNotification:(NSNotification *)arg0;
+- (char)isPreparedForPlayback;
+- (float)playbackRate;
+- (void)_setBufferingState:(unsigned int)arg0;
+- (id)_playerKeysToObserve;
+- (void)_serverConnectionDidDie:(id)arg0;
+- (void)_screenDidConnect:(NSNotification *)arg0;
+- (void)_screenDidDisconnect:(NSNotification *)arg0;
+- (void)tearDownTVOutWindow;
+- (void)_updateBackgroundViewInformation;
+- (void)_updateDisableAirPlayMirroringDuringPlayback;
+- (void)_setupTVOutWindow;
+- (void)_updateTVOutEnabled;
+- (void)_tearDownTVOutWindow;
+- (void)setCurrentTime:(double)arg0;
+- (void)dealloc;
+- (void)setDelegate:(<PLMoviePlayerControllerDelegate> *)arg0;
+- (PLMoviePlayerController *)init;
+- (<PLMoviePlayerControllerDelegate> *)delegate;
+- (PLMoviePlayerView *)view;
+- (double)duration;
+- (void)alertView:(UIAlertView *)arg0 clickedButtonAtIndex:(int)arg1;
+- (void)stop;
+- (void)observeValueForKeyPath:(NSString *)arg0 ofObject:(NSObject *)arg1 change:(NSDictionary *)arg2 context:(void *)arg3;
+- (void)pause;
+- (void)_registerForNotifications;
+- (void)willResignAsActiveController;
+- (void)didBecomeActiveController;
+- (void)requestToBecomeActiveController;
+- (void)requestToResignAsActiveController;
+- (void)setPlayerItem:(AVPlayerItem *)arg0 startTime:(double)arg1;
+- (void)resetPlayer;
+- (void)playDueToEnoughData;
+- (char)isExternalPlayback;
+- (void)playFromBeginning;
+- (void)_setupPlayer;
+- (void)_setPlayerItem:(NSObject *)arg0;
+- (void)_tearDownPlayer;
+- (void)_updateAudioSession;
+- (void)_setPlaybackState:(unsigned int)arg0;
+- (void)_loadAsset:(NSSet *)arg0;
+- (void)_playerItemDidReachEndNotification:(NSNotification *)arg0;
+- (void)_playerItemFailedToPlayToEndNotification:(NSNotification *)arg0;
+- (void)_updateFromPendingTime;
+- (void)_didLoadValueOfKey:(NSString *)arg0 forAsset:(NSObject *)arg1;
+- (void)_playerItemFailedToPlayToEnd:(id)arg0;
+- (void)_streamRanDry;
+- (void)_streamBufferFull;
+- (void)_streamLikelyToKeepUp;
+- (void)_streamUnlikelyToKeepUp;
+- (void)_dispatchOnMainThreadWithBlock:(id /* block */)arg0;
+- (void)_playerRateDidChange:(NSDictionary *)arg0;
+- (void)setCurrentTime:(double)arg0 timeSnapOption:(unsigned int)arg1 forceUpdate:(char)arg2;
+- (void)_delayedUpdateFromPendingTime;
+- (void)_setPlayerAudioSessionActive:(char)arg0;
+- (void)_restoreTVOutVideoIfNecessary;
+- (void)_pausePlaybackForNotification;
+- (void)_setForceDisableTVOut:(char)arg0;
+- (void)_displayVideoView;
+- (char)isActiveController;
+- (void)setIsActiveController:(char)arg0;
+- (void)_playbackFailedWithError:(NSError *)arg0;
+- (void)pauseDueToInsufficientData;
+- (char)forceDisableTVOut;
+- (double)currentTime;
+- (AVPlayer *)player;
+- (int)externalPlaybackType;
+
+@end

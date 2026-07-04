@@ -1,0 +1,9 @@
+/* Runtime dump - SKHandleInvalidReceiptRequest
+ * Image: /System/Library/Frameworks/StoreKit.framework/StoreKit
+ */
+
+@interface SKHandleInvalidReceiptRequest : SKRequest
+
+- (void)_sendXPCMessage;
+
+@end

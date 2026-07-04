@@ -1,0 +1,134 @@
+/* Runtime dump - UIDynamicAnimator
+ * Image: /System/Library/Frameworks/UIKit.framework/UIKit
+ */
+
+@interface UIDynamicAnimator : NSObject
+{
+    PKExtendedPhysicsWorld * _world;
+    CADisplayLink * _displaylink;
+    double _elapsedTime;
+    double _realElapsedTime;
+    double _lastUpdateTime;
+    double _lastInterval;
+    long long _ticks;
+    CALayer * _debugLayer;
+    NSMutableDictionary * _bodies;
+    NSMutableArray * _topLevelBehaviors;
+    NSMutableSet * _registeredBehaviors;
+    NSMutableSet * _behaviorsToRemove;
+    NSMutableSet * _behaviorsToAdd;
+    NSMutableArray * _postSolverActions;
+    NSMutableArray * _beginContacts;
+    NSMutableArray * _endContacts;
+    char _isInWorldStepMethod;
+    char _needsLocalBehaviorReevaluation;
+    char _stopping;
+    unsigned int _referenceSystemType;
+    unsigned int _integralization;
+    struct ? _stateFlags;
+    float _accuracy;
+    int _registeredCollisionGroups;
+    int _registeredImplicitBounds;
+    struct CGRect _referenceSystemBounds;
+    <_UIDynamicReferenceSystem> * _referenceSystem;
+    int _debugInterval;
+    id _action;
+    <UIDynamicAnimatorDelegate> * _delegate;
+    char _disableDisplayLink;
+    float _speed;
+    UIDynamicAnimatorTicker * _ticker;
+}
+
+@property (readonly, nonatomic) UIView * referenceView;
+@property (readonly, copy, nonatomic) NSArray * behaviors;
+@property (readonly, nonatomic) char running;
+@property (nonatomic) <UIDynamicAnimatorDelegate> * delegate;
+@property (retain, nonatomic) UIDynamicAnimatorTicker * ticker;
+
++ (void)initialize;
++ (void)_referenceViewSizeChanged:(NSNotification *)arg0;
++ (void)_clearReferenceViewFromAnimators:(id)arg0;
++ (void)_registerAnimator:(id)arg0;
++ (void)_unregisterAnimator:(id)arg0;
++ (UIDynamicAnimator *)_allDynamicAnimators;
+
+- (void)dealloc;
+- (void)setDelegate:(<UIDynamicAnimatorDelegate> *)arg0;
+- (UIDynamicAnimator *)init;
+- (NSString *)description;
+- (<UIDynamicAnimatorDelegate> *)delegate;
+- (<UIDynamicAnimatorDelegate> *)_delegate;
+- (void)_start;
+- (NSString *)recursiveDescription;
+- (void)_setDelegate:(NSObject *)arg0;
+- (NSObject *)_bodyForItem:(NSObject *)arg0;
+- (void)_tickle;
+- (struct b2World *)_world;
+- (NSObject *)_registerBodyForItem:(NSObject *)arg0;
+- (void)_unregisterBodyForItem:(NSObject *)arg0 action:(NSObject *)arg1;
+- (void)removeAllBehaviors;
+- (UIDynamicAnimator *)initWithReferenceView:(UIView *)arg0;
+- (void)addBehavior:(CABehavior *)arg0;
+- (char)_animatorStep:(double)arg0;
+- (NSObject *)_registerBodyForItem:(NSObject *)arg0 shape:(unsigned int)arg1;
+- (void)_shouldReevaluateLocalBehaviors;
+- (char)isRunning;
+- (UICollectionViewLayoutAttributes *)layoutAttributesForSupplementaryViewOfKind:(id)arg0 atIndexPath:(NSIndexPath *)arg1;
+- (UICollectionViewLayoutAttributes *)layoutAttributesForDecorationViewOfKind:(id)arg0 atIndexPath:(NSIndexPath *)arg1;
+- (UIDynamicAnimator *)initWithCollectionViewLayout:(UICollectionViewLayout *)arg0;
+- (void)_setRunning:(char)arg0;
+- (NSArray *)behaviors;
+- (void)_displayLinkTick:(id)arg0;
+- (UIDynamicAnimator *)initWithReferenceSystem:(<_UIDynamicReferenceSystem> *)arg0;
+- (UIView *)referenceView;
+- (void)_clearReferenceView;
+- (double)elapsedTime;
+- (<_UIDynamicReferenceSystem> *)_referenceSystem;
+- (void)_traverseBehaviorHierarchy:(id)arg0;
+- (void)_checkBehavior:(id)arg0;
+- (void)_registerBehavior:(id)arg0;
+- (void)_unregisterBehavior:(id)arg0;
+- (void)_setupWorld;
+- (NSObject *)_keyForItem:(NSObject *)arg0;
+- (void)_runBlockPostSolverIfNeeded:(id)arg0;
+- (void)updateItemUsingCurrentState:(NSObject *)arg0;
+- (void)_defaultMapper:(NSObject *)arg0 position:(struct CGPoint)arg1 angle:(float)arg2 itemType:(unsigned int)arg3;
+- (char)_isWorldActive;
+- (void)_stop;
+- (void)setTicker:(UIDynamicAnimatorTicker *)arg0;
+- (UIDynamicAnimatorTicker *)ticker;
+- (void)_evaluateLocalBehaviors;
+- (void)_reevaluateImplicitBounds;
+- (void)_reportBeginContacts;
+- (void)_reportEndContacts;
+- (void)_preSolverStep;
+- (void)_postSolverStep;
+- (void)_setReferenceSystem:(PLTimeReferenceSystem *)arg0;
+- (float)_ptmRatio;
+- (void)removeBehavior:(CABehavior *)arg0;
+- (void)didBeginContact:(id)arg0;
+- (void)didEndContact:(id)arg0;
+- (void)_registerImplicitBounds;
+- (void)_unregisterImplicitBounds;
+- (int)_registerCollisionGroup;
+- (void)_unregisterCollisionGroup;
+- (void)_setAnimatorIntegralization:(unsigned int)arg0;
+- (unsigned int)_animatorIntegralization;
+- (NSObject *)itemsInRect:(struct CGRect)arg0;
+- (NSString *)layoutAttributesForCellAtIndexPath:(NSIndexPath *)arg0;
+- (void)updateItemFromCurrentState:(NSObject *)arg0;
+- (void)_setSpeed:(float)arg0;
+- (float)_speed;
+- (void)_setAction:(NSObject *)arg0;
+- (void)_setDebugInterval:(int)arg0;
+- (int)_debugInterval;
+- (void)_setAlwaysDisableDisplayLink:(char)arg0;
+- (char)_alwaysDisableDisplayLink;
+- (double)_animatorInterval;
+- (long long)_ticks;
+- (double)_realElapsedTime;
+- (void)setReferenceView:(UIView *)arg0;
+- (struct CGRect)_referenceSystemBounds;
+- (unsigned int)_referenceSystemType;
+
+@end

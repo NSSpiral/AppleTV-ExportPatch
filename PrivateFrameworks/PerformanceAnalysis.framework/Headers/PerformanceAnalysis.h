@@ -1,0 +1,57 @@
+// PerformanceAnalysis.framework umbrella header
+// Auto-generated from iOS 8.4.3 dyld_shared_cache (AppleTV 3,2)
+
+#import <Foundation/Foundation.h>
+
+#import <PerformanceAnalysis/PAAggregatedDispatchQueue.h>
+#import <PerformanceAnalysis/PAAggregatedExecutable.h>
+#import <PerformanceAnalysis/PAAggregatedInstruction.h>
+#import <PerformanceAnalysis/PAAggregatedKernelInstruction.h>
+#import <PerformanceAnalysis/PAAggregatedMainThread.h>
+#import <PerformanceAnalysis/PAAggregatedProcessInstance.h>
+#import <PerformanceAnalysis/PAAggregatedTask.h>
+#import <PerformanceAnalysis/PAAggregatedThreadAndDispatchQueue.h>
+#import <PerformanceAnalysis/PABinaryLocator.h>
+#import <PerformanceAnalysis/PACSRefWrapper.h>
+#import <PerformanceAnalysis/PACSSymbolOwnerWrapper.h>
+#import <PerformanceAnalysis/PAContiguousThreadArray.h>
+#import <PerformanceAnalysis/PACountedFrame.h>
+#import <PerformanceAnalysis/PACountedSampleFrame.h>
+#import <PerformanceAnalysis/PACountedSampleTreeFrame.h>
+#import <PerformanceAnalysis/PAException.h>
+#import <PerformanceAnalysis/PAExecutableAggregator.h>
+#import <PerformanceAnalysis/PAFanSpeed.h>
+#import <PerformanceAnalysis/PAGenealogyBreadcrumb.h>
+#import <PerformanceAnalysis/PAGenealogyTimestampedMessage.h>
+#import <PerformanceAnalysis/PAGenealogyTraceMessage.h>
+#import <PerformanceAnalysis/PAGenealogyTracker.h>
+#import <PerformanceAnalysis/PAMicrostackshotData.h>
+#import <PerformanceAnalysis/PAMountSnapshot.h>
+#import <PerformanceAnalysis/PAMountStatus.h>
+#import <PerformanceAnalysis/PAMountStatusTracker.h>
+#import <PerformanceAnalysis/PAProcessInstanceAggregator.h>
+#import <PerformanceAnalysis/PAProcessSymbolicationInfo.h>
+#import <PerformanceAnalysis/PASample.h>
+#import <PerformanceAnalysis/PASampleAggregator.h>
+#import <PerformanceAnalysis/PASampleAggregatorOptions.h>
+#import <PerformanceAnalysis/PASampleFrame.h>
+#import <PerformanceAnalysis/PASampleFrameIterator.h>
+#import <PerformanceAnalysis/PASampleKernelFrame.h>
+#import <PerformanceAnalysis/PASamplePowerstatsThreadData.h>
+#import <PerformanceAnalysis/PASampleTaskData.h>
+#import <PerformanceAnalysis/PASampleTaskDataPrivateData.h>
+#import <PerformanceAnalysis/PASampleThreadData.h>
+#import <PerformanceAnalysis/PASampleTimeInsensitiveTaskData.h>
+#import <PerformanceAnalysis/PASampleTimeSeriesDataStore.h>
+#import <PerformanceAnalysis/PASampleUserFrame.h>
+#import <PerformanceAnalysis/PAStackshot.h>
+#import <PerformanceAnalysis/PAStackshotFrameIterator.h>
+#import <PerformanceAnalysis/PAStackshotImageInfo.h>
+#import <PerformanceAnalysis/PAStackshotTask.h>
+#import <PerformanceAnalysis/PAStackshotThread.h>
+#import <PerformanceAnalysis/PASymbol.h>
+#import <PerformanceAnalysis/PASymbolDataStore.h>
+#import <PerformanceAnalysis/PASymbolHandle.h>
+#import <PerformanceAnalysis/PASymbolOwner.h>
+#import <PerformanceAnalysis/PASymbolSourceInfo.h>
+#import <PerformanceAnalysis/PATimestampIndexedSampleThread.h>

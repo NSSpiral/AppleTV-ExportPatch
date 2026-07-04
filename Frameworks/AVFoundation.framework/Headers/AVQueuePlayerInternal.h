@@ -1,0 +1,11 @@
+/* Runtime dump - AVQueuePlayerInternal
+ * Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
+ */
+
+@interface AVQueuePlayerInternal : NSObject
+{
+    int beginModificationCount;
+    NSMutableArray * queuedModifications;
+}
+
+@end

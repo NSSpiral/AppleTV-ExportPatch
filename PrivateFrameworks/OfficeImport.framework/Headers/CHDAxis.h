@@ -1,0 +1,120 @@
+/* Runtime dump - CHDAxis
+ * Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
+ */
+
+@interface CHDAxis : NSObject <EDKeyedObject>
+{
+    BOOL mReverseOrder;
+    BOOL mSecondary;
+    BOOL mDateTimeFormattingFlag;
+    BOOL mLineVisible;
+    BOOL mDeleted;
+    BOOL mAutoMinimumValue;
+    BOOL mAutoMaximumValue;
+    BOOL mAutoCrossValue;
+    BOOL mContentFormatDerived;
+    int mAxisId;
+    unsigned int mContentFormatId;
+    unsigned int mFontIndex;
+    double mScalingMaximum;
+    double mScalingMinimum;
+    int mOrientation;
+    double mCrossAxisId;
+    double mCrossesAt;
+    int mMajorTickMark;
+    int mMinorTickMark;
+    int mAxisPosition;
+    int mAxisType;
+    int mTickLabelPosition;
+    CHDTitle * mTitle;
+    OADGraphicProperties * mMinorGridLinesGraphicProperties;
+    OADGraphicProperties * mMajorGridLinesGraphicProperties;
+    OADGraphicProperties * mAxisGraphicProperties;
+    int mCrossBetween;
+    int mCrosses;
+    double mTickLabelRotation;
+    BOOL mIsAutoRotation;
+    unsigned int mTickLabelColorIndex;
+    EDResources * mResources;
+}
+
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString * description;
+@property (readonly, copy) NSString * debugDescription;
+
+- (void)dealloc;
+- (void)setTitle:(NSString *)arg0;
+- (NSString *)description;
+- (int)key;
+- (int)orientation;
+- (NSString *)title;
+- (void)setFont:(UIFont *)arg0;
+- (UIFont *)font;
+- (void)setOrientation:(int)arg0;
+- (unsigned int)contentFormatId;
+- (EDContentFormat *)contentFormat;
+- (int)axisPosition;
+- (BOOL)isSecondary;
+- (NSDictionary *)majorGridLinesGraphicProperties;
+- (double)scalingMinimum;
+- (double)scalingMaximum;
+- (BOOL)isDateTimeFormattingFlag;
+- (void)setSecondary:(BOOL)arg0;
+- (void)setAxisId:(int)arg0;
+- (void)setAxisType:(int)arg0;
+- (void)setAxisPosition:(int)arg0;
+- (void)setContentFormatId:(unsigned int)arg0;
+- (void)setFontIndex:(unsigned int)arg0;
+- (void)setLineVisible:(BOOL)arg0;
+- (void)setDeleted:(BOOL)arg0;
+- (void)setAxisGraphicProperties:(NSDictionary *)arg0;
+- (void)setMajorTickMark:(int)arg0;
+- (void)setMinorTickMark:(int)arg0;
+- (void)setTickLabelPosition:(int)arg0;
+- (void)setTickLabelAutoRotation:(BOOL)arg0;
+- (void)setTickLabelRotationAngle:(double)arg0;
+- (void)setTickLabelColorIndex:(unsigned int)arg0;
+- (void)setMinorGridLinesGraphicProperties:(NSDictionary *)arg0;
+- (void)setMajorGridLinesGraphicProperties:(NSDictionary *)arg0;
+- (CHDAxis *)initWithResources:(NSArray *)arg0;
+- (void)setReverseOrder:(BOOL)arg0;
+- (void)setCrossesAt:(double)arg0;
+- (void)setCrossBetween:(int)arg0;
+- (void)setScalingMaximum:(double)arg0;
+- (void)setScalingMinimum:(double)arg0;
+- (BOOL)isReverseOrder;
+- (double)crossesAt;
+- (int)crossBetween;
+- (unsigned int)fontIndex;
+- (BOOL)isAutoCrossValue;
+- (BOOL)isAutoMaximumValue;
+- (BOOL)isAutoMinimumValue;
+- (void)adjustAxisPositionForHorizontalChart;
+- (int)axisId;
+- (BOOL)isLineVisible;
+- (BOOL)isHorizontalPosition;
+- (NSString *)defaultDateTimeContentFormat;
+- (void)setContentFormat:(EDContentFormat *)arg0;
+- (BOOL)isContentFormatDerivedFromDataPoints;
+- (void)setIsContentFormatDerivedFromDataPoints:(BOOL)arg0;
+- (double)crossAxisId;
+- (void)setCrossAxisId:(double)arg0;
+- (int)majorTickMark;
+- (int)minorTickMark;
+- (int)axisType;
+- (int)tickLabelPosition;
+- (BOOL)isTickLabelVisible;
+- (NSDictionary *)minorGridLinesGraphicProperties;
+- (NSDictionary *)axisGraphicProperties;
+- (int)crosses;
+- (void)setCrosses:(int)arg0;
+- (BOOL)isDate;
+- (void)setDateTimeFormattingFlag:(BOOL)arg0;
+- (double)tickLabelRotationAngle;
+- (BOOL)isTickLabelAutoRotation;
+- (unsigned int)tickLabelColorIndex;
+- (UIColor *)tickLabelColor;
+- (BOOL)isDeleted;
+
+@end

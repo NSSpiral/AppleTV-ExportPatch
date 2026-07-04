@@ -1,0 +1,112 @@
+/* Runtime dump - ACDDatabaseInitializer
+ * Image: /System/Library/PrivateFrameworks/AccountsDaemon.framework/AccountsDaemon
+ */
+
+@interface ACDDatabaseInitializer : NSObject
+{
+    ACDDatabase * _database;
+    NSArray * _dataclasses;
+    NSArray * _accountTypes;
+    NSArray * _accounts;
+    NSArray * _accessKeys;
+}
+
+- (ACDDatabaseInitializer *)initWithDatabase:(ACDDatabase *)arg0;
+- (void).cxx_destruct;
+- (void)updateDefaultContent;
+- (void)_addTwitterAccountType;
+- (void)_addWeiboAccountType;
+- (void)_addAppleIDAccountType;
+- (void)_addFlickrAccountType;
+- (void)_addVimeoAccountType;
+- (void)_addLinkedInAccountType;
+- (void)_addFacebookAccountType;
+- (void)_addCalDAVAccountType;
+- (void)_addCardDAVAccountType;
+- (void)_addDataclassWithName:(NSString *)arg0;
+- (void)_addContactsCalendarsDataclassesToFB;
+- (void)_addTudouAccountType;
+- (void)_addYoukuAccountType;
+- (void)_updateWeiboAccountTypeIfNecessary;
+- (void)_addSupportsAuthenticationAttributeToAccountTypes;
+- (void)_addSupportsAuthenticationAttributeToAccounts;
+- (void)_addMissingAccountTypes;
+- (void)_addSyncableDataclassesToCardAndCalDAV;
+- (void)_addSupportsMultipleAccountsAttributeToAccountTypes;
+- (void)_addYelpAccountType;
+- (void)_addFacebookAccessKeys;
+- (void)_addAccessKeysAttributeToFacebookAccountType;
+- (void)_removeFacebookPermissionGroupAccessKey;
+- (void)_removeFacebookAppVersionAccessKey;
+- (void)_addFacebookAudienceAccessKey;
+- (void)_addFacebookAudienceAccessKeyToFacebookAccountType;
+- (void)_addAppleAccountType;
+- (void)_addLiverpoolAccountType;
+- (void)_addLiverpoolAccessKeys;
+- (void)_addAccessKeysAttributeToLiverpoolAccountType;
+- (void)_addTencentWeiboAccountType;
+- (void)_upgradeLinkedInAccountType;
+- (void)_addSMTPAccountType;
+- (void)_addGmailAccountType;
+- (void)_addYahooAccountType;
+- (void)_addRemindersDataclassToCalDAVAccountType;
+- (void)_addFaceTimeAccountType;
+- (void)_addMadridAccountType;
+- (void)_addGameCenterAccountType;
+- (void)_addiTunesStoreAccountType;
+- (void)_addLinkedInAccessKeys;
+- (void)_addAccessKeysAttributeToLinkedInAccountType;
+- (void)_limitFlickrToOneAccount;
+- (void)_limitVimeoToOneAccount;
+- (void)_updateFlickrCredentialTypeToOAuth;
+- (void)_updateVimeoCredentialTypeToOAuth;
+- (void)_addIdentityServicesAccountType;
+- (void)_limitLinkedInToOneAccount;
+- (void)_ensureDataclassesAllExist;
+- (void)_addSubscribedCalendarAccountType;
+- (void)_addBookmarkDAVAccountType;
+- (void)_addExchangeAccountType;
+- (void)_addHotmailAccountType;
+- (void)_addIMAPNotesAccountType;
+- (void)_addLDAPAccountType;
+- (void)_ensureProperAccountTypeDataclasses;
+- (void)_addPasswordCredentialTypeToSMTPAccountType;
+- (void)_addPasswordCredentialTypeToGmailAccountType;
+- (void)_addTokenCredentialTypeToYahooAccountType;
+- (void)_addIMAPAccountType;
+- (void)_addPOPAccountType;
+- (void)_addIMAPMailAccountType;
+- (void)_updateTencentWeiboCredentialTypeToOAuth2;
+- (void)_addTencentWeiboAccessKeys;
+- (void)_addAccessKeysAttributeToTencentWeiboAccountType;
+- (void)_addFindMyiPhoneAccountType;
+- (void)_updateIdentityServicesAccountTypeToSupportAuthenticationAndMultipleAccounts;
+- (void)_updateIdentityServicesAccountDescription;
+- (void)_makeTencentWeiboSingleton;
+- (void)_addHolidayCalendarAccountType;
+- (void)_addFMFAccountType;
+- (void)_setOwningBundleIDForNativeAccountTypes;
+- (void)_createLiverpoolDataclasses;
+- (void)_addCloudKitAccountType;
+- (void)_addAccessKeysAttributeToCloudKitAccountType;
+- (void)_addAppleIDAuthenticationAccountType;
+- (void)_removeLiverpoolTypes;
+- (void)_addCloudKitDataclasses;
+- (void)_setCloudKitCredentialType;
+- (NSArray *)_dataclasses;
+- (NSArray *)_accountTypes;
+- (NSArray *)_accessKeys;
+- (NSString *)_addAccountTypeWithIdentifier:(NSString *)arg0 displayName:(NSString *)arg1 visibility:(int)arg2 supportedDataclasses:(id)arg3 syncableDataclasses:(NSSet *)arg4 credentialType:(NSString *)arg5 supportsAuthentication:(char)arg6 supportsMultipleAccounts:(char)arg7;
+- (NSString *)_addAccountTypeWithIdentifier:(NSString *)arg0 displayName:(NSString *)arg1 visibility:(int)arg2 supportedDataclasses:(id)arg3 syncableDataclasses:(NSSet *)arg4 credentialType:(NSString *)arg5 supportsAuthentication:(char)arg6 supportsMultipleAccounts:(char)arg7 credentialProtectionPolicy:(NSString *)arg8;
+- (NSString *)_accountTypeWithIdentifier:(NSString *)arg0;
+- (NSString *)_addAccountTypeWithIdentifier:(NSString *)arg0 displayName:(NSString *)arg1 visibility:(int)arg2 supportedDataclasses:(id)arg3 credentialType:(NSString *)arg4 supportsAuthentication:(char)arg5 supportsMultipleAccounts:(char)arg6;
+- (NSString *)_dataclassWithName:(NSString *)arg0;
+- (NSArray *)_accounts;
+- (void)_addAccessKeyWithName:(NSString *)arg0;
+- (NSString *)_accessKeyWithName:(NSString *)arg0;
+- (void)_ensureAccountTypeWithIdentifier:(NSString *)arg0 supportsDataclasses:(id)arg1 syncsDataclasses:(id)arg2;
+- (void)_addCredentialType:(NSObject *)arg0 toAccountType:(NSObject *)arg1 supportsAuthentication:(char)arg2;
+- (id)_resultsForEntityNamed:(id)arg0;
+- (void)insertAllDefaultContent;
+
+@end

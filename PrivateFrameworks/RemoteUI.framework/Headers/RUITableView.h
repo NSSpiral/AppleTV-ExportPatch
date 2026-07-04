@@ -1,0 +1,124 @@
+/* Runtime dump - RUITableView
+ * Image: /System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
+ */
+
+@interface RUITableView : RUIElement <UITableViewDataSource, UITableViewDelegate, UIWebViewDelegate, RUITableViewRowDelegate, RUITableViewSectionDelegate>
+{
+    NSMutableArray * _sections;
+    UITableView * _tableView;
+    UIPickerView * _selectPicker;
+    char _showSelectPicker;
+    UIDatePicker * _datePicker;
+    RUIPhotoPicker * _photoPicker;
+    char _showDatePicker;
+    _UIBackdropView * _pickerBackdrop;
+    NSIndexPath * _pickerRowIndexPath;
+    NSIndexPath * _embeddedPickerRowIndexPath;
+    RUITableViewRow * _defaultFirstResponderRow;
+    char _registeredForNotifications;
+    float _lastLayoutWidth;
+    float _fullscreenCellHeight;
+    char _showingPickerNavBarButtons;
+    RUIBarButtonItem * _oldLeftBarButtonItemForPicker;
+    RUIBarButtonItem * _oldRightBarButtonItemForPicker;
+    NSDate * _oldPickerDate;
+    RUIObjectModel<RUITableViewDelegate> * _objectModel;
+    RUITableHeaderView * _headerView;
+    NSDictionary * _headerViewAttributes;
+    NSDictionary * _footerViewAttributes;
+}
+
+@property (readonly, nonatomic) char showingPicker;
+@property (readonly, nonatomic) NSMutableArray * sections;
+@property (retain, nonatomic) RUITableViewRow * defaultFirstResponderRow;
+@property (weak, nonatomic) RUIObjectModel<RUITableViewDelegate> * objectModel;
+@property (readonly, nonatomic) RUITableHeaderView * headerView;
+@property (retain, nonatomic) NSDictionary * headerViewAttributes;
+@property (retain, nonatomic) NSDictionary * footerViewAttributes;
+@property (retain, nonatomic) NSString * headerTitle;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString * description;
+@property (readonly, copy) NSString * debugDescription;
+
+- (NSURL *)sourceURL;
+- (void)dealloc;
+- (RUITableView *)init;
+- (void)tableView:(UITableView *)arg0 willDisplayCell:(UITableViewCell *)arg1 forRowAtIndexPath:(NSIndexPath *)arg2;
+- (float)tableView:(UITableView *)arg0 heightForRowAtIndexPath:(NSIndexPath *)arg1;
+- (float)tableView:(UITableView *)arg0 heightForHeaderInSection:(int)arg1;
+- (float)tableView:(UITableView *)arg0 heightForFooterInSection:(int)arg1;
+- (NSObject *)tableView:(UITableView *)arg0 viewForHeaderInSection:(int)arg1;
+- (NSObject *)tableView:(UITableView *)arg0 viewForFooterInSection:(int)arg1;
+- (void)tableView:(UITableView *)arg0 didSelectRowAtIndexPath:(NSIndexPath *)arg1;
+- (int)tableView:(UITableView *)arg0 editingStyleForRowAtIndexPath:(NSIndexPath *)arg1;
+- (char)tableView:(UITableView *)arg0 shouldIndentWhileEditingRowAtIndexPath:(NSIndexPath *)arg1;
+- (void)scrollViewWillBeginDragging:(UIScrollView *)arg0;
+- (int)tableView:(UITableView *)arg0 numberOfRowsInSection:(int)arg1;
+- (UITableViewCell *)tableView:(UITableView *)arg0 cellForRowAtIndexPath:(NSIndexPath *)arg1;
+- (int)numberOfSectionsInTableView:(UITableView *)arg0;
+- (NSString *)tableView:(UITableView *)arg0 titleForHeaderInSection:(int)arg1;
+- (NSObject *)tableView:(UITableView *)arg0 titleForFooterInSection:(int)arg1;
+- (void)tableView:(UITableView *)arg0 commitEditingStyle:(int)arg1 forRowAtIndexPath:(NSIndexPath *)arg2;
+- (int)tableView:(UITableView *)arg0 titleAlignmentForHeaderInSection:(int)arg1;
+- (int)tableView:(UITableView *)arg0 titleAlignmentForFooterInSection:(int)arg1;
+- (char)tableView:(UITableView *)arg0 shouldDrawTopSeparatorForSection:(int)arg1;
+- (void)viewWillAppear:(char)arg0;
+- (void)viewDidAppear:(char)arg0;
+- (void)viewWillDisappear:(char)arg0;
+- (void)viewDidDisappear:(char)arg0;
+- (RUITableHeaderView *)headerView;
+- (UITableView *)tableView;
+- (char)webView:(NSObject *)arg0 shouldStartLoadWithRequest:(NSURLRequest *)arg1 navigationType:(int)arg2;
+- (void).cxx_destruct;
+- (NSString *)headerTitle;
+- (void)setHeaderTitle:(NSString *)arg0;
+- (NSMutableArray *)sections;
+- (void)setAttributes:(NSDictionary *)arg0;
+- (void)populatePostbackDictionary:(NSDictionary *)arg0;
+- (void)setSelectedRadioGroupRow:(id)arg0;
+- (char)isShowingPicker;
+- (RUIObjectModel<RUITableViewDelegate> *)objectModel;
+- (NSString *)subElementsWithName:(NSString *)arg0;
+- (void)setObjectModel:(RUIObjectModel<RUITableViewDelegate> *)arg0;
+- (void)viewDidLayout;
+- (NSString *)objectModelRowForIndexPath:(NSIndexPath *)arg0;
+- (void)setHeaderViewAttributes:(NSDictionary *)arg0;
+- (void)setFooterViewAttributes:(NSDictionary *)arg0;
+- (Class)tableCellClassForTableViewRow:(id)arg0;
+- (void)textFieldStartedEditing:(id)arg0;
+- (void)rowIsFirstResponder:(NSObject *)arg0;
+- (void)rowDidChange:(NSDictionary *)arg0;
+- (void)rowDidEndEditing:(id)arg0;
+- (id)textFieldRow:(id)arg0 changeCharactersInRange:(struct _NSRange)arg1 replacementString:(NSString *)arg2;
+- (id)sourceURLForRUITableViewRow;
+- (void)rowActivatedLink:(id)arg0 attributes:(NSDictionary *)arg1 completion:(id /* block */)arg2;
+- (void)sectionActivatedLink:(id)arg0 attributes:(NSDictionary *)arg1 completion:(id /* block */)arg2;
+- (id)sourceURLForRUITableViewSection;
+- (void)_textChanged:(NSNotification *)arg0;
+- (void)automaticKeyboardDidShow:(id)arg0;
+- (void)automaticKeyboardDidHide:(id)arg0;
+- (void)_registerForNotifications:(char)arg0;
+- (NSString *)_objectModelIndexPathForIndexPath:(NSIndexPath *)arg0;
+- (RUITableViewRow *)defaultFirstResponderRow;
+- (NSIndexPath *)indexPathForRow:(id)arg0;
+- (void)activateRowAtIndexPath:(NSIndexPath *)arg0 animated:(char)arg1;
+- (void)setDefaultFirstResponderRow:(RUITableViewRow *)arg0;
+- (void)_clearPickers;
+- (void)_datePickerRevert;
+- (void)hidePickerViewAnimated:(char)arg0;
+- (void)_handleLinkPress:(id)arg0 attributes:(NSDictionary *)arg1;
+- (void)datePickerCancel:(id)arg0;
+- (void)datePickerDone:(id)arg0;
+- (void)_hideDatePickerNavBarButtonsIfNeeded;
+- (struct CGRect)_selectPickerFrame;
+- (void)_showDatePickerNavBarButtonsIfNeededForRow:(id)arg0;
+- (void)showPickerViewForRow:(id)arg0 animated:(char)arg1;
+- (void)_enumerateRowsUsingBlock:(id /* block */)arg0;
+- (char)_becomeFirstResponderAtIndexPath:(NSIndexPath *)arg0;
+- (void)_setBottomInset:(float)arg0;
+- (void)rowActivatedLink:(id)arg0 attributes:(NSDictionary *)arg1;
+- (NSDictionary *)headerViewAttributes;
+- (NSDictionary *)footerViewAttributes;
+
+@end

@@ -1,0 +1,122 @@
+/* Runtime dump - EAAccessoryInternal
+ * Image: /System/Library/Frameworks/ExternalAccessory.framework/ExternalAccessory
+ */
+
+@interface EAAccessoryInternal : NSObject
+{
+    char _connected;
+    unsigned int _connectionID;
+    NSString * _name;
+    NSString * _manufacturer;
+    NSString * _modelNumber;
+    NSString * _serialNumber;
+    NSString * _firmwareRevision;
+    NSString * _hardwareRevision;
+    NSString * _macAddress;
+    NSString * _preferredApp;
+    int _classType;
+    NSDictionary * _audioPorts;
+    unsigned int _capabilities;
+    char _notPresentInIAPAccessoriesArray;
+    NSMutableArray * _sessionsList;
+    NSArray * _eqNames;
+    int _locationSentenceTypesMask;
+    NSDictionary * _vehicleInfoSupportedTypes;
+    NSDictionary * _vehicleInfoInitialData;
+    NSDictionary * _protocols;
+    <EAAccessoryDelegate> * _delegate;
+    char _pointOfInterestHandoffEnabled;
+    char _hasIPConnection;
+    char _isAvailableOverBonjour;
+    unsigned int _eqIndex;
+    unsigned int _pointOfInterestDataFormatMaximumSupportedVersion;
+    NSString * _bonjourName;
+}
+
+@property (nonatomic) char connected;
+@property (nonatomic) unsigned int connectionID;
+@property (copy, nonatomic) NSString * manufacturer;
+@property (copy, nonatomic) NSString * name;
+@property (copy, nonatomic) NSString * modelNumber;
+@property (copy, nonatomic) NSString * serialNumber;
+@property (copy, nonatomic) NSString * firmwareRevision;
+@property (copy, nonatomic) NSString * hardwareRevision;
+@property (copy, nonatomic) NSString * macAddress;
+@property (copy, nonatomic) NSString * preferredApp;
+@property (nonatomic) int classType;
+@property (retain, nonatomic) NSDictionary * audioPorts;
+@property (nonatomic) unsigned int capabilities;
+@property (nonatomic) char notPresentInIAPAccessoriesArray;
+@property (readonly, nonatomic) NSArray * sessionsList;
+@property (retain, nonatomic) NSArray * eqNames;
+@property (nonatomic) unsigned int eqIndex;
+@property (nonatomic) int locationSentenceTypesMask;
+@property (retain, nonatomic) NSDictionary * vehicleInfoSupportedTypes;
+@property (retain, nonatomic) NSDictionary * vehicleInfoInitialData;
+@property (retain, nonatomic) NSDictionary * protocols;
+@property (nonatomic) <EAAccessoryDelegate> * delegate;
+@property (copy, nonatomic) NSString * bonjourName;
+@property (nonatomic) char hasIPConnection;
+@property (nonatomic) char isAvailableOverBonjour;
+@property char pointOfInterestHandoffEnabled;
+@property unsigned int pointOfInterestDataFormatMaximumSupportedVersion;
+
+- (void)setConnectionID:(unsigned int)arg0;
+- (void)setModelNumber:(NSString *)arg0;
+- (void)setFirmwareRevision:(NSString *)arg0;
+- (void)setHardwareRevision:(NSString *)arg0;
+- (void)setMacAddress:(NSString *)arg0;
+- (void)setProtocols:(NSDictionary *)arg0;
+- (void)setPreferredApp:(NSString *)arg0;
+- (void)setClassType:(int)arg0;
+- (void)setEqNames:(NSArray *)arg0;
+- (void)setEqIndex:(unsigned int)arg0;
+- (void)setLocationSentenceTypesMask:(int)arg0;
+- (void)setVehicleInfoSupportedTypes:(NSDictionary *)arg0;
+- (void)setVehicleInfoInitialData:(NSDictionary *)arg0;
+- (void)setAudioPorts:(NSDictionary *)arg0;
+- (void)setPointOfInterestDataFormatMaximumSupportedVersion:(unsigned int)arg0;
+- (void)setPointOfInterestHandoffEnabled:(char)arg0;
+- (NSString *)firmwareRevision;
+- (NSString *)hardwareRevision;
+- (NSDictionary *)protocols;
+- (void)setNotPresentInIAPAccessoriesArray:(char)arg0;
+- (void)addSession:(NSObject *)arg0;
+- (NSArray *)sessionsList;
+- (char)notPresentInIAPAccessoriesArray;
+- (NSString *)preferredApp;
+- (int)classType;
+- (NSDictionary *)audioPorts;
+- (NSArray *)eqNames;
+- (unsigned int)eqIndex;
+- (char)pointOfInterestHandoffEnabled;
+- (unsigned int)pointOfInterestDataFormatMaximumSupportedVersion;
+- (int)locationSentenceTypesMask;
+- (NSDictionary *)vehicleInfoSupportedTypes;
+- (NSDictionary *)vehicleInfoInitialData;
+- (NSString *)bonjourName;
+- (char)hasIPConnection;
+- (char)isAvailableOverBonjour;
+- (void)setBonjourName:(NSString *)arg0;
+- (void)setHasIPConnection:(char)arg0;
+- (void)setIsAvailableOverBonjour:(char)arg0;
+- (void)dealloc;
+- (void)setDelegate:(<EAAccessoryDelegate> *)arg0;
+- (EAAccessoryInternal *)init;
+- (<EAAccessoryDelegate> *)delegate;
+- (void)setName:(NSString *)arg0;
+- (NSString *)name;
+- (NSString *)modelNumber;
+- (void)setConnected:(char)arg0;
+- (unsigned int)connectionID;
+- (void)setCapabilities:(unsigned int)arg0;
+- (void)setManufacturer:(NSString *)arg0;
+- (void)setSerialNumber:(NSString *)arg0;
+- (NSString *)manufacturer;
+- (NSString *)serialNumber;
+- (unsigned int)capabilities;
+- (void)removeSession:(NSObject *)arg0;
+- (NSString *)macAddress;
+- (char)connected;
+
+@end

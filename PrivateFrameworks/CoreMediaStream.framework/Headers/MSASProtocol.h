@@ -1,0 +1,123 @@
+/* Runtime dump - MSASProtocol
+ * Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
+ */
+
+@interface MSASProtocol : NSObject <NSURLConnectionDelegate>
+{
+    char _isShuttingDown;
+    MSASPConnectionGate * _gate;
+    NSObject<OS_dispatch_queue> * _pendingConnectionsQueue;
+    NSObject<OS_dispatch_group> * _pendingConnectionsGroup;
+    NSString * _personID;
+    NSURL * _baseURL;
+    NSString * _serverSideConfigVersion;
+    NSString * _headerVersion;
+    NSObject<OS_dispatch_queue> * _workQueue;
+    NSObject<OS_dispatch_queue> * _memberQueue;
+}
+
+@property (readonly, retain, nonatomic) NSString * personID;
+@property (retain, nonatomic) NSURL * baseURL;
+@property (retain, nonatomic) NSString * serverSideConfigVersion;
+@property (retain, nonatomic) MSASPConnectionGate * gate;
+@property (retain, nonatomic) NSObject<OS_dispatch_queue> * pendingConnectionsQueue;
+@property (retain, nonatomic) NSObject<OS_dispatch_group> * pendingConnectionsGroup;
+@property (retain, nonatomic) NSObject<OS_dispatch_queue> * workQueue;
+@property (retain, nonatomic) NSObject<OS_dispatch_queue> * memberQueue;
+@property (nonatomic) char isShuttingDown;
+@property (readonly, nonatomic) NSString * headerVersion;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString * description;
+@property (readonly, copy) NSString * debugDescription;
+
+- (void)dealloc;
+- (NSObject<OS_dispatch_queue> *)memberQueue;
+- (void)setMemberQueue:(NSObject<OS_dispatch_queue> *)arg0;
+- (NSURL *)baseURL;
+- (void).cxx_destruct;
+- (NSObject<OS_dispatch_queue> *)workQueue;
+- (void)setWorkQueue:(NSObject<OS_dispatch_queue> *)arg0;
+- (MSASProtocol *)initWithPersonID:(NSString *)arg0;
+- (void)shutDownCompletionBlock:(id /* block */)arg0;
+- (void)acceptInvitationWithToken:(NSString *)arg0 completionBlock:(id /* block */)arg1;
+- (void)setServerSideConfigVersion:(NSString *)arg0;
+- (void)stopCompletionBlock:(id /* block */)arg0;
+- (void)getServerSideConfigCompletionBlock:(id /* block */)arg0;
+- (void)getAlbumURLForAlbumWithGUID:(NSString *)arg0 completionBlock:(id /* block */)arg1;
+- (id /* block */)stopHandlerBlock;
+- (void)getChangesRootCtag:(id)arg0 completionBlock:(id /* block */)arg1;
+- (void)albumSummaryAlbum:(id)arg0 albumURLString:(NSString *)arg1 resetSync:(char)arg2 completionBlock:(id /* block */)arg3;
+- (void)getSharingInfoForAlbum:(id)arg0 albumURLString:(NSString *)arg1 completionBlock:(id /* block */)arg2;
+- (void)subscribeToAlbum:(id)arg0 completionBlock:(id /* block */)arg1;
+- (void)unsubscribeFromAlbum:(id)arg0 completionBlock:(id /* block */)arg1;
+- (void)getAssetCollections:(id)arg0 inAlbum:(MSASAlbum *)arg1 albumURLString:(NSString *)arg2 completionBlock:(id /* block */)arg3;
+- (void)getCommentChanges:(id)arg0 inAlbumWithGUID:(NSString *)arg1 albumURLString:(NSString *)arg2 completionBlock:(id /* block */)arg3;
+- (void)getAlbumSyncedStateForAlbum:(id)arg0 assetCollectionStateBlock:(id /* block */)arg1 completionBlock:(/* block */ id)arg2;
+- (void)setAlbumSyncedState:(NSObject *)arg0 forAlbum:(MSASAlbum *)arg1 albumStateCtag:(id)arg2 completionBlock:(id /* block */)arg3;
+- (void)setAssetCollectionSyncedState:(NSObject *)arg0 forAssetCollection:(PHAssetCollection *)arg1 inAlbum:(MSASAlbum *)arg2 assetCollectionStateCtag:(id)arg3 completionBlock:(id /* block */)arg4;
+- (void)deleteAlbum:(id)arg0 completionBlock:(id /* block */)arg1;
+- (void)deleteAssetCollections:(id)arg0 inAlbum:(MSASAlbum *)arg1 completionBlock:(id /* block */)arg2;
+- (void)deleteComment:(id)arg0 fromAssetCollection:(PHAssetCollection *)arg1 inAlbum:(MSASAlbum *)arg2 albumURLString:(NSString *)arg3 completionBlock:(id /* block */)arg4;
+- (void)createAlbum:(id)arg0 completionBlock:(id /* block */)arg1;
+- (void)updateAlbum:(id)arg0 albumURLString:(NSString *)arg1 completionBlock:(id /* block */)arg2;
+- (void)sendUploadCompleteSuccessfulAssetCollections:(id)arg0 failedAssetCollections:(id)arg1 album:(MSASAlbum *)arg2 completionBlock:(id /* block */)arg3;
+- (void)putAssetCollections:(id)arg0 intoAlbum:(id)arg1 albumURLString:(NSString *)arg2 completionBlock:(id /* block */)arg3;
+- (void)getUploadTokens:(id)arg0 forAssetCollectionWithGUID:(NSString *)arg1 inAlbumWithGUID:(NSString *)arg2 albumURLString:(NSString *)arg3 completionBlock:(id /* block */)arg4;
+- (void)addSharingRelationships:(id)arg0 toAlbum:(MSASAlbum *)arg1 completionBlock:(id /* block */)arg2;
+- (void)removeSharingRelationships:(id)arg0 fromAlbum:(MSASAlbum *)arg1 completionBlock:(id /* block */)arg2;
+- (void)addComment:(MSASComment *)arg0 toAssetCollection:(PHAssetCollection *)arg1 inAlbum:(MSASAlbum *)arg2 albumURLString:(NSString *)arg3 completionBlock:(id /* block */)arg4;
+- (void)setPublicAccessEnabled:(char)arg0 forAlbum:(MSASAlbum *)arg1 completionBlock:(id /* block */)arg2;
+- (void)setMultipleContributorsEnabled:(char)arg0 forAlbum:(MSASAlbum *)arg1 completionBlock:(id /* block */)arg2;
+- (void)getVideoURL:(NSURL *)arg0 forAssetCollectionWithGUID:(NSString *)arg1 inAlbumWithGUID:(NSString *)arg2 albumURLString:(NSString *)arg3 completionBlock:(id /* block */)arg4;
+- (void)getTokensForAssets:(NSArray *)arg0 inAlbum:(MSASAlbum *)arg1 albumURLString:(NSString *)arg2 completionBlock:(id /* block */)arg3;
+- (MSASPConnectionGate *)gate;
+- (void)setIsShuttingDown:(char)arg0;
+- (NSError *)shutDownError;
+- (NSError *)stoppingError;
+- (void)sendURLRequest:(NSURLRequest *)arg0 method:(NSString *)arg1 bodyObj:(id)arg2 checkServerSideConfigVersion:(char)arg3 completionBlock:(id /* block */)arg4;
+- (char)isShuttingDown;
+- (void)setGate:(MSASPConnectionGate *)arg0;
+- (NSURLResponse *)errorFromStandardProcessingOnResponse:(NSURLResponse *)arg0 responseObject:(NSObject *)arg1 checkServerSideConfigVersion:(char)arg2 error:(NSError *)arg3 body:(id /* block */)arg4;
+- (NSString *)serverSideConfigVersion;
+- (id)HTTPErrorWithStatusCode:(int)arg0;
+- (NSURL *)_createAlbumURL;
+- (char)responseDict:(id)arg0 containsLimitErrorCode:(id)arg1 outMaxAllowed:(id *)arg2;
+- (void)sendURLRequest:(NSURLRequest *)arg0 bodyObj:(id)arg1 completionBlock:(id /* block */)arg2;
+- (NSURL *)_updateAlbumURLWithBaseURL:(NSURL *)arg0;
+- (NSURL *)_putAssetsURLWithBaseURL:(NSURL *)arg0;
+- (NSURL *)_getUploadTokensURLWithBaseURL:(NSURL *)arg0;
+- (NSURL *)_getVideoURLWithBaseURL:(NSURL *)arg0;
+- (NSURL *)_uploadCompleteURLWithBaseURL:(NSURL *)arg0;
+- (NSURL *)_shareURL;
+- (NSURL *)_unshareURL;
+- (NSURL *)_addCommentURLWithBaseURL:(NSURL *)arg0;
+- (NSURL *)_enablePublicAccessURLWithBaseURL:(NSURL *)arg0;
+- (NSURL *)_enableMultipleContributorsURLWithBaseURL:(NSURL *)arg0;
+- (NSURL *)_deleteURLWithBaseURL:(NSURL *)arg0;
+- (NSURL *)_deleteAssetsURLWithBaseURL:(NSURL *)arg0;
+- (NSURL *)_deleteCommentURLWithBaseURL:(NSURL *)arg0;
+- (NSURL *)_getChangesURL;
+- (NSURL *)_sharingInfoURLWithBaseURL:(NSURL *)arg0;
+- (NSURL *)_albumSummaryURLWithBaseURL:(NSURL *)arg0;
+- (NSURL *)_getAssetsURLWithBaseURL:(NSURL *)arg0;
+- (NSURL *)_getTokensURLWithBaseURL:(NSURL *)arg0;
+- (NSError *)_couldNotReauthorizeError;
+- (NSURL *)_subscribeURL;
+- (NSURL *)_unsubscribeURL;
+- (NSURL *)_getCommentsURLWithBaseURL:(NSURL *)arg0;
+- (NSURL *)_albumStateURL;
+- (NSURL *)_setAssetStateURL;
+- (NSURL *)_setAlbumStateURL;
+- (NSURL *)_serverSideConfigURL;
+- (NSURL *)_getAlbumURL;
+- (NSURL *)_setCommentPositionURL;
+- (NSObject<OS_dispatch_queue> *)pendingConnectionsQueue;
+- (void)setPendingConnectionsQueue:(NSObject<OS_dispatch_queue> *)arg0;
+- (NSObject<OS_dispatch_group> *)pendingConnectionsGroup;
+- (void)setPendingConnectionsGroup:(NSObject<OS_dispatch_group> *)arg0;
+- (NSString *)headerVersion;
+- (void)setBaseURL:(NSURL *)arg0;
+- (NSString *)personID;
+
+@end

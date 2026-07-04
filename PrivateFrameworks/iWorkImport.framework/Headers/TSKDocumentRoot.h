@@ -1,0 +1,134 @@
+/* Runtime dump - TSKDocumentRoot
+ * Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
+ */
+
+@interface TSKDocumentRoot : TSPObject <TSKAccessControllerDelegate, TSKModel>
+{
+    TSKAccessController * _accessController;
+    TSKChangeNotifier * _changeNotifier;
+    TSKSelectionDispatcher * _selectionDispatcher;
+    TSKPasteboardController * _pasteboardController;
+    TSKAnnotationAuthorStorage * _annotationAuthorStorage;
+    NSSet * _filteredAuthors;
+    NSMutableArray * _activityLogEntries;
+    char _isFindActive;
+    NSObject<OS_dispatch_queue> * _iCloudTeardownStackQueue;
+    NSMutableArray * _iCloudTeardownStack;
+    TSULocale * _documentLocale;
+    TSULocale * _documentCreationLocale;
+    char _isBeingLocalized;
+    char _isCollaborationLobbyOutgoingRequestsSuspended;
+    TSKDocumentSupport * _documentSupport;
+}
+
+@property (readonly, nonatomic) TSSTheme * theme;
+@property (readonly, nonatomic) TSSStylesheet * stylesheet;
+@property (readonly, nonatomic) TSKAccessController * accessController;
+@property (readonly, nonatomic) TSKChangeNotifier * changeNotifier;
+@property (readonly, nonatomic) TSKSelectionDispatcher * selectionDispatcher;
+@property (retain, nonatomic) TSKPasteboardController * pasteboardController;
+@property (readonly, nonatomic) TSULocale * documentLocale;
+@property (readonly, nonatomic) TSULocale * documentCreationLocale;
+@property (readonly, nonatomic) unsigned int applicationType;
+@property (nonatomic) char findActive;
+@property (readonly, nonatomic) NSString * creationLanguage;
+@property (readonly, nonatomic) unsigned int writingDirection;
+@property (readonly, nonatomic) unsigned int writingDirectionForStorage;
+@property (retain, nonatomic) TSKAnnotationAuthorStorage * annotationAuthorStorage;
+@property (retain, nonatomic) NSSet * filteredAuthors;
+@property (readonly, nonatomic) char isBeingLocalized;
+@property (readonly, nonatomic) char hasICloudConflict;
+@property (readonly, nonatomic) TSKDocumentSupport * documentSupport;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString * description;
+@property (readonly, copy) NSString * debugDescription;
+
++ (char)needsObjectUUID;
+
+- (id)additionalDocumentPropertiesForWrite;
+- (TSULocale *)documentLocale;
+- (void)saveToArchive:(struct DocumentArchive *)arg0 archiver:(NSObject *)arg1;
+- (void)pauseRecalculation;
+- (void)resumeRecalculation;
+- (TSKAccessController *)accessController;
+- (void)documentDidLoad;
+- (void)pauseRecalculationForBlock:(id /* block */)arg0;
+- (NSEnumerator *)modelEnumerator;
+- (void)updateDocumentLocaleToUseLanguage:(NSString *)arg0;
+- (void)updateDocumentLocaleToCurrent;
+- (NSString *)creationLanguage;
+- (NSObject *)modelEnumeratorForObjectsConformingToProtocol:(NSObject *)arg0;
+- (NSArray *)customFormatList;
+- (void)loadFromArchive:(struct DocumentArchive *)arg0 unarchiver:(struct DocumentArchive)arg1;
+- (void)willClose;
+- (NSObject *)modelEnumeratorForObjectsOfClass:(Class)arg0;
+- (char)hasICloudConflict;
+- (id)modelEnumeratorWithFlags:(unsigned int)arg0;
+- (void)setStylesheetForUpgradeToSingleStylesheet:(NSObject *)arg0;
+- (NSObject *)makeStyleMapper;
+- (NSObject *)makeIsolatedStyleMapper;
+- (NSString *)dataFromDocumentCachePath:(NSString *)arg0;
+- (void)didSaveWithEncryptionChange;
+- (char)writeData:(NSData *)arg0 atDocumentCachePath:(NSString *)arg1;
+- (struct CGImageSource *)newImageSourceForDocumentCachePath:(NSString *)arg0;
+- (NSString *)uniqueDocumentCachePathForProposedPath:(NSString *)arg0;
+- (void)changeDocumentCacheFileProtection:(id)arg0;
+- (TSKCollaborationState *)collaborationState;
+- (void)didAcquireReadLock;
+- (void)willRelinquishReadLock;
+- (void)setStylesheet:(TSSStylesheet *)arg0 andThemeForImport:(id)arg1;
+- (id)UIStateForChart:(id)arg0;
+- (void)setUIState:(NSObject *)arg0 forChart:(GQHChart *)arg1;
+- (void)gilligan_documentWillInsertObject:(NSObject *)arg0;
+- (void)gilligan_documentDidInsertObject:(NSObject *)arg0;
+- (void)gilligan_documentWillRemoveObject:(NSObject *)arg0;
+- (void)gilligan_documentDidRemoveObject:(NSObject *)arg0;
+- (TSKChangeNotifier *)changeNotifier;
+- (TSKAnnotationAuthorStorage *)annotationAuthorStorage;
+- (void)setFilteredAuthors:(NSSet *)arg0;
+- (Class)thumbnailImagerClass;
+- (id)modelEnumeratorWithFlags:(unsigned int)arg0 forObjectsPassingTest:(id /* block */)arg1;
+- (id)modelEnumeratorWithFlags:(unsigned int)arg0 forObjectsOfClass:(Class)arg1;
+- (id)modelEnumeratorWithFlags:(unsigned int)arg0 forObjectsConformingToProtocol:(NSObject *)arg1;
+- (id)modelEnumeratorWithFlags:(unsigned int)arg0 forObjectsRespondingToSelector:(SEL)arg1;
+- (TSULocale *)documentCreationLocale;
+- (unsigned long long)maxMediaItemFileSize;
+- (void)addOrUpdateAnnotationAuthorList:(NSArray *)arg0;
+- (char)documentCacheHasAtMostFileProtection:(id)arg0;
+- (unsigned int)writingDirectionForStorage;
+- (char)isDirectionRightToLeft;
+- (char)shouldShowComments;
+- (char)documentDisallowsHighlightsOnStorage:(id)arg0;
+- (id)commandForRemovingCommentsFromDrawables:(id)arg0 context:(NSObject *)arg1;
+- (void)removeCommentsFromDrawables:(id)arg0;
+- (NSString *)modelEnumeratorForObjectsRespondingToSelector:(SEL)arg0;
+- (id)modelEnumeratorForObjectsPassingTest:(id /* block */)arg0;
+- (long long)addObserverForICloudTeardownWithBlock:(id /* block */)arg0;
+- (void)removeICloudTeardownObserver:(long long)arg0;
+- (void)notifyICloudTeardownObservers;
+- (char)hasICloudTeardownObserver;
+- (void)updateForNonCommandChangesWithWriteLock:(id)arg0;
+- (TSKSelectionDispatcher *)selectionDispatcher;
+- (TSKPasteboardController *)pasteboardController;
+- (void)setPasteboardController:(TSKPasteboardController *)arg0;
+- (char)isFindActive;
+- (void)setFindActive:(char)arg0;
+- (void)setAnnotationAuthorStorage:(TSKAnnotationAuthorStorage *)arg0;
+- (NSSet *)filteredAuthors;
+- (char)isBeingLocalized;
+- (TSKDocumentSupport *)documentSupport;
+- (NSSet *)migratedPresetForPreset:(NSSet *)arg0;
+- (void)setThemeForTemplateImport:(id)arg0;
+- (void)migrateStylesInObjects:(NSArray *)arg0;
+- (NSObject *)migratedStyleForStyle:(NSObject *)arg0;
+- (NSObject *)migratedPropertyMapForPropertyMap:(NSObject *)arg0;
+- (void)dealloc;
+- (TSKDocumentRoot *)initWithContext:(TSPObjectContext *)arg0;
+- (unsigned int)writingDirection;
+- (unsigned int)applicationType;
+- (TSSTheme *)theme;
+- (void)setTheme:(TSSTheme *)arg0;
+- (TSSStylesheet *)stylesheet;
+
+@end

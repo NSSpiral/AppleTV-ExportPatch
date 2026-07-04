@@ -1,0 +1,134 @@
+/* Runtime dump - MSAsset
+ * Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
+ */
+
+@interface MSAsset : NSObject <MMCSAsset, NSSecureCoding, NSCopying>
+{
+    char _assetDataAvailableOnServer;
+    NSData * _masterAssetHash;
+    NSDictionary * _metadata;
+    NSString * _path;
+    NSURL * _MMCSURL;
+    NSData * _fileData;
+    NSError * _error;
+    NSString * _type;
+    NSData * _fileHash;
+    NSString * _MMCSAccessHeader;
+    NSDate * _MMCSAccessHeaderTimeStamp;
+    NSString * _MMCSReceipt;
+    NSString * _GUID;
+    NSString * _assetCollectionGUID;
+    NSDate * _batchCreationDate;
+    NSDate * _photoCreationDate;
+    <NSCoding> * _userInfo;
+    unsigned int _mediaAssetType;
+    unsigned long long _protocolFileSize;
+}
+
+@property (retain, nonatomic) NSString * GUID;
+@property (retain, nonatomic) NSData * masterAssetHash;
+@property (retain, nonatomic) NSDictionary * metadata;
+@property (retain, nonatomic) NSString * path;
+@property (retain, nonatomic) NSURL * MMCSURL;
+@property (retain, nonatomic) NSData * fileData;
+@property (retain, nonatomic) NSString * assetCollectionGUID;
+@property (retain, nonatomic) NSDate * batchCreationDate;
+@property (retain, nonatomic) NSDate * photoCreationDate;
+@property (retain, nonatomic) NSError * error;
+@property (retain, nonatomic) <NSCoding> * userInfo;
+@property (nonatomic) unsigned int mediaAssetType;
+@property (nonatomic) char assetDataAvailableOnServer;
+@property (retain, nonatomic) NSData * fileHash;
+@property (retain, nonatomic) NSString * type;
+@property (nonatomic) unsigned long long protocolFileSize;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString * description;
+@property (readonly, copy) NSString * debugDescription;
+@property (retain, nonatomic) NSString * MMCSUTI;
+@property (nonatomic) unsigned long long MMCSItemID;
+@property (retain, nonatomic) NSData * MMCSHash;
+@property (nonatomic) unsigned long long MMCSItemSize;
+@property (retain, nonatomic) NSError * MMCSError;
+@property (retain, nonatomic) NSString * MMCSAccessHeader;
+@property (retain, nonatomic) NSDate * MMCSAccessHeaderTimeStamp;
+@property (retain, nonatomic) NSString * MMCSReceipt;
+@property (nonatomic) unsigned long MMCSItemFlags;
+
++ (char)supportsSecureCoding;
++ (NSSet *)asset;
++ (NSSet *)assetWithAsset:(NSSet *)arg0;
++ (NSDictionary *)MSASPAssetFromProtocolDictionary:(NSDictionary *)arg0;
+
+- (unsigned long long)_fileSize;
+- (MSAsset *)initWithCoder:(NSCoder *)arg0;
+- (void)encodeWithCoder:(NSCoder *)arg0;
+- (MSAsset *)init;
+- (char)isEqual:(NSObject *)arg0;
+- (unsigned int)hash;
+- (NSString *)description;
+- (void)setType:(NSString *)arg0;
+- (NSString *)type;
+- (void)setUserInfo:(<NSCoding> *)arg0;
+- (NSString *)path;
+- (MSAsset *)copyWithZone:(struct _NSZone *)arg0;
+- (<NSCoding> *)userInfo;
+- (void)setPath:(NSString *)arg0;
+- (void).cxx_destruct;
+- (char)isVideo;
+- (NSError *)error;
+- (void)setProtocolFileSize:(unsigned long long)arg0;
+- (NSData *)fileData;
+- (NSData *)masterAssetHash;
+- (unsigned long long)_fileSizeOnDisk;
+- (void)setMMCSAccessHeader:(NSString *)arg0;
+- (NSString *)MMCSAccessHeader;
+- (void)addMetadataValue:(id)arg0 forKey:(NSString *)arg1;
+- (NSData *)MMCSHash;
+- (void)setMMCSHash:(id)arg0;
+- (NSString *)MMCSUTI;
+- (void)setMMCSUTI:(NSSet *)arg0;
+- (unsigned long long)MMCSItemSize;
+- (void)setMMCSItemSize:(unsigned long long)arg0;
+- (MSAsset *)initWithGUID:(NSString *)arg0;
+- (NSURL *)MMCSURL;
+- (void)setMMCSURL:(NSURL *)arg0;
+- (void)setFileData:(NSData *)arg0;
+- (NSDate *)MMCSAccessHeaderTimeStamp;
+- (void)setMMCSAccessHeader:(NSString *)arg0 andTimeStamp:(id)arg1;
+- (NSString *)MMCSReceipt;
+- (void)setMMCSReceipt:(id)arg0;
+- (NSDate *)batchCreationDate;
+- (void)setBatchCreationDate:(NSDate *)arg0;
+- (NSDate *)photoCreationDate;
+- (void)setPhotoCreationDate:(NSDate *)arg0;
+- (char)assetDataAvailableOnServer;
+- (void)setAssetDataAvailableOnServer:(char)arg0;
+- (int)MMCSOpenNewFileDescriptor;
+- (NSObject *)MMCSItemType;
+- (unsigned long long)MMCSItemID;
+- (void)setMMCSItemID:(unsigned long long)arg0;
+- (NSError *)MMCSError;
+- (void)setMMCSError:(NSError *)arg0;
+- (void)setMMCSAccessHeaderTimeStamp:(id)arg0;
+- (unsigned long)MMCSItemFlags;
+- (void)setMMCSItemFlags:(unsigned long)arg0;
+- (unsigned long long)protocolFileSize;
+- (NSDictionary *)MSASPProtocolDictionary;
+- (NSString *)metadataValueForKey:(NSString *)arg0;
+- (void)setError:(NSError *)arg0;
+- (char)isPhoto;
+- (void)setMetadata:(NSDictionary *)arg0;
+- (NSDictionary *)metadata;
+- (NSData *)fileHash;
+- (void)setMasterAssetHash:(NSData *)arg0;
+- (void)setFileHash:(NSData *)arg0;
+- (void)setGUID:(NSSet *)arg0;
+- (NSString *)GUID;
+- (void)setMetadataValue:(id)arg0 forKey:(NSString *)arg1;
+- (void)setMediaAssetType:(unsigned int)arg0;
+- (unsigned int)mediaAssetType;
+- (void)setAssetCollectionGUID:(NSString *)arg0;
+- (NSString *)assetCollectionGUID;
+
+@end

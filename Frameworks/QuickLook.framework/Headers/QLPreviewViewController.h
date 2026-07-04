@@ -1,0 +1,121 @@
+/* Runtime dump - QLPreviewViewController
+ * Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
+ */
+
+@interface QLPreviewViewController : UIViewController <QLPreviewItemInteractionDelegate, UIDocumentPasswordViewDelegate, QLSwippableItemProtocol>
+{
+    <QLPreviewItemInteractionDelegate> * _displayBundleDelegate;
+    <QLPreviewItem> * _previewItem;
+    int _index;
+    struct ? _clientContext;
+    int _previewMode;
+    char _needsReload;
+    char _swiping;
+    char _shouldSwapDisplayBundles;
+    UIView * _scalingView;
+    UIView * _contentContainerView;
+    UIView * _accessoryContainerView;
+    float _aspectRatio;
+    float _scaleFactor;
+    float _navigationBarVerticalOffset;
+    QLDisplayBundle * _displayBundle;
+    QLDisplayBundle * _newDisplayBundle;
+    NSTimer * _progressTimer;
+    QLProgressView * _progressView;
+    NSString * _loadingTextForMissingFiles;
+    char _overlayHidden;
+    UIDocumentPasswordView * _documentPasswordView;
+    NSLayoutConstraint * _documentPasswordViewKeyboardConstraint;
+    QLGenericView * _airPlayPasswordView;
+    char _loadedWithPassword;
+    char _visible;
+    struct CGRect _initialFrame;
+}
+
+@property (readonly) QLDisplayBundle * displayBundle;
+@property <QLPreviewItemInteractionDelegate> * displayBundleDelegate;
+@property int previewMode;
+@property struct ? clientContext;
+@property (readonly) int airPlayMode;
+@property (readonly) UIView * airPlayView;
+@property (readonly) UIView * snapshotView;
+@property (nonatomic) char visible;
+@property (nonatomic) struct CGRect initialFrame;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString * description;
+@property (readonly, copy) NSString * debugDescription;
+@property int index;
+@property (retain) <QLPreviewItem> * previewItem;
+
+- (<QLPreviewItem> *)previewItem;
+- (void)setPreviewItem:(<QLPreviewItem> *)arg0;
+- (void)setLoadingTextForMissingFiles:(NSString *)arg0;
+- (void)setOverlayHidden:(char)arg0 duration:(double)arg1;
+- (void)previewItemWillLoad:(id)arg0;
+- (void)previewItemDidLoad:(id)arg0 atIndex:(int)arg1 withError:(NSError *)arg2;
+- (void)previewItem:(<QLPreviewItem> *)arg0 requiresDisplayBundle:(NSObject *)arg1 withHints:(NSDictionary *)arg2;
+- (void)viewDidUpdateForPreviewItem:(NSObject *)arg0;
+- (void)cancelLoadIfNeeded;
+- (int)airPlayMode;
+- (void)beginTrackingViewUpdates;
+- (void)endTrackingViewUpdates;
+- (void)setupAirPlayView;
+- (void)discardAirPlayView;
+- (struct ?)clientContext;
+- (void)setClientContext:(struct ?)arg0;
+- (void)setNavigationBarVerticalOffset:(float)arg0;
+- (void)showContentsWasTappedForPreviewItem:(NSObject *)arg0;
+- (NSObject *)previewItem:(<QLPreviewItem> *)arg0 willSendRequest:(NSURLRequest *)arg1;
+- (void)previewItem:(<QLPreviewItem> *)arg0 receivedTapOnURL:(NSURL *)arg1;
+- (NSObject *)clientProcessAlertViewForPreviewItem:(NSObject *)arg0;
+- (void)overlayWasInteractedWithOnPreviewItem:(NSObject *)arg0;
+- (void)_layoutViews;
+- (void)_cancelScheduledShowProgressiveUI;
+- (void)_prepareDisplayBundle:(NSObject *)arg0 preload:(char)arg1 withHints:(NSDictionary *)arg2;
+- (void)_showProgressUI;
+- (void)_refreshPreviewItem:(char)arg0 withPassword:(NSString *)arg1;
+- (void)refreshPreviewItem;
+- (void)_updateProgressUIWithDuration:(double)arg0;
+- (void)_hidePasswordView;
+- (void)_hideProgressiveUI;
+- (void)_removeDisplayBundles;
+- (void)_keyboardVisibilityChanged:(NSNotification *)arg0;
+- (void)_showGenericDisplayBundleForPreviewItem:(NSObject *)arg0;
+- (void)_scheduleShowProgressiveUI;
+- (void)_swapDisplayBundles;
+- (void)viewWasTappedOnPreviewItem:(NSObject *)arg0;
+- (void)previewItem:(<QLPreviewItem> *)arg0 willShowOverlayWithDuration:(double)arg1;
+- (void)previewItem:(<QLPreviewItem> *)arg0 willHideOverlayWithDuration:(double)arg1;
+- (void)_showPasswordView;
+- (void)previewItem:(<QLPreviewItem> *)arg0 setAVState:(NSObject *)arg1;
+- (void)previewItem:(<QLPreviewItem> *)arg0 willEnterFullScreenWithHostedWindow:(_UIHostedWindow *)arg1;
+- (void)previewItemDidExitFullScreen:(NSObject *)arg0;
+- (void)willStartSwiping;
+- (void)didFinishSwiping;
+- (void)setAspectRatio:(float)arg0 scaleFactor:(float)arg1;
+- (QLDisplayBundle *)displayBundle;
+- (UIView *)airPlayView;
+- (void)preloadIfNeeded;
+- (<QLPreviewItemInteractionDelegate> *)displayBundleDelegate;
+- (void)setDisplayBundleDelegate:(<QLPreviewItemInteractionDelegate> *)arg0;
+- (struct CGRect)initialFrame;
+- (void)setInitialFrame:(struct CGRect)arg0;
+- (void)dealloc;
+- (QLPreviewViewController *)init;
+- (NSString *)description;
+- (UIView *)snapshotView;
+- (void)loadView;
+- (void)setVisible:(char)arg0;
+- (void)willMoveToParentViewController:(BRController *)arg0;
+- (void)viewDidAppear:(char)arg0;
+- (int)index;
+- (char)visible;
+- (void)userDidEnterPassword:(NSString *)arg0 forPasswordView:(NSObject *)arg1;
+- (void)didBeginEditingPassword:(NSString *)arg0 inView:(struct CGSize)arg1;
+- (void)didEndEditingPassword:(NSString *)arg0 inView:(struct CGSize)arg1;
+- (void)setIndex:(int)arg0;
+- (void)setPreviewMode:(int)arg0;
+- (int)previewMode;
+
+@end

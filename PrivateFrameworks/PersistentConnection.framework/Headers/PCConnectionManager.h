@@ -1,0 +1,138 @@
+/* Runtime dump - PCConnectionManager
+ * Image: /System/Library/PrivateFrameworks/PersistentConnection.framework/PersistentConnection
+ */
+
+@interface PCConnectionManager : NSObject <PCLoggingDelegate, PCInterfaceMonitorDelegate>
+{
+    int _connectionClass;
+    <PCConnectionManagerDelegate> * _delegate;
+    NSString * _serviceIdentifier;
+    NSString * _duetIdentifier;
+    int _prefsStyle;
+    int _onlyAllowedStyle;
+    char _onlyAllowedStyleSet;
+    int _interfaceIdentifier;
+    unsigned int _guidancePriority;
+    NSRunLoop * _delegateRunLoop;
+    NSObject<OS_dispatch_queue> * _delegateQueue;
+    <PCGrowthAlgorithm> * _wwanGrowthAlgorithm;
+    <PCGrowthAlgorithm> * _wifiGrowthAlgorithm;
+    <PCGrowthAlgorithm> * _lastScheduledGrowthAlgorithm;
+    PCPersistentTimer * _intervalTimer;
+    PCPersistentTimer * _reconnectWakeTimer;
+    PCPersistentTimer * _delayTimer;
+    unsigned int _powerAssertionID;
+    double _onTimeKeepAliveTime;
+    double _lastResumeTime;
+    double _lastStopTime;
+    double _lastReachableTime;
+    double _lastReconnectTime;
+    double _lastScheduledIntervalTime;
+    double _timerGuidance;
+    double _keepAliveGracePeriod;
+    unsigned int _reconnectIteration;
+    int _timerGuidanceToken;
+    int _pushIsConnectedToken;
+    int _prefsChangedToken;
+    double _defaultPollingInterval;
+    double _pollingIntervalOverride;
+    char _pollingIntervalOverrideSet;
+    char _hasStarted;
+    char _isRunning;
+    char _inCallback;
+    char _isInReconnectMode;
+    char _reconnectWithKeepAliveDelay;
+    char _forceManualWhenRoaming;
+    char _enableNonCellularConnections;
+    char _isReachable;
+    char _disableEarlyFire;
+}
+
+@property (nonatomic) <PCConnectionManagerDelegate> * delegate;
+@property (copy, nonatomic) NSString * duetIdentifier;
+@property (readonly, nonatomic) char isRunning;
+@property (readonly, nonatomic) double currentKeepAliveInterval;
+@property (nonatomic) double minimumKeepAliveInterval;
+@property double maximumKeepAliveInterval;
+@property (readonly, nonatomic) unsigned int countOfGrowthActions;
+@property (nonatomic) char disableEarlyFire;
+@property (nonatomic) double keepAliveGracePeriod;
+@property (readonly, nonatomic) double pollingInterval;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString * description;
+@property (readonly, copy) NSString * debugDescription;
+@property (readonly, nonatomic) NSString * loggingIdentifier;
+
++ (Class)growthAlgorithmClass;
++ (NSString *)_keepAliveCachePath;
++ (PCConnectionManager *)intervalCacheDictionaries;
++ (char)_isCachedKeepAliveIntervalStillValid:(double)arg0 date:(NSDate *)arg1;
+
+- (void)log:(NSData *)arg0;
+- (void)dealloc;
+- (void)setDelegate:(<PCConnectionManagerDelegate> *)arg0;
+- (<PCConnectionManagerDelegate> *)delegate;
+- (int)currentStyle;
+- (char)isRunning;
+- (NSString *)loggingIdentifier;
+- (NSString *)duetIdentifier;
+- (void)interfaceManagerInternetReachabilityChanged:(NSNotification *)arg0;
+- (void)interfaceManagerWWANInterfaceStatusChanged:(NSNotification *)arg0;
+- (void)interfaceManagerInHomeCountryStatusChanged:(NSNotification *)arg0;
+- (void)interfaceLinkQualityChanged:(id)arg0 previousLinkQuality:(int)arg1;
+- (double)minimumKeepAliveInterval;
+- (void)setMinimumKeepAliveInterval:(double)arg0;
+- (double)currentKeepAliveInterval;
+- (double)maximumKeepAliveInterval;
+- (void)setMaximumKeepAliveInterval:(double)arg0;
+- (NSObject *)_stringForAction:(int)arg0;
+- (unsigned int)countOfGrowthActions;
+- (id)_getCachedWWANKeepAliveInterval;
+- (void)_setTimerGuidance:(double)arg0;
+- (void)_preferencesChanged;
+- (void)_loadPreferencesGeneratingEvent:(char)arg0;
+- (NSObject *)_initWithConnectionClass:(int)arg0 interfaceIdentifier:(int)arg1 guidancePriority:(unsigned int)arg2 delegate:(<PCConnectionManagerDelegate> *)arg3 delegateQueue:(NSObject<OS_dispatch_queue> *)arg4 serviceIdentifier:(NSString *)arg5;
+- (PCConnectionManager *)initWithConnectionClass:(int)arg0 interfaceIdentifier:(int)arg1 guidancePriority:(unsigned int)arg2 delegate:(<PCConnectionManagerDelegate> *)arg3 serviceIdentifier:(NSString *)arg4;
+- (void)_clearTimers;
+- (NSObject *)_stringForStyle:(int)arg0;
+- (void)_adjustInterfaceAssertions;
+- (void)_calloutWithEvent:(int)arg0;
+- (double)pollingInterval;
+- (void)resumeManagerWithAction:(int)arg0;
+- (void)_validateActionForCurrentStyle:(int)arg0;
+- (void)_resolveStateWithAction:(int)arg0;
+- (id)_currentGrowthAlgorithm;
+- (void)_setupTimerForPushWithKeepAliveInterval:(double)arg0;
+- (void)_saveWWANKeepAliveInterval;
+- (void)_setupTimerForPollForAdjustment:(char)arg0;
+- (void)_setupKeepAliveForReconnect;
+- (void)stopManager;
+- (char)_isPushConnected;
+- (void)_intervalTimerFired;
+- (void)_takePowerAssertionWithTimeout:(double)arg0;
+- (char)_hasBudgetRemaining;
+- (void)_releasePowerAssertion;
+- (void)startManager;
+- (void)_delayTimerFired;
+- (void)_clearTimersReleasingPowerAssertion:(char)arg0;
+- (NSObject *)_stringForEvent:(int)arg0;
+- (void)_callDelegateWithEvent:(NSObject *)arg0;
+- (void)_adjustPollTimerIfNecessary;
+- (void)logAtLevel:(int)arg0 format:(NSString *)arg1 arguments:(void *)arg2;
+- (PCConnectionManager *)initWithConnectionClass:(int)arg0 delegate:(<PCConnectionManagerDelegate> *)arg1 delegateQueue:(NSObject<OS_dispatch_queue> *)arg2 serviceIdentifier:(NSString *)arg3;
+- (PCConnectionManager *)initWithConnectionClass:(int)arg0 delegate:(<PCConnectionManagerDelegate> *)arg1 serviceIdentifier:(NSString *)arg2;
+- (void)setDuetIdentifier:(NSString *)arg0;
+- (void)setOnlyAllowedStyle:(int)arg0;
+- (void)stopAndResetManager;
+- (void)setKeepAliveGracePeriod:(double)arg0;
+- (void)setPollingIntervalOverride:(double)arg0;
+- (void)cancelPollingIntervalOverride;
+- (char)shouldClientScheduleReconnectDueToFailure;
+- (void)setEnableNonCellularConnections:(char)arg0;
+- (char)disableEarlyFire;
+- (void)setDisableEarlyFire:(char)arg0;
+- (void)logAtLevel:(int)arg0 format:(NSString *)arg1;
+- (double)keepAliveGracePeriod;
+
+@end

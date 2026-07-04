@@ -1,0 +1,122 @@
+/* Runtime dump - GEOETARequest
+ * Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
+ */
+
+@interface GEOETARequest : PBRequest <NSCopying>
+{
+    struct ? _sessionID;
+    struct ? _timepoint;
+    GEOAutomobileOptions * _automobileOptions;
+    NSMutableArray * _destinationWaypointTypeds;
+    NSMutableArray * _destinations;
+    unsigned int _distanceLimitMeters;
+    GEOWaypoint * _origin;
+    GEOWaypointTyped * _originWaypointTyped;
+    NSMutableArray * _serviceTags;
+    int _transportType;
+    GEOWalkingOptions * _walkingOptions;
+    char _allowPartialResults;
+    char _includeDistance;
+    char _includeHistoricTravelTime;
+    struct ? _has;
+}
+
+@property (nonatomic) char hasTransportType;
+@property (nonatomic) int transportType;
+@property (nonatomic) char hasTimepoint;
+@property (nonatomic) struct ? timepoint;
+@property (readonly, nonatomic) char hasOrigin;
+@property (retain, nonatomic) GEOWaypoint * origin;
+@property (retain, nonatomic) NSMutableArray * destinations;
+@property (nonatomic) char hasIncludeHistoricTravelTime;
+@property (nonatomic) char includeHistoricTravelTime;
+@property (nonatomic) char hasAllowPartialResults;
+@property (nonatomic) char allowPartialResults;
+@property (nonatomic) char hasIncludeDistance;
+@property (nonatomic) char includeDistance;
+@property (nonatomic) char hasSessionID;
+@property (nonatomic) struct ? sessionID;
+@property (nonatomic) char hasDistanceLimitMeters;
+@property (nonatomic) unsigned int distanceLimitMeters;
+@property (readonly, nonatomic) char hasOriginWaypointTyped;
+@property (retain, nonatomic) GEOWaypointTyped * originWaypointTyped;
+@property (retain, nonatomic) NSMutableArray * destinationWaypointTypeds;
+@property (readonly, nonatomic) char hasAutomobileOptions;
+@property (retain, nonatomic) GEOAutomobileOptions * automobileOptions;
+@property (readonly, nonatomic) char hasWalkingOptions;
+@property (retain, nonatomic) GEOWalkingOptions * walkingOptions;
+@property (retain, nonatomic) NSMutableArray * serviceTags;
+
+- (void)dealloc;
+- (char)isEqual:(NSObject *)arg0;
+- (unsigned int)hash;
+- (NSString *)description;
+- (GEOETARequest *)copyWithZone:(struct _NSZone *)arg0;
+- (GEOWaypoint *)origin;
+- (void)setOrigin:(GEOWaypoint *)arg0;
+- (NSDictionary *)dictionaryRepresentation;
+- (unsigned int)requestTypeCode;
+- (Class)responseClass;
+- (struct ?)sessionID;
+- (void)setSessionID:(struct ?)arg0;
+- (void)setHasSessionID:(char)arg0;
+- (char)hasSessionID;
+- (char)hasOrigin;
+- (char)hasTransportType;
+- (void)setServiceTags:(NSMutableArray *)arg0;
+- (void)addServiceTag:(NSString *)arg0;
+- (unsigned int)serviceTagsCount;
+- (void)clearServiceTags;
+- (NSObject *)serviceTagAtIndex:(unsigned int)arg0;
+- (NSMutableArray *)serviceTags;
+- (void)setHasTransportType:(char)arg0;
+- (void)setDestinations:(NSMutableArray *)arg0;
+- (void)setOriginWaypointTyped:(GEOWaypointTyped *)arg0;
+- (void)setDestinationWaypointTypeds:(NSMutableArray *)arg0;
+- (void)setAutomobileOptions:(GEOAutomobileOptions *)arg0;
+- (void)setWalkingOptions:(GEOWalkingOptions *)arg0;
+- (void)addDestination:(NSObject *)arg0;
+- (void)addDestinationWaypointTyped:(id)arg0;
+- (unsigned int)destinationsCount;
+- (void)clearDestinations;
+- (NSObject *)destinationAtIndex:(unsigned int)arg0;
+- (unsigned int)destinationWaypointTypedsCount;
+- (void)clearDestinationWaypointTypeds;
+- (NSObject *)destinationWaypointTypedAtIndex:(unsigned int)arg0;
+- (void)setTimepoint:(struct ?)arg0;
+- (void)setHasTimepoint:(char)arg0;
+- (char)hasTimepoint;
+- (void)setIncludeHistoricTravelTime:(char)arg0;
+- (void)setHasIncludeHistoricTravelTime:(char)arg0;
+- (char)hasIncludeHistoricTravelTime;
+- (void)setAllowPartialResults:(char)arg0;
+- (void)setHasAllowPartialResults:(char)arg0;
+- (char)hasAllowPartialResults;
+- (void)setIncludeDistance:(char)arg0;
+- (void)setHasIncludeDistance:(char)arg0;
+- (char)hasIncludeDistance;
+- (unsigned int)distanceLimitMeters;
+- (void)setDistanceLimitMeters:(unsigned int)arg0;
+- (void)setHasDistanceLimitMeters:(char)arg0;
+- (char)hasDistanceLimitMeters;
+- (char)hasOriginWaypointTyped;
+- (char)hasAutomobileOptions;
+- (char)hasWalkingOptions;
+- (struct ?)timepoint;
+- (NSMutableArray *)destinations;
+- (char)includeHistoricTravelTime;
+- (char)allowPartialResults;
+- (char)includeDistance;
+- (GEOWaypointTyped *)originWaypointTyped;
+- (NSMutableArray *)destinationWaypointTypeds;
+- (GEOAutomobileOptions *)automobileOptions;
+- (GEOWalkingOptions *)walkingOptions;
+- (GEOETARequest *)initWithQuickETARequest:(NSURLRequest *)arg0;
+- (void)setTransportType:(int)arg0;
+- (void)mergeFrom:(NSObject *)arg0;
+- (char)readFrom:(NSObject *)arg0;
+- (void)writeTo:(NSObject *)arg0;
+- (void)copyTo:(NSObject *)arg0;
+- (int)transportType;
+
+@end

@@ -1,0 +1,135 @@
+/* Runtime dump - NEConfiguration
+ * Image: /System/Library/Frameworks/NetworkExtension.framework/NetworkExtension
+ */
+
+@interface NEConfiguration : NSObject <NEProfilePayloadHandlerDelegate, NEConfigurationValidating, NSSecureCoding, NSCopying>
+{
+    int _grade;
+    NSUUID * _identifier;
+    NSString * _application;
+    NSString * _name;
+    NSString * _applicationName;
+    NSString * _applicationIdentifier;
+    NSString * _externalIdentifier;
+    NEVPN * _VPN;
+    NEAOVPN * _alwaysOnVPN;
+    NEVPNApp * _appVPN;
+    NEContentFilter * _contentFilter;
+    NEProfileIngestionPayloadInfo * _payloadInfo;
+}
+
+@property (readonly) int grade;
+@property (readonly) NSUUID * identifier;
+@property (copy) NSString * application;
+@property (copy) NSString * name;
+@property (copy) NSString * applicationName;
+@property (copy) NSString * applicationIdentifier;
+@property (copy) NSString * externalIdentifier;
+@property (copy) NEVPN * VPN;
+@property (copy) NEAOVPN * alwaysOnVPN;
+@property (copy) NEVPNApp * appVPN;
+@property (copy) NEContentFilter * contentFilter;
+@property (copy) NEProfileIngestionPayloadInfo * payloadInfo;
+@property (readonly) NSString * pluginType;
+
++ (void)addError:(NSError *)arg0 toList:(NSArray *)arg1;
++ (char)setConfiguration:(struct __CFDictionary *)arg0 forProtocol:(struct __CFString *)arg1 inService:(struct __SCNetworkService *)arg2;
++ (struct __CFDictionary *)copyConfigurationForProtocol:(struct __CFString *)arg0 inService:(struct __SCNetworkService *)arg1;
++ (char)SCServiceWithIdentifier:(NSUUID *)arg0 existsInPreferences:(struct __SCPreferences *)arg1;
++ (char)removeSCServiceWithIdentifier:(NSUUID *)arg0 fromPreferences:(struct __SCPreferences *)arg1;
++ (char)supportsSecureCoding;
+
+- (char)checkValidityAndCollectErrors:(NSArray *)arg0;
+- (NSString *)pluginType;
+- (NEVPN *)VPN;
+- (NEVPNApp *)appVPN;
+- (NEAOVPN *)alwaysOnVPN;
+- (NEContentFilter *)contentFilter;
+- (int)grade;
+- (void)syncWithSystemKeychain;
+- (NSObject *)generateSignature;
+- (char)isSupportedBySC;
+- (char)applyChangesToSCServiceInPreferences:(struct __SCPreferences *)arg0;
+- (void)clearSystemKeychain;
+- (NEProfileIngestionPayloadInfo *)payloadInfo;
+- (char)updateFromSCService:(struct __SCNetworkService *)arg0;
+- (NEConfiguration *)initFromSCService:(struct __SCNetworkService *)arg0;
+- (void)syncWithUserKeychain;
+- (void)clearUserKeychain;
+- (NSString *)application;
+- (NSString *)externalIdentifier;
+- (NEConfiguration *)initWithName:(NSString *)arg0 grade:(int)arg1;
+- (void)setContentFilter:(NEContentFilter *)arg0;
+- (void)setVPN:(NSSet *)arg0;
+- (void)setApplication:(NSString *)arg0;
+- (void)setAlwaysOnVPN:(NEAOVPN *)arg0;
+- (void)setAppVPN:(NEVPNApp *)arg0;
+- (void)setPayloadInfo:(NEProfileIngestionPayloadInfo *)arg0;
+- (void)syncWithKeychainInDomain:(int)arg0;
+- (void)clearKeychainInDomain:(int)arg0;
+- (NSDictionary *)copyProfileDictionary;
+- (void)copyPasswordsFromSystemKeychain;
+- (void)setExternalIdentifier:(NSString *)arg0;
+- (char)setConfigurationVPNPassword:(NSString *)arg0;
+- (char)ingestDisconnectOptions:(NSDictionary *)arg0;
+- (NSObject *)getConfigurationProtocol;
+- (char)ingestPPPDict:(id)arg0;
+- (char)configurePPPCommon:(id)arg0;
+- (char)configureVpnOnDemandRules:(id)arg0;
+- (char)configureL2TPWithPPPOptions:(NSDictionary *)arg0;
+- (char)configurePPTPWithPPPOptions:(NSDictionary *)arg0;
+- (char)configureIKE:(id)arg0 vpnType:(NSString *)arg1 payloadBase:(MCVPNPayloadBase *)arg2 vpn:(id)arg3;
+- (char)ingestPPPData:(NSData *)arg0 vnpType:(NSObject *)arg1;
+- (char)configurePPPWithVPNOptions:(NSDictionary *)arg0 payloadBase:(MCVPNPayloadBase *)arg1;
+- (char)ingestIPSecDict:(id)arg0 vpnType:(NSString *)arg1 vpn:(id)arg2;
+- (char)configurePluginWithPayload:(NSData *)arg0 pluginType:(NSString *)arg1 payloadType:(NSObject *)arg2;
+- (char)configureVpnOnDemand:(id)arg0 vpnType:(NSString *)arg1;
+- (char)ingestDNSOptions:(NSDictionary *)arg0;
+- (char)ingestProxyOptions:(NSDictionary *)arg0;
+- (char)setAppLayerVPNRuleSettings:(NSDictionary *)arg0 withAppIdentifier:(NSString *)arg1;
+- (id)configureAOVPNTunnelFromTunnelDict:(id)arg0 payloadBase:(MCVPNPayloadBase *)arg1;
+- (char)setConfigurationPassword:(NSString *)arg0 account:(NSObject *)arg1 password:(NSString *)arg2 description:(NSString *)arg3;
+- (id)getConfigurationPasswordPersist:(id)arg0 account:(NSObject *)arg1 description:(NSString *)arg2;
+- (char)setCertificatesVPN:(id)arg0;
+- (char)setCertificatesAppVPN:(id)arg0;
+- (char)setCertificatesAOVpn:(id)arg0;
+- (char)setCertificateContentFilter:(NSObject *)arg0;
+- (id)getPendingCertificateUUIDsVPN:(id)arg0;
+- (id)getPendingCertificateUUIDsAppVPN:(id)arg0;
+- (id)getPendingCertificateUUIDsAOVpn:(id)arg0;
+- (NSObject *)getPendingCertificateUUIDsContentFilter:(NSObject *)arg0;
+- (char)setConfigurationSharedSecret:(id)arg0;
+- (char)setPayloadInfoIdentityUserNameAndPassword:(NSString *)arg0;
+- (char)setPayloadInfoIdentityProxy:(NSObject *)arg0;
+- (char)setPayloadInfoIdentityIPSecSharedSecret:(id)arg0;
+- (char)setPayloadInfoIdentityPIN:(id)arg0;
+- (NEConfiguration *)initWithVPNPayload:(NSData *)arg0 configurationName:(NSString *)arg1;
+- (NEConfiguration *)initWithAppLayerVPNPayload:(NSData *)arg0 configurationName:(NSString *)arg1;
+- (NEConfiguration *)initWithAlwaysOnVPNPayload:(NEAOVPN *)arg0 configurationName:(NSString *)arg1;
+- (NEConfiguration *)initWithContentFilterPayload:(NEContentFilter *)arg0 configurationName:(NSString *)arg1;
+- (id)getPendingCertificateUUIDs:(id)arg0;
+- (NSString *)getConfigurationIdentifier;
+- (char)setConfigurationHTTPPassword:(NSString *)arg0;
+- (char)setPayloadInfoIdentity:(NSObject *)arg0;
+- (char)setPayloadInfoCommon:(id)arg0 payloadOrganization:(NSString *)arg1;
+- (char)setProfileInfo:(NSDictionary *)arg0;
+- (char)setAppLayerVPNUUID:(id)arg0 andSafariDomains:(id)arg1;
+- (NEConfiguration *)initWithCoder:(NSCoder *)arg0;
+- (void)encodeWithCoder:(NSCoder *)arg0;
+- (char)isEqual:(NSObject *)arg0;
+- (unsigned int)hash;
+- (NSString *)description;
+- (void)setName:(NSString *)arg0;
+- (NSString *)name;
+- (NSUUID *)identifier;
+- (NSString *)applicationIdentifier;
+- (NEConfiguration *)copyWithZone:(struct _NSZone *)arg0;
+- (NEConfiguration *)initWithIdentifier:(NSUUID *)arg0;
+- (void).cxx_destruct;
+- (void)setApplicationName:(NSString *)arg0;
+- (char)setCertificates:(NSArray *)arg0;
+- (void)setApplicationIdentifier:(NSString *)arg0;
+- (NSString *)applicationName;
+- (NEConfiguration *)initWithConfiguration:(NSDictionary *)arg0;
+
+@end

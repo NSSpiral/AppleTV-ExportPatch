@@ -1,0 +1,126 @@
+/* Runtime dump - AVController
+ * Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
+ */
+
+@interface AVController : NSObject
+{
+    struct AVControllerPrivate * _priv;
+}
+
++ (char)isNetworkSupportedPath:(NSString *)arg0;
++ (MPAVController *)avController;
++ (AVController *)compatibleAudioRouteForRoute:(id)arg0;
++ (NSString *)convertFigTimeDictionaryToTimeIntervalWithKey:(NSString *)arg0 stringURLToNSURLWithKey:(NSString *)arg1 inDictionaries:(id)arg2;
++ (void)setEnableNetworkMode:(char)arg0;
++ (char)isSupportedMimeType:(NSObject *)arg0;
++ (char)isSupportedFileExtension:(id)arg0;
++ (NSOperationQueue *)avControllerWithQueue:(NSObject *)arg0 error:(id *)arg1;
+
+- (NSDictionary *)vibrationPattern;
+- (void)setVibrationPattern:(NSDictionary *)arg0;
+- (void)stepByCount:(int)arg0;
+- (int)repeatMode;
+- (char)setRepeatMode:(int)arg0;
+- (void)setCurrentTime:(double)arg0 options:(int)arg1;
+- (void)seekToDate:(NSDate *)arg0;
+- (char)isCurrentItemReady;
+- (void)setMuted:(char)arg0;
+- (void)setCurrentTime:(double)arg0;
+- (void)dealloc;
+- (void)setDelegate:(NSObject *)arg0;
+- (AVController *)init;
+- (NSObject *)delegate;
+- (char)isValid;
+- (void)setLayer:(CALayer *)arg0;
+- (NSObject *)currentItem;
+- (void)pause;
+- (char)setAttribute:(char *)arg0 forKey:(NSString *)arg1 error:(id *)arg2;
+- (AVController *)initWithQueue:(NSObject<OS_dispatch_queue> *)arg0 error:(id *)arg1;
+- (void)makeCurrentItemReady;
+- (struct CGImage *)grabCGImageAtTime:(double)arg0 withTimeOptions:(int)arg1 withImageOptions:(NSDictionary *)arg2 actualTime:(double *)arg3;
+- (void)setEQPreset:(int)arg0;
+- (char)okToNotifyFromThisThread;
+- (char)activate:(id *)arg0;
+- (void)makeError:(id *)arg0 withDescription:(NSString *)arg1 code:(long)arg2;
+- (char)vibrationEnabled;
+- (void)setVibrationEnabled:(char)arg0;
+- (AVController *)initWithQueue:(NSObject<OS_dispatch_queue> *)arg0 fmpType:(unsigned int)arg1 error:(id *)arg2;
+- (id)_figPlayerNotifications;
+- (void)checkQueueSpace;
+- (NSOperationQueue *)addNextFeederItemToQueue;
+- (AVQueueFeeder *)queueFeeder;
+- (char)playNextItem:(id *)arg0;
+- (void)feederRangeWasInserted:(id)arg0;
+- (void)feederRangeWasRemoved:(id)arg0;
+- (void)feederInvalidatedWithCurrentItemMoved:(id)arg0;
+- (void)setQueueFeeder:(AVQueueFeeder *)arg0 withIndex:(int)arg1;
+- (void)applyDesiredRepeatMode;
+- (void)continueAfterRepeatGap;
+- (char)setRate:(float)arg0 error:(id *)arg1;
+- (void)dequeueFirstItem;
+- (struct OpaqueFigPlaybackItem *)currentFPItem;
+- (void)cancelContinueAfterRepeatGap;
+- (char)shouldBeginPlayingItem:(NSObject *)arg0 error:(id *)arg1;
+- (NSString *)errorWithDescription:(NSString *)arg0 code:(long)arg1;
+- (CALayer *)lkLayer;
+- (char)shouldDisplayClosedCaptions;
+- (void)setVisualContext:(struct OpaqueFigVisualContext *)arg0;
+- (long)updateActionAtEnd;
+- (void)setOutputQTESFilePath:(NSString *)arg0;
+- (void)setShouldDisplayClosedCaptions:(char)arg0;
+- (void)setSubtitleRecipient:(id)arg0;
+- (void)setApplyVideoTrackMatrix;
+- (void)requestAsyncCGImagesAtTimes:(id)arg0 requestIDs:(id)arg1 withTimeOptions:(int)arg2 withImageOptions:(NSDictionary *)arg3;
+- (void)scheduleUpdateTimeMarkerObservations;
+- (void)scheduleQueueSpaceCheck;
+- (void)avPlaybackQueueCurrentItemChangedNotification:(NSNotification *)arg0;
+- (void)updateTimeMarkerObservations;
+- (void)removeObserver:(NSObject *)arg0 fromTMOArray:(NSArray *)arg1;
+- (void)ensurePlaybackQueueImmed;
+- (NSString *)outputQTESFilePath;
+- (void)logPerformanceDataForCurrentItem;
+- (void)currentItemWillChangeToItem:(NSObject *)arg0 oldItemCurrentTime:(double)arg1;
+- (void)rateDidChangeToRate:(float)arg0;
+- (void)currentItemHasChanged:(NSNotification *)arg0;
+- (void)fpItemNotification:(NSNotification *)arg0 sender:(NSObject *)arg1;
+- (void)itemHasFinishedPlayingNotification:(NSNotification *)arg0;
+- (char)beginRepeatGap;
+- (void)fmpEffectiveVolumeDidChange;
+- (void)safeSubtitleCommandPosted:(void *)arg0;
+- (void)setAVItemClass:(Class)arg0;
+- (AVController *)initForStreaming;
+- (struct AVControllerPrivate *)privateStorage;
+- (char)isNewImageAvailableForTime:(struct ? *)arg0 willNeverBeAvailable:(struct ?)arg1;
+- (long)copyImageForTime:(struct __CVBuffer * *)arg0 time:(struct __CVBuffer)arg1;
+- (void)setQueueFeeder:(AVQueueFeeder *)arg0;
+- (char)havePlayedCurrentItem;
+- (unsigned int)indexOfCurrentQueueFeederItem;
+- (char)setIndexOfCurrentQueueFeederItem:(unsigned int)arg0 error:(id *)arg1;
+- (char)resumePlayback:(double)arg0 error:(id *)arg1;
+- (char)beginInterruption:(id *)arg0;
+- (char)canBeginInterruption;
+- (void)endInterruptionWithStatus:(id)arg0;
+- (struct OpaqueFigVisualContext *)visualContext;
+- (void)requestAsyncCGImagesAtTimes:(id)arg0 withTimeOptions:(int)arg1 withImageOptions:(NSDictionary *)arg2;
+- (void)cancelAllCGImageRequests;
+- (void)registerTimeMarkerObserver:(NSObject *)arg0 forItem:(NSObject *)arg1 times:(NSArray *)arg2 context:(NSObject *)arg3;
+- (void)unregisterTimeMarkerObserver:(NSObject *)arg0 forItem:(NSObject *)arg1;
+- (NSObject *)bookmarkGroupIDForAVItem:(NSObject *)arg0;
+- (double)bookmarkTimeForAVItem:(NSObject *)arg0;
+- (struct OpaqueFigPlaybackItem *)createItemWithURL:(NSURL *)arg0 flags:(unsigned long)arg1 error:(int *)arg2;
+- (char)setPickedRouteWithPassword:(NSString *)arg0 withPassword:(NSString *)arg1;
+- (void)dequeueDeadItem;
+- (void)figPlayerNotificationHandler:(id /* block */)arg0;
+- (NSOperationQueue *)queue;
+- (void)setQueue:(NSObject<OS_dispatch_queue> *)arg0;
+- (int)eqPreset;
+- (float)rate;
+- (NSString *)attributeForKey:(NSString *)arg0;
+- (char)muted;
+- (AVController *)initWithError:(id *)arg0;
+- (float)volume;
+- (void)setVolume:(float)arg0;
+- (double)currentTime;
+- (char)play:(id *)arg0;
+
+@end

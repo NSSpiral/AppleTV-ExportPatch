@@ -1,0 +1,131 @@
+/* Runtime dump - AXSpringBoardServer
+ * Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
+ */
+
+@interface AXSpringBoardServer : AXServer
+{
+    AXAccessQueue * _accessQueue;
+    id _currentAlertHandler;
+    NSMutableArray * _gestureOverrides;
+    NSMutableArray * _actionHandlers;
+    NSMutableDictionary * _reachabilityHandlers;
+}
+
+@property (retain, nonatomic) AXAccessQueue * accessQueue;
+@property (copy, nonatomic) id currentAlertHandler;
+@property (retain, nonatomic) NSMutableArray * gestureOverrides;
+@property (retain, nonatomic) NSMutableArray * actionHandlers;
+@property (retain, nonatomic) NSMutableDictionary * reachabilityHandlers;
+
++ (NSXPCConnection *)server;
+
+- (AXAccessQueue *)accessQueue;
+- (void)setAccessQueue:(AXAccessQueue *)arg0;
+- (void)dealloc;
+- (AXSpringBoardServer *)init;
+- (int)activeInterfaceOrientation;
+- (char)hasActiveCall;
+- (void)setGestureOverrides:(NSMutableArray *)arg0;
+- (void)setActionHandlers:(NSMutableArray *)arg0;
+- (void)setReachabilityHandlers:(NSMutableDictionary *)arg0;
+- (void)setCurrentAlertHandler:(id /* block */)arg0;
+- (id /* block */)currentAlertHandler;
+- (NSMutableArray *)gestureOverrides;
+- (NSMutableDictionary *)reachabilityHandlers;
+- (NSMutableArray *)actionHandlers;
+- (void)_didConnectToServer;
+- (NSObject *)_handleReplyResult:(NSObject *)arg0;
+- (NSObject *)_handleGestureOverrideResult:(NSObject *)arg0;
+- (NSObject *)_handleActionResult:(NSObject *)arg0;
+- (NSObject *)_handleReachabilityResult:(NSObject *)arg0;
+- (char)_shouldValidateEntitlements;
+- (void)_willClearServer;
+- (void)_wasDisconnectedFromClient;
+- (void)_didConnectToClient;
+- (void)cleanupAlertHandler;
+- (void)showAlert:(int)arg0 withHandler:(id /* block */)arg1 withData:(/* block */ id)arg2;
+- (void)registerSpringBoardActionHandler:(id /* block */)arg0 withIdentifierCallback:(/* block */ id)arg1;
+- (void)setCancelGestureActivation:(unsigned int)arg0 cancelEnabled:(char)arg1;
+- (void)registerOverrideIntentForGesture:(unsigned int)arg0 withHandler:(id /* block */)arg1 withIdentifierCallback:(/* block */ id)arg2;
+- (void)registerReachabilityHandler:(id /* block */)arg0 withIdentifierCallback:(/* block */ id)arg1;
+- (NSString *)_serviceName;
+- (void)takeScreenshot;
+- (void)openAssistiveTouchCustomGestureCreation;
+- (void)openSCATCustomGestureCreation;
+- (void)openSCATCommonTasks;
+- (void)setHearingAidControlVisible:(char)arg0;
+- (void)startHearingAidServer;
+- (int)topEventPidOverride;
+- (char)isOrientationLocked;
+- (void)setOrientationLocked:(char)arg0;
+- (void)resetDimTimer;
+- (char)isSideSwitchUsedForOrientation;
+- (char)isRingerMuted;
+- (float)reachabilityOffset;
+- (float)volumeLevel;
+- (void)hideAlert;
+- (void)showAlert:(int)arg0 withHandler:(id /* block */)arg1;
+- (void)setShowSpeechPlaybackControls:(char)arg0;
+- (void)removeActionHandler:(id /* block */)arg0;
+- (void)removeOverrideIntent:(id)arg0;
+- (void)cancelReachabilityDetection;
+- (char)toggleIncomingCall;
+- (void)setReachabilityEnabledDuration:(double)arg0;
+- (void)removeReachabilityHandler:(id /* block */)arg0;
+- (char)isInspectorMinimized;
+- (char)isPointInsideAccessibilityInspector:(id)arg0;
+- (int)activeApplicationOrientation;
+- (void)copyStringToPasteboard:(id)arg0;
+- (char)_shouldDispatchLocally;
+- (NSObject *)_axSpringBoardServerInstanceDelegate;
+- (id)_axSpringBoardServerInstance;
+- (char)isNotificationCenterVisible;
+- (void)toggleNotificationCenter;
+- (char)_isSystemAppFrontmostExcludingSiri:(char)arg0;
+- (char)isScreenLockedWithPasscode:(char *)arg0;
+- (char)isSystemSleeping;
+- (char)isSyncingRestoringResettingOrUpdating;
+- (char)areSystemGesturesDisabledNatively;
+- (char)areSystemGesturesDisabledByAccessibility;
+- (id)installedApps;
+- (void)unlockDevice;
+- (char)isMediaPlaying;
+- (void)pauseMedia;
+- (void)resumeMedia;
+- (char)hasActiveOrPendingCall;
+- (char)hasActiveOrPendingCallOrFaceTime;
+- (char)isMakingEmergencyCall;
+- (void)showNotificationCenter;
+- (void)hideNotificationCenter;
+- (char)isControlCenterVisible;
+- (char)showNotificationCenter:(char)arg0;
+- (void)showControlCenter:(char)arg0;
+- (char)isAppSwitcherVisible;
+- (void)openAppSwitcher;
+- (void)dismissAppSwitcher;
+- (void)openSiri;
+- (void)dismissSiri;
+- (char)isSiriVisible;
+- (char)isSiriTalkingOrListening;
+- (void)setSiriIsTalking:(char)arg0;
+- (void)openVoiceControl;
+- (char)isVoiceControlRunning;
+- (char)isGuidedAccessActive;
+- (char)isSpeakThisTemporarilyDisabled;
+- (NSObject *)systemAppInfoWithQuery:(unsigned int)arg0;
+- (char)isSystemAppShowingAnAlert;
+- (id)focusedAppPID;
+- (int)purpleBuddyPID;
+- (id)runningAppPIDs;
+- (char)isSystemAppFrontmost;
+- (char)isSystemAppFrontmostExludingSiri;
+- (char)isPurpleBuddyAppFrontmost;
+- (char)isSettingsAppFrontmost;
+- (NSString *)applicationWithIdentifier:(NSString *)arg0;
+- (NSObject *)focusedAppProcess;
+- (id)runningAppProcesses;
+- (id)_axSpringBoardServerInstanceIfExists;
+- (int)pid;
+- (void)setVolume:(float)arg0;
+
+@end

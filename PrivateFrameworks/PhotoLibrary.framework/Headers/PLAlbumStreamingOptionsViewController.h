@@ -1,0 +1,125 @@
+/* Runtime dump - PLAlbumStreamingOptionsViewController
+ * Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
+ */
+
+@interface PLAlbumStreamingOptionsViewController : UIViewController <PLComposeRecipientViewControllerDelegate, PLInvitationRecordsObserver, UITableViewDataSource, UITableViewDelegate>
+{
+    NSArray * _visibleInvitationRecords;
+    NSString * _visiblePublicURL;
+    char _showShareLink;
+    PLCloudSharedAlbum * _album;
+    <PLAlbumStreamingOptionsViewControllerDelegate> * _delegate;
+    PLComposeRecipientViewController * _composeRecipientController;
+    UIBarButtonItem * _cancelButton;
+    UIBarButtonItem * _doneButton;
+    UITableView * _optionsTableView;
+    UISwitch * _wantsPublicWebsiteSwitch;
+    UISwitch * _wantsMultipleContributorsSwitch;
+    UISwitch * _wantsAcceptCloudNotificationSwitch;
+    char _adjustedInsetsForKeyboard;
+    unsigned int _addSubscribersRow;
+    NSOperationQueue * _familyRequestQueue;
+    ACAccountStore * _familyAccountStore;
+    NSArray * _familyMembers;
+    AAUIProfilePictureStore * _familyMemberPictureStore;
+    NSMutableDictionary * _familyProfilePictures;
+    char _isPresentedModally;
+    char _streamOwner;
+    char __shouldScrollToTopOnNextViewLayout;
+    char _albumIsFamilyStream;
+    NSString * _albumName;
+    PLCloudSharedAlbumInvitationRecord * __selectedSubscriberInvitationRecord;
+    NSString * __lastPublicURLSectionFooterTitle;
+    NSString * __lastMultiContributorsSectionFooterTitle;
+}
+
+@property (retain, nonatomic) PLCloudSharedAlbum * album;
+@property (nonatomic) <PLAlbumStreamingOptionsViewControllerDelegate> * delegate;
+@property (nonatomic) char isPresentedModally;
+@property (copy, nonatomic) NSString * albumName;
+@property (nonatomic) char streamOwner;
+@property (retain, nonatomic) PLCloudSharedAlbumInvitationRecord * _selectedSubscriberInvitationRecord;
+@property (nonatomic) char _shouldScrollToTopOnNextViewLayout;
+@property (copy, nonatomic) NSString * _lastPublicURLSectionFooterTitle;
+@property (copy, nonatomic) NSString * _lastMultiContributorsSectionFooterTitle;
+@property (nonatomic) char albumIsFamilyStream;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString * description;
+@property (readonly, copy) NSString * debugDescription;
+
+- (void)_cancelAction:(UIAlertAction *)arg0;
+- (void)_doneAction:(NSObject *)arg0;
+- (void)dealloc;
+- (void)setDelegate:(<PLAlbumStreamingOptionsViewControllerDelegate> *)arg0;
+- (float)tableView:(UITableView *)arg0 heightForRowAtIndexPath:(NSIndexPath *)arg1;
+- (UIView *)tableView:(UITableView *)arg0 viewForFooterInSection:(int)arg1;
+- (void)tableView:(UITableView *)arg0 didSelectRowAtIndexPath:(NSIndexPath *)arg1;
+- (int)tableView:(UITableView *)arg0 numberOfRowsInSection:(int)arg1;
+- (UITableViewCell *)tableView:(UITableView *)arg0 cellForRowAtIndexPath:(NSIndexPath *)arg1;
+- (int)numberOfSectionsInTableView:(UITableView *)arg0;
+- (NSString *)tableView:(UITableView *)arg0 titleForFooterInSection:(int)arg1;
+- (<PLAlbumStreamingOptionsViewControllerDelegate> *)delegate;
+- (void)viewDidLayoutSubviews;
+- (void)loadView;
+- (char)shouldAutorotateToInterfaceOrientation:(int)arg0;
+- (void)viewWillAppear:(char)arg0;
+- (struct CGSize)contentSizeForViewInPopover;
+- (void)viewDidLoad;
+- (void)viewDidUnload;
+- (void)viewDidAppear:(char)arg0;
+- (void)viewWillDisappear:(char)arg0;
+- (void)viewDidDisappear:(char)arg0;
+- (void)_keyboardWillShow:(NSNotification *)arg0;
+- (void)_keyboardWillHide:(NSNotification *)arg0;
+- (void)_keyboardDidHide:(NSNotification *)arg0;
+- (char)_appAllowsSupressionOfAlerts;
+- (id)_suppresionContexts;
+- (void)setStreamOwner:(char)arg0;
+- (void)setAlbumIsFamilyStream:(char)arg0;
+- (void)_updateWantsPublicWebsiteField;
+- (void)_updateWantsAcceptCloudNotificationField;
+- (void)_updateWantsMultipleContributorsField;
+- (void)_updatePublicURLStateIfNecessaryAnimated:(char)arg0;
+- (void)_updateMultipleContributorsState;
+- (void)_updateAllControls;
+- (void)_setShouldScrollToTopOnNextViewLayout:(char)arg0;
+- (char)isPresentedModally;
+- (char)_shouldScrollToTopOnNextViewLayout;
+- (void)_handleCompletionWithReason:(int)arg0;
+- (char)streamOwner;
+- (void)_deletePhotoStream;
+- (void)_displayConfirmationWithMessage:(NSString *)arg0 destructiveTitle:(NSString *)arg1 actionHandler:(id /* block */)arg2;
+- (char)_publicURLEnabled;
+- (NSString *)_lastPublicURLSectionFooterTitle;
+- (void)_setLastPublicURLSectionFooterTitle:(NSString *)arg0;
+- (NSString *)_lastMultiContributorsSectionFooterTitle;
+- (void)_setLastMultiContributorsSectionFooterTitle:(NSString *)arg0;
+- (void *)_personMatchingEmail:(id)arg0 orPhone:(id)arg1 matchingProperty:(int *)arg2 matchingValueIdentifier:(int)arg3;
+- (void)_resendInvitationToSelectedSubscriber;
+- (void)_displayConfirmationForRemovalOfSelectedSubscriber;
+- (PLCloudSharedAlbumInvitationRecord *)_selectedSubscriberInvitationRecord;
+- (void)_removeSelectedSubscriber;
+- (NSObject *)_visibleInvitationRecordsForStreamOwner:(char)arg0;
+- (char)albumIsFamilyStream;
+- (void)_changeWantsMultipleContributors:(id)arg0;
+- (void)_changeWantsPublicWebsite:(id)arg0;
+- (void)_changeWantsAcceptCloudNotification:(NSNotification *)arg0;
+- (char)_multipleContributorsEnabled;
+- (char)_shouldShowPublicURLActivitySpinner;
+- (void)_setShowingPublicURLActivitySpinner:(char)arg0;
+- (void)_setSelectedSubscriberInvitationRecord:(NSObject *)arg0;
+- (id)_newPersonViewControllerWithEmail:(id)arg0 phone:(SAPhone *)arg1 firstName:(NSString *)arg2 lastName:(NSString *)arg3 canResendInvitation:(char)arg4 canRemoveSubscriber:(char)arg5;
+- (void)_displayActivitySheet;
+- (void)_displayDeleteConfirmation:(id)arg0;
+- (UINavigationController *)backingNavigationControllerForComposeRecipientViewController:(PLComposeRecipientViewController *)arg0;
+- (PLAlbumStreamingOptionsViewController *)initWithAlbum:(PLCloudSharedAlbum *)arg0;
+- (void)_setShowingMultipleContributorSpinner:(char)arg0;
+- (void)setIsPresentedModally:(char)arg0;
+- (void)invitationRecordsDidChange:(PLInvitationRecordsChangeNotification *)arg0;
+- (void)setAlbum:(PLCloudSharedAlbum *)arg0;
+- (PLCloudSharedAlbum *)album;
+- (void)setAlbumName:(NSString *)arg0;
+- (NSString *)albumName;
+
+@end

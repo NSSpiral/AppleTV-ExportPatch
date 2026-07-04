@@ -1,0 +1,13 @@
+/* Runtime dump - AVVideoCompositionCoreAnimationToolInternal
+ * Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
+ */
+
+@interface AVVideoCompositionCoreAnimationToolInternal : NSObject
+{
+    CALayer * animationLayer;
+    int auxiliaryTrackID;
+    NSArray * postProcessingVideoLayers;
+    int way;
+}
+
+@end

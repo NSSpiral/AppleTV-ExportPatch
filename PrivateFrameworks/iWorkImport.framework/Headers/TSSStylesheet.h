@@ -1,0 +1,130 @@
+/* Runtime dump - TSSStylesheet
+ * Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
+ */
+
+@interface TSSStylesheet : TSPObject <TSKTransformableObject>
+{
+    TSSStylesheet * mParent;
+    TSSStylesheet * mChild;
+    TSUMutableRetainedPointerSet * mStyles;
+    NSMutableDictionary * mIdentifierToStyleMap;
+    TSURetainedPointerKeyDictionary * mParentToChildrenStyleMap;
+    char mIsLocked;
+    char mCanCullStyles;
+    NSString * mDebugName;
+}
+
+@property (readonly, nonatomic) TSWPParagraphStyle * defaultPresenterNotesParagraphStyle;
+@property (readonly, nonatomic) TSSStylesheet * parent;
+@property (readonly, nonatomic) TSSStylesheet * child;
+@property (nonatomic) char isLocked;
+@property (nonatomic) char canCullStyles;
+@property (readonly, nonatomic) NSSet * styles;
+@property (readonly, nonatomic) NSSet * baseStyles;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString * description;
+@property (readonly, copy) NSString * debugDescription;
+
++ (NSObject *)variationMapForVaryingCharacterStyle:(NSObject *)arg0 overParagraphStyle:(NSObject *)arg1 withPropertyMap:(NSObject *)arg2;
++ (NSString *)presenterNotesParagraphStyleIdentifier;
++ (NSObject *)p_presenterNotesListStyleIdentifierForListLabelType:(int)arg0;
+
+- (NSString *)styleWithIdentifier:(NSString *)arg0;
+- (NSString *)packageLocator;
+- (TSSStylesheet *)initFromUnarchiver:(NSObject *)arg0;
+- (char)shouldDelayArchiving;
+- (unsigned int)delayedArchivingPriority;
+- (void)didLoadChildObjectFromDocumentSupport:(id)arg0;
+- (void)saveToArchiver:(NSObject *)arg0;
+- (NSObject *)hyperlinkStyle;
+- (TSSStyle *)rootAncestor;
+- (NSObject *)defaultColumnStyle;
+- (NSObject *)variationOfCharacterStyle:(NSObject *)arg0 paragraphStyle:(TSWPParagraphStyle *)arg1 propertyMap:(NSObject *)arg2;
+- (void)removeStyle:(NSObject *)arg0;
+- (NSObject *)variationOfStyleMatchingStyle:(NSObject *)arg0 withNewParentStyle:(NSObject *)arg1;
+- (NSObject *)stylesOfClass:(Class)arg0;
+- (void)setIsLocked:(char)arg0;
+- (NSString *)cascadedStyleWithIdentifier:(NSString *)arg0;
+- (void)addStyle:(struct __CFString *)arg0 withIdentifier:(NSString *)arg1;
+- (NSString *)unusedStyleIdentifierWithPackageString:(NSString *)arg0 styleDescriptor:(NSObject *)arg1 contentTag:(NSString *)arg2;
+- (void)setIdentifier:(NSString *)arg0 ofStyle:(NSObject *)arg1;
+- (void)moveAllStylestoStylesheet:(NSObject *)arg0 stripIdentifiers:(char)arg1;
+- (id)stylesPassingTest:(id /* block */)arg0;
+- (NSObject *)namedStylesOfClass:(Class)arg0;
+- (NSObject *)variationOfStyle:(NSObject *)arg0 propertyMap:(NSObject *)arg1;
+- (NSObject *)addDuplicateOfStyle:(NSObject *)arg0 withIdentifier:(NSString *)arg1;
+- (TSSStylesheet *)child;
+- (NSObject *)childrenOfStyle:(NSObject *)arg0;
+- (char)isDescendentOf:(id)arg0;
+- (char)isAncestorOf:(id)arg0;
+- (char)isChildOf:(PXSlideChild *)arg0;
+- (char)isParentOf:(_NSProgressWithRemoteParent *)arg0;
+- (void)addStyle:(struct __CFString *)arg0 withParent:(TSSStylesheet *)arg1 identifier:(NSString *)arg2;
+- (void)unlockStylesheetForDurationOfBlock:(id /* block */)arg0;
+- (unsigned int)descendantCount;
+- (TSSStylesheet *)initWithContext:(NSObject *)arg0 canCullStyles:(char)arg1;
+- (void)setParent:(TSSStylesheet *)arg0 withParentStyleMap:(struct __CFDictionary *)arg1;
+- (void)p_addStyle:(NSObject *)arg0 withParent:(TSSStylesheet *)arg1 identifier:(NSString *)arg2;
+- (void)p_removeStyle:(NSObject *)arg0;
+- (char)containsStyle:(NSObject *)arg0;
+- (char)cascadedContainsStyle:(NSObject *)arg0;
+- (NSString *)styleWithIdentifier:(NSString *)arg0 componentMask:(int)arg1;
+- (NSString *)cascadedStyleWithIdentifier:(NSString *)arg0 componentMask:(int)arg1;
+- (void)p_setIdentifier:(NSString *)arg0 ofStyle:(NSObject *)arg1;
+- (void)p_setParent:(NSObject *)arg0 ofStyle:(NSObject *)arg1;
+- (void)enumerateStylesUsingBlock:(id /* block */)arg0;
+- (id)p_stylesPassingTest:(id /* block */)arg0 cascade:(/* block */ id)arg1;
+- (id)cascadedStylesPassingTest:(id /* block */)arg0;
+- (NSObject *)pVariationOfStyle:(NSObject *)arg0 propertyMap:(NSObject *)arg1 matchStyles:(id)arg2 context:(NSObject *)arg3;
+- (void)p_addStyleToParentChildren:(NSArray *)arg0;
+- (void)moveStyle:(NSObject *)arg0 toStylesheet:(NSObject *)arg1 stripIdentifiers:(char)arg2 overwriteIdentifiers:(char)arg3;
+- (char)p_shouldDoDOLCForStyle:(NSObject *)arg0;
+- (void)p_removeStyleFromParentChildren:(NSArray *)arg0;
+- (char)canCullStyles;
+- (void)setCanCullStyles:(char)arg0;
+- (void)addStyle:(struct __CFString *)arg0 withParent:(TSSStylesheet *)arg1;
+- (void)setParent:(TSSStylesheet *)arg0 ofStyle:(NSObject *)arg1;
+- (NSString *)stylesWithName:(NSString *)arg0;
+- (id)identifiedStyles;
+- (NSObject *)identifiedStylesOfClass:(Class)arg0;
+- (void)enumerateCascadedStylesUsingBlock:(id /* block */)arg0;
+- (id)firstCascadedStylePassingTest:(id /* block */)arg0;
+- (NSObject *)firstRootlessStyleOfClass:(Class)arg0 withOverridePropertyMap:(TSSPropertyMap *)arg1;
+- (NSObject *)variationOfStyle:(NSObject *)arg0 propertyMap:(NSObject *)arg1 context:(NSObject *)arg2;
+- (NSObject *)variationOfStyle:(NSObject *)arg0 propertyMap:(NSObject *)arg1 matchStyles:(id)arg2 context:(NSObject *)arg3;
+- (NSObject *)variationOfStyle:(NSObject *)arg0 exactPropertyMap:(NSObject *)arg1;
+- (NSString *)stylesToNotTransform;
+- (NSString *)stylesToNotTransform;
+- (struct set<long long, std::__1::less<long long>, std::__1::allocator<long long> > *)p_allFilteredIdentifiersInArchive:(id)arg0 unarchiver:(struct __compressed_pair<unsigned long, std::__1::less<long long> >)arg1;
+- (void)saveStyles:(id)arg0 toArchiver:(NSArchiver *)arg1;
+- (id)_defaultCharacterStyleWasCreated:(char *)arg0;
+- (id)_hyperlinkStyleWasCreated:(char *)arg0;
+- (id)_defaultParagraphStyleWasCreated:(char *)arg0;
+- (id)_defaultListStyleWasCreated:(char *)arg0;
+- (id)_defaultColumnStyleWasCreated:(char *)arg0;
+- (NSObject *)headerAndFooterStyle;
+- (NSObject *)_defaultStyleOfClass:(Class)arg0 withIdentifier:(NSString *)arg1 wasCreated:(char *)arg2 usingBlock:(id /* block */)arg3;
+- (TSWPParagraphStyle *)defaultPresenterNotesParagraphStyle;
+- (void)addDefaultPresenterNotesStylesIfAbsent;
+- (void)upgradeDefaultPresenterNotesStyles;
+- (void)p_upgradeDefaultPresenterNotesStylesResetExisting:(char)arg0;
+- (id)p_boxedLabelTypesForNotesListStyles;
+- (NSString *)p_newDefaultPresenterNotesListStyleWithContext:(NSObject *)arg0 forListLabelType:(int)arg1;
+- (NSObject *)p_defaultPresenterNotesListStylePropertyMapForListLabelType:(int)arg0;
+- (NSString *)p_defaultPresenterNotesParagraphStyleWithContext:(NSObject *)arg0;
+- (NSObject *)p_defaultPresenterNotesParagraphStylePropertyMap;
+- (void)dealloc;
+- (char)isEqual:(NSObject *)arg0;
+- (char)isLocked;
+- (TSSStylesheet *)initWithContext:(TSPObjectContext *)arg0;
+- (TSWPSpecParagraphStyle *)defaultParagraphStyle;
+- (NSSet *)baseStyles;
+- (NSObject *)defaultCharacterStyle;
+- (NSObject *)defaultListStyle;
+- (TSSStylesheet *)parent;
+- (void)setParent:(TSSStylesheet *)arg0;
+- (void)addStyle:(struct __CFString *)arg0;
+- (NSSet *)styles;
+
+@end

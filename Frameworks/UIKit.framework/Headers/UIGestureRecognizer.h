@@ -1,0 +1,131 @@
+/* Runtime dump - UIGestureRecognizer
+ * Image: /System/Library/Frameworks/UIKit.framework/UIKit
+ */
+
+@interface UIGestureRecognizer : NSObject
+{
+    NSMutableArray * _targets;
+    NSMutableArray * _delayedTouches;
+    UIView * _view;
+    UITouchesEvent * _updateEvent;
+    UIPhysicalButtonsEvent * _updateButtonEvent;
+    <UIGestureRecognizerDelegate> * _delegate;
+    NSMutableSet * _friends;
+    int _state;
+    struct ? _gestureFlags;
+    NSMutableSet * _failureRequirements;
+    NSMutableSet * _failureDependents;
+    NSMutableSet * _dynamicFailureRequirements;
+    NSMutableSet * _dynamicFailureDependents;
+    id _failureMap;
+}
+
+@property (readonly, nonatomic) int state;
+@property (nonatomic) <UIGestureRecognizerDelegate> * delegate;
+@property (nonatomic) char enabled;
+@property (readonly, nonatomic) UIView * view;
+@property (nonatomic) char cancelsTouchesInView;
+@property (nonatomic) char delaysTouchesBegan;
+@property (nonatomic) char delaysTouchesEnded;
+
++ (char)_touchesBeganWasDelayedForTouch:(id)arg0;
+
+- (void)dealloc;
+- (UIGestureRecognizer *)initWithCoder:(NSCoder *)arg0;
+- (void)encodeWithCoder:(NSCoder *)arg0;
+- (void)setDelegate:(<UIGestureRecognizerDelegate> *)arg0;
+- (UIGestureRecognizer *)init;
+- (NSString *)description;
+- (<UIGestureRecognizerDelegate> *)delegate;
+- (UIView *)view;
+- (void)setDelaysTouchesBegan:(char)arg0;
+- (int)state;
+- (UIGestureRecognizer *)initWithTarget:(NSObject *)arg0 action:(SEL)arg1;
+- (void)_setRequiresSystemGesturesToFail:(char)arg0;
+- (struct CGPoint)locationInView:(struct CGPoint)arg0;
+- (void)setState:(int)arg0;
+- (void)touchesBegan:(NSSet *)arg0 withEvent:(Event *)arg1;
+- (void)touchesMoved:(NSSet *)arg0 withEvent:(Event *)arg1;
+- (void)touchesEnded:(NSSet *)arg0 withEvent:(Event *)arg1;
+- (void)touchesCancelled:(NSSet *)arg0 withEvent:(Event *)arg1;
+- (void)_physicalButtonsBegan:(NSSet *)arg0 withEvent:(Event *)arg1;
+- (void)_physicalButtonsEnded:(NSSet *)arg0 withEvent:(Event *)arg1;
+- (void)_physicalButtonsCancelled:(NSSet *)arg0 withEvent:(Event *)arg1;
+- (char)_isDirty;
+- (void)ignoreTouch:(UIDelayedAction *)arg0 forEvent:(struct __GSEvent *)arg1;
+- (void)_updateGestureStateWithEvent:(NSObject *)arg0 buttonEvent:(NSObject *)arg1 afterDelay:(char)arg2;
+- (void)_queueForResetIfFinished;
+- (void)_ignorePhysicalButton:(id)arg0 forEvent:(struct __GSEvent *)arg1;
+- (void)setView:(UIView *)arg0;
+- (void)reset;
+- (void)setEnabled:(char)arg0;
+- (void)setCancelsTouchesInView:(char)arg0;
+- (char)isEnabled;
+- (void)_setDirty;
+- (char)_requiresSystemGesturesToFail;
+- (void)removeTarget:(NSObject *)arg0 action:(SEL)arg1;
+- (void)setDelaysTouchesEnded:(char)arg0;
+- (void)requireGestureRecognizerToFail:(id)arg0;
+- (unsigned int)numberOfTouches;
+- (NSObject *)_activeTouchesForEvent:(NSObject *)arg0;
+- (char)_isRecognized;
+- (char)canBePreventedByGestureRecognizer:(NSObject *)arg0;
+- (char)canPreventGestureRecognizer:(NSObject *)arg0;
+- (void)addTarget:(NSObject *)arg0 action:(SEL)arg1;
+- (char)_delegateShouldReceiveTouch:(id)arg0;
+- (void)requireOtherGestureToFail:(id)arg0;
+- (struct CGPoint)locationOfTouch:(unsigned int)arg0 inView:(struct CGSize)arg1;
+- (void)_connectInterfaceBuilderEventConnection:(NSURLConnection *)arg0;
+- (void)_setAcceptsFailureRequiments:(char)arg0;
+- (void)_resetGestureRecognizer;
+- (char)delaysTouchesBegan;
+- (NSString *)_briefDescription;
+- (char)_shouldBeRequiredToFailByGestureRecognizer:(NSObject *)arg0;
+- (void)_clearReferencesToRelatedGesture:(NSObject *)arg0;
+- (void)_enqueueDelayedTouchesToSend;
+- (void)_clearUpdateTimer;
+- (char)_shouldBegin;
+- (char)_isFriendWithGesture:(NSObject *)arg0;
+- (void)_enqueueDelayedTouchToSend:(id)arg0;
+- (void)_delayTouch:(id)arg0 forEvent:(struct __GSEvent *)arg1;
+- (void)_clearDelayedTouches;
+- (void)_willBeginAfterSatisfyingFailureRequirements;
+- (void)_delayTouchesForEvent:(NSObject *)arg0;
+- (void)_updateGestureWithEvent:(NSObject *)arg0 buttonEvent:(NSObject *)arg1;
+- (char)_shouldReceiveTouch:(id)arg0;
+- (char)_affectedByGesture:(NSObject *)arg0;
+- (char)_delegateCanPreventGestureRecognizer:(NSObject *)arg0;
+- (void)_addFailureDependent:(id)arg0;
+- (void)_removeFailureDependent:(id)arg0;
+- (void)_appendDescriptionToString:(NSString *)arg0 atLevel:(int)arg1 includingDependencies:(char)arg2;
+- (char)cancelsTouchesInView;
+- (char)delaysTouchesEnded;
+- (void)_appendSubclassDescription:(NSString *)arg0;
+- (void)_appendDescription:(NSString *)arg0 forDependencies:(id)arg1 toString:(NSString *)arg2 atLevel:(int)arg3;
+- (NSObject *)_failureMap;
+- (void)_setFailureMap:(NSObject *)arg0;
+- (NSMutableArray *)_delayedTouches;
+- (char)_hasTargets;
+- (char)_shouldRequireFailureOfGestureRecognizer:(NSObject *)arg0;
+- (char)shouldRequireFailureOfGestureRecognizer:(NSObject *)arg0;
+- (char)shouldBeRequiredToFailByGestureRecognizer:(NSObject *)arg0;
+- (struct CGPoint)_centroidOfTouches:(NSArray *)arg0 excludingEnded:(char)arg1;
+- (float)_distanceBetweenTouches:(NSArray *)arg0;
+- (void)_touchWasCancelled:(id)arg0;
+- (char)_requiresGestureRecognizerToFail:(id)arg0;
+- (void)_delayedUpdateGesture;
+- (void)_resetIfFinished;
+- (int)_depthFirstViewCompare:(NSObject *)arg0;
+- (void)_addFriendGesture:(NSObject *)arg0;
+- (char)_isExcludedByGesture:(NSObject *)arg0;
+- (void)_cancelRecognition;
+- (void)_exclude;
+- (void)_addDynamicFailureDependent:(id)arg0;
+- (void)_addDynamicFailureRequirement:(id)arg0;
+- (void)removeFailureRequirement:(id)arg0;
+- (void)_failureRequirementCompleted:(id)arg0 withEvent:(Event *)arg1;
+- (char)_acceptsFailureRequirements;
+- (void)_invalidate;
+- (void)_detach;
+
+@end

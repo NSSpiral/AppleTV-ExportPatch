@@ -1,0 +1,123 @@
+/* Runtime dump - PLImagePickerCameraView
+ * Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
+ */
+
+@interface PLImagePickerCameraView : CAMCameraView <PLVideoViewDelegate>
+{
+    char _allowsEditing;
+    char _showsCropRegion;
+    char _displayedInPopover;
+    char _cropOverlayUsesTelephonyUI;
+    char _wantsImageData;
+    char __manipulatingCrop;
+    char __shouldSkipPostcaptureReview;
+    char __retakingPhoto;
+    NSDictionary * _imagePickerOptions;
+    int _photoSavingOptions;
+    PLPhotoTileViewController * _tileViewController;
+    CAMStillImageCaptureResponse * __mostRecentCaptureResponse;
+    PLCropOverlay * __cropOverlay;
+    PLVideoView * __videoView;
+    int __enabledGestures;
+    int __windowEdgeClip;
+}
+
+@property (retain, nonatomic) NSDictionary * imagePickerOptions;
+@property (nonatomic) char allowsEditing;
+@property (nonatomic) char showsCropRegion;
+@property (nonatomic) char controlsAreVisible;
+@property (nonatomic) char displayedInPopover;
+@property (retain, nonatomic) UIView * customOverlayView;
+@property (nonatomic) char cropOverlayUsesTelephonyUI;
+@property (nonatomic) char wantsImageData;
+@property (nonatomic) int photoSavingOptions;
+@property (readonly, nonatomic) PLPhotoTileViewController * tileViewController;
+@property (readonly, nonatomic) CAMStillImageCaptureResponse * _mostRecentCaptureResponse;
+@property (readonly, nonatomic) PLCropOverlay * _cropOverlay;
+@property (nonatomic) char _manipulatingCrop;
+@property (readonly, nonatomic) PLVideoView * _videoView;
+@property (nonatomic) int _enabledGestures;
+@property (readonly, nonatomic) char _shouldSkipPostcaptureReview;
+@property (nonatomic) char _retakingPhoto;
+@property (nonatomic) int _windowEdgeClip;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString * description;
+@property (readonly, copy) NSString * debugDescription;
+
+- (PLVideoView *)_videoView;
+- (void)dealloc;
+- (NSObject *)hitTest:(struct CGPoint)arg0 withEvent:(Event *)arg1;
+- (void)didMoveToWindow;
+- (void)setAllowsImageEditing:(char)arg0;
+- (char)allowsEditing;
+- (void)setAllowsEditing:(char)arg0;
+- (PLImagePickerCameraView *)initWithFrame:(struct CGRect)arg0 spec:(struct CGSize)arg1;
+- (void)viewWillBeDisplayed;
+- (void)captureController:(BRController *)arg0 didCompleteResponse:(NSURLResponse *)arg1 forStillImageRequest:(NSURLRequest *)arg2 error:(NSError *)arg3;
+- (char)_wantsSuspensionBlurs;
+- (char)_shouldBlurWhenSessionStops;
+- (char)_shouldStartPreviewWhenApplicationBecomesActive;
+- (char)_wantsCaptureAnimations;
+- (char)_shouldPausePreviewDuringCapture;
+- (char)_supportsPreviewingAfterCapture;
+- (void)performPostcapturePreviewForVideoAtPath:(NSString *)arg0;
+- (void)cameraControllerPreviewDidStart:(CAMCaptureController *)arg0;
+- (char)_wantsFullScreenPreview;
+- (void)verifyViewOrdering;
+- (char)_shouldHideCancelButton;
+- (char)_isLockedToPortraitOrientation;
+- (char)_wantsOrientationAnimations;
+- (void)setControlsAreVisible:(char)arg0;
+- (void)captureController:(BRController *)arg0 didStopRecordingForVideoRequest:(NSURLRequest *)arg1;
+- (struct CGRect)_bottomBarFrame;
+- (void)setAllowsMultipleModes:(char)arg0;
+- (char)_wantsForcedPreviewAspectRatio;
+- (char)_wantsPreviewSizeAdjustmentForBars;
+- (int)_windowEdgeClip;
+- (float)videoViewScrubberYOrigin:(PLVideoView *)arg0 forOrientation:(int)arg1;
+- (char)videoViewCanBeginPlayback:(PLVideoView *)arg0;
+- (void)videoViewIsReadyToBeginPlayback:(PLVideoView *)arg0;
+- (void)videoViewDidBeginPlayback:(PLVideoView *)arg0;
+- (void)videoViewDidPausePlayback:(PLVideoView *)arg0;
+- (void)videoViewDidEndPlayback:(PLVideoView *)arg0 didFinish:(char)arg1;
+- (char)photoTileViewControllerIsDisplayingLandscape:(id)arg0;
+- (char)isDisplayedInPopover;
+- (void)setShowsCropRegion:(char)arg0;
+- (void)cropOverlayWasCancelled:(id)arg0;
+- (void)cropOverlayWasOKed:(id)arg0;
+- (void)cropOverlayPlay:(id)arg0;
+- (void)cropOverlayPause:(id)arg0;
+- (void)setDisplayedInPopover:(char)arg0;
+- (void)cropOverlay:(PLCropOverlay *)arg0 didFinishSaving:(id)arg1;
+- (PLCropOverlay *)_cropOverlay;
+- (void)setCropOverlayUsesTelephonyUI:(char)arg0;
+- (void)setPhotoSavingOptions:(int)arg0;
+- (void)setImagePickerOptions:(NSDictionary *)arg0;
+- (void)setWantsImageData:(char)arg0;
+- (UIView *)customOverlayView;
+- (void)setCustomOverlayView:(UIView *)arg0;
+- (PLPhotoTileViewController *)tileViewController;
+- (void)_resetImageTile;
+- (void)_createCropOverlayIfNecessary;
+- (char)_isManipulatingCrop;
+- (void)_setWindowEdgeClip:(int)arg0;
+- (void)_updateImageEditability;
+- (struct CGSize)_displaySizeForPreviewForCameraMode:(int)arg0;
+- (char)cropOverlayUsesTelephonyUI;
+- (NSDictionary *)imagePickerOptions;
+- (void)_setManipulatingCrop:(char)arg0;
+- (void)_setRetakingPhoto:(char)arg0;
+- (char)_allowsVideoEditing;
+- (char)_isRetakingPhoto;
+- (char)_shouldSkipPostcaptureReview;
+- (void)_previewVideoAtPath:(NSString *)arg0;
+- (void)_setEnabledGestures:(int)arg0;
+- (void)cropOverlayWasToggled:(id)arg0;
+- (char)showsCropRegion;
+- (char)wantsImageData;
+- (int)photoSavingOptions;
+- (CAMStillImageCaptureResponse *)_mostRecentCaptureResponse;
+- (int)_enabledGestures;
+
+@end

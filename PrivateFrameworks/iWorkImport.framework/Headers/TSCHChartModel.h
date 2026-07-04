@@ -1,0 +1,125 @@
+/* Runtime dump - TSCHChartModel
+ * Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
+ */
+
+@interface TSCHChartModel : NSObject <TSCHNotifyOnModify, TSCHUnretainedParent, TSDMixing, NSCopying>
+{
+    TSCHChartInfo * mInfo;
+    TSCHChartGrid * mGrid;
+    int mScatterFormat;
+    unsigned int mMultiDataSetIndex;
+    char mIsTransient;
+    NSMutableArray * mSeriesList;
+    NSMutableArray * mAxisList;
+    NSMutableDictionary * mRefLinesMap;
+    unsigned int mNumberOfSeriesForCalculatingBarWidth;
+    char mModelInvalid;
+    NSMutableDictionary * mModelManagedCaches;
+    NSMutableDictionary * mSeriesDimensionsByGridIndex;
+    NSMutableDictionary * mGridIndexesBySeriesDimension;
+}
+
+@property (nonatomic) TSCHChartInfo * chartInfo;
+@property (retain, nonatomic) TSCHChartGrid * grid;
+@property (nonatomic) int scatterFormat;
+@property (readonly, nonatomic) char isTransient;
+@property (readonly, nonatomic) char isMultiData;
+@property (nonatomic) unsigned int multiDataSetIndex;
+@property (readonly, nonatomic) unsigned int numberOfMultiDataSets;
+@property (readonly, nonatomic) unsigned int numberOfMultiDataSetCategories;
+@property (readonly, nonatomic) unsigned int numberOfChunkableMultiDataSets;
+@property (readonly, nonatomic) unsigned int numberOfSeries;
+@property (readonly, nonatomic) unsigned int numberOfSeriesForCalculatingBarWidth;
+@property (readonly, nonatomic) unsigned int numberOfValues;
+@property (readonly, nonatomic) unsigned int maxNumberOfReferenceLines;
+@property (readonly, retain, nonatomic) NSArray * seriesList;
+@property (readonly, retain, nonatomic) NSArray * axisList;
+@property (readonly, retain, nonatomic) NSArray * valueAxisList;
+@property (readonly, retain, nonatomic) NSArray * categoryAxisList;
+@property (readonly, retain, nonatomic) NSDictionary * referenceLinesMap;
+@property (readonly, retain, nonatomic) id syncRoot;
+
+- (void)willModify;
+- (void)validateIfNeeded;
+- (NSArray *)axisList;
+- (void)invalidateModel;
+- (NSObject *)axisForID:(NSObject *)arg0;
+- (TSCHChartInfo *)chartInfo;
+- (void)clearParent;
+- (unsigned int)maxNumberOfReferenceLines;
+- (NSString *)nameForCategory:(unsigned int)arg0;
+- (unsigned int)numberOfSeries;
+- (NSObject *)seriesAtIndex:(unsigned int)arg0;
+- (NSObject *)referenceLineForStyleSwapIndex:(unsigned int)arg0;
+- (id)barModelCacheForSeries:(unsigned int)arg0;
+- (id)pieSeriesModelCacheForSeries:(unsigned int)arg0;
+- (char)isMultiData;
+- (NSDictionary *)referenceLinesMap;
+- (NSObject *)syncRoot;
+- (NSArray *)seriesList;
+- (unsigned int)multiDataSetIndex;
+- (unsigned int)multiDataSetCategoryIndexForCategory:(unsigned int)arg0;
+- (unsigned int)categoryForMultiDataSetCategoryIndex:(unsigned int)arg0;
+- (NSObject *)mixedObjectWithFraction:(float)arg0 ofObject:(NSObject *)arg1;
+- (int)mixingTypeWithObject:(NSObject *)arg0 context:(NSObject *)arg1;
+- (char)isEquivalentForCrossDocumentPasteMasterComparison:(id)arg0;
+- (int)scatterFormat;
+- (TSCHChartModel *)initWithChartInfo:(TSCHChartInfo *)arg0;
+- (unsigned int)numberOfMultiDataSets;
+- (TSCHChartModel *)initWithChartInfo:(TSCHChartInfo *)arg0 dataSetIndex:(unsigned int)arg1;
+- (unsigned int)p_lastMultiDataSetIndex;
+- (void)setScatterFormat:(int)arg0;
+- (void)setMultiDataSetIndex:(unsigned int)arg0;
+- (NSObject *)p_axisForID:(NSObject *)arg0;
+- (void)p_synchronizeAxis:(id)arg0 class:(Class)arg1 axisID:(TSCHChartAxisID *)arg2 axisIndex:(unsigned int)arg3 styleIndex:(unsigned int)arg4 usedAxes:(id)arg5 unusedAxes:(id)arg6;
+- (unsigned int)defaultOrdinalForAxisType:(int)arg0 seriesIndex:(unsigned int)arg1;
+- (void)p_setBimapEntryForSeriesDimension:(id)arg0 andGridIndex:(unsigned int)arg1;
+- (void)p_synchronizeAxisList;
+- (void)p_synchronizeSeriesList;
+- (void)p_postSynchronizeAxisList;
+- (void)p_synchronizeReferenceLines;
+- (void)resetSeriesStorage;
+- (void)p_synchronizeModel;
+- (unsigned int)numberOfGridValues;
+- (unsigned int)p_multiDataSetCategoryIndexForCategory:(unsigned int)arg0;
+- (unsigned int)numberOfMultiDataSetCategories;
+- (NSString *)nameForMultiDataSetCategory:(unsigned int)arg0;
+- (void)setNameForMultiDataSetCategory:(unsigned int)arg0 toName:(NSString *)arg1;
+- (void)p_loadDefaultDataWithGridRowIds:(id)arg0 gridColumnIds:(id)arg1;
+- (void)loadDefaultDataWithGridRowIds:(id)arg0 gridColumnIds:(id)arg1;
+- (void)setChartInfo:(TSCHChartInfo *)arg0;
+- (void)enumerateMultiDataModelsUsingBlock:(id /* block */)arg0;
+- (void)updateTransientModelFromInfoModel;
+- (void)setCacheObject:(NSObject *)arg0 forKey:(NSString *)arg1;
+- (NSString *)cachedObjectForKey:(NSString *)arg0;
+- (NSArray *)noSyncAxisList;
+- (NSArray *)valueAxisList;
+- (NSArray *)categoryAxisList;
+- (NSArray *)noSyncSeriesList;
+- (unsigned int)numberOfSeriesForCalculatingBarWidth;
+- (unsigned int)numberOfChunkableMultiDataSets;
+- (id)nameForSeries:(unsigned int)arg0;
+- (NSObject *)dataSetNameForMultiDataModel;
+- (void)setNameForCategory:(unsigned int)arg0 toName:(NSString *)arg1;
+- (void)loadDefaultData;
+- (NSObject *)seriesDimensionForGridIndex:(unsigned int)arg0;
+- (unsigned int)gridIndexForSeriesDimension:(id)arg0;
+- (char)hasReferenceLines;
+- (unsigned int)styleSwapIndexForReferenceLine:(id)arg0;
+- (id)lineAreaModelCacheForSeries:(unsigned int)arg0;
+- (NSCache *)legendModelCache;
+- (void)loadFromPreUFFArchive:(struct ChartModelArchive *)arg0 unarchiver:(struct ChartModelArchive)arg1 contextForUpgradeOnly:(id)arg2;
+- (void)setTextEditingSelectionPath:(NSString *)arg0 string:(NSString *)arg1;
+- (void)clearTextEditingSelectionPath;
+- (void)loadFromUnityArchive:(struct ChartArchive *)arg0 unarchiver:(struct ChartArchive)arg1 contextForUpgradeOnly:(struct /* ? */)arg2;
+- (void)saveToUnityArchive:(struct ChartArchive *)arg0 forCopy:(struct /* ? */)arg1;
+- (void)setGrid:(TSCHChartGrid *)arg0;
+- (void)dealloc;
+- (TSCHChartModel *)init;
+- (TSCHChartModel *)copyWithZone:(struct _NSZone *)arg0;
+- (char)isTransient;
+- (void)invalidateCaches;
+- (unsigned int)numberOfValues;
+- (TSCHChartGrid *)grid;
+
+@end

@@ -1,0 +1,128 @@
+/* Runtime dump - ADAdSpace
+ * Image: /System/Library/Frameworks/iAd.framework/iAd
+ */
+
+@interface ADAdSpace : NSObject <UIViewControllerTransitioningDelegate, ADAdSpace_RPC, ADAdSpaceRemoteViewControllerDelegate>
+{
+    <ADAdRecipient> * _recipient;
+    char _visibilityCheckScheduled;
+    char _serviceAdSpaceRequestInProgress;
+    char _shouldPresentActionViewControllerWhenReady;
+    char _actionViewControllerReadyForPresentation;
+    char _actionViewControllerWantsDismissal;
+    NSString * _identifier;
+    NSURL * _serverURL;
+    NSString * _advertisingSection;
+    NSString * _authenticationUserName;
+    NSSet * _context;
+    ADAdImpressionPublicAttributes * _currentAdImpressionPublicAttributes;
+    int _visibility;
+    ADAdSpaceRemoteViewController * _creativeViewController;
+    _UIAsyncInvocation * _remoteViewControllerRequestCancelationInvocation;
+    _ADRemoteViewController * _remoteViewController;
+    _ADRemoteViewController * _portraitOnlyViewController;
+    NSDictionary * _adToLoad;
+    double _lastSlowCheck;
+}
+
+@property (readonly, nonatomic) <ADAdRecipient> * recipient;
+@property (readonly, nonatomic) <ADSAdSpace_RPC><NSObject> * serviceAdSpace;
+@property (copy, nonatomic) NSString * identifier;
+@property (copy, nonatomic) NSURL * serverURL;
+@property (copy, nonatomic) NSString * advertisingSection;
+@property (copy, nonatomic) NSString * authenticationUserName;
+@property (copy, nonatomic) NSSet * context;
+@property (retain, nonatomic) ADAdImpressionPublicAttributes * currentAdImpressionPublicAttributes;
+@property (readonly, nonatomic) ADAdSpaceConfiguration * configuration;
+@property (nonatomic) int visibility;
+@property (nonatomic) char visibilityCheckScheduled;
+@property (nonatomic) double lastSlowCheck;
+@property (retain, nonatomic) ADAdSpaceRemoteViewController * creativeViewController;
+@property (nonatomic) char serviceAdSpaceRequestInProgress;
+@property (retain, nonatomic) _UIAsyncInvocation * remoteViewControllerRequestCancelationInvocation;
+@property (retain, nonatomic) _ADRemoteViewController * remoteViewController;
+@property (retain, nonatomic) _ADRemoteViewController * portraitOnlyViewController;
+@property (nonatomic) char shouldPresentActionViewControllerWhenReady;
+@property (nonatomic) char actionViewControllerReadyForPresentation;
+@property (nonatomic) char actionViewControllerWantsDismissal;
+@property (readonly, nonatomic) NSString * connectionAssertionIdentifier;
+@property (retain, nonatomic) NSDictionary * adToLoad;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString * description;
+@property (readonly, copy) NSString * debugDescription;
+
+- (void)dealloc;
+- (NSString *)description;
+- (NSString *)identifier;
+- (NSSet *)context;
+- (void)setIdentifier:(NSString *)arg0;
+- (void)setContext:(NSSet *)arg0;
+- (void)viewServiceDidTerminateWithError:(NSError *)arg0;
+- (void)close;
+- (_ADRemoteViewController *)remoteViewController;
+- (void)setRemoteViewController:(_ADRemoteViewController *)arg0;
+- (ADAdSpaceConfiguration *)configuration;
+- (ADAdSpace *)initForRecipient:(_MFPlaceholderComposeRecipient *)arg0;
+- (<ADSAdSpace_RPC><NSObject> *)serviceAdSpace;
+- (ADAdImpressionPublicAttributes *)currentAdImpressionPublicAttributes;
+- (void)updateVisibility;
+- (void)executeBannerViewActionFrom:(struct CGRect)arg0 withTapLocation:(struct CGSize)arg1;
+- (void)refuseBannerViewAction;
+- (void)setAdvertisingSection:(NSString *)arg0;
+- (void)cancelBannerViewAction;
+- (void)setAuthenticationUserName:(NSString *)arg0;
+- (void)loadAd:(id)arg0;
+- (NSString *)advertisingSection;
+- (NSString *)authenticationUserName;
+- (void)interstitialWasRemovedFromSuperview;
+- (NSString *)connectionAssertionIdentifier;
+- (void)_requestServiceAdSpace;
+- (void)_clientApplicationDidBecomeActive;
+- (void)_clientApplicationDidEnterBackground;
+- (ADAdSpaceRemoteViewController *)creativeViewController;
+- (char)serviceAdSpaceRequestInProgress;
+- (void)setServiceAdSpaceRequestInProgress:(char)arg0;
+- (void)setCreativeViewController:(ADAdSpaceRemoteViewController *)arg0;
+- (void)_remote_close;
+- (void)_closeConnectionIfNecessary;
+- (void)_remote_dismissViewController;
+- (void)_updateAllProperties;
+- (NSDictionary *)adToLoad;
+- (void)setAdToLoad:(NSDictionary *)arg0;
+- (_UIAsyncInvocation *)remoteViewControllerRequestCancelationInvocation;
+- (void)setCurrentAdImpressionPublicAttributes:(ADAdImpressionPublicAttributes *)arg0;
+- (char)visibilityCheckScheduled;
+- (void)setVisibilityCheckScheduled:(char)arg0;
+- (double)lastSlowCheck;
+- (void)setLastSlowCheck:(double)arg0;
+- (void)setShouldPresentActionViewControllerWhenReady:(char)arg0;
+- (void)_considerPresentingActionViewController;
+- (char)shouldPresentActionViewControllerWhenReady;
+- (char)actionViewControllerReadyForPresentation;
+- (void)setActionViewControllerWantsDismissal:(char)arg0;
+- (char)actionViewControllerWantsDismissal;
+- (void)setActionViewControllerReadyForPresentation:(char)arg0;
+- (void)setRemoteViewControllerRequestCancelationInvocation:(_UIAsyncInvocation *)arg0;
+- (_ADRemoteViewController *)portraitOnlyViewController;
+- (void)_remote_dismissPortraitOnlyViewController;
+- (void)setPortraitOnlyViewController:(_ADRemoteViewController *)arg0;
+- (void)_remote_creativeWillLoad;
+- (void)_remote_adImpressionDidLoadWithPublicAttributes:(ADAdImpressionPublicAttributes *)arg0;
+- (void)_remote_creativeDidFailWithError:(NSError *)arg0;
+- (void)_remote_openURL:(NSURL *)arg0;
+- (void)_remote_requestViewControllerWithClassName:(NSString *)arg0 forAdSpaceControllerWithIdentifier:(NSString *)arg1;
+- (void)_remote_updateViewControllerSupportedOrientations:(unsigned int)arg0;
+- (void)_remote_actionViewControllerReadyForPresentation;
+- (void)_remote_requestPortraitOnlyViewController;
+- (void)_remote_pauseBannerMedia;
+- (void)_remote_resumeBannerMedia;
+- (void)adSpaceRemoteViewControllerDidTerminateWithError:(NSError *)arg0;
+- (void)setAdSpaceType:(int)arg0;
+- (NSURL *)serverURL;
+- (void)setServerURL:(NSURL *)arg0;
+- (<ADAdRecipient> *)recipient;
+- (int)visibility;
+- (void)setVisibility:(int)arg0;
+
+@end

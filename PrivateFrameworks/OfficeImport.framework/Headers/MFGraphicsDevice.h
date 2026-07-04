@@ -1,0 +1,117 @@
+/* Runtime dump - MFGraphicsDevice
+ * Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
+ */
+
+@interface MFGraphicsDevice : NSObject
+{
+    MFDeviceContext * m_currentDC;
+    NSMutableArray * m_savedDC;
+    NSObject<MFDeviceDriver> * m_deviceDriver;
+    MFObjectTable * m_objectTable;
+    MFObjectTable * m_stockObjects;
+    NSDictionary * m_colorMap;
+    NSDictionary * m_fillMap;
+}
+
+- (int)setWorldTransform:(struct CGAffineTransform *)arg0;
+- (void)dealloc;
+- (int)setMiterLimit:(double)arg0;
+- (void)done;
+- (MFGraphicsDevice *)initWithCanvas:(struct CGRect)arg0;
+- (struct CGRect)getCanvas;
+- (UIColor *)recolor:(UIColor *)arg0 fill:(char)arg1;
+- (int)setBkColour:(id)arg0;
+- (int)setBkMode:(int)arg0;
+- (int)setTextColour:(id)arg0;
+- (int)setTextCharExtra:(int)arg0;
+- (int)textOut:(int)arg0 :(int)arg1 :(id)arg2;
+- (int)extTextOut:(int)arg0 :(int)arg1 :(id)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(int)arg6 :(int)arg7 :(int *)arg8 :(int)arg9;
+- (int)setViewBox:(double)arg0 :(double)arg1 :(double)arg2 :(double)arg3;
+- (int)setArcDirection:(int)arg0;
+- (int)setPolyFillMode:(int)arg0;
+- (void)createStockObjects;
+- (UIColor *)recolor:(unsigned char)arg0 :(unsigned char)arg1 :(unsigned char)arg2 fill:(char)arg3;
+- (int)setWindowExt:(int)arg0 :(int)arg1;
+- (int)setWindowOrg:(int)arg0 :(int)arg1;
+- (int)setViewportExt:(int)arg0 :(int)arg1;
+- (int)offsetWindowOrg:(int)arg0 :(int)arg1;
+- (int)offsetViewportOrg:(int)arg0 :(int)arg1;
+- (int)setViewportOrg:(int)arg0 :(int)arg1;
+- (int)scaleViewportExt:(int)arg0 :(int)arg1 :(int)arg2 :(int)arg3;
+- (int)scaleWindowExt:(int)arg0 :(int)arg1 :(int)arg2 :(int)arg3;
+- (int)modifyWorldTransform:(struct CGAffineTransform *)arg0 :(struct CGAffineTransform)arg1;
+- (int)excludeClipRect:(struct CGRect)arg0;
+- (int)intersectClipRect:(struct CGRect)arg0;
+- (int)setMetaRgn;
+- (UIFont *)getCurrentFont;
+- (void)setColorMap:(OADColorMap *)arg0 fillMap:(NSObject *)arg1;
+- (int)comment:(MSASComment *)arg0;
+- (int)description:(NSString *)arg0;
+- (int)setBrushOrg:(double)arg0 :(double)arg1;
+- (int)setStretchBltMode:(int)arg0;
+- (int)setTextJustification:(int)arg0 :(int)arg1;
+- (int)setTextAlign:(BOOL)arg0 :(int)arg1 :(int)arg2 :(int)arg3;
+- (int)textOutEncoded:(int)arg0 :(int)arg1 :(id)arg2;
+- (int)extTextOutEncoded:(int)arg0 :(int)arg1 :(id)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(int)arg6 :(int)arg7 :(int *)arg8 :(int)arg9;
+- (int)rectangle:(int)arg0 :(int)arg1 :(int)arg2 :(int)arg3;
+- (int)ellipse:(int)arg0 :(int)arg1 :(int)arg2 :(int)arg3;
+- (int)saveDC;
+- (int)restoreDC:(int)arg0;
+- (int)moveTo:(double)arg0 :(double)arg1;
+- (int)lineTo:(double)arg0 :(double)arg1;
+- (int)polygon:(struct CGPoint *)arg0 :(int)arg1;
+- (int)polyPolygon:(struct CGPoint *)arg0 :(int *)arg1 :(int)arg2;
+- (int)polyline:(struct CGPoint *)arg0 :(int)arg1;
+- (int)polyPolyline:(struct CGPoint *)arg0 :(int *)arg1 :(int)arg2;
+- (int)arc:(int)arg0 :(int)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(int)arg6 :(int)arg7;
+- (int)pie:(int)arg0 :(int)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(int)arg6 :(int)arg7;
+- (int)angleArc:(int)arg0 :(int)arg1 :(unsigned int)arg2 :(double)arg3 :(double)arg4;
+- (int)arcTo:(int)arg0 :(int)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(int)arg6 :(int)arg7;
+- (int)chord:(int)arg0 :(int)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(int)arg6 :(int)arg7;
+- (int)bezierTo:(int)arg0 :(int)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5;
+- (int)bezier:(int)arg0 :(int)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(int)arg6 :(int)arg7;
+- (int)closeCurrentPath:(BOOL)arg0;
+- (int)roundRect:(int)arg0 :(int)arg1 :(int)arg2 :(int)arg3 :(double)arg4 :(double)arg5;
+- (int)realizePalette;
+- (int)selectObject:(int)arg0;
+- (int)getStockObject:(unsigned int)arg0;
+- (int)createRegion:(NSObject *)arg0;
+- (int)createBrush:(int)arg0 :(id)arg1 :(int)arg2 :(unsigned int)arg3;
+- (int)createFontIndirect:(int)arg0 :(int)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(BOOL)arg5 :(BOOL)arg6 :(BOOL)arg7 :(int)arg8 :(int)arg9 :(unsigned char)arg10 :(int)arg11 :(int)arg12 :(int)arg13 :(id)arg14;
+- (int)createFontIndirectW:(int)arg0 :(int)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(BOOL)arg5 :(BOOL)arg6 :(BOOL)arg7 :(int)arg8 :(int)arg9 :(unsigned char)arg10 :(int)arg11 :(int)arg12 :(int)arg13 :(id)arg14 :(id)arg15 :(id)arg16 :(unsigned int)arg17 :(unsigned int)arg18 :(unsigned int)arg19 :(unsigned int)arg20 :(unsigned int)arg21 :(unsigned int)arg22;
+- (int)createPen:(int)arg0 :(int)arg1 :(id)arg2 :(double *)arg3 :(unsigned int)arg4;
+- (NSData *)createColorWithRGBBytes:(unsigned char)arg0 :(unsigned char)arg1 :(unsigned char)arg2 :(unsigned char)arg3;
+- (int)setPaletteEntries:(unsigned int)arg0 :(id)arg1 :(unsigned int)arg2;
+- (int)resizePalette:(unsigned int)arg0 :(unsigned int)arg1;
+- (int)createPalette:(id)arg0 :(unsigned int)arg1;
+- (int)createPatternBrush:(id)arg0 :(unsigned int)arg1 usePaletteForBilevel:(char)arg2;
+- (int)setRop2:(int)arg0;
+- (int)abortPath;
+- (int)beginPath;
+- (int)widenPath;
+- (int)endPath;
+- (int)strokeAndFillPath:(BOOL)arg0 :(BOOL)arg1;
+- (int)selectClipPath:(int)arg0;
+- (int)selectClipRegionWithRects:(NSArray *)arg0 :(int)arg1;
+- (int)selectClipRegion:(unsigned int)arg0 :(int)arg1;
+- (int)paintRgnWithRects:(NSArray *)arg0;
+- (int)paintRgn:(unsigned int)arg0;
+- (int)invertRgnWithRects:(NSArray *)arg0;
+- (int)invertRgn:(unsigned int)arg0;
+- (int)fillRgnWithRects:(NSArray *)arg0 :(unsigned int)arg1;
+- (int)fillRgn:(unsigned int)arg0 :(unsigned int)arg1;
+- (int)frameRegionWithRects:(NSArray *)arg0 :(unsigned int)arg1 :(int)arg2 :(int)arg3;
+- (int)frameRegion:(unsigned int)arg0 :(unsigned int)arg1 :(int)arg2 :(int)arg3;
+- (id)createDIBitmap:(char *)arg0 :(unsigned int)arg1 :(int)arg2;
+- (id)createDIBitmap:(char *)arg0 :(unsigned int)arg1 :(char *)arg2 :(unsigned int)arg3 :(int)arg4;
+- (id)createBitmap:(unsigned int)arg0 :(unsigned int)arg1 :(unsigned int)arg2 :(unsigned int)arg3 :(char *)arg4 :(unsigned int)arg5;
+- (int)patBlt:(int)arg0 :(int)arg1 :(int)arg2 :(int)arg3 :(unsigned int)arg4;
+- (int)bitBlt:(int)arg0 :(int)arg1 :(int)arg2 :(int)arg3 :(id)arg4 :(int)arg5 :(int)arg6 :(unsigned int)arg7 :(struct CGAffineTransform *)arg8 :(unsigned int)arg9;
+- (int)stretchBlt:(int)arg0 :(int)arg1 :(int)arg2 :(int)arg3 :(id)arg4 :(int)arg5 :(int)arg6 :(int)arg7 :(int)arg8 :(unsigned int)arg9 :(struct CGAffineTransform *)arg10 :(unsigned int)arg11;
+- (int)stretchBlt:(int)arg0 :(int)arg1 :(int)arg2 :(int)arg3 :(id)arg4 :(int)arg5 :(int)arg6 :(int)arg7 :(int)arg8 :(unsigned int)arg9 :(struct CGAffineTransform *)arg10 :(unsigned int)arg11 usePaletteForBilevel:(char)arg12;
+- (int)maskBlt:(int)arg0 :(int)arg1 :(int)arg2 :(int)arg3 :(id)arg4 :(int)arg5 :(int)arg6 :(id)arg7 :(int)arg8 :(int)arg9 :(unsigned int)arg10 :(struct CGAffineTransform *)arg11 :(unsigned int)arg12;
+- (int)plgBlt:(struct CGPoint *)arg0 :(id)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(id)arg6 :(int)arg7 :(int)arg8 :(struct CGAffineTransform *)arg9 :(unsigned int)arg10;
+- (int)deleteObject:(int)arg0;
+- (int)setMapMode:(int)arg0;
+
+@end

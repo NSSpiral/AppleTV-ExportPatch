@@ -1,0 +1,31 @@
+// BackBoardServices.framework umbrella header
+// Auto-generated from iOS 8.4.3 dyld_shared_cache (AppleTV 3,2)
+
+#import <Foundation/Foundation.h>
+
+#import <BackBoardServices/BKSAccelerometer.h>
+#import <BackBoardServices/BKSAlternateSystemApp.h>
+#import <BackBoardServices/BKSApplicationDataStore.h>
+#import <BackBoardServices/BKSApplicationDataStoreClientFactory.h>
+#import <BackBoardServices/BKSApplicationDataStoreRepositoryClient.h>
+#import <BackBoardServices/BKSEventFocusDeferral.h>
+#import <BackBoardServices/BKSEventFocusDeferralProperties.h>
+#import <BackBoardServices/BKSEventFocusManager.h>
+#import <BackBoardServices/BKSHIDEventDescriptor.h>
+#import <BackBoardServices/BKSHIDEventKeyboardDescriptor.h>
+#import <BackBoardServices/BKSHIDEventRouter.h>
+#import <BackBoardServices/BKSHIDEventRouterManager.h>
+#import <BackBoardServices/BKSHIDEventRouterManagerBase.h>
+#import <BackBoardServices/BKSHIDEventVendorDefinedDescriptor.h>
+#import <BackBoardServices/BKSInsecureDrawingAction.h>
+#import <BackBoardServices/BKSPowerMonitor.h>
+#import <BackBoardServices/BKSRestartAction.h>
+#import <BackBoardServices/BKSSystemApplication.h>
+#import <BackBoardServices/BKSSystemApplicationClient.h>
+#import <BackBoardServices/BKSSystemService.h>
+#import <BackBoardServices/BKSTouchDeliveryPolicy.h>
+#import <BackBoardServices/BKSTouchDeliveryPolicyAssertion.h>
+#import <BackBoardServices/BKSWatchdogServerWrapper.h>
+#import <BackBoardServices/_BKSCancelTouchesTouchDeliveryPolicy.h>
+#import <BackBoardServices/_BKSCombinedTouchDeliveryPolicy.h>
+#import <BackBoardServices/_BKSShareTouchesTouchDeliveryPolicy.h>

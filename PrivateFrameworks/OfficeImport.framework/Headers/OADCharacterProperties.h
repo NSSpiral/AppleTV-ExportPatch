@@ -1,0 +1,135 @@
+/* Runtime dump - OADCharacterProperties
+ * Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
+ */
+
+@interface OADCharacterProperties : OADProperties <OADEffectsParent>
+{
+    NSString * mLatinFont;
+    NSString * mEastAsianFont;
+    NSString * mBidiFont;
+    NSString * mHAnsiFont;
+    NSString * mSymbolFont;
+    OADHyperlink * mClickHyperlink;
+    OADHyperlink * mHoverHyperlink;
+    OADStroke * mStroke;
+    OADFill * mFill;
+    OADColor * mHighlight;
+    NSArray * mEffects;
+    OADUnderline * mUnderline;
+    double mOpacity;
+    double mSize;
+    double mSpacing;
+    double mBaseline;
+    unsigned char mFormatType;
+    unsigned char mFormatKerningType;
+    unsigned char mStrikeThroughType;
+    unsigned char mCaps;
+    id mHasOpacity;
+    id mHasIsBold;
+    id mIsBold;
+    id mHasIsItalic;
+    id mIsItalic;
+    id mHasFormatType;
+    id mHasFormatKerningType;
+    id mHasStrikeThroughType;
+    id mHasSize;
+    id mHasSpacing;
+    id mHasKerning;
+    id mHasIsVerticalText;
+    id mIsVerticalText;
+    id mHasIsRightToLeft;
+    id mIsRightToLeft;
+    id mHasBaseline;
+    id mHasIsHorizontalNormalized;
+    id mIsHorizontalNormalized;
+    id mHasCaps;
+}
+
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString * description;
+@property (readonly, copy) NSString * debugDescription;
+
++ (void)initialize;
+
+- (void)dealloc;
+- (double)size;
+- (char)isEqual:(NSObject *)arg0;
+- (unsigned int)hash;
+- (EDFill *)fill;
+- (OADStroke *)stroke;
+- (void)setSize:(double)arg0;
+- (double)opacity;
+- (void)setOpacity:(double)arg0;
+- (char)isBold;
+- (void)setHighlight:(TSWPHighlight *)arg0;
+- (TSWPHighlight *)highlight;
+- (UIFont *)symbolFont;
+- (id)clickHyperlink;
+- (TSSSpecInteger *)underline;
+- (int)caps;
+- (void)setFill:(TSDFill *)arg0;
+- (void)setStroke:(TSDStroke *)arg0;
+- (int)formatType;
+- (char)isItalic;
+- (char)hasFill;
+- (char)hasStroke;
+- (UIFont *)latinFont;
+- (char)hasLatinFont;
+- (UIFont *)eastAsianFont;
+- (UIFont *)bidiFont;
+- (char)hasBaseline;
+- (double)baseline;
+- (char)hasIsBold;
+- (NSArray *)effects;
+- (char)hasStrikeThroughType;
+- (int)strikeThroughType;
+- (char)hasCaps;
+- (void)setIsBold:(char)arg0;
+- (void)setIsItalic:(char)arg0;
+- (id)hoverHyperlink;
+- (void)setEffects:(NSArray *)arg0;
+- (void)setUnderline:(TSSSpecInteger *)arg0;
+- (void)setBaseline:(double)arg0;
+- (void)setIsVerticalText:(char)arg0;
+- (void)setIsRightToLeft:(char)arg0;
+- (void)setStrikeThroughType:(int)arg0;
+- (void)setCaps:(int)arg0;
+- (char)hasUnderline;
+- (void)setClickHyperlink:(id)arg0;
+- (void)setHoverHyperlink:(id)arg0;
+- (void)setFormatType:(int)arg0;
+- (void)setLatinFont:(UIFont *)arg0;
+- (void)setEastAsianFont:(UIFont *)arg0;
+- (void)setBidiFont:(UIFont *)arg0;
+- (void)setHAnsiFont:(UIFont *)arg0;
+- (void)setSymbolFont:(UIFont *)arg0;
+- (void)setIsHorizontalNormalized:(char)arg0;
+- (char)hasOpacity;
+- (char)hasHighlight;
+- (char)hasIsVerticalText;
+- (char)hasIsHorizontalNormalized;
+- (char)hasEastAsianFont;
+- (char)hasBidiFont;
+- (char)hasHAnsiFont;
+- (char)hasSymbolFont;
+- (char)isVerticalText;
+- (char)isHorizontalNormalized;
+- (UIFont *)hansiFont;
+- (char)hasIsRightToLeft;
+- (char)isRightToLeft;
+- (void)overrideWithProperties:(NSDictionary *)arg0;
+- (void)removeUnnecessaryOverrides;
+- (OADCharacterProperties *)initWithDefaults;
+- (char)hasEffects;
+- (char)hasIsItalic;
+- (char)hasFormatType;
+- (char)hasFormatKerningType;
+- (int)formatKerningType;
+- (void)setFormatKerningType:(int)arg0;
+- (void)setSpacing:(double)arg0;
+- (char)hasSpacing;
+- (double)spacing;
+- (char)hasSize;
+
+@end

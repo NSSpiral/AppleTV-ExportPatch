@@ -1,0 +1,132 @@
+/* Runtime dump - PFUbiquityLocation
+ * Image: /System/Library/Frameworks/CoreData.framework/CoreData
+ */
+
+@interface PFUbiquityLocation : NSObject <NSCopying>
+{
+    PFUbiquityLocation * _ubiquityRootLocation;
+    NSString * _ubiquityRootLocationPath;
+    int _ubiquityLocationType;
+    NSString * _exportingPeerID;
+    NSString * _storeName;
+    NSString * _modelVersionHash;
+    NSString * _filename;
+    NSArray * _otherPathComponents;
+    char _isDirectory;
+    unsigned int _hash;
+    char _isRootUbiquitous;
+}
+
+@property (readonly, nonatomic) PFUbiquityLocation * ubiquityRootLocation;
+@property (readonly, nonatomic) NSString * ubiquityRootLocationPath;
+@property (readonly, nonatomic) char isRootUbiquitous;
+@property (readonly, nonatomic) int ubiquityLocationType;
+@property (readonly, nonatomic) NSString * exportingPeerID;
+@property (readonly, nonatomic) NSString * storeName;
+@property (readonly, nonatomic) NSString * modelVersionHash;
+@property (readonly, nonatomic) NSString * filename;
+@property (readonly, nonatomic) char usesStagingLogDirectory;
+@property (readonly, nonatomic) char usesTemporaryLogDirectory;
+@property (readonly, nonatomic) char usesCurrentBaselineDirectory;
+@property (readonly, nonatomic) char usesBaselineStagingDirectory;
+@property (readonly, nonatomic) char usesBaselineDirectory;
+@property (readonly, nonatomic) char usesNosyncDirectory;
+@property (readonly, nonatomic) unsigned int hash;
+@property (readonly, nonatomic) NSArray * otherPathComponents;
+@property (readonly, nonatomic) char isTransactionLogLocation;
+@property (readonly, nonatomic) char isDirectory;
+
++ (PFUbiquityLocation *)pathByTruncatingBeforeLibraryMobileDocuments:(id)arg0;
++ (NSObject *)createPeerRootLocationForPeerID:(NSObject *)arg0 withUbiquityRootLocation:(PFUbiquityLocation *)arg1;
++ (NSObject *)createVersionHashStringForModel:(NSObject *)arg0;
++ (NSObject *)createArrayOfSubLocationsAtLocation:(NSObject *)arg0 error:(id *)arg1;
++ (NSURL *)createUbiquityLocationForRootURL:(NSURL *)arg0;
++ (NSObject *)createTransactionLogLocationForPeerID:(NSObject *)arg0 storeName:(NSString *)arg1 modelVersionHash:(NSString *)arg2 logFilename:(NSString *)arg3 andUbiquityRootLocation:(NSObject *)arg4;
++ (NSURL *)createUbiquityLocationForURL:(NSURL *)arg0 withUbiquityRootLocation:(PFUbiquityLocation *)arg1;
++ (NSObject *)createBaselineLocation:(int)arg0 forStoreName:(NSString *)arg1 andModelVersionHash:(id)arg2 withUbiquityRootLocation:(PFUbiquityLocation *)arg3;
++ (NSObject *)createTemporaryTransactionLogLocationFromTransactionLogLocation:(NSObject *)arg0;
++ (NSObject *)createStagingTransactionLogLocationFromTransactionLogLocation:(NSObject *)arg0;
++ (PFUbiquityLocation *)createUbiquityExternalDataReferenceFileLocationForUUID:(id)arg0 andStore:(NSObject *)arg1 withUbiquityRootLocation:(PFUbiquityLocation *)arg2;
++ (NSObject *)createPeerBaselineFileSafeSaveLocationForLocalPeerID:(NSObject *)arg0 andBaselineFileLocation:(NSObject *)arg1;
++ (NSObject *)createBaselineStagingLocation:(int)arg0 forStoreName:(NSString *)arg1 modelVersionHash:(NSString *)arg2 andFilename:(NSString *)arg3 withUbiquityRootLocation:(PFUbiquityLocation *)arg4;
++ (NSObject *)createPeerStoreVersionLocationForPeerID:(NSObject *)arg0 storeName:(NSString *)arg1 andModelVersionHash:(id)arg2 withUbiquityRootLocation:(PFUbiquityLocation *)arg3;
++ (NSObject *)createCurrentBaselineLocation:(int)arg0 forStoreName:(NSString *)arg1 peerID:(NSObject *)arg2 andModelVersionHash:(id)arg3 forFileNamed:(id)arg4 withUbiquityRootLocation:(PFUbiquityLocation *)arg5;
++ (NSString *)createUbiquityExternalDataReferenceStoreLocationForStoreName:(NSString *)arg0 withUbiquityRootLocation:(PFUbiquityLocation *)arg1;
++ (PFUbiquityLocation *)locationSentinel;
++ (void)setLocationSentinel:(id)arg0;
++ (NSString *)createUbiquityLocationForRootPath:(NSString *)arg0;
++ (NSString *)createUbiquityLocationForPath:(NSString *)arg0 withUbiquityRootLocation:(PFUbiquityLocation *)arg1;
++ (NSObject *)createTransactionLogLocationFromTemporaryOrStagingLogLocation:(NSObject *)arg0;
++ (PFUbiquityLocation *)createUbiquityExternalDataReferenceFileLocationForUUID:(id)arg0 andLog:(id)arg1;
++ (NSObject *)createPeerStoreLocationForPeerID:(NSObject *)arg0 andStoreName:(NSString *)arg1 withUbiquityRootLocation:(PFUbiquityLocation *)arg2;
++ (NSString *)createStringByAppendingSubpath:(id)arg0 toPath:(NSString *)arg1;
++ (NSString *)createUbiquityLocationForRootPath:(NSString *)arg0 checkIsUbiquitous:(char)arg1;
++ (NSString *)createUbiquityLocationForPath:(NSString *)arg0 withUbiquityRootPath:(NSString *)arg1;
++ (char)isUbiquityLocationPath:(NSString *)arg0 equalToPath:(NSString *)arg1;
++ (PFUbiquityLocation *)createUbiquityExternalDataReferenceFileLocationForUUID:(id)arg0 storeName:(NSString *)arg1 andUbiquityRootLocation:(NSObject *)arg2;
++ (PFUbiquityLocation *)localLocationSentinel;
++ (NSObject *)createLocalBasePathWithLocalPeerID:(NSString *)arg0 containerID:(NSObject *)arg1 storeName:(NSString *)arg2 andStoreURL:(NSURL *)arg3;
++ (NSURL *)createUbiquityLocationForURL:(NSURL *)arg0 withUbiquityRootURL:(NSURL *)arg1;
++ (NSString *)createUbiquityLocationForSubpath:(id)arg0 ofUbiquityRootPath:(NSString *)arg1;
++ (NSObject *)createMetadataRootLocationForUbiquityRootLocation:(NSObject *)arg0;
++ (NSObject *)createMetadataStoreFileLocationForLocalPeerID:(NSObject *)arg0 storeName:(NSString *)arg1 andUbiquityRootLocation:(NSObject *)arg2;
++ (NSObject *)createMetadataPeerLocationForLocalPeerID:(NSObject *)arg0 andUbiquityRootLocation:(NSObject *)arg1;
++ (NSObject *)createMetadataPeerStoreLocationForLocalPeerID:(NSObject *)arg0 storeName:(NSString *)arg1 andUbiquityRootLocation:(NSObject *)arg2;
++ (NSObject *)createMetadataUUIDLocationForLocalPeerID:(NSObject *)arg0 storeName:(NSString *)arg1 UUID:(NSUUID *)arg2 andUbiquityRootLocation:(NSObject *)arg3;
++ (NSObject *)createPeerBaselineFileLocationForLocalPeerID:(NSObject *)arg0 andBaselineFileLocation:(NSObject *)arg1;
++ (NSObject *)createStagingPeerStoreVersionLocationForExportingPeerID:(NSObject *)arg0 storeName:(NSString *)arg1 andModelVersionHash:(id)arg2 withUbiquityRootLocation:(PFUbiquityLocation *)arg3;
++ (NSObject *)createUbiquityPeerReceiptFileLocationForPeerWithID:(int)arg0 storeName:(NSString *)arg1 andModelVersionHash:(id)arg2 withUbiquityRootLocation:(PFUbiquityLocation *)arg3;
++ (NSObject *)createUbiquityPeerReceiptSafeSaveLocationFromReceiptFileLocation:(NSObject *)arg0;
++ (NSObject *)createMapOfLocationsForOldManagedObjectModel:(NSObject *)arg0 andNewManagedObjectModel:(NSObject *)arg1 inUbiquityPeerStoreLocation:(NSObject *)arg2;
++ (NSObject *)createLocalStoresPathWithLocalPeerID:(NSString *)arg0 containerID:(NSObject *)arg1 storeName:(NSString *)arg2 andStoreURL:(NSURL *)arg3;
++ (NSObject *)createLocalContainerRootLocationWithLocalPeerID:(NSString *)arg0 containerID:(NSObject *)arg1 storeName:(NSString *)arg2 andStoreURL:(NSURL *)arg3;
++ (void)initialize;
+
+- (int)ubiquityLocationType;
+- (NSString *)modelVersionHash;
+- (char)fileExistsAtLocation;
+- (NSString *)storeName;
+- (PFUbiquityLocation *)ubiquityRootLocation;
+- (NSString *)ubiquityRootLocationPath;
+- (NSString *)createRelativePath;
+- (char)isRootUbiquitous;
+- (NSURL *)createFullURL;
+- (NSString *)exportingPeerID;
+- (void)setExportingPeerID:(NSString *)arg0;
+- (void)setStoreName:(NSString *)arg0;
+- (void)setUbiquityRootLocation:(PFUbiquityLocation *)arg0;
+- (NSString *)createFullPath;
+- (char)usesNosyncDirectory;
+- (char)removeFileAtLocation:(NSObject *)arg0 error:(id *)arg1;
+- (char)usesCurrentBaselineDirectory;
+- (void)updateHash;
+- (PFUbiquityLocation *)initWithUbiquityRootPath:(NSString *)arg0;
+- (void)setUbiquityRootLocationPath:(NSString *)arg0;
+- (void)setModelVersionHash:(NSString *)arg0;
+- (NSArray *)otherPathComponents;
+- (void)setOtherPathComponents:(NSArray *)arg0;
+- (void)setUbiquityLocationType:(int)arg0;
+- (void)setHash:(unsigned int)arg0;
+- (void)setIsRootUbiquitous:(char)arg0;
+- (char)usesBaselineStagingDirectory;
+- (char)fileExistsAtLocationWithLocalPeerID:(NSString *)arg0 error:(id *)arg1;
+- (char)__isDirectory;
+- (PFUbiquityLocation *)initWithUbiquityRootURL:(NSURL *)arg0;
+- (char)usesStagingLogDirectory;
+- (char)usesTemporaryLogDirectory;
+- (char)usesBaselineDirectory;
+- (char)isTransactionLogLocation;
+- (char)fileAtLocationIsUploaded:(id *)arg0;
+- (char)fileAtLocationIsDownloaded:(id *)arg0;
+- (char)isEqualToURL:(NSURL *)arg0;
+- (void)dealloc;
+- (PFUbiquityLocation *)init;
+- (char)isEqual:(NSObject *)arg0;
+- (unsigned int)hash;
+- (NSString *)description;
+- (PFUbiquityLocation *)copyWithZone:(struct _NSZone *)arg0;
+- (NSString *)filename;
+- (char)isDirectory;
+- (void)setFilename:(NSString *)arg0;
+
+@end

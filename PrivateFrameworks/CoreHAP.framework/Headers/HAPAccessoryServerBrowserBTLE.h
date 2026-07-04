@@ -1,0 +1,123 @@
+/* Runtime dump - HAPAccessoryServerBrowserBTLE
+ * Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
+ */
+
+@interface HAPAccessoryServerBrowserBTLE : HAPAccessoryServerBrowser <CBCentralManagerDelegate, HAPAccessoryServerBrowserWiProxBTLEDelegate>
+{
+    char _performingGeneralScan;
+    <HAPAccessoryServerBrowserBTLEDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _delegateQueue;
+    CBCentralManager * _centralManager;
+    HAPAccessoryServerBrowserWiProxBTLE * _hapWiProxBLEBrowser;
+    NSMapTable * _discoveredPeripheralsWithAccessories;
+    NSMapTable * _recentlySeenPairedPeripherals;
+    NSObject<OS_dispatch_source> * _lostAccessoryServerTimer;
+    NSMutableArray * _powerOnCentralManagerCompletions;
+    id _reachabilityCompletion;
+    NSMapTable * _peripheralsWithConnectionRequestTuples;
+    NSObject<OS_dispatch_source> * _targetedScanTimer;
+    NSMutableArray * _targetedScanAccessoryIdentifiers;
+    NSMapTable * _identifersWithReachabilityScanTuples;
+}
+
+@property (weak, nonatomic) <HAPAccessoryServerBrowserBTLEDelegate> * delegate;
+@property (retain, nonatomic) NSObject<OS_dispatch_queue> * delegateQueue;
+@property (retain, nonatomic) CBCentralManager * centralManager;
+@property (retain, nonatomic) HAPAccessoryServerBrowserWiProxBTLE * hapWiProxBLEBrowser;
+@property (retain, nonatomic) NSMapTable * discoveredPeripheralsWithAccessories;
+@property (retain, nonatomic) NSMapTable * recentlySeenPairedPeripherals;
+@property (retain, nonatomic) NSObject<OS_dispatch_source> * lostAccessoryServerTimer;
+@property (nonatomic) char performingGeneralScan;
+@property (retain, nonatomic) NSMutableArray * powerOnCentralManagerCompletions;
+@property (copy, nonatomic) id reachabilityCompletion;
+@property (retain, nonatomic) NSMapTable * peripheralsWithConnectionRequestTuples;
+@property (retain, nonatomic) NSObject<OS_dispatch_source> * targetedScanTimer;
+@property (retain, nonatomic) NSMutableArray * targetedScanAccessoryIdentifiers;
+@property (retain, nonatomic) NSMapTable * identifersWithReachabilityScanTuples;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSString * description;
+@property (readonly, copy) NSString * debugDescription;
+
+- (void)setDelegate:(<HAPAccessoryServerBrowserBTLEDelegate> *)arg0;
+- (<HAPAccessoryServerBrowserBTLEDelegate> *)delegate;
+- (HAPAccessoryServerBrowserBTLE *)initWithQueue:(NSObject<OS_dispatch_queue> *)arg0;
+- (void).cxx_destruct;
+- (char)_delegateRespondsToSelector:(SEL)arg0;
+- (NSObject<OS_dispatch_queue> *)delegateQueue;
+- (int)linkType;
+- (NSMapTable *)discoveredPeripheralsWithAccessories;
+- (CBCentralManager *)centralManager;
+- (NSMapTable *)recentlySeenPairedPeripherals;
+- (void)setDelegateQueue:(NSObject<OS_dispatch_queue> *)arg0;
+- (void)_startDiscoveringAccessoryServers;
+- (void)setPerformingGeneralScan:(char)arg0;
+- (HAPAccessoryServerBrowserWiProxBTLE *)hapWiProxBLEBrowser;
+- (void)setHapWiProxBLEBrowser:(HAPAccessoryServerBrowserWiProxBTLE *)arg0;
+- (void)_startScanningForPairingPeers;
+- (void)_powerOnCentralManagerWithCompletion:(id /* block */)arg0;
+- (NSMutableArray *)targetedScanAccessoryIdentifiers;
+- (void)_stopActiveScan;
+- (void)_cancelLostAccessoryServerTimer;
+- (NSMutableArray *)powerOnCentralManagerCompletions;
+- (void)setCentralManager:(CBCentralManager *)arg0;
+- (void)_discoverAccessoryServerWithIdentifier:(NSString *)arg0;
+- (void)_performTimedConnectionRequestForIdentifier:(NSString *)arg0;
+- (void)setReachabilityCompletion:(id /* block */)arg0;
+- (void)_probeReachabilityForAccessoryServersWithIdentifiers:(id)arg0 onQueue:(/* block */ id)arg1 withCompletion:(id /* block */)arg2;
+- (void)_clearCachedDescriptorsForIdentifier:(NSString *)arg0;
+- (void)_performTimedScanForIdentifiers:(id)arg0 workQueue:(NSObject<OS_dispatch_queue> *)arg1 withCompletion:(id /* block */)arg2;
+- (void)_forgetPairedAccesoryWithIdentifier:(NSString *)arg0;
+- (NSMapTable *)identifersWithReachabilityScanTuples;
+- (void)_updateTargetedScanTimer;
+- (char)_shouldCreateHAPAccessoryServerWithIdentifier:(NSString *)arg0 statusFlags:(NSNumber *)arg1 stateNumber:(NSNumber *)arg2 category:(NSString *)arg3 configNumber:(NSNumber *)arg4 forPeripheral:(CBPeripheral *)arg5;
+- (void)_createHAPAccessoryAndNotifyDelegateWithPeripheral:(id)arg0 name:(NSString *)arg1 pairingUsername:(NSString *)arg2 statusFlags:(NSNumber *)arg3 stateNumber:(NSNumber *)arg4 category:(NSString *)arg5 format:(unsigned int)arg6;
+- (char)isPerformingGeneralScan;
+- (NSObject<OS_dispatch_source> *)lostAccessoryServerTimer;
+- (void)_setupLostAccessoryServerTimer;
+- (void)_callPowerOnCompletionsWithError:(NSError *)arg0;
+- (id /* block */)reachabilityCompletion;
+- (unsigned int)_parseAdvertisementData:(NSData *)arg0 forPeripheral:(CBPeripheral *)arg1 name:(id *)arg2 pairingUsername:(id *)arg3 statusFlags:(id *)arg4 stateNumber:(id *)arg5 category:(id *)arg6 configNumber:(id *)arg7;
+- (void)_didDiscoverPeripheral:(id)arg0 accessoryName:(NSString *)arg1 pairingIdentifier:(NSString *)arg2 format:(unsigned int)arg3 statusFlags:(NSNumber *)arg4 stateNumber:(NSNumber *)arg5 category:(NSString *)arg6 configNumber:(NSNumber *)arg7;
+- (void)connectedHAPPeripheral:(id)arg0;
+- (void)_handleConnectionRequestCompletionForPeripheral:(id)arg0;
+- (void)failedToConnectHAPPeripheral:(id)arg0 error:(NSError *)arg1;
+- (void)_notifyDelegatesOfRemovedAccessoryServer:(NSObject *)arg0;
+- (void)disconnectedHAPPeripheral:(id)arg0 error:(NSError *)arg1;
+- (NSMapTable *)peripheralsWithConnectionRequestTuples;
+- (void)_performTargetedScanForAccessoryWithIdentifier:(NSString *)arg0;
+- (NSObject<OS_dispatch_source> *)targetedScanTimer;
+- (void)setTargetedScanTimer:(NSObject<OS_dispatch_source> *)arg0;
+- (void)_handleTargetedScanTimeout;
+- (void)_removeIdentifiersForReachabilityScan;
+- (void)setLostAccessoryServerTimer:(NSObject<OS_dispatch_source> *)arg0;
+- (void)_removeLostAccessoryServers;
+- (void)centralManagerDidUpdateState:(CBCentralManager *)arg0;
+- (void)centralManager:(CBCentralManager *)arg0 didDiscoverPeripheral:(CBPeripheral *)arg1 advertisementData:(NSDictionary *)arg2 RSSI:(NSNumber *)arg3;
+- (void)centralManager:(CBCentralManager *)arg0 didConnectPeripheral:(CBPeripheral *)arg1;
+- (void)centralManager:(CBCentralManager *)arg0 didFailToConnectPeripheral:(CBPeripheral *)arg1 error:(NSError *)arg2;
+- (void)centralManager:(CBCentralManager *)arg0 didDisconnectPeripheral:(CBPeripheral *)arg1 error:(NSError *)arg2;
+- (void)accessoryServerBrowserBTLE:(HAPAccessoryServerBrowserWiProxBTLE *)arg0 didDiscoverHAPPeripheral:(NSUUID *)arg1 accessoryName:(NSString *)arg2 pairingIdentifier:(NSString *)arg3 advertisementFormat:(unsigned int)arg4 statusFlags:(NSNumber *)arg5 stateNumber:(NSNumber *)arg6 category:(NSNumber *)arg7 configurationNumber:(NSNumber *)arg8;
+- (void)connectToBTLEAccessoryServer:(NSObject *)arg0;
+- (void)disconnectFromBTLEAccessoryServer:(NSObject *)arg0;
+- (void)setConnectionLatency:(int)arg0 forPeripheral:(CBPeripheral *)arg1;
+- (void)startDiscoveringAccessoryServers;
+- (void)stopDiscoveringAccessoryServers;
+- (void)discoverAccessoryServerWithIdentifier:(NSString *)arg0;
+- (void)setReachabilityCompletionHandler:(id /* block */)arg0;
+- (void)probeReachabilityForAccessoryServersWithIdentifiers:(id)arg0 onQueue:(/* block */ id)arg1 withCompletion:(id /* block */)arg2;
+- (void)markNotifyingCharacteristicUpdatedOnPeripheral:(id)arg0;
+- (id)cachedDescriptorsForCharacteristic:(id)arg0 forServiceInstance:(id)arg1;
+- (void)updateCacheWithDescriptor:(NSObject *)arg0 forServiceInstance:(id)arg1;
+- (void)cacheCharacteristicSignature:(NSObject *)arg0 characteristicInstanceID:(NSNumber *)arg1 forCharacteristic:(HMCharacteristic *)arg2;
+- (NSObject *)getCachedCharacteristicSignatureForCharacteristicInstanceID:(NSObject *)arg0 characteristic:(HAPCharacteristic *)arg1;
+- (void)forgetPairedAccesoryWithIdentifier:(NSString *)arg0;
+- (void)setDiscoveredPeripheralsWithAccessories:(NSMapTable *)arg0;
+- (void)setRecentlySeenPairedPeripherals:(NSMapTable *)arg0;
+- (void)setPowerOnCentralManagerCompletions:(NSMutableArray *)arg0;
+- (void)setPeripheralsWithConnectionRequestTuples:(NSMapTable *)arg0;
+- (void)setTargetedScanAccessoryIdentifiers:(NSMutableArray *)arg0;
+- (void)setIdentifersWithReachabilityScanTuples:(NSMapTable *)arg0;
+- (void)setDelegate:(<HAPAccessoryServerBrowserBTLEDelegate> *)arg0 queue:(NSObject *)arg1;
+
+@end
